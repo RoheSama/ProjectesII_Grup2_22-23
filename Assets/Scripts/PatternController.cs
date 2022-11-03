@@ -18,10 +18,11 @@ public class PatternController : MonoBehaviour
     }
     void Update()
     {
-            if (phoneDrawController.isDrawing && mouseCheck.overlappedObject == true)
+       
+        if (phoneDrawController.isDrawing && mouseCheck.overlappedObject == true)
             {
-                actualPin = mouseCheck.overlappedObject;
-                if (actualPin != lastPin)
+            actualPin = mouseCheck.overlappedObject;
+            if (actualPin != lastPin)
                     {
                         pins[counter] = mouseCheck.overlappedObject;
                         counter++;
