@@ -10,33 +10,24 @@ public class PatternController : MonoBehaviour
     public MouseCheck mouseCheck;
 
     GameObject lastPin;
-
+    GameObject actualPin;
+    int counter = 0;
     void Start()
     {
      
     }
-
-    
     void Update()
     {
-        if (phoneDrawController.isDrawing && mouseCheck.overlappedObject == true)
-        {
-            for(int i = 0; i < pins.Length; i++)
+            if (phoneDrawController.isDrawing && mouseCheck.overlappedObject == true)
             {
-                if (pins[i]!= lastPin)
-                {
-                    lastPin = pins[i];
-                    pins[i] = mouseCheck.overlappedObject;
- 
-                }
+                actualPin = mouseCheck.overlappedObject;
+                if (actualPin != lastPin)
+                    {
+                        pins[counter] = mouseCheck.overlappedObject;
+                        counter++;
+                    }
+                    lastPin = actualPin;
             }
-            mouseCheck.overlappedObject.SetActive(false);
-        }
-
-       // else if (Input.GetKey(KeyCode.Mouse1))
-       //  { 
-             
-        // }
     }
 }
 

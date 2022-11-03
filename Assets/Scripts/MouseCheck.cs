@@ -24,7 +24,7 @@ public class MouseCheck : MonoBehaviour
         Collider2D col = Physics2D.OverlapPoint(mousePosWorldSpace);
         if(col != null && col.tag == "Selectable" && Input.GetKey(KeyCode.Mouse0))
         {
-            Debug.Log(col.gameObject);
+           // Debug.Log(col.gameObject);
             hasOverlappedObject = true;
             overlappedObject = col.gameObject;
         }
