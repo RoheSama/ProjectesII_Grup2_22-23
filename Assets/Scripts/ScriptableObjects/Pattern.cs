@@ -7,5 +7,5 @@ using UnityEngine.Events;
 public class Pattern : ScriptableObject
 {
     public int[] sequence;
-    public UnityEvent OnMakePattern;
+    public string functionCall;
 }

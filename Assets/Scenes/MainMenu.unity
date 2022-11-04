@@ -365,7 +365,7 @@ GameObject:
   - component: {fileID: 173449642}
   - component: {fileID: 173449641}
   m_Layer: 0
-  m_Name: MENU MANAGER
+  m_Name: ------MENU MANAGER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -505,8 +505,9 @@ GameObject:
   - component: {fileID: 849628053}
   - component: {fileID: 849628052}
   - component: {fileID: 849628051}
+  - component: {fileID: 849628054}
   m_Layer: 5
-  m_Name: Button
+  m_Name: OnButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -530,8 +531,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.9, y: -201.2228}
-  m_SizeDelta: {x: 29.3454, y: 26.7839}
+  m_AnchoredPosition: {x: -2.8904, y: -201.4867}
+  m_SizeDelta: {x: 22, y: 23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &849628051
 MonoBehaviour:
@@ -552,7 +553,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 3
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9811321, g: 0.6437463, b: 0.0046279924, a: 1}
@@ -627,6 +628,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 849628049}
   m_CullTransparentMesh: 1
+--- !u!95 &849628054
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 849628049}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 62701d5b4440f2d4381a834c9b88b84d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &914414624
 GameObject:
   m_ObjectHideFlags: 0

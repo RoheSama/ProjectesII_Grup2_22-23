@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PhoneDrawController : MonoBehaviour
 {
+
     public bool isDrawing = false;
     public MouseCheck mouseCheck;
+    public PatternController patternController;
     public ParticleSystem particles;
     public LineRenderer line;
     Vector2 lastPos;

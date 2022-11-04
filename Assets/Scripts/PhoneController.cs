@@ -11,7 +11,8 @@ public class PhoneController : MonoBehaviour
     public GameObject cursesApp;
     public GameObject mapApp;
     public GameObject settingsApp;
-
+    public GameObject buttons;
+    public GameObject apps;
     void Start()
     {
        
@@ -25,13 +26,8 @@ public class PhoneController : MonoBehaviour
 
     public void CloseApp()
     {
-        messageApp.SetActive(false);
-        callApp.SetActive(false);
-        tinderApp.SetActive(false);
-        bookApp.SetActive(false);
         cursesApp.SetActive(false);
-        mapApp.SetActive(false);
-        settingsApp.SetActive(false);
+        buttons.SetActive(true);
     }
 
     public void OpenMessageApp()
@@ -57,6 +53,7 @@ public class PhoneController : MonoBehaviour
     public void OpenCursesApp()
     {
         cursesApp.SetActive(true);
+        buttons.SetActive(false);
     }
 
     public void OpenMapApp()
