@@ -50,7 +50,7 @@ namespace ClearSky
                 isKickboard = false;
                 anim.SetBool("isKickBoard", false);
             }
-            else if (Input.GetKeyDown(KeyCode.Alpha4) && !isKickboard )
+            else if (Input.GetKeyDown(KeyCode.Alpha4) && !isKickboard)
             {
                 isKickboard = true;
                 anim.SetBool("isKickBoard", true);
