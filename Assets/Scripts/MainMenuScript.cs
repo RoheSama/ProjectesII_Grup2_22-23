@@ -16,8 +16,8 @@ public class MainMenuScript : MonoBehaviour
        
     }
 
-    public void OnButton()
+    public void OnPowerButton()
     {
-        SceneManager.LoadScene("SampleScene");
+       // SceneManager.LoadScene("SampleScene");
     }
 }
