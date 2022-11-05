@@ -68,6 +68,7 @@ public class PatternController : MonoBehaviour
     }
     void Corruption()
     {
+        Debug.Log("corruption");
         corruption.SetActive(true);
         if(target.gameObject.tag == "Targeted")
         {
