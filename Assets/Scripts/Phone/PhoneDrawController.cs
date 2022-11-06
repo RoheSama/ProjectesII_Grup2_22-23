@@ -11,6 +11,9 @@ public class PhoneDrawController : MonoBehaviour
     public ParticleSystem particles;
     public LineRenderer line;
     Vector2 lastPos;
+    bool canPlayAudio = true;
+
+    public AudioSource audioSource;
 
     private void Update()
     {
@@ -36,6 +39,14 @@ public class PhoneDrawController : MonoBehaviour
             }
             isDrawing = false;
         }
+        //Play Drawing Sound
+        if(canPlayAudio)
+        {
+            audioSource.Play();
+        }
+        canPlayAudio = false;
+       
+
     }
 
     void StartParticlesAndLine()
