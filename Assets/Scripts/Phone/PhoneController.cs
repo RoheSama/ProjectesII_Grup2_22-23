@@ -13,57 +13,57 @@ public class PhoneController : MonoBehaviour
     public GameObject settingsApp;
     public GameObject buttons;
     public GameObject apps;
-    void Start()
-    {
-       
-    }
+    public GameObject closePhoneButton;
 
-    void Update()
-    {
-        
-    }
-
-
+  
     public void CloseApp()
     {
         cursesApp.SetActive(false);
         buttons.SetActive(true);
+        closePhoneButton.SetActive(true);
     }
 
     public void OpenMessageApp()
     {
         messageApp.SetActive(true);
+        closePhoneButton.SetActive(false);
     }
 
     public void OpenCallApp()
     {
         callApp.SetActive(true);
+        closePhoneButton.SetActive(false);
     }
 
     public void OpenTinderApp()
     {
         tinderApp.SetActive(true);
+        closePhoneButton.SetActive(false);
     }
 
     public void OpenBookApp()
     {
         bookApp.SetActive(true);
+        closePhoneButton.SetActive(false);
     }
 
     public void OpenCursesApp()
     {
         cursesApp.SetActive(true);
         buttons.SetActive(false);
+        closePhoneButton.SetActive(false);
     }
 
     public void OpenMapApp()
     {
         mapApp.SetActive(true);
+        closePhoneButton.SetActive(false);
     }
 
     public void OpenSettingsApp()
     {
         settingsApp.SetActive(true);
+        closePhoneButton.SetActive(false);
     }
 
 }
