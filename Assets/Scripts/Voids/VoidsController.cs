@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class VoidsController : MonoBehaviour
@@ -21,6 +22,7 @@ public class VoidsController : MonoBehaviour
 
     void FixedUpdate()
     {
+
         direction = Vector2.zero;
         //get the vector from your position to current waypoint
         direction = checkpoints[counter].transform.position - transform.position;
