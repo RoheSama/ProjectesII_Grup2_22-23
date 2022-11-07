@@ -33,6 +33,7 @@ public class PatternController : MonoBehaviour
                 }
             }
             lastPin = actualPin;
+            mouseCheck.overlappedObject.SetActive(false);
         }
 
         else if(phoneDrawController.isDrawing==false)
@@ -41,10 +42,12 @@ public class PatternController : MonoBehaviour
             {
                 CheckIfPatternDrawn();
                 pinsOverlapped.Clear();
+                for(int i = 0; i < pins.Length; i++)
+                {
+                    pins[i].SetActive(true);
+                }
             }
-        }
-
-       
+        }      
     }
     void CheckIfPatternDrawn()
     {
