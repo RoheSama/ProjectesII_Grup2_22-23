@@ -11,7 +11,7 @@ public class VoidController : MonoBehaviour
 
     private Vector2 direction = Vector2.zero;
 
-    private float movePower = 350.4f;
+    public float movePower = 350.4f;
 
     private Animator anim;
     private Rigidbody2D rb;
