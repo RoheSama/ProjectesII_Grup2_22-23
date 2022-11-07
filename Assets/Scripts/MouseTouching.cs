@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class MouseTouching : MonoBehaviour
 {
-    public Transform touchedObject;
-    public Transform Mouse;
-    
+    public Vector2 mousePosWorldSpace;
+    public Collider2D touchedObjectCollider;
+    public Animator animator;
+
     void Update()
     {
-        if(Mouse.transform == touchedObject.transform)
+        MouseCoords();
+    }
+    void MouseCoords()
+    {
+        Vector2 mousePosScreenSpace = Input.mousePosition;
+        mousePosWorldSpace = Camera.main.ScreenToWorldPoint(mousePosScreenSpace);
+       
+        if (touchedObjectCollider == Physics2D.OverlapPoint(mousePosWorldSpace))
         {
-            Debug.Log("LMAO");
+           animator.SetBool("startAnim", true);
         }
     }
 }
