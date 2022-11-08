@@ -12,9 +12,11 @@ public class Tracking : MonoBehaviour
     private float distance;
 
     private Animator anim;
+    private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
 
@@ -23,6 +25,7 @@ public class Tracking : MonoBehaviour
     {
         distance = Vector2.Distance(transform.position, player.transform.position);
         Vector2 direction = player.transform.position - transform.position;
+
         direction.Normalize();
 
         anim.SetBool("isRun", direction.sqrMagnitude > 0.0001f);
@@ -35,7 +38,7 @@ public class Tracking : MonoBehaviour
         transform.localScale = new Vector3(orientation, 1, 1);
 
         if (distance < distanceBetween)
-        {       
+        {
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
         }
     }
