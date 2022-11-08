@@ -14,11 +14,11 @@ public class PhoneDrawController : MonoBehaviour
 
     bool canPlayAudio = true;
 
-    private SoundManager soundManager;
+   // private SoundManager soundManager;
 
     private void Start()
     {
-        soundManager = FindObjectOfType<SoundManager>();
+        //soundManager = FindObjectOfType<SoundManager>();
  
     }
     void Update()
@@ -40,14 +40,14 @@ public class PhoneDrawController : MonoBehaviour
             UpdateParticles();
             UpdateLineRenderer();
            
-            soundManager.SeleccionAudio(0, 0.5f);
+            //soundManager.SeleccionAudio(0, 0.5f);
         }
         else
         {
             if (isDrawing)
             {
                 ClearParticlesandLine();
-                soundManager.StopAudio();
+              //  soundManager.StopAudio();
             }
             isDrawing = false;
         }

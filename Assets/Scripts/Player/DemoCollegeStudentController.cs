@@ -13,17 +13,16 @@ namespace ClearSky
         private int direction = 1;
         private bool alive = true;
 
-        private SoundManager soundManager;
+        //private SoundManager soundManager;
 
         Vector2 moveVelocity;
-
 
         // Start is called before the first frame update
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
             anim = GetComponent<Animator>();
-            soundManager = FindObjectOfType<SoundManager>();
+           // soundManager = FindObjectOfType<SoundManager>();
         }
         private void FixedUpdate()
         {
@@ -37,7 +36,7 @@ namespace ClearSky
 
             //Run animation
             anim.SetBool("isRun", moveVelocity.sqrMagnitude > 0.0001f);        
-                soundManager.SeleccionAudio(1, 0.5f);
+             //   soundManager.SeleccionAudio(1, 0.5f);
             
            
             //Direction flip
@@ -48,7 +47,7 @@ namespace ClearSky
 
             else
             {
-                soundManager.StopAudio();
+               // soundManager.StopAudio();
             }
             transform.localScale = new Vector3(direction, 1, 1);
 

@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PatternController : MonoBehaviour
 {
     public Pattern[] patterns;
     public GameObject[] pins;
+    public Sprite pinClickedSprite;
+    public Sprite pinSprite;
     public PhoneDrawController phoneDrawController;
     public MouseCheck mouseCheck;
 
@@ -21,6 +24,7 @@ public class PatternController : MonoBehaviour
     }
     void Update()
     {
+       
         if (phoneDrawController.isDrawing && mouseCheck.overlappedObject == true)
         {
             actualPin = mouseCheck.overlappedObject;
@@ -30,10 +34,10 @@ public class PatternController : MonoBehaviour
                 {
                     if (pins[i] == mouseCheck.overlappedObject)
                         pinsOverlapped.Add(i);
+                    mouseCheck.overlappedObject.GetComponent<Image>().sprite = pinClickedSprite;
                 }
             }
             lastPin = actualPin;
-            mouseCheck.overlappedObject.SetActive(false);
         }
 
         else if(phoneDrawController.isDrawing==false)
@@ -44,7 +48,7 @@ public class PatternController : MonoBehaviour
                 pinsOverlapped.Clear();
                 for(int i = 0; i < pins.Length; i++)
                 {
-                    pins[i].SetActive(true);
+                     pins[i].GetComponent<Image>().sprite = pinSprite;
                 }
             }
         }      
@@ -73,11 +77,11 @@ public class PatternController : MonoBehaviour
     {
         Debug.Log("corruption");
         corruption.SetActive(true);
-        if(target.gameObject.tag == "Targeted")
-        {
-            Debug.Log("A");
-            Destroy(target);
-        }
+       // if(target.gameObject.tag == "Targeted")
+        //{
+        //    Debug.Log("A");
+        //    Destroy(target);
+        //}
     }
     void SoulEater()
     {

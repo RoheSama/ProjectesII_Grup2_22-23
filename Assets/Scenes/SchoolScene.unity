@@ -276,7 +276,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &67830379
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8185,7 +8185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &749113090
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8278,7 +8278,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &780445953
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8404,7 +8404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &805266039
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9202,7 +9202,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &934882832
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9510,7 +9510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1012587008
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21655,7 +21655,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1157301570
 RectTransform:
   m_ObjectHideFlags: 0
@@ -51924,6 +51924,8 @@ MonoBehaviour:
   - {fileID: 883177777}
   - {fileID: 1138025305}
   - {fileID: 1994657023}
+  pinClickedSprite: {fileID: 21300000, guid: 9de39035f4c855c438eeb833be5e3a19, type: 3}
+  pinSprite: {fileID: 21300000, guid: dfcb4e1e4dde5194dba5f2cdb61a075d, type: 3}
   phoneDrawController: {fileID: 1935828080}
   mouseCheck: {fileID: 1935828078}
   target: {fileID: 0}
@@ -52302,7 +52304,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1980806182
 RectTransform:
   m_ObjectHideFlags: 0
@@ -52761,7 +52763,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2050790005
 RectTransform:
   m_ObjectHideFlags: 0
