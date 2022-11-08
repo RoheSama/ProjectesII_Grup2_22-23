@@ -1,10 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace ClearSky
 {
-    public class DemoCollegeStudentController : MonoBehaviour
+    public class PlayerMovement : MonoBehaviour
     {
         public float movePower = 10f;
 
