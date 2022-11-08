@@ -27,11 +27,14 @@ public class targetScript : MonoBehaviour
     //funcio per cambiar el tag
     void OnTriggerEnter2D(Collider2D col)
     {
-        Target = col.gameObject;
+        Debug.Log("Trigger");
+        if(col.gameObject.tag == "Target")//only delete Targets
+            Target = col.gameObject;
     }
 
     public void ClearTarget()
     {
+        Debug.Log("Clear");
         Target = null;
     }
     //una vegada cambiat el tag y fet el pattern

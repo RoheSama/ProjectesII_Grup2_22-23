@@ -75,6 +75,7 @@ public class PatternController : MonoBehaviour
         corruption.SetActive(true);
         if (targetScript.Target != null)
         {
+            Debug.Log("Destroy");
             Destroy(targetScript.Target);
             targetScript.ClearTarget(); 
         }
