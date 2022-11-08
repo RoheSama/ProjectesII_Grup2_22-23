@@ -9,7 +9,10 @@ public class PatternController : MonoBehaviour
     public PhoneDrawController phoneDrawController;
     public MouseCheck mouseCheck;
 
-    public GameObject target;
+    //Target
+    public targetScript targetScript;
+
+
     GameObject lastPin;
     GameObject actualPin;
     public GameObject corruption;
@@ -70,10 +73,11 @@ public class PatternController : MonoBehaviour
     {
         Debug.Log("corruption");
         corruption.SetActive(true);
-        if(target.gameObject.tag == "Targeted")
+        if (targetScript.Target != null)
         {
-            Debug.Log("A");
-            Destroy(target);
+            Debug.Log("Destroy");
+            Destroy(targetScript.Target);
+            targetScript.ClearTarget(); 
         }
     }
     void SoulEater()
