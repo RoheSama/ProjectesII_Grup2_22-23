@@ -11,16 +11,25 @@ public class PhoneDrawController : MonoBehaviour
     public ParticleSystem particles;
     public LineRenderer line;
     Vector2 lastPos;
+
     bool canPlayAudio = true;
 
-    public AudioSource audioSource;
+    private SoundManager soundManager;
 
-    private void Update()
+    private void Start()
     {
-        Draw();
+        soundManager = FindObjectOfType<SoundManager>();
+ 
+    }
+    void Update()
+    {
+        
+        Draw(); 
+
     }
     void Draw()
     {
+       
         if (Input.GetKey(KeyCode.Mouse0))
         {
             if (!isDrawing)
@@ -30,23 +39,18 @@ public class PhoneDrawController : MonoBehaviour
             isDrawing = true;
             UpdateParticles();
             UpdateLineRenderer();
+           
+            soundManager.SeleccionAudio(0, 0.5f);
         }
         else
         {
             if (isDrawing)
             {
                 ClearParticlesandLine();
+                soundManager.StopAudio();
             }
             isDrawing = false;
         }
-        //Play Drawing Sound
-        if(canPlayAudio)
-        {
-            audioSource.Play();
-        }
-        canPlayAudio = false;
-       
-
     }
 
     void StartParticlesAndLine()
