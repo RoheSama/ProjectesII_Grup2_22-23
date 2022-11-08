@@ -29,7 +29,10 @@ public class targetScript : MonoBehaviour
     {
         Debug.Log("Trigger");
         if(col.gameObject.tag == "Target")//only delete Targets
+        {
+            Debug.Log("ENTER");
             Target = col.gameObject;
+        }
     }
 
     public void ClearTarget()
