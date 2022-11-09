@@ -22,6 +22,9 @@ public class TileTrigger : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        tilemap.color = new Color(tilemap.color.r, tilemap.color.g, tilemap.color.b, 0.25f);
+        if (col.gameObject.tag == "Player")
+        {
+            tilemap.color = new Color(tilemap.color.r, tilemap.color.g, tilemap.color.b, 0.25f);
+        }
     }
 }
