@@ -2424,6 +2424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 558f22ac06eae514188bf9dffca0ded5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  phoneIsActive: 0
 --- !u!95 &290281744
 Animator:
   serializedVersion: 4
@@ -43669,7 +43670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1280057925408222619, guid: 521aebf732701414da1c25c63cb8390b, type: 3}
       propertyPath: m_TagString
-      value: Targeted
+      value: Cura
       objectReference: {fileID: 0}
     - target: {fileID: 1411872002157240282, guid: 521aebf732701414da1c25c63cb8390b, type: 3}
       propertyPath: m_Color.b
@@ -43689,7 +43690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2053518115102101880, guid: 521aebf732701414da1c25c63cb8390b, type: 3}
       propertyPath: m_TagString
-      value: Targeted
+      value: Cura
       objectReference: {fileID: 0}
     - target: {fileID: 2053518115102101881, guid: 521aebf732701414da1c25c63cb8390b, type: 3}
       propertyPath: m_RootOrder
@@ -43875,6 +43876,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2053518115102101880, guid: 521aebf732701414da1c25c63cb8390b, type: 3}
   m_PrefabInstance: {fileID: 1283335249}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1283335252 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1280057925408222619, guid: 521aebf732701414da1c25c63cb8390b, type: 3}
+  m_PrefabInstance: {fileID: 1283335249}
+  m_PrefabAsset: {fileID: 0}
 --- !u!70 &1283335253
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -43927,6 +43933,25 @@ MonoBehaviour:
   player: {fileID: 410406444}
   speed: 2
   distanceBetween: 5
+  attackDamage: 10
+  attackSpeed: 1
+  canAttack: 0
+--- !u!70 &1283335256
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283335252}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 1.87}
+  m_Size: {x: 1.11, y: 3.97}
+  m_Direction: 0
 --- !u!1 &1284758319
 GameObject:
   m_ObjectHideFlags: 0
@@ -55294,6 +55319,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeletal
       objectReference: {fileID: 0}
+    - target: {fileID: -8233668366669173445, guid: 389d2366e1db64147aa81dd92ed3e4dd, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: -7834950085274576163, guid: 389d2366e1db64147aa81dd92ed3e4dd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.028577881
@@ -56188,6 +56217,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePower: 3000
+  anim: {fileID: 0}
+  alive: 1
+  showPhone: {fileID: 290281743}
+  health: 0
+  maxHealth: 100
 --- !u!114 &2053518114221879507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56202,6 +56236,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 408773249}
   isPatternActivated: 0
+  voids:
+  - {fileID: 104417064}
+  - {fileID: 1568703828}
+  - {fileID: 1536344433}
+  - {fileID: 1426311803}
 --- !u!120 &6514728808049303394
 LineRenderer:
   m_ObjectHideFlags: 0
