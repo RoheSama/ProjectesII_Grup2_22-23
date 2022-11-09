@@ -13,15 +13,24 @@ public class targetScript : MonoBehaviour
     [HideInInspector]
     public bool isPatternActivated = false;
 
+    [SerializeField]
+    Transform[] voids;
+
+    int voidsIndex = 0;
+
     void Start()
     {
         //isPatternActivated = GameObject.Find("Pattern Controller").GetComponent<PatternController>().corruptionActivated;
+        voidsIndex = voids.Length;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (voidsIndex == 0)
+        {
+            Debug.Log("WIN");
+        }
     }
 
     //funcio per cambiar el tag
@@ -35,10 +44,15 @@ public class targetScript : MonoBehaviour
         }
     }
 
+
     public void ClearTarget()
     {
         Debug.Log("Clear");
         Target = null;
+        voidsIndex--;
+
     }
+
+   
     //una vegada cambiat el tag y fet el pattern
 }
