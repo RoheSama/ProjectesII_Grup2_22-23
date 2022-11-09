@@ -2425,6 +2425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phoneIsActive: 0
+  triggers: {fileID: 1851070743}
 --- !u!95 &290281744
 Animator:
   serializedVersion: 4

@@ -6,6 +6,7 @@ public class ShowPhone : MonoBehaviour
 {
     Animator anim;
     public bool phoneIsActive = false;
+    public GameObject triggers;
 
     void Start()
     {
@@ -17,11 +18,13 @@ public class ShowPhone : MonoBehaviour
     {
         anim.SetBool("canShowPhone", true);
         phoneIsActive = true;
+        triggers.SetActive(false);
     }
 
     public void HidePhoneFuntion()
     {
         anim.SetBool("canShowPhone", false);
         phoneIsActive = false;
+        triggers.SetActive(true);
     }
 }
