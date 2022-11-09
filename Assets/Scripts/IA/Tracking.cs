@@ -56,18 +56,20 @@ public class Tracking : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            if(attackSpeed <= canAttack)
+            if (collision.gameObject.GetComponent<PlayerMovement>().alive)
             {
-                collision.gameObject.GetComponent<PlayerMovement>().Hurt();
-                collision.gameObject.GetComponent<PlayerMovement>().UpdateHealth(-attackDamage);
-                Debug.Log("HIT");
-                canAttack = 0f;
-            } 
-            else
-            {
-                canAttack += Time.deltaTime;
-            }
-           
+                if (attackSpeed <= canAttack)
+                {
+                    collision.gameObject.GetComponent<PlayerMovement>().Hurt();
+                    collision.gameObject.GetComponent<PlayerMovement>().UpdateHealth(-attackDamage);
+                    Debug.Log("HIT");
+                    canAttack = 0f;
+                }
+                else
+                {
+                    canAttack += Time.deltaTime;
+                }
+            }            
         }
     }
 }

@@ -12,7 +12,7 @@ namespace ClearSky
         private Rigidbody2D rb;
         public Animator anim;
         private int direction = 1;
-        private bool alive = true;
+        public bool alive = true;
 
         public ShowPhone showPhone;
 
@@ -33,8 +33,12 @@ namespace ClearSky
         }
         private void FixedUpdate()
         {
-            Run();
-            Die();
+            if (alive)
+            {
+                Run();
+                Die();
+            }
+            
         }
         void Run()
         {
@@ -121,7 +125,7 @@ namespace ClearSky
                 Debug.Log("LOSE");
                 health = 0;
                 anim.SetTrigger("die");
-                rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                alive = false;
             }
           
         }
