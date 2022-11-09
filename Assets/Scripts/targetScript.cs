@@ -18,18 +18,16 @@ public class targetScript : MonoBehaviour
 
     int voidsIndex = 0;
 
-
-
     void Start()
     {
         //isPatternActivated = GameObject.Find("Pattern Controller").GetComponent<PatternController>().corruptionActivated;
-        voidsIndex = voids.Length; 
+        voidsIndex = voids.Length;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(voidsIndex == 0)
+        if (voidsIndex == 0)
         {
             Debug.Log("WIN");
         }
@@ -46,6 +44,7 @@ public class targetScript : MonoBehaviour
         }
     }
 
+
     public void ClearTarget()
     {
         Debug.Log("Clear");
@@ -53,5 +52,7 @@ public class targetScript : MonoBehaviour
         voidsIndex--;
 
     }
+
+   
     //una vegada cambiat el tag y fet el pattern
 }

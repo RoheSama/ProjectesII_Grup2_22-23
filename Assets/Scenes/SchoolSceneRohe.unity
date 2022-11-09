@@ -683,6 +683,27 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &76605603 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1280057925408222619, guid: 521aebf732701414da1c25c63cb8390b, type: 3}
+  m_PrefabInstance: {fileID: 1283335249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &76605605
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 76605603}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.11299133, y: 1.1917567}
+  m_Size: {x: 1.3587284, y: 2.6278734}
+  m_Direction: 0
 --- !u!1 &100738926
 GameObject:
   m_ObjectHideFlags: 0
@@ -3952,7 +3973,7 @@ GameObject:
   - component: {fileID: 408773249}
   m_Layer: 0
   m_Name: TargetTrigger
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43707,7 +43728,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2053518115102101880, guid: 521aebf732701414da1c25c63cb8390b, type: 3}
       propertyPath: m_TagString
-      value: Targeted
+      value: Cura
       objectReference: {fileID: 0}
     - target: {fileID: 2053518115102101881, guid: 521aebf732701414da1c25c63cb8390b, type: 3}
       propertyPath: m_RootOrder
@@ -43903,7 +43924,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.022414207, y: 0.3560973}
@@ -43943,8 +43964,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 410406444}
-  speed: 2
-  distanceBetween: 5
+  speed: 1.5
+  distanceBetween: 10
+  attackDamage: 10
+  attackSpeed: 0.5
+  canAttack: 0
 --- !u!1 &1284758319
 GameObject:
   m_ObjectHideFlags: 0
@@ -44925,7 +44949,7 @@ GameObject:
   - component: {fileID: 1386102198}
   m_Layer: 0
   m_Name: ------ Cura
-  m_TagString: Untagged
+  m_TagString: Cura
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55120,6 +55144,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Skeletal
       objectReference: {fileID: 0}
+    - target: {fileID: -8233668366669173445, guid: 389d2366e1db64147aa81dd92ed3e4dd, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: -7834950085274576163, guid: 389d2366e1db64147aa81dd92ed3e4dd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.028577881
@@ -55958,7 +55986,7 @@ GameObject:
   - component: {fileID: 2053518114221879507}
   m_Layer: 0
   m_Name: CollegeStudent
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56013,7 +56041,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePower: 3000
+  anim: {fileID: 0}
   showPhone: {fileID: 290281743}
+  health: 0
+  maxHealth: 100
 --- !u!114 &2053518114221879507
 MonoBehaviour:
   m_ObjectHideFlags: 0

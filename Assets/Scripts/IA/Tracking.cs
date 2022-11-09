@@ -1,5 +1,8 @@
+using ClearSky;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Tracking : MonoBehaviour
@@ -10,6 +13,12 @@ public class Tracking : MonoBehaviour
     private int orientation = 1;
 
     private float distance;
+    [SerializeField]
+    private float attackDamage = 10f;
+    [SerializeField]
+    private float attackSpeed = 1f;
+    [SerializeField]
+    private float canAttack;
 
     private Animator anim;
     private Rigidbody2D rb;
@@ -40,6 +49,25 @@ public class Tracking : MonoBehaviour
         if (distance < distanceBetween)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+        }
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Player")
+        {
+            if(attackSpeed <= canAttack)
+            {
+                collision.gameObject.GetComponent<PlayerMovement>().Hurt();
+                collision.gameObject.GetComponent<PlayerMovement>().UpdateHealth(-attackDamage);
+                Debug.Log("HIT");
+                canAttack = 0f;
+            } 
+            else
+            {
+                canAttack += Time.deltaTime;
+            }
+           
         }
     }
 }

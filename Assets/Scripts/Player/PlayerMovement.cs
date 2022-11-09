@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 namespace ClearSky
 {
@@ -9,11 +10,15 @@ namespace ClearSky
         public float movePower = 10f;
 
         private Rigidbody2D rb;
-        private Animator anim;
+        public Animator anim;
         private int direction = 1;
         private bool alive = true;
 
         public ShowPhone showPhone;
+
+        public float health = 0f;
+        [SerializeField]
+        private float maxHealth = 100f;
         //private SoundManager soundManager;
 
         Vector2 moveVelocity;
@@ -21,6 +26,7 @@ namespace ClearSky
         // Start is called before the first frame update
         void Start()
         {
+            health = maxHealth;
             rb = GetComponent<Rigidbody2D>();
             anim = GetComponent<Animator>();
             // soundManager = FindObjectOfType<SoundManager>();
@@ -28,6 +34,7 @@ namespace ClearSky
         private void FixedUpdate()
         {
             Run();
+            Die();
         }
         void Run()
         {
@@ -55,8 +62,8 @@ namespace ClearSky
 
             if (showPhone.phoneIsActive == true)
             {
-                rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-                rb.constraints = RigidbodyConstraints2D.FreezePosition;
+                rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                //rb.constraints = RigidbodyConstraints2D.FreezePosition;
                 anim.SetBool("isRun", false);
             }
             else
@@ -64,6 +71,59 @@ namespace ClearSky
                 rb.constraints = RigidbodyConstraints2D.None;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             }
+        }
+
+        //void OnTriggerEnter2D(Collider2D col)
+        //{
+        //    Debug.Log("Trigger");
+        //    if (col.gameObject.tag == "Cura")
+        //    {
+        //            Hurt();
+        //    }           
+        //}
+
+        //private void OnTriggerExit2D(Collider2D col)
+        //{
+        //    if (col.gameObject.tag == "Cura")
+        //    {
+        //        Debug.Log("HIT");
+        //    }
+        //}
+
+        public void Hurt()
+        {
+            anim.SetTrigger("hurt");
+            if (direction == 1)
+                rb.AddForce(new Vector2(-5f, 1f), ForceMode2D.Impulse);
+            else
+                rb.AddForce(new Vector2(5f, 1f), ForceMode2D.Impulse);
+            
+        }
+
+        public void UpdateHealth(float mod)
+        {
+            health += mod;
+            
+            if(health > maxHealth)
+            {
+                health = maxHealth;
+            }else if(health <= 0f)
+            {
+                health = 0f;
+            }
+            
+        }
+
+        void Die()
+        {   
+          if(health <= 0)
+            {
+                Debug.Log("LOSE");
+                health = 0;
+                anim.SetTrigger("die");
+                rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            }
+          
         }
     }
 }
