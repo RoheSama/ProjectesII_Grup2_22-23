@@ -13,6 +13,7 @@ namespace ClearSky
         private int direction = 1;
         private bool alive = true;
 
+        public ShowPhone showPhone;
         //private SoundManager soundManager;
 
         Vector2 moveVelocity;
@@ -22,7 +23,7 @@ namespace ClearSky
         {
             rb = GetComponent<Rigidbody2D>();
             anim = GetComponent<Animator>();
-           // soundManager = FindObjectOfType<SoundManager>();
+            // soundManager = FindObjectOfType<SoundManager>();
         }
         private void FixedUpdate()
         {
@@ -30,15 +31,14 @@ namespace ClearSky
         }
         void Run()
         {
-           
+
             //Calculate the movement direction
             moveVelocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
 
             //Run animation
-            anim.SetBool("isRun", moveVelocity.sqrMagnitude > 0.0001f);        
-             //   soundManager.SeleccionAudio(1, 0.5f);
-            
-           
+            anim.SetBool("isRun", moveVelocity.sqrMagnitude > 0.0001f);
+            //   soundManager.SeleccionAudio(1, 0.5f);
+
             //Direction flip
             if (moveVelocity.x > 0.0001f)
                 direction = 1;
@@ -47,13 +47,23 @@ namespace ClearSky
 
             else
             {
-               // soundManager.StopAudio();
+                // soundManager.StopAudio();
             }
             transform.localScale = new Vector3(direction, 1, 1);
 
             rb.AddForce(moveVelocity * movePower * Time.fixedDeltaTime, ForceMode2D.Force);
 
-           
+            if (showPhone.phoneIsActive == true)
+            {
+                rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+                rb.constraints = RigidbodyConstraints2D.FreezePosition;
+                anim.SetBool("isRun", false);
+            }
+            else
+            {
+                rb.constraints = RigidbodyConstraints2D.None;
+                rb.constraints = RigidbodyConstraints2D.FreezeRotation;
+            }
         }
     }
 }

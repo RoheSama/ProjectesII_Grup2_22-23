@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShowPhone : MonoBehaviour
 {
     Animator anim;
+    public bool phoneIsActive = false;
 
     void Start()
     {
@@ -12,13 +13,15 @@ public class ShowPhone : MonoBehaviour
     }
 
 
-   public void ShowPhoneFuntion()
+    public void ShowPhoneFuntion()
     {
         anim.SetBool("canShowPhone", true);
+        phoneIsActive = true;
     }
 
-   public void HidePhoneFuntion()
+    public void HidePhoneFuntion()
     {
         anim.SetBool("canShowPhone", false);
+        phoneIsActive = false;
     }
 }

@@ -2377,6 +2377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 558f22ac06eae514188bf9dffca0ded5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  phoneIsActive: 0
 --- !u!95 &290281744
 Animator:
   serializedVersion: 4
@@ -56012,6 +56013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movePower: 3000
+  showPhone: {fileID: 290281743}
 --- !u!114 &2053518114221879507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56026,6 +56028,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   col: {fileID: 408773249}
   isPatternActivated: 0
+  voids:
+  - {fileID: 104417064}
+  - {fileID: 1568703828}
+  - {fileID: 1536344433}
+  - {fileID: 1426311803}
 --- !u!120 &6514728808049303394
 LineRenderer:
   m_ObjectHideFlags: 0
