@@ -8,6 +8,9 @@ public class ShowPhone : MonoBehaviour
     public bool phoneIsActive = false;
     public GameObject triggers;
 
+    //Momenatni pel prototip
+    public AudioSource audioSource;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -19,6 +22,7 @@ public class ShowPhone : MonoBehaviour
         anim.SetBool("canShowPhone", true);
         phoneIsActive = true;
         triggers.SetActive(false);
+        audioSource.Play();
     }
 
     public void HidePhoneFuntion()
@@ -26,5 +30,6 @@ public class ShowPhone : MonoBehaviour
         anim.SetBool("canShowPhone", false);
         phoneIsActive = false;
         triggers.SetActive(true);
+        audioSource.Play();
     }
 }

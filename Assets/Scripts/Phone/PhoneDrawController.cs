@@ -37,12 +37,12 @@ public class PhoneDrawController : MonoBehaviour
     }
     void Update()
     {
-        if(canDraw)
-        {
+       // if(canDraw)
+       //{
             Draw();
-        }
+      //  }
         
-        MouseCoords();
+        //MouseCoords();
 
     }
     void Draw()
