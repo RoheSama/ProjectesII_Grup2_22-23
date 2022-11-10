@@ -10,13 +10,19 @@ public class MainMenuPhone : MonoBehaviour
 
     void Start()
     {
-      //  anim = GetComponent<Animator>();
+
     }
     public void PowerButtonTouched()
     {
         Debug.Log("a");
-       // anim.SetBool("powerButtonTouched", true);
         mainMenu.SetActive(true);
-        // SceneManager.LoadScene("SampleScene")
+    }
+    public void StartGame()
+    {
+        SceneManager.LoadScene("SchoolScene");
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }

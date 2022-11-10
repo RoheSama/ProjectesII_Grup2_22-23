@@ -23,47 +23,48 @@ public class PhoneController : MonoBehaviour
         closePhoneButton.SetActive(true);
     }
 
-    public void OpenMessageApp()
-    {
-        messageApp.SetActive(true);
-        closePhoneButton.SetActive(false);
-    }
-
-    public void OpenCallApp()
-    {
-        callApp.SetActive(true);
-        closePhoneButton.SetActive(false);
-    }
-
-    public void OpenTinderApp()
-    {
-        tinderApp.SetActive(true);
-        closePhoneButton.SetActive(false);
-    }
-
-    public void OpenBookApp()
-    {
-        bookApp.SetActive(true);
-        closePhoneButton.SetActive(false);
-    }
-
     public void OpenCursesApp()
     {
         cursesApp.SetActive(true);
         buttons.SetActive(false);
         closePhoneButton.SetActive(false);
     }
+    public void OpenMessageApp()
+    {
+        //messageApp.SetActive(true);
+        //closePhoneButton.SetActive(false);
+    }
+
+    public void OpenCallApp()
+    {
+    //    callApp.SetActive(true);
+    //    closePhoneButton.SetActive(false);
+    }
+
+    public void OpenTinderApp()
+    {
+        //tinderApp.SetActive(true);
+        //closePhoneButton.SetActive(false);
+    }
+
+    public void OpenBookApp()
+    {
+        //bookApp.SetActive(true);
+        //closePhoneButton.SetActive(false);
+    }
+
+   
 
     public void OpenMapApp()
     {
-        mapApp.SetActive(true);
-        closePhoneButton.SetActive(false);
+        //mapApp.SetActive(true);
+        //closePhoneButton.SetActive(false);
     }
 
     public void OpenSettingsApp()
     {
-        settingsApp.SetActive(true);
-        closePhoneButton.SetActive(false);
+        //settingsApp.SetActive(true);
+        //closePhoneButton.SetActive(false);
     }
 
 }

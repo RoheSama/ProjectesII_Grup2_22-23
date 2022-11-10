@@ -41,7 +41,7 @@ public class PatternController : MonoBehaviour
                     if (pins[i] == mouseCheck.overlappedObject)
                         pinsOverlapped.Add(i);
                     mouseCheck.overlappedObject.GetComponent<Image>().sprite = pinClickedSprite;
-                    audioSource.PlayOneShot(pinSound, 0.1f);
+                    audioSource.PlayOneShot(pinSound, 0.03f);
                 }
             }
             lastPin = actualPin;
@@ -83,7 +83,7 @@ public class PatternController : MonoBehaviour
     void Corruption()
     {
         Debug.Log("corruption");
-        corruption.SetActive(true);
+       // corruption.SetActive(true);
         if (targetScript.Target != null)
         {
             Debug.Log("Destroy");
