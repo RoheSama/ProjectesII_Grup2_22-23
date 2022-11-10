@@ -57832,7 +57832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7df61ea9b64802547b21df2c1d8e31f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movePower: 3000
+  movePower: 2500
   anim: {fileID: 0}
   alive: 1
   playerSteps: {fileID: 8300000, guid: 3cbe80054e092e2458196bfc19169475, type: 3}
