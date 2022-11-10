@@ -28,7 +28,6 @@ public class PatternController : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        //deathAudioSource = GetComponent<AudioSource>();
     }
     void Update()
     {

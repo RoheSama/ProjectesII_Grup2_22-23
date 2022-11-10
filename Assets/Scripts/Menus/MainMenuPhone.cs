@@ -5,16 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuPhone : MonoBehaviour
 {
-    Animator anim;
+    //Animator anim;
+    public GameObject mainMenu;
 
     void Start()
     {
-        anim = GetComponent<Animator>();
+      //  anim = GetComponent<Animator>();
     }
     public void PowerButtonTouched()
     {
         Debug.Log("a");
-        anim.SetBool("powerButtonTouched", true);
-        // SceneManager.LoadScene("SampleScene");
+       // anim.SetBool("powerButtonTouched", true);
+        mainMenu.SetActive(true);
+        // SceneManager.LoadScene("SampleScene")
     }
 }
