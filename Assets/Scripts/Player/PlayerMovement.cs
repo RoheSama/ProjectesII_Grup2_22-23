@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static UnityEngine.GraphicsBuffer;
 
 namespace ClearSky
@@ -25,6 +28,9 @@ namespace ClearSky
         private float maxHealth = 100f;
 
         Vector2 moveVelocity;
+
+        int number = 0;
+        bool couroutineStarted = false;
 
         // Start is called before the first frame update
         void Start()
@@ -131,8 +137,16 @@ namespace ClearSky
                 health = 0;
                 anim.SetTrigger("die");
                 alive = false;
+                StartCoroutine(Wait());
             }
-          
         }
+
+        IEnumerator Wait()
+        {
+           yield return new WaitForSeconds(2);
+           SceneManager.LoadScene("MainMenu");
+
+        }
+
     }
 }

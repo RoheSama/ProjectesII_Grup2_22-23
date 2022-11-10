@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using static UnityEditor.Experimental.AssetDatabaseExperimental.AssetDatabaseCounters;
 using static UnityEngine.GraphicsBuffer;
@@ -30,6 +31,7 @@ public class targetScript : MonoBehaviour
         if (voidsIndex == 0)
         {
             Debug.Log("WIN");
+            StartCoroutine(Wait());
         }
     }
 
@@ -53,6 +55,11 @@ public class targetScript : MonoBehaviour
 
     }
 
-   
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("MainMenu");
+
+    }
     //una vegada cambiat el tag y fet el pattern
 }
