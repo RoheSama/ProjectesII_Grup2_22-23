@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuPhone : MonoBehaviour
 {
     public GameObject mainMenu;
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -15,13 +16,16 @@ public class MainMenuPhone : MonoBehaviour
     {
         Debug.Log("a");
         mainMenu.SetActive(true);
+        audioSource.Play();
     }
     public void StartGame()
     {
         SceneManager.LoadScene("SchoolScene");
+        audioSource.Play();
     }
     public void ExitGame()
     {
         Application.Quit();
+        audioSource.Play();
     }
 }
