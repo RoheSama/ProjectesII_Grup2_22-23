@@ -12,14 +12,14 @@ public class PhoneDrawController : MonoBehaviour
     public LineRenderer line;
     Vector2 lastPos;
 
-    bool canPlayAudio = true;
 
-   // private SoundManager soundManager;
+    public AudioClip drawSound;
+    AudioSource audioSource;
 
     private void Start()
     {
-        //soundManager = FindObjectOfType<SoundManager>();
- 
+        audioSource = GetComponent<AudioSource>();
+
     }
     void Update()
     {
@@ -39,17 +39,20 @@ public class PhoneDrawController : MonoBehaviour
             isDrawing = true;
             UpdateParticles();
             UpdateLineRenderer();
-           
-            //soundManager.SeleccionAudio(0, 0.5f);
+
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(drawSound, 1f);
+            }
         }
         else
         {
             if (isDrawing)
             {
                 ClearParticlesandLine();
-              //  soundManager.StopAudio();
             }
             isDrawing = false;
+            audioSource.Stop();
         }
     }
 

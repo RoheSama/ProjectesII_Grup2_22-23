@@ -14,12 +14,15 @@ namespace ClearSky
         private int direction = 1;
         public bool alive = true;
 
+        public AudioClip playerSteps;
+        AudioSource audioSource;
+
+
         public ShowPhone showPhone;
 
         public float health = 0f;
         [SerializeField]
         private float maxHealth = 100f;
-        //private SoundManager soundManager;
 
         Vector2 moveVelocity;
 
@@ -29,7 +32,7 @@ namespace ClearSky
             health = maxHealth;
             rb = GetComponent<Rigidbody2D>();
             anim = GetComponent<Animator>();
-            // soundManager = FindObjectOfType<SoundManager>();
+            audioSource = GetComponent<AudioSource>();
         }
         private void FixedUpdate()
         {
@@ -48,17 +51,19 @@ namespace ClearSky
 
             //Run animation
             anim.SetBool("isRun", moveVelocity.sqrMagnitude > 0.0001f);
-            //   soundManager.SeleccionAudio(1, 0.5f);
+            if (!audioSource.isPlaying && moveVelocity.sqrMagnitude != 0)
+            {
+                audioSource.PlayOneShot(playerSteps, 0.7F);
+            }
 
             //Direction flip
             if (moveVelocity.x > 0.0001f)
                 direction = 1;
             else if (moveVelocity.x < -0.0001f)
                 direction = -1;
-
             else
             {
-                // soundManager.StopAudio();
+                audioSource.Stop();
             }
             transform.localScale = new Vector3(direction, 1, 1);
 
