@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuPhone : MonoBehaviour
 {
-    //Animator anim;
     public GameObject mainMenu;
 
     void Start()

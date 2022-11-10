@@ -5381,7 +5381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &548581413
 Transform:
   m_ObjectHideFlags: 0
@@ -9530,7 +9530,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &886919505
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11630,9 +11630,10 @@ GameObject:
   - component: {fileID: 1131716832}
   - component: {fileID: 1131716834}
   - component: {fileID: 1131716833}
+  - component: {fileID: 1131716835}
   m_Layer: 0
   m_Name: Curses Background
-  m_TagString: Untagged
+  m_TagString: Curses_Background
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11695,6 +11696,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1131716831}
   m_CullTransparentMesh: 1
+--- !u!61 &1131716835
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131716831}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -5.892853, y: 2.6889648}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 273.88458, y: 333.35553}
+  m_EdgeRadius: 0
 --- !u!1 &1138025305
 GameObject:
   m_ObjectHideFlags: 0
@@ -54761,6 +54788,17 @@ MonoBehaviour:
   patternController: {fileID: 1935828081}
   particles: {fileID: 1541755344}
   line: {fileID: 6514728808049303394}
+  mousePosWorldSpace: {x: 0, y: 0}
+  touchedObjectCollider: {fileID: 1131716835}
+  pin0: {fileID: 1928734275}
+  pin1: {fileID: 1773331586}
+  pin2: {fileID: 256806164}
+  pin3: {fileID: 448156362}
+  pin4: {fileID: 2115811451}
+  pin5: {fileID: 684313193}
+  pin6: {fileID: 883177781}
+  pin7: {fileID: 1138025309}
+  pin8: {fileID: 1994657027}
   drawSound: {fileID: 8300000, guid: f33a8c8d83d5fb74fb9e8c48669db0de, type: 3}
 --- !u!114 &1935828081
 MonoBehaviour:

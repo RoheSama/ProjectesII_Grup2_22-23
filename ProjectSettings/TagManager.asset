@@ -9,6 +9,8 @@ TagManager:
   - Targeted
   - Target
   - Cura
+  - Touchable
+  - Curses_Background
   layers:
   - Default
   - TransparentFX
