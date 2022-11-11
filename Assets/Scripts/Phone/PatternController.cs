@@ -5,30 +5,23 @@ using UnityEngine.UI;
 
 public class PatternController : MonoBehaviour
 {
-    public Pattern[] patterns;
+    //Variables de Pins
     public GameObject[] pins;
     public Sprite pinClickedSprite;
     public Sprite pinSprite;
-    public PhoneDrawController phoneDrawController;
-    public MouseCheck mouseCheck;
-
-    public AudioClip pinSound;
-    public AudioClip deathSound;
-    AudioSource audioSource;
-    public AudioSource deathAudioSource;
-
-    //Target
-    public targetScript targetScript;
-
     GameObject lastPin;
     GameObject actualPin;
+    private List<int> pinsOverlapped = new List<int>();
+    
+    // Variables de Patterns
+    public PhoneDrawController phoneDrawController;
+    public Pattern[] patterns; 
+    public MouseCheck mouseCheck;
     public GameObject corruption;
     public GameObject soulEater;
-    private List<int> pinsOverlapped = new List<int>();
-    void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
+  
+    //Target
+    public targetScript targetScript;
     void Update()
     {
         if (phoneDrawController.isDrawing && mouseCheck.overlappedObject == true)
@@ -40,8 +33,8 @@ public class PatternController : MonoBehaviour
                 {
                     if (pins[i] == mouseCheck.overlappedObject)
                         pinsOverlapped.Add(i);
+                    //
                     mouseCheck.overlappedObject.GetComponent<Image>().sprite = pinClickedSprite;
-                    audioSource.PlayOneShot(pinSound, 0.03f);
                 }
             }
             lastPin = actualPin;
@@ -83,13 +76,11 @@ public class PatternController : MonoBehaviour
     void Corruption()
     {
         Debug.Log("corruption");
-       // corruption.SetActive(true);
         if (targetScript.Target != null)
         {
             Debug.Log("Destroy");
             Destroy(targetScript.Target);
             targetScript.ClearTarget();
-            deathAudioSource.PlayOneShot(deathSound, 1f);
         }
     }
     void SoulEater()

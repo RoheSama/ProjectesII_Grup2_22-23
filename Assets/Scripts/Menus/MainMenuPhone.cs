@@ -6,26 +6,27 @@ using UnityEngine.SceneManagement;
 public class MainMenuPhone : MonoBehaviour
 {
     public GameObject mainMenu;
-    public AudioSource audioSource;
 
     void Start()
     {
 
     }
+    //Button de On 
     public void PowerButtonTouched()
     {
         Debug.Log("a");
         mainMenu.SetActive(true);
-        audioSource.Play();
     }
+
+    // Button de Play 
     public void StartGame()
     {
         SceneManager.LoadScene("SchoolScene");
-        audioSource.Play();
     }
+    
+    // Button de Exit
     public void ExitGame()
     {
         Application.Quit();
-        audioSource.Play();
     }
 }
