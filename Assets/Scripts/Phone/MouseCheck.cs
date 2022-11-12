@@ -9,13 +9,12 @@ public class MouseCheck : MonoBehaviour
     public GameObject overlappedObject;
     public PhoneDrawController phoneDrawController;
      
-
-    // Update is called once per frame
     void Update()
     {
         CheckIfOverlappingObject();
     }
-
+      
+    // Comprovar si el MouseCheck passa per sobre d' un collider d'un tag en concret i estàs fent click
     void CheckIfOverlappingObject()
     {
         Vector2 mousePosScreenSpace = Input.mousePosition;
@@ -24,7 +23,6 @@ public class MouseCheck : MonoBehaviour
         Collider2D col = Physics2D.OverlapPoint(mousePosWorldSpace);
         if(col != null && col.tag == "Selectable" && Input.GetKey(KeyCode.Mouse0))
         {
-           // Debug.Log(col.gameObject);
             hasOverlappedObject = true;
             overlappedObject = col.gameObject;
         }
