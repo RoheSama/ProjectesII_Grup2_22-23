@@ -54,6 +54,12 @@ TagManager:
   - name: Floor
     uniqueID: 4207922663
     locked: 0
+  - name: Back -1
+    uniqueID: 1235624353
+    locked: 0
+  - name: Furniture 3
+    uniqueID: 1360912537
+    locked: 0
   - name: Back
     uniqueID: 734993209
     locked: 0
