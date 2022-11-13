@@ -8,15 +8,12 @@ public class ShowPhone : MonoBehaviour
     public bool phoneIsActive = false;
     public GameObject triggers;
 
-    //Momenatni pel prototip
-    public AudioSource audioSource;
-
     void Start()
     {
         anim = GetComponent<Animator>();
     }
 
-
+    // Desplegar el telèfon
     public void ShowPhoneFuntion()
     {
         anim.SetBool("canShowPhone", true);
@@ -25,6 +22,7 @@ public class ShowPhone : MonoBehaviour
         audioSource.Play();
     }
 
+    // Amagar el telèfon
     public void HidePhoneFuntion()
     {
         anim.SetBool("canShowPhone", false);

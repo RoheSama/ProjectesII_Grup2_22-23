@@ -12,42 +12,13 @@ public class PhoneDrawController : MonoBehaviour
     public LineRenderer line;
     Vector2 lastPos;
 
-    //Momentani, això es borrarà en un futur, només pel protoip
-    public Vector2 mousePosWorldSpace;
-    public Collider2D touchedObjectCollider;
-    public Collider2D pin0;
-    public Collider2D pin1;
-    public Collider2D pin2;
-    public Collider2D pin3;
-    public Collider2D pin4;
-    public Collider2D pin5;
-    public Collider2D pin6;
-    public Collider2D pin7;
-    public Collider2D pin8;
-    bool canDraw = false;
-
-
-    public AudioClip drawSound;
-    AudioSource audioSource;
-
-    private void Start()
-    {
-        audioSource = GetComponent<AudioSource>();
-
-    }
     void Update()
     {
-       // if(canDraw)
-       //{
-            Draw();
-      //  }
-        
-        //MouseCoords();
-
+        Draw();
     }
     void Draw()
     {
-
+        // Quan estàs dibuixant
         if (Input.GetKey(KeyCode.Mouse0))
         {
             if (!isDrawing)
@@ -57,12 +28,8 @@ public class PhoneDrawController : MonoBehaviour
             isDrawing = true;
             UpdateParticles();
             UpdateLineRenderer();
-
-            if (!audioSource.isPlaying)
-            {
-                audioSource.PlayOneShot(drawSound, 1f);
-            }
         }
+        // Quan no estàs dibuixant
         else
         {
             if (isDrawing)
@@ -70,7 +37,6 @@ public class PhoneDrawController : MonoBehaviour
                 ClearParticlesandLine();
             }
             isDrawing = false;
-            audioSource.Stop();
         }
     }
 
@@ -100,24 +66,10 @@ public class PhoneDrawController : MonoBehaviour
         }
     }
 
+    // Borrar el dibuix al deixar de dibuixar
     void ClearParticlesandLine()
     {
         line.positionCount = 0;
         particles.Stop();
-    }
-
-    //Momentani, això es borrarà en un futur, només pel protoip
-    void MouseCoords()
-    {
-        Vector2 mousePosScreenSpace = Input.mousePosition;
-        mousePosWorldSpace = Camera.main.ScreenToWorldPoint(mousePosScreenSpace);
-        if (touchedObjectCollider == Physics2D.OverlapPoint(mousePosWorldSpace) || pin0 == Physics2D.OverlapPoint(mousePosWorldSpace) || pin1 == Physics2D.OverlapPoint(mousePosWorldSpace)
-            || pin2 == Physics2D.OverlapPoint(mousePosWorldSpace) || pin3 == Physics2D.OverlapPoint(mousePosWorldSpace) || pin4 == Physics2D.OverlapPoint(mousePosWorldSpace)
-            || pin5 == Physics2D.OverlapPoint(mousePosWorldSpace) || pin6 == Physics2D.OverlapPoint(mousePosWorldSpace) || pin7 == Physics2D.OverlapPoint(mousePosWorldSpace)
-            || pin8 == Physics2D.OverlapPoint(mousePosWorldSpace))
-        {
-            canDraw = true;
-        }
-        else canDraw = false;
     }
 }
