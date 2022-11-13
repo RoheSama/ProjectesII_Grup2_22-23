@@ -1851,7 +1851,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phoneIsActive: 0
   triggers: {fileID: 0}
-  audioSource: {fileID: 1895790876}
 --- !u!95 &290281744
 Animator:
   serializedVersion: 4
@@ -48656,7 +48655,6 @@ GameObject:
   - component: {fileID: 1895790875}
   - component: {fileID: 1895790874}
   - component: {fileID: 1895790873}
-  - component: {fileID: 1895790876}
   m_Layer: 0
   m_Name: Show Phone Button
   m_TagString: Untagged
@@ -48778,102 +48776,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1895790871}
   m_CullTransparentMesh: 1
---- !u!82 &1895790876
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1895790871}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 8e486812f3adfb44cb4b6c7a9c97398c, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.624
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1001 &1907238761
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49315,18 +49217,6 @@ MonoBehaviour:
   patternController: {fileID: 1935828081}
   particles: {fileID: 1541755344}
   line: {fileID: 6514728808049303394}
-  mousePosWorldSpace: {x: 0, y: 0}
-  touchedObjectCollider: {fileID: 1131716835}
-  pin0: {fileID: 1928734275}
-  pin1: {fileID: 1773331586}
-  pin2: {fileID: 256806164}
-  pin3: {fileID: 448156362}
-  pin4: {fileID: 2115811451}
-  pin5: {fileID: 684313193}
-  pin6: {fileID: 883177781}
-  pin7: {fileID: 1138025309}
-  pin8: {fileID: 1994657027}
-  drawSound: {fileID: 8300000, guid: f33a8c8d83d5fb74fb9e8c48669db0de, type: 3}
 --- !u!114 &1935828081
 MonoBehaviour:
   m_ObjectHideFlags: 0

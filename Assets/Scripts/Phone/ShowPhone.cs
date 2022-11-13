@@ -18,8 +18,6 @@ public class ShowPhone : MonoBehaviour
     {
         anim.SetBool("canShowPhone", true);
         phoneIsActive = true;
-        triggers.SetActive(false);
-        audioSource.Play();
     }
 
     // Amagar el telèfon
@@ -27,7 +25,5 @@ public class ShowPhone : MonoBehaviour
     {
         anim.SetBool("canShowPhone", false);
         phoneIsActive = false;
-        triggers.SetActive(true);
-        audioSource.Play();
     }
 }
