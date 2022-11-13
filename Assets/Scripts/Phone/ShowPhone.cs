@@ -7,23 +7,34 @@ public class ShowPhone : MonoBehaviour
     Animator anim;
     public bool phoneIsActive = false;
     public GameObject triggers;
+    bool canShowPhone = true;
+    bool canHidePhone = true;
 
     void Start()
     {
         anim = GetComponent<Animator>();
     }
 
-    // Desplegar el telèfon
-    public void ShowPhoneFuntion()
+    void Update()
     {
-        anim.SetBool("canShowPhone", true);
-        phoneIsActive = true;
+        ShowOrHidePhone();
     }
 
-    // Amagar el telèfon
-    public void HidePhoneFuntion()
+    // Desplegar i amagar telèfon
+   void ShowOrHidePhone()
     {
-        anim.SetBool("canShowPhone", false);
-        phoneIsActive = false;
+        if (Input.GetKeyDown("space"))
+        {
+            if (phoneIsActive == false && canShowPhone)
+            {
+                anim.SetBool("canShowPhone", true);
+                phoneIsActive = true;
+            }
+            else if (phoneIsActive && canHidePhone)
+            {
+                anim.SetBool("canShowPhone", false);
+                phoneIsActive = false;
+            }
+        }
     }
 }
