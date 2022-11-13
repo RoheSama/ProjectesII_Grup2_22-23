@@ -81,6 +81,15 @@ TagManager:
   - name: Furniture 2
     uniqueID: 4154268413
     locked: 0
+  - name: Entity
+    uniqueID: 859969739
+    locked: 0
+  - name: Player
+    uniqueID: 2305932827
+    locked: 0
   - name: Foreground
     uniqueID: 1703072653
+    locked: 0
+  - name: Phone
+    uniqueID: 2407111009
     locked: 0
