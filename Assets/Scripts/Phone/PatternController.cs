@@ -86,8 +86,8 @@ public class PatternController : MonoBehaviour
         if (targetScript.Target != null)
         {
             Debug.Log("Destroy");
-            Destroy(targetScript.Target);
-            targetScript.ClearTarget();
+           // Destroy(targetScript.Target);
+           // targetScript.ClearTarget();
         }
     }
 

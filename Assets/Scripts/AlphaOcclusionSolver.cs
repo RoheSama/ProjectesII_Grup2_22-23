@@ -14,7 +14,7 @@ public class AlphaOcclusionSolver : MonoBehaviour
 
         //Set alpha to 0.2
         this.GetComponent<Tilemap>().color = new Color(1f, 1f, 1f, 0.25f);
-        Debug.Log("Entró :)");
+       // Debug.Log("Entró :)");
 
     }
     private void OnTriggerExit2D(Collider2D collision)
@@ -27,7 +27,7 @@ public class AlphaOcclusionSolver : MonoBehaviour
             {
                 //Set alpha to 1
                 this.GetComponent<Tilemap>().color = new Color(1f, 1f, 1f, 1f);
-                Debug.Log("Se salio :(");
+               // Debug.Log("Se salio :(");
             }
         }
     }
