@@ -48,15 +48,45 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: BG
+  - name: Floor Out
+    uniqueID: 3416833723
+    locked: 0
+  - name: Floor
     uniqueID: 4207922663
     locked: 0
+  - name: Back -1
+    uniqueID: 1235624353
+    locked: 0
+  - name: Furniture 3
+    uniqueID: 1360912537
+    locked: 0
   - name: Back
+    uniqueID: 734993209
+    locked: 0
+  - name: Back 1
     uniqueID: 3587614323
+    locked: 0
+  - name: Furniture
+    uniqueID: 3134009647
     locked: 0
   - name: Front
     uniqueID: 2518751637
     locked: 0
-  - name: Foreground
-    uniqueID: 1703072653
+  - name: Front 2
+    uniqueID: 2856007283
+    locked: 0
+  - name: Front 3
+    uniqueID: 1220260211
+    locked: 0
+  - name: Furniture 2
+    uniqueID: 4154268413
+    locked: 0
+  - name: Entity
+    uniqueID: 859969739
+    locked: 0
+  - name: Player
+    uniqueID: 2305932827
+    locked: 0
+  - name: Phone
+    uniqueID: 2407111009
     locked: 0
