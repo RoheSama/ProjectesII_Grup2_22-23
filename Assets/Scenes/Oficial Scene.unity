@@ -5267,7 +5267,7 @@ GameObject:
   - component: {fileID: 102005539}
   - component: {fileID: 102005538}
   - component: {fileID: 102005537}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: MessageApp Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6093,7 +6093,7 @@ GameObject:
   - component: {fileID: 157773570}
   - component: {fileID: 157773569}
   - component: {fileID: 157773568}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: 'Close Phone Button '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6226,7 +6226,7 @@ GameObject:
   - component: {fileID: 171681794}
   - component: {fileID: 171681793}
   - component: {fileID: 171681792}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: TinderApp Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6359,7 +6359,7 @@ GameObject:
   - component: {fileID: 187490178}
   - component: {fileID: 187490177}
   - component: {fileID: 187490176}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: CursesApp Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24823,7 +24823,7 @@ GameObject:
   - component: {fileID: 396273014}
   - component: {fileID: 396273013}
   - component: {fileID: 396273012}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: SettingsApp Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25279,7 +25279,7 @@ GameObject:
   - component: {fileID: 432869781}
   - component: {fileID: 432869780}
   - component: {fileID: 432869779}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: CallApp Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28442,7 +28442,7 @@ GameObject:
   - component: {fileID: 727225751}
   - component: {fileID: 727225750}
   - component: {fileID: 727225749}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Exit Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29606,7 +29606,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 886919505}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30145,7 +30145,7 @@ GameObject:
   - component: {fileID: 945981791}
   - component: {fileID: 945981790}
   - component: {fileID: 945981789}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: BookApp Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85173,7 +85173,7 @@ GameObject:
   - component: {fileID: 1022388433}
   - component: {fileID: 1022388435}
   - component: {fileID: 1022388434}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Phone carcass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88584,7 +88584,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1403887423
 Transform:
   m_ObjectHideFlags: 0
@@ -89395,7 +89395,7 @@ GameObject:
   - component: {fileID: 1512113691}
   - component: {fileID: 1512113690}
   - component: {fileID: 1512113689}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89460,7 +89460,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1887856287
   m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &1512113692
@@ -95201,7 +95201,7 @@ GameObject:
   - component: {fileID: 1754559501}
   - component: {fileID: 1754559500}
   - component: {fileID: 1754559499}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: MapApp Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
