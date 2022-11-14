@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PhoneController : MonoBehaviour
 {
+    //GameObjects del mòbil
     public GameObject messageApp;
     public GameObject callApp;
     public GameObject tinderApp;
@@ -13,6 +14,7 @@ public class PhoneController : MonoBehaviour
     public GameObject settingsApp;
     public GameObject buttons;
     public GameObject apps;
+
     public GameObject closePhoneButton;
 
   

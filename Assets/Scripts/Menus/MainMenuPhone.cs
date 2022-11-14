@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuPhone : MonoBehaviour
 {
     public GameObject mainMenu;
+    public Animator animator;
 
     void Start()
     {
@@ -14,8 +15,8 @@ public class MainMenuPhone : MonoBehaviour
     //Button de On 
     public void PowerButtonTouched()
     {
-        Debug.Log("a");
         mainMenu.SetActive(true);
+        animator.SetBool("activateEyes", true);
     }
 
     // Button de Play 

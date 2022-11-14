@@ -78,7 +78,6 @@ namespace ClearSky
             if (showPhone.phoneIsActive == true)
             {
                 rb.constraints = RigidbodyConstraints2D.FreezeAll;
-                //rb.constraints = RigidbodyConstraints2D.FreezePosition;
                 anim.SetBool("isRun", false);
             }
             else
@@ -88,23 +87,7 @@ namespace ClearSky
             }
         }
 
-        //void OnTriggerEnter2D(Collider2D col)
-        //{
-        //    Debug.Log("Trigger");
-        //    if (col.gameObject.tag == "Cura")
-        //    {
-        //            Hurt();
-        //    }           
-        //}
-
-        //private void OnTriggerExit2D(Collider2D col)
-        //{
-        //    if (col.gameObject.tag == "Cura")
-        //    {
-        //        Debug.Log("HIT");
-        //    }
-        //}
-
+       
         public void Hurt()
         {
             anim.SetTrigger("hurt");

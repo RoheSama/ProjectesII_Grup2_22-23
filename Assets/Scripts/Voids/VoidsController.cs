@@ -22,7 +22,6 @@ public class VoidsController : MonoBehaviour
 
     void FixedUpdate()
     {
-
         direction = Vector2.zero;
         //get the vector from your position to current waypoint
         direction = checkpoints[counter].transform.position - transform.position;
@@ -54,5 +53,4 @@ public class VoidsController : MonoBehaviour
 
         GetComponent<Rigidbody2D>().velocity = new Vector2(direction.x * actualSpeed, direction.y * actualSpeed);
     }
-
 }

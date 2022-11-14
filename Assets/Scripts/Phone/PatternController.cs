@@ -22,6 +22,8 @@ public class PatternController : MonoBehaviour
   
     //Target
     public targetScript targetScript;
+    
+    //Update
     void Update()
     {
         if (phoneDrawController.isDrawing && mouseCheck.overlappedObject == true)
@@ -29,17 +31,19 @@ public class PatternController : MonoBehaviour
             actualPin = mouseCheck.overlappedObject;
             if (actualPin != lastPin)
             {
+                //Afegir els pins activats al'array en ordre
                 for(int i = 0; i < pins.Length; i++)
                 {
                     if (pins[i] == mouseCheck.overlappedObject)
                         pinsOverlapped.Add(i);
-                    //
+                    //Canviar de Sprite quan el pin està activat
                     mouseCheck.overlappedObject.GetComponent<Image>().sprite = pinClickedSprite;
                 }
             }
             lastPin = actualPin;
         }
 
+        // Si no estàs dibuixant
         else if(phoneDrawController.isDrawing==false)
         {
             if (pinsOverlapped.Count > 0)
@@ -53,6 +57,7 @@ public class PatternController : MonoBehaviour
             }
         }      
     }
+    // Comprovar si has fet el pattern correcte
     void CheckIfPatternDrawn()
     {
         bool patternFound = false;
@@ -73,6 +78,8 @@ public class PatternController : MonoBehaviour
             }
         }
     }
+
+    // Efectes de la maledicciño Corruption
     void Corruption()
     {
         Debug.Log("corruption");
@@ -83,6 +90,8 @@ public class PatternController : MonoBehaviour
             targetScript.ClearTarget();
         }
     }
+
+    // Efectes de la maledicciño Soul Eater
     void SoulEater()
     {
         soulEater.SetActive(true);
