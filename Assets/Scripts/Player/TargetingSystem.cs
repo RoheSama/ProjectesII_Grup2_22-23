@@ -4,28 +4,44 @@ using UnityEngine;
 
 public class TargetingSystem : MonoBehaviour
 {
-    GameObject target1;
-    GameObject mark1;
+    public GameObject target;
 
-    SpriteRenderer spriteRenderer;
+    public GameObject mark;
 
+    public bool isTargeted = false;
+
+    [SerializeField] private TargetController targetController;
+   
+   
     void Start()
     {
 
     }
     void Update()
     {
-        if(mark1 != null)
+       if(targetController.a)
         {
-            mark1.gameObject.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
-        }
+            if(targetController.target1 != null)
+            {
+                targetController.target1 = target;
+            }
+       }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Mark"))
+        if (other.CompareTag("Player"))
         {
-            mark1 = other.gameObject;
+             mark.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+            isTargeted = true;
+        }
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if(other.tag == "Player")
+        {
+            mark.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
+            isTargeted = false;
         }
     }
 }
