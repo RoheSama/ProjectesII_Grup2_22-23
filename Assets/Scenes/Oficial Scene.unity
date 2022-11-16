@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 19568021}
   - component: {fileID: 19568024}
   - component: {fileID: 19568025}
+  - component: {fileID: 19568026}
   m_Layer: 0
   m_Name: Wall Dissapearing Class 1 2
   m_TagString: Untagged
@@ -487,6 +488,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd8b3749b419d445a6cba6189a6906a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &19568026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 19568019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &22606558
 GameObject:
   m_ObjectHideFlags: 0
@@ -1229,6 +1246,7 @@ GameObject:
   - component: {fileID: 117344380}
   - component: {fileID: 117344379}
   - component: {fileID: 117344378}
+  - component: {fileID: 117344382}
   m_Layer: 0
   m_Name: Wall Dissapreaing Corridor
   m_TagString: Untagged
@@ -1454,6 +1472,53 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &117344382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 117344376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
+--- !u!1 &131130209
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 131130210}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &131130210
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131130209}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &147440003 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2053518115102101880, guid: 521aebf732701414da1c25c63cb8390b, type: 3}
@@ -1951,6 +2016,7 @@ GameObject:
   - component: {fileID: 206912211}
   - component: {fileID: 206912213}
   - component: {fileID: 206912212}
+  - component: {fileID: 206912214}
   m_Layer: 0
   m_Name: Furniture 3
   m_TagString: Untagged
@@ -2094,6 +2160,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &206912214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206912210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &217142639 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2053518115102101880, guid: 521aebf732701414da1c25c63cb8390b, type: 3}
@@ -2285,6 +2367,7 @@ GameObject:
   - component: {fileID: 278940054}
   - component: {fileID: 278940056}
   - component: {fileID: 278940055}
+  - component: {fileID: 278940057}
   m_Layer: 0
   m_Name: Wall Permanent 4
   m_TagString: Untagged
@@ -2418,6 +2501,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &278940057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278940053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &283563247
 GameObject:
   m_ObjectHideFlags: 0
@@ -2637,6 +2736,7 @@ GameObject:
   - component: {fileID: 326641351}
   - component: {fileID: 326641350}
   - component: {fileID: 326641349}
+  - component: {fileID: 326641353}
   m_Layer: 0
   m_Name: Wall Dissapreaing Dinner
   m_TagString: Untagged
@@ -2952,6 +3052,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &326641353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 326641347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &358326508
 GameObject:
   m_ObjectHideFlags: 0
@@ -3039,6 +3155,7 @@ GameObject:
   - component: {fileID: 368161273}
   - component: {fileID: 368161275}
   - component: {fileID: 368161274}
+  - component: {fileID: 368161276}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -20238,6 +20355,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &368161276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368161272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 0
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &383283961
 GameObject:
   m_ObjectHideFlags: 0
@@ -20467,6 +20600,7 @@ GameObject:
   - component: {fileID: 416537490}
   - component: {fileID: 416537492}
   - component: {fileID: 416537491}
+  - component: {fileID: 416537493}
   m_Layer: 0
   m_Name: Wall Permanent 2
   m_TagString: Untagged
@@ -20726,6 +20860,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &416537493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416537489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &432869777
 GameObject:
   m_ObjectHideFlags: 0
@@ -21039,6 +21189,72 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 11
+--- !u!1 &471490240
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 471490243}
+  - component: {fileID: 471490242}
+  m_Layer: 0
+  m_Name: NavMesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &471490242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471490240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148387606d0ccd84fa326ca211f274ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 0
+  m_OverrideByGrid: 0
+  m_UseMeshPrefab: {fileID: 0}
+  m_CompressBounds: 0
+  m_OverrideVector: {x: 1, y: 1, z: 1}
+  m_DefaultArea: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_BuildHeightMesh: 0
+  m_HideEditorLogs: 0
+  m_NavMeshData: {fileID: 23800000, guid: b9711d2e29a26f24eaa14c8184a96586, type: 2}
+--- !u!4 &471490243
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471490240}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &481730178
 GameObject:
   m_ObjectHideFlags: 0
@@ -21050,6 +21266,7 @@ GameObject:
   - component: {fileID: 481730179}
   - component: {fileID: 481730181}
   - component: {fileID: 481730180}
+  - component: {fileID: 481730182}
   m_Layer: 0
   m_Name: Wall Permanent
   m_TagString: Untagged
@@ -21645,6 +21862,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &481730182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481730178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &488041898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22524,6 +22757,7 @@ GameObject:
   - component: {fileID: 557604310}
   - component: {fileID: 557604309}
   - component: {fileID: 557604308}
+  - component: {fileID: 557604312}
   m_Layer: 0
   m_Name: Wall Dissapreaing CoDinner
   m_TagString: Untagged
@@ -22759,6 +22993,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &557604312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 557604306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &558821216
 GameObject:
   m_ObjectHideFlags: 0
@@ -22770,6 +23020,7 @@ GameObject:
   - component: {fileID: 558821217}
   - component: {fileID: 558821219}
   - component: {fileID: 558821218}
+  - component: {fileID: 558821220}
   m_Layer: 0
   m_Name: Wall Permanent 3
   m_TagString: Untagged
@@ -23017,6 +23268,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &558821220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558821216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &573182130 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2053518115102101880, guid: 521aebf732701414da1c25c63cb8390b, type: 3}
@@ -24457,6 +24724,7 @@ GameObject:
   - component: {fileID: 818893264}
   - component: {fileID: 818893263}
   - component: {fileID: 818893262}
+  - component: {fileID: 818893266}
   m_Layer: 0
   m_Name: Wall Dissapreaing Church
   m_TagString: Untagged
@@ -24682,6 +24950,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &818893266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818893260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &842593655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25210,7 +25494,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919234889}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.62, y: 0.71, z: 0}
+  m_LocalPosition: {x: 2.3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -81332,6 +81616,7 @@ GameObject:
   - component: {fileID: 1202439156}
   - component: {fileID: 1202439158}
   - component: {fileID: 1202439157}
+  - component: {fileID: 1202439159}
   m_Layer: 0
   m_Name: Furniture 2
   m_TagString: Untagged
@@ -81589,6 +81874,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1202439159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202439155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1206249984
 GameObject:
   m_ObjectHideFlags: 0
@@ -81739,6 +82040,7 @@ GameObject:
   - component: {fileID: 1282793743}
   - component: {fileID: 1282793742}
   - component: {fileID: 1282793741}
+  - component: {fileID: 1282793745}
   m_Layer: 0
   m_Name: Wall Dissapreaing Corridor 2
   m_TagString: Untagged
@@ -81964,6 +82266,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1282793745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282793739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &1283335249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82660,6 +82978,7 @@ GameObject:
   - component: {fileID: 1294478767}
   - component: {fileID: 1294478770}
   - component: {fileID: 1294478769}
+  - component: {fileID: 1294478771}
   m_Layer: 0
   m_Name: Wall Disappearing Hall
   m_TagString: Untagged
@@ -82999,6 +83318,22 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!114 &1294478771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294478765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1304299188
 GameObject:
   m_ObjectHideFlags: 0
@@ -83012,6 +83347,7 @@ GameObject:
   - component: {fileID: 1304299192}
   - component: {fileID: 1304299191}
   - component: {fileID: 1304299190}
+  - component: {fileID: 1304299194}
   m_Layer: 0
   m_Name: Wall Dissapreaing Church2
   m_TagString: Untagged
@@ -83193,6 +83529,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1304299194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1304299188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &1337831795
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -83487,6 +83839,7 @@ GameObject:
   - component: {fileID: 1346338262}
   - component: {fileID: 1346338261}
   - component: {fileID: 1346338260}
+  - component: {fileID: 1346338264}
   m_Layer: 0
   m_Name: Wall Dissapreaing Church 3
   m_TagString: Untagged
@@ -83648,6 +84001,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1346338264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346338258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1366525784
 GameObject:
   m_ObjectHideFlags: 0
@@ -83661,6 +84030,7 @@ GameObject:
   - component: {fileID: 1366525786}
   - component: {fileID: 1366525789}
   - component: {fileID: 1366525788}
+  - component: {fileID: 1366525790}
   m_Layer: 0
   m_Name: Wall Dissapreaing Gym
   m_TagString: Untagged
@@ -83996,6 +84366,22 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!114 &1366525790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366525784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1386102197
 GameObject:
   m_ObjectHideFlags: 0
@@ -84072,6 +84458,7 @@ GameObject:
   - component: {fileID: 1415022447}
   - component: {fileID: 1415022449}
   - component: {fileID: 1415022448}
+  - component: {fileID: 1415022450}
   m_Layer: 0
   m_Name: Furniture
   m_TagString: Untagged
@@ -84503,6 +84890,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1415022450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415022446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1472597724
 GameObject:
   m_ObjectHideFlags: 0
@@ -84549,6 +84952,7 @@ GameObject:
   - component: {fileID: 1509604072}
   - component: {fileID: 1509604075}
   - component: {fileID: 1509604074}
+  - component: {fileID: 1509604076}
   m_Layer: 0
   m_Name: Wall Dissapearing Class 3
   m_TagString: Untagged
@@ -84842,6 +85246,22 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!114 &1509604076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1509604070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1512113688
 GameObject:
   m_ObjectHideFlags: 0
@@ -84956,6 +85376,7 @@ GameObject:
   - component: {fileID: 1513747805}
   - component: {fileID: 1513747804}
   - component: {fileID: 1513747803}
+  - component: {fileID: 1513747807}
   m_Layer: 0
   m_Name: Wall Dissapreaing Bathroom
   m_TagString: Untagged
@@ -85175,6 +85596,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1513747807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513747801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1541755342
 GameObject:
   m_ObjectHideFlags: 0
@@ -91576,6 +92013,7 @@ GameObject:
   - component: {fileID: 1908658725}
   - component: {fileID: 1908658724}
   - component: {fileID: 1908658723}
+  - component: {fileID: 1908658727}
   m_Layer: 0
   m_Name: 'Wall Dissapreaing Corridor 2 '
   m_TagString: Untagged
@@ -91747,6 +92185,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1908658727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908658721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1928734271
 GameObject:
   m_ObjectHideFlags: 0
@@ -94096,6 +94550,7 @@ GameObject:
   - component: {fileID: 2107872934}
   - component: {fileID: 2107872936}
   - component: {fileID: 2107872935}
+  - component: {fileID: 2107872937}
   m_Layer: 0
   m_Name: Wall Permanent -1
   m_TagString: Untagged
@@ -94523,6 +94978,22 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &2107872937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107872933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &2115811447
 GameObject:
   m_ObjectHideFlags: 0
@@ -95629,6 +96100,8 @@ GameObject:
   - component: {fileID: 2053518114221879506}
   - component: {fileID: 2053518114221879507}
   - component: {fileID: 2053518114221879508}
+  - component: {fileID: 2053518114221879509}
+  - component: {fileID: 2053518114221879510}
   m_Layer: 7
   m_Name: CollegeStudent
   m_TagString: Player
@@ -95680,7 +96153,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2053518114221879503}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7df61ea9b64802547b21df2c1d8e31f2, type: 3}
   m_Name: 
@@ -95811,6 +96284,40 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!195 &2053518114221879509
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053518114221879503}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.1
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 0.5
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &2053518114221879510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053518114221879503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 473f0dbdb72a3c6489cb583d7128a165, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!120 &6514728808049303394
 LineRenderer:
   m_ObjectHideFlags: 0
