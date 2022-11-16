@@ -17,8 +17,6 @@ namespace ClearSky
         private int direction = 1;
         public bool alive = true;
 
-        public AudioClip playerSteps;
-        AudioSource audioSource;
 
 
         public ShowPhone showPhone;
@@ -38,7 +36,6 @@ namespace ClearSky
             health = maxHealth;
             rb = GetComponent<Rigidbody2D>();
             anim = GetComponent<Animator>();
-            audioSource = GetComponent<AudioSource>();
         }
         private void FixedUpdate()
         {
@@ -57,20 +54,13 @@ namespace ClearSky
 
             //Run animation
             anim.SetBool("isRun", moveVelocity.sqrMagnitude > 0.0001f);
-            if (!audioSource.isPlaying && moveVelocity.sqrMagnitude != 0)
-            {
-                audioSource.PlayOneShot(playerSteps, 0.7F);
-            }
 
             //Direction flip
             if (moveVelocity.x > 0.0001f)
                 direction = 1;
             else if (moveVelocity.x < -0.0001f)
                 direction = -1;
-            else
-            {
-                audioSource.Stop();
-            }
+
             transform.localScale = new Vector3(direction, 1, 1);
 
             rb.AddForce(moveVelocity * movePower * Time.fixedDeltaTime, ForceMode2D.Force);
