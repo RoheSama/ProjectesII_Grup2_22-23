@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class TargetController : MonoBehaviour
 {
-    // public GameObject target1 = null;
-    // public GameObject target2 = null;
-    // public GameObject target3 = null;
+ 
 
     public GameObject[] targetsInRange;
 
@@ -26,11 +24,12 @@ public class TargetController : MonoBehaviour
         FirstTarget();
         SecondTarget();
         ThirdTarget();
+        TargetsOrder();
     }
 
     void FirstTarget()
     {
-        if (tabCounter == 1)
+        if (tabCounter == 0)
         {
             targetedElement = targetsInRange[0];
         }    
@@ -38,7 +37,7 @@ public class TargetController : MonoBehaviour
 
     void SecondTarget()
     {
-        if (tabCounter == 2)
+        if (tabCounter == 1)
         {
             targetedElement = targetsInRange[1];
         }
@@ -46,7 +45,7 @@ public class TargetController : MonoBehaviour
 
     void ThirdTarget()
     {
-        if (tabCounter == 3)
+        if (tabCounter == 2)
         {
             targetedElement = targetsInRange[2];
         }
@@ -56,9 +55,30 @@ public class TargetController : MonoBehaviour
     {
         if (Input.GetKeyDown("tab"))
         {
-            tabCounter++;
+            if(tabCounter <=2)
+            {
+                tabCounter++;
+            }
+            else if(tabCounter >1)
+            {
+                tabCounter = 0;
+            }
         }
-          
     }
 
+    void TargetsOrder()
+    {
+        if (targetsInRange[0] != null && targetsInRange[1] == null && targetsInRange[2] == null)
+        {
+            tabCounter = 0;
+        }
+        if (targetsInRange[0] == null && targetsInRange[1] != null && targetsInRange[2] == null)
+        {
+            tabCounter = 1;
+        }
+        if (targetsInRange[0] == null && targetsInRange[1] == null && targetsInRange[2] != null)
+        {
+            tabCounter = 2;
+        }
+    }
 }
