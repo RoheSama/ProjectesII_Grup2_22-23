@@ -19,12 +19,20 @@ public class VoidController : MonoBehaviour
 
     private int orientation = 1;
 
-    
+    //navmesh
+    private Vector3 target;
+    NavMeshAgent agent;
+
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        //navmesh
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
     }
 
     // Update is called once per frame
