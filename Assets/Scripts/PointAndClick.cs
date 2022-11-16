@@ -2,11 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class PointAndClick : MonoBehaviour
 {
     private Vector3 target;
     NavMeshAgent agent;
+
+    //others
+    public float health = 0f;
+    [SerializeField]
+    private float maxHealth = 100f;
+    public bool alive = true;
+    public Animator anim;
+
+    int number = 0;
+    bool couroutineStarted = false;
 
     void Start()
     {
@@ -14,13 +26,19 @@ public class PointAndClick : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+        //health 
+        health = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        SetTargetPosition();
-        SetAgentPosition();
+        if (alive)
+        {
+            SetTargetPosition();
+            SetAgentPosition();
+            Die();
+        }
     }
 
     void SetTargetPosition() //Sets the target position that our agent is following everytime you click
@@ -34,5 +52,45 @@ public class PointAndClick : MonoBehaviour
     void SetAgentPosition()
     {
         agent.SetDestination(new Vector3 (target.x, target.y, transform.position.z));
+    }
+
+
+    public void Hurt()
+    {
+        anim.SetTrigger("hurt");
+    }
+
+    public void UpdateHealth(float mod)
+    {
+        health += mod;
+
+        if (health > maxHealth)
+        {
+            health = maxHealth;
+        }
+        else if (health <= 0f)
+        {
+            health = 0f;
+        }
+
+    }
+
+    void Die()
+    {
+        if (health <= 0)
+        {
+            Debug.Log("LOSE");
+            health = 0;
+            anim.SetTrigger("die");
+            alive = false;
+            StartCoroutine(Wait());
+        }
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1);
+        SceneManager.LoadScene("MainMenu");
+
     }
 }
