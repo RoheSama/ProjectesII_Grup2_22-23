@@ -8,10 +8,10 @@ public class TargetingSystem : MonoBehaviour
 
     public GameObject mark;
 
-    public bool isTargeted = false;
+    public bool isInRange = false;
+
 
     [SerializeField] private TargetController targetController;
-   
    
     void Start()
     {
@@ -19,29 +19,30 @@ public class TargetingSystem : MonoBehaviour
     }
     void Update()
     {
-       if(targetController.a)
-        {
-            if(targetController.target1 != null)
-            {
-                targetController.target1 = target;
-            }
+       if(targetController.target1 == null && isInRange)
+       {
+            targetController.target1 = target;
        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if(targetController.targetedElement == target)
         {
-             mark.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
-            isTargeted = true;
+            mark.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 1f);
+        }
+        else if (other.CompareTag("Player"))
+        {
+            mark.GetComponent<SpriteRenderer>().color = new Color(0f, 0f,0f, 1f);
+            isInRange = true;
         }
     }
     void OnTriggerExit2D(Collider2D other)
     {
         if(other.tag == "Player")
         {
-            mark.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f, 0f);
-            isTargeted = false;
+            mark.GetComponent<SpriteRenderer>().color = new Color(0f, 0f, 0f, 0f);
+            isInRange = false;
         }
     }
 }

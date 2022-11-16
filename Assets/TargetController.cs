@@ -5,10 +5,11 @@ using UnityEngine;
 public class TargetController : MonoBehaviour
 {
     public GameObject target1 = null;
-    public GameObject target2;
-    public GameObject target3;
+    public GameObject target2 = null;
+    public GameObject target3 = null;
 
-    public bool a = true;
+    public GameObject targetedElement = null;
+
 
     void Start()
     {
@@ -19,7 +20,9 @@ public class TargetController : MonoBehaviour
     {
         if(target1 != null)
         {
-            target1.SetActive(false);
+            targetedElement = target1;
         }
+
+        
     }
 }
