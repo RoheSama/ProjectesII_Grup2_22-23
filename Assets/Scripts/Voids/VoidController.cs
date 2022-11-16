@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Scripting.APIUpdating;
 
 public class VoidController : MonoBehaviour
@@ -17,12 +18,13 @@ public class VoidController : MonoBehaviour
     private Rigidbody2D rb;
 
     private int orientation = 1;
+
+    
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-
     }
 
     // Update is called once per frame
