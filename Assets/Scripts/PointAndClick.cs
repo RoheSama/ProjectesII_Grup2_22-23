@@ -16,9 +16,16 @@ public class PointAndClick : MonoBehaviour
     private float maxHealth = 100f;
     public bool alive = true;
     public Animator anim;
+    private Rigidbody2D rb;
 
     int number = 0;
     bool couroutineStarted = false;
+
+    public float movePower = 10f;
+    private int direction = 1;
+    Vector2 moveVelocity;
+
+
 
     void Start()
     {
@@ -28,6 +35,9 @@ public class PointAndClick : MonoBehaviour
         agent.updateUpAxis = false;
         //health 
         health = maxHealth;
+
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -51,7 +61,11 @@ public class PointAndClick : MonoBehaviour
 
     void SetAgentPosition()
     {
-        agent.SetDestination(new Vector3 (target.x, target.y, transform.position.z));
+        anim.SetBool("isRun", false);
+        agent.SetDestination(new Vector3(target.x, target.y, transform.position.z));
+        if (!anim.GetBool("isJump"))
+            anim.SetBool("isRun", true);
+
     }
 
 
