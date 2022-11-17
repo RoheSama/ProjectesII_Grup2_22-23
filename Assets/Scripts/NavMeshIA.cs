@@ -11,11 +11,17 @@ public class NavMeshIA : MonoBehaviour
     public Transform centrePoint; //centre of the area the agent wants to move around in
     //instead of centrePoint you can set it as the transform of the agent if you don't care about a specific area
 
+    private Animator anim;
+
+    int direction = 1;
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
+
+        anim = GetComponent<Animator>();
     }
 
 
@@ -23,11 +29,20 @@ public class NavMeshIA : MonoBehaviour
     {
         if (agent.remainingDistance <= agent.stoppingDistance) //done with path
         {
+            anim.SetBool("isRun", false);
             Vector3 point;
             if (RandomPoint(centrePoint.position, range, out point)) //pass in our centre point and radius of area
             {
                 Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f); //so you can see with gizmos
                 agent.SetDestination(point);
+                anim.SetBool("isRun", true);
+                if (point.x > 0.0001f)
+                    direction = 1;
+                else if (point.x < -0.0001f)
+                    direction = -1;
+
+                transform.localScale = new Vector3(direction, 1, 1);
+
             }
         }
 
