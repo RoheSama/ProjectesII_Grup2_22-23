@@ -28729,7 +28729,7 @@ GameObject:
   - component: {fileID: 598308041}
   - component: {fileID: 598308040}
   m_Layer: 0
-  m_Name: Text_07 Gap
+  m_Name: Text_06 Gap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28910,6 +28910,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 615491327}
+  - component: {fileID: 615491328}
   m_Layer: 0
   m_Name: Message App
   m_TagString: Untagged
@@ -28943,6 +28944,27 @@ Transform:
   m_Father: {fileID: 662240744}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &615491328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615491326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d400a62215e8b7479a389174c9771b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textGap:
+  - {fileID: 1616919543}
+  - {fileID: 1928054220}
+  - {fileID: 1432400429}
+  - {fileID: 1044320614}
+  - {fileID: 1600207559}
+  - {fileID: 1938321784}
+  - {fileID: 598308040}
+  - {fileID: 1708914152}
 --- !u!1 &617517148
 GameObject:
   m_ObjectHideFlags: 0
@@ -86581,7 +86603,7 @@ GameObject:
   - component: {fileID: 1044320615}
   - component: {fileID: 1044320614}
   m_Layer: 0
-  m_Name: Text_04 Gap
+  m_Name: Text_03 Gap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90677,7 +90699,7 @@ GameObject:
   - component: {fileID: 1432400430}
   - component: {fileID: 1432400429}
   m_Layer: 0
-  m_Name: Text_03 Gap
+  m_Name: Text_02 Gap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96817,7 +96839,7 @@ GameObject:
   - component: {fileID: 1600207560}
   - component: {fileID: 1600207559}
   m_Layer: 0
-  m_Name: Text_05 Gap
+  m_Name: Text_04 Gap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96893,7 +96915,7 @@ GameObject:
   - component: {fileID: 1616919544}
   - component: {fileID: 1616919543}
   m_Layer: 0
-  m_Name: Text_01 Gap
+  m_Name: Text_00 Gap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97330,7 +97352,7 @@ GameObject:
   - component: {fileID: 1708914153}
   - component: {fileID: 1708914152}
   m_Layer: 0
-  m_Name: Text_08 Gap
+  m_Name: Text_07 Gap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98596,7 +98618,7 @@ GameObject:
   - component: {fileID: 1928054221}
   - component: {fileID: 1928054220}
   m_Layer: 0
-  m_Name: Text_02 Gap
+  m_Name: Text_01 Gap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99168,7 +99190,7 @@ GameObject:
   - component: {fileID: 1938321785}
   - component: {fileID: 1938321784}
   m_Layer: 0
-  m_Name: Text_06 Gap
+  m_Name: Text_05 Gap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
