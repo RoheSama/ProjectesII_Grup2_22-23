@@ -61,11 +61,8 @@ public class PointAndClick : MonoBehaviour
 
     void SetAgentPosition()
     {
-        anim.SetBool("isRun", false);
         agent.SetDestination(new Vector3(target.x, target.y, transform.position.z));
-        if (!anim.GetBool("isJump"))
-            anim.SetBool("isRun", true);
-
+        anim.SetBool("isRun", moveVelocity.sqrMagnitude > 0.0001f);
     }
 
 
