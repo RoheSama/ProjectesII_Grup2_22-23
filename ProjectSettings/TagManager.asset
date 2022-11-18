@@ -11,6 +11,7 @@ TagManager:
   - Cura
   - Touchable
   - Curses_Background
+  - Mark
   layers:
   - Default
   - TransparentFX
