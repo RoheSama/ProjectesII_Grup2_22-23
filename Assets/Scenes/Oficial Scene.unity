@@ -27401,7 +27401,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &496751323
 Transform:
   m_ObjectHideFlags: 0
@@ -101155,7 +101155,6 @@ GameObject:
   - component: {fileID: 2053518114221879508}
   - component: {fileID: 2053518114221879509}
   - component: {fileID: 2053518114221879510}
-  - component: {fileID: 2053518114221879511}
   m_Layer: 7
   m_Name: CollegeStudent
   m_TagString: Player
@@ -101342,21 +101341,6 @@ MonoBehaviour:
   alive: 1
   anim: {fileID: 2053518114221879489}
   movePower: 10
---- !u!114 &2053518114221879511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2053518114221879503}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b5e4eb4f860f1d4a9b7b1085f4fb788, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 2053518114221879509}
-  range: 5
-  centrePoint: {fileID: 858199719}
 --- !u!120 &6514728808049303394
 LineRenderer:
   m_ObjectHideFlags: 0
