@@ -35,13 +35,13 @@ public class NavMeshIA : MonoBehaviour
             {
                 Debug.DrawRay(point, Vector3.up, Color.blue, 1.0f); //so you can see with gizmos
                 agent.SetDestination(point);
-                anim.SetBool("isRun", true);
-                if (point.x > 0.0001f)
-                    direction = 1;
-                else if (point.x < -0.0001f)
-                    direction = -1;
+                //anim.SetBool("isRun", true);
+                //if (point.x > 0.0001f)
+                //    direction = 1;
+                //else if (point.x < -0.0001f)
+                //    direction = -1;
 
-                transform.localScale = new Vector3(direction, 1, 1);
+                //transform.localScale = new Vector3(direction, 1, 1);
 
             }
         }
