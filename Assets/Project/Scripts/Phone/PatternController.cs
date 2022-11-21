@@ -85,7 +85,6 @@ public class PatternController : MonoBehaviour
     {
         Destroy(targetController.targetedElement);
     }
-
     // Efectes de la maledicciño Soul Eater
     void SoulEater()
     {

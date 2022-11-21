@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class TargetController : MonoBehaviour
 {
-
-
     public GameObject[] targetsInRange;
 
     public GameObject targetedElement = null;

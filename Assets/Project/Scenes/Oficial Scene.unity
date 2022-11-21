@@ -107378,7 +107378,7 @@ MonoBehaviour:
   corruption: {fileID: 1768985085}
   soulEater: {fileID: 0}
   targetScript: {fileID: 0}
-  targetController: {fileID: 2053518114221879511}
+  targetController: {fileID: 0}
 --- !u!82 &1935828082
 AudioSource:
   m_ObjectHideFlags: 0
@@ -110273,6 +110273,7 @@ GameObject:
   - component: {fileID: 2053518114221879502}
   - component: {fileID: 2053518114221879489}
   - component: {fileID: 2053518114221879504}
+  - component: {fileID: 2053518114221879512}
   - component: {fileID: 2053518114221879508}
   - component: {fileID: 2053518114221879509}
   - component: {fileID: 2053518114221879510}
@@ -110457,6 +110458,19 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   targetedElement: {fileID: 0}
+--- !u!114 &2053518114221879512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2053518114221879503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0aa6bb73398bff248b8f0356a61f11e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetController: {fileID: 2053518114221879511}
 --- !u!120 &6514728808049303394
 LineRenderer:
   m_ObjectHideFlags: 0
