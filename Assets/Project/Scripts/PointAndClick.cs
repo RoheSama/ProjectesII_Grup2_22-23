@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
@@ -25,7 +26,7 @@ public class PointAndClick : MonoBehaviour
     private int direction = 1;
     Vector2 moveVelocity;
 
-
+    private float powerUpSpeed = 1.5f;
 
     void Start()
     {
@@ -47,6 +48,7 @@ public class PointAndClick : MonoBehaviour
         {
             SetTargetPosition();
             SetAgentPosition();
+            PowerUp();
             Die();
         }
     }
@@ -62,11 +64,31 @@ public class PointAndClick : MonoBehaviour
     void SetAgentPosition()
     {
         agent.SetDestination(moveVelocity = new Vector3(target.x, target.y, transform.position.z));
-        anim.SetBool("Walk", true);
-            
+       // anim.SetBool("Walk", true);         
     }
 
+    void PowerUp()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            GetComponent<SpriteRenderer>().color = Color.yellow;
+            agent.speed = agent.speed + powerUpSpeed;
+            StartCoroutine(NormalForm());
+        }
+    }
 
+    void PowerOff()
+    {
+        GetComponent<SpriteRenderer>().color = Color.white;
+        agent.speed = agent.speed - powerUpSpeed;
+    }
+
+    IEnumerator NormalForm()
+    {
+        yield return new WaitForSeconds(5);
+        PowerOff();
+
+    }
     public void Hurt()
     {
         anim.SetTrigger("hurt");
