@@ -28,6 +28,8 @@ public class PointAndClick : MonoBehaviour
 
     private float powerUpSpeed = 1.5f;
 
+    private bool powerUpAvailable = true;
+
     void Start()
     {
         //Navmesh DONT ERASE
@@ -48,8 +50,11 @@ public class PointAndClick : MonoBehaviour
         {
             SetTargetPosition();
             SetAgentPosition();
-            PowerUp();
             Die();
+            if (powerUpAvailable)
+            {
+                PowerUp();
+            }
         }
     }
 
@@ -71,6 +76,8 @@ public class PointAndClick : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            powerUpAvailable = false;
+            StartCoroutine(PowerUpCooldown());
             GetComponent<SpriteRenderer>().color = Color.yellow;
             agent.speed = agent.speed + powerUpSpeed;
             StartCoroutine(NormalForm());
@@ -85,10 +92,18 @@ public class PointAndClick : MonoBehaviour
 
     IEnumerator NormalForm()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(15);
         PowerOff();
 
     }
+
+    IEnumerator PowerUpCooldown()
+    {
+        yield return new WaitForSeconds(10);
+        powerUpAvailable = true;
+
+    }
+
     public void Hurt()
     {
         anim.SetTrigger("hurt");
