@@ -62,14 +62,8 @@ public class PointAndClick : MonoBehaviour
     void SetAgentPosition()
     {
         agent.SetDestination(moveVelocity = new Vector3(target.x, target.y, transform.position.z));
-        //anim.SetBool("isRun", moveVelocity.sqrMagnitude > 0.0001f);
-
-        //if (moveVelocity.x > 0.0001f)
-        //    direction = 1;
-        //else if (moveVelocity.x < -0.0001f)
-        //    direction = -1;
-
-        //transform.localScale = new Vector3(direction, 1, 1);
+        anim.SetBool("Walk", true);
+            
     }
 
 
