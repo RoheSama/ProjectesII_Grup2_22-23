@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Attack
   m_EditorClassIdentifier: 
   name: Attack
-  cooldownTime: 10
-  activeTime: 2
+  cooldownTime: 1
+  activeTime: 10
