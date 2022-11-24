@@ -3,16 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu]
-public class DashAbility : Ability
+public class AttackAbility : Ability
 {
 
-    public float dashVelocity;
 
     public override void Activate(GameObject parent) 
     {
-        Debug.Log("a");
+        Debug.Log("Ability Used");
     }
-    
-    
-    
 }

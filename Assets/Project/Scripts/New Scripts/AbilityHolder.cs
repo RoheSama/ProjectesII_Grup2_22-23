@@ -8,7 +8,7 @@ public class AbilityHolder : MonoBehaviour
     public Ability ability;
     float cooldownTime;
     float activeTime;
-
+    public KeyCode key;
     enum AbilityState
     {
         ready,
@@ -17,7 +17,6 @@ public class AbilityHolder : MonoBehaviour
     }
     AbilityState state = AbilityState.ready;
 
-    public KeyCode key;
     void Update()
     {
         switch (state)
@@ -38,6 +37,7 @@ public class AbilityHolder : MonoBehaviour
                 }
                 else
                 {
+                    ability.BeginCooldown(gameObject);
                     state = AbilityState.cooldown;
                     cooldownTime -= ability.cooldownTime;
                 }
