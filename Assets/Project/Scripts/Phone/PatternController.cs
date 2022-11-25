@@ -21,7 +21,6 @@ public class PatternController : MonoBehaviour
     public GameObject soulEater;
   
     //Target
-    public targetScript targetScript;
     public TargetController targetController;
     
     //Update
@@ -85,7 +84,6 @@ public class PatternController : MonoBehaviour
     {
         Destroy(targetController.targetedElement);
     }
-
     // Efectes de la maledicciño Soul Eater
     void SoulEater()
     {

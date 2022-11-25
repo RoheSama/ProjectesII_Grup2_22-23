@@ -8,11 +8,12 @@ public class TargetingSystem : MonoBehaviour
     public GameObject mark;
     public bool isInRange = false;
 
+    // Script de Target Controller del Player
     [SerializeField] private TargetController targetController;
 
     void Start()
     {
-
+    
     }
     void Update()
     {
