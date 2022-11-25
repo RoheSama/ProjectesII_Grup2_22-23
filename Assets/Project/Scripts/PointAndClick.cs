@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
@@ -25,7 +26,9 @@ public class PointAndClick : MonoBehaviour
     private int direction = 1;
     Vector2 moveVelocity;
 
+    private float powerUpSpeed = 1.5f;
 
+    private bool powerUpAvailable = true;
 
     void Start()
     {
@@ -48,6 +51,10 @@ public class PointAndClick : MonoBehaviour
             SetTargetPosition();
             SetAgentPosition();
             Die();
+            if (powerUpAvailable)
+            {
+                PowerUp();
+            }
         }
     }
 
@@ -62,16 +69,40 @@ public class PointAndClick : MonoBehaviour
     void SetAgentPosition()
     {
         agent.SetDestination(moveVelocity = new Vector3(target.x, target.y, transform.position.z));
-        //anim.SetBool("isRun", moveVelocity.sqrMagnitude > 0.0001f);
-
-        //if (moveVelocity.x > 0.0001f)
-        //    direction = 1;
-        //else if (moveVelocity.x < -0.0001f)
-        //    direction = -1;
-
-        //transform.localScale = new Vector3(direction, 1, 1);
+       // anim.SetBool("Walk", true);         
     }
 
+    void PowerUp()
+    {
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            powerUpAvailable = false;
+            StartCoroutine(PowerUpCooldown());
+            GetComponent<SpriteRenderer>().color = Color.yellow;
+            agent.speed = agent.speed + powerUpSpeed;
+            StartCoroutine(NormalForm());
+        }
+    }
+
+    void PowerOff()
+    {
+        GetComponent<SpriteRenderer>().color = Color.white;
+        agent.speed = agent.speed - powerUpSpeed;
+    }
+
+    IEnumerator NormalForm()
+    {
+        yield return new WaitForSeconds(5);
+        PowerOff();
+
+    }
+
+    IEnumerator PowerUpCooldown()
+    {
+        yield return new WaitForSeconds(10);
+        powerUpAvailable = true;
+
+    }
 
     public void Hurt()
     {
