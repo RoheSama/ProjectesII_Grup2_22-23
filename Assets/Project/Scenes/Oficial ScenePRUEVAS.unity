@@ -10195,7 +10195,7 @@ RectTransform:
   m_GameObject: {fileID: 266748021}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1967839974}
@@ -10203,7 +10203,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -394.8, y: -152.9}
+  m_AnchoredPosition: {x: -714.5, y: -376.3}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &266748023
@@ -35447,7 +35447,7 @@ RectTransform:
   m_GameObject: {fileID: 853759333}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1967839974}
@@ -35455,7 +35455,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -463.2, y: -200.5}
+  m_AnchoredPosition: {x: -830, y: -503.5}
   m_SizeDelta: {x: 87.8361, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &853759335
@@ -93600,7 +93600,7 @@ RectTransform:
   m_GameObject: {fileID: 1044454095}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1967839974}
@@ -93608,7 +93608,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -483.8, y: -152.5}
+  m_AnchoredPosition: {x: -884, y: -374.7}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1044454097
@@ -93676,7 +93676,7 @@ RectTransform:
   m_GameObject: {fileID: 1055749218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1967839974}
@@ -93684,7 +93684,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -394.8, y: -152.9}
+  m_AnchoredPosition: {x: -714.5, y: -376.3}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1055749220
@@ -109285,7 +109285,7 @@ RectTransform:
   m_GameObject: {fileID: 2049549538}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1967839974}
@@ -109293,7 +109293,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -373.4, y: -200.5}
+  m_AnchoredPosition: {x: -665.1, y: -498.9}
   m_SizeDelta: {x: 87.8361, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2049549540
@@ -109636,6 +109636,7 @@ MonoBehaviour:
   alive: 1
   anim: {fileID: 1172473749}
   movePower: 10
+  powerUpActivated: 0
 --- !u!50 &2055133025
 Rigidbody2D:
   serializedVersion: 4
@@ -109686,7 +109687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityImage1: {fileID: 1055749220}
-  cooldown1: 3
+  cooldown1: 2
   ability1: 113
   targetController: {fileID: 0}
   anim: {fileID: 1172473749}
@@ -110483,7 +110484,7 @@ RectTransform:
   m_GameObject: {fileID: 2118007758}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1967839974}
@@ -110491,7 +110492,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -483.8, y: -152.9}
+  m_AnchoredPosition: {x: -884, y: -375.1}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2118007760
@@ -111713,6 +111714,7 @@ MonoBehaviour:
   alive: 1
   anim: {fileID: 2053518114221879489}
   movePower: 10
+  powerUpActivated: 0
 --- !u!114 &2053518114221879511
 MonoBehaviour:
   m_ObjectHideFlags: 0

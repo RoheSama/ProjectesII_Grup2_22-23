@@ -26,9 +26,10 @@ public class PointAndClick : MonoBehaviour
     private int direction = 1;
     Vector2 moveVelocity;
 
-    private float powerUpSpeed = 1.5f;
+    //private float powerUpSpeed = 1.5f;
 
-    private bool powerUpAvailable = true;
+    //private bool powerUpAvailable = true;
+    //public bool powerUpActivated = false;
 
     void Start()
     {
@@ -51,10 +52,10 @@ public class PointAndClick : MonoBehaviour
             SetTargetPosition();
             SetAgentPosition();
             Die();
-            if (powerUpAvailable)
-            {
-                PowerUp();
-            }
+            //if (powerUpAvailable)
+            //{
+            //    PowerUp();
+            //}
         }
     }
 
@@ -72,37 +73,39 @@ public class PointAndClick : MonoBehaviour
        // anim.SetBool("Walk", true);         
     }
 
-    void PowerUp()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            powerUpAvailable = false;
-            StartCoroutine(PowerUpCooldown());
-            GetComponent<SpriteRenderer>().color = Color.yellow;
-            agent.speed = agent.speed + powerUpSpeed;
-            StartCoroutine(NormalForm());
-        }
-    }
+    //void PowerUp()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.E))
+    //    {
+    //        powerUpActivated = true;
+    //        powerUpAvailable = false;
+    //        StartCoroutine(PowerUpCooldown());
+    //        GetComponent<SpriteRenderer>().color = Color.yellow;
+    //        agent.speed = agent.speed + powerUpSpeed;
+    //        StartCoroutine(NormalForm());
+    //    }
+    //}
 
-    void PowerOff()
-    {
-        GetComponent<SpriteRenderer>().color = Color.white;
-        agent.speed = agent.speed - powerUpSpeed;
-    }
+    //void PowerOff()
+    //{
+    //    GetComponent<SpriteRenderer>().color = Color.white;
+    //    agent.speed = agent.speed - powerUpSpeed;
+    //    powerUpActivated = false;
+    //}
 
-    IEnumerator NormalForm()
-    {
-        yield return new WaitForSeconds(5);
-        PowerOff();
+    //IEnumerator NormalForm()
+    //{
+    //    yield return new WaitForSeconds(5);
+    //    PowerOff();
 
-    }
+    //}
 
-    IEnumerator PowerUpCooldown()
-    {
-        yield return new WaitForSeconds(10);
-        powerUpAvailable = true;
+    //IEnumerator PowerUpCooldown()
+    //{
+    //    yield return new WaitForSeconds(10);
+    //    powerUpAvailable = true;
 
-    }
+    //}
 
     public void Hurt()
     {
