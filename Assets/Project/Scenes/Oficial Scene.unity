@@ -11860,7 +11860,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -423.6, y: -261.6}
+  m_AnchoredPosition: {x: -373.4, y: -200.5}
   m_SizeDelta: {x: 87.8361, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &330999376
@@ -95365,7 +95365,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -445, y: -214}
+  m_AnchoredPosition: {x: -394.8, y: -152.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1165008367
@@ -95406,6 +95406,54 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1165008365}
   m_CullTransparentMesh: 1
+--- !u!1 &1177938065
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1177938066}
+  - component: {fileID: 1177938067}
+  m_Layer: 0
+  m_Name: TargetTrigger
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1177938066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177938065}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.96, y: -2.09, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 589175472}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &1177938067
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177938065}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.19, y: 0.76}
+  serializedVersion: 2
+  m_Radius: 1
 --- !u!1 &1184338747
 GameObject:
   m_ObjectHideFlags: 0
@@ -96240,6 +96288,10 @@ PrefabInstance:
     - target: {fileID: 6887121871495450158, guid: 901315c7f65749b4585a1ba9375ceb3c, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887121871495450158, guid: 901315c7f65749b4585a1ba9375ceb3c, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6887121872436583786, guid: 901315c7f65749b4585a1ba9375ceb3c, type: 3}
       propertyPath: m_LinearDrag
@@ -98484,7 +98536,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -445, y: -214}
+  m_AnchoredPosition: {x: -394.8, y: -152.9}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1400867242
@@ -109158,7 +109210,7 @@ MonoBehaviour:
   health: 0
   maxHealth: 100
   alive: 1
-  anim: {fileID: 1172473749}
+  anim: {fileID: 0}
   movePower: 10
 --- !u!50 &2055133025
 Rigidbody2D:
@@ -109181,6 +109233,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2055133028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055133018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fd3946e5d3b7a547897d48d463da318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetsInRange:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  targetedElement: {fileID: 0}
 --- !u!1 &2070583112
 GameObject:
   m_ObjectHideFlags: 0
@@ -110898,7 +110967,6 @@ GameObject:
   - component: {fileID: 2053518114221879509}
   - component: {fileID: 2053518114221879510}
   - component: {fileID: 2053518114221879511}
-  - component: {fileID: 2053518114221879512}
   - component: {fileID: 2053518114221879513}
   m_Layer: 7
   m_Name: CollegeStudent
@@ -110906,7 +110974,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &2053518114221879504
 Rigidbody2D:
   serializedVersion: 4
@@ -111080,20 +111148,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   targetedElement: {fileID: 0}
---- !u!114 &2053518114221879512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2053518114221879503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddbae0782ba6f034d9cbd54288826927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ability: {fileID: 11400000, guid: 49f02112cf643cf4ca2f9ea9b60808a3, type: 2}
-  key: 276
 --- !u!114 &2053518114221879513
 MonoBehaviour:
   m_ObjectHideFlags: 0

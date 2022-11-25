@@ -10,6 +10,13 @@ public class AbilityUI : MonoBehaviour
     bool isCooldown = false;
     public KeyCode ability1;
     public TargetController targetController;
+
+    public Animator anim;
+    public LayerMask enemyLayers;
+
+    public Transform attackPoint;
+    public float attackRange = 0.5f;
+    int attackDamage = 5;
     void Start()
     {
         abilityImage1.fillAmount = 1;
@@ -28,8 +35,19 @@ public class AbilityUI : MonoBehaviour
             abilityImage1.fillAmount = 1;
 
             //Efecto de la habilidad
-            Debug.Log("Ataque ejecutado");
-            targetController.targetedElement.SetActive(false);
+            //Debug.Log("Ataque ejecutado");
+            //targetController.targetedElement.SetActive(false);
+            //Animation
+            anim.SetTrigger("Attack");
+
+            //Detect enemies
+            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                Debug.Log("HIT");
+                enemy.GetComponent<EnemyHit>().TakeDamage(attackDamage);
+            }
 
         }
         if(isCooldown)
@@ -42,6 +60,14 @@ public class AbilityUI : MonoBehaviour
                 isCooldown = false;
             }
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 
 }
