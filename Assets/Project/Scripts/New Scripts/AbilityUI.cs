@@ -11,7 +11,7 @@ public class AbilityUI : MonoBehaviour
     public KeyCode ability1;
     void Start()
     {
-        abilityImage1.fillAmount = 0;
+        abilityImage1.fillAmount = 1;
     }
 
     void Update()
