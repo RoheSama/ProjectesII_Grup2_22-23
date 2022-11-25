@@ -5,18 +5,22 @@ using UnityEngine.UI;
 
 public class AbilityUI : MonoBehaviour
 {
+    // Ability1
     public Image abilityImage1;
     public float cooldown1;
     bool isCooldown = false;
     public KeyCode ability1;
     public TargetController targetController;
 
+    //Rohe
     public Animator anim;
     public LayerMask enemyLayers;
 
     public Transform attackPoint;
     public float attackRange = 0.5f;
     int attackDamage = 5;
+
+
     void Start()
     {
         abilityImage1.fillAmount = 1;
@@ -25,6 +29,7 @@ public class AbilityUI : MonoBehaviour
     void Update()
     {
         Ability1();
+
     }
 
     void Ability1()
@@ -48,7 +53,6 @@ public class AbilityUI : MonoBehaviour
                 Debug.Log("HIT");
                 enemy.GetComponent<EnemyHit>().TakeDamage(attackDamage);
             }
-
         }
         if(isCooldown)
         {
@@ -69,5 +73,4 @@ public class AbilityUI : MonoBehaviour
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
-
 }
