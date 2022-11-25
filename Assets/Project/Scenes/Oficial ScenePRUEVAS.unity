@@ -109636,7 +109636,6 @@ MonoBehaviour:
   alive: 1
   anim: {fileID: 1172473749}
   movePower: 10
-  powerUpActivated: 0
 --- !u!50 &2055133025
 Rigidbody2D:
   serializedVersion: 4
@@ -109690,12 +109689,16 @@ MonoBehaviour:
   cooldown1: 2
   ability1: 113
   targetController: {fileID: 0}
+  abilityImage2: {fileID: 2118007760}
+  cooldown2: 20
+  ability2: 101
   anim: {fileID: 1172473749}
   enemyLayers:
     serializedVersion: 2
     m_Bits: 256
   attackPoint: {fileID: 1438776506}
   attackRange: 0.5
+  powerUpActivated: 0
 --- !u!1 &2070583112
 GameObject:
   m_ObjectHideFlags: 0
@@ -111714,7 +111717,6 @@ MonoBehaviour:
   alive: 1
   anim: {fileID: 2053518114221879489}
   movePower: 10
-  powerUpActivated: 0
 --- !u!114 &2053518114221879511
 MonoBehaviour:
   m_ObjectHideFlags: 0

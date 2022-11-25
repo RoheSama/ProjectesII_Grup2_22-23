@@ -13,6 +13,12 @@ public class AbilityUI : MonoBehaviour
     public KeyCode ability1;
     public TargetController targetController;
 
+    //Abilty2
+    public Image abilityImage2;
+    public float cooldown2;
+    bool isCooldown2 = false;
+    public KeyCode ability2;
+
     //Rohe
     public Animator anim;
     public LayerMask enemyLayers;
@@ -30,6 +36,7 @@ public class AbilityUI : MonoBehaviour
     void Start()
     {
         abilityImage1.fillAmount = 1;
+        abilityImage2.fillAmount = 1;
 
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
@@ -43,10 +50,11 @@ public class AbilityUI : MonoBehaviour
             Ability1();
         }
 
-        if (powerUpAvailable)
-        {
-            PowerUp();
-        }
+        //if (powerUpAvailable)
+       // {
+
+            Ability2();
+        //}
 
     }
 
@@ -83,18 +91,40 @@ public class AbilityUI : MonoBehaviour
             }
         }
     }
+    void Ability2()
+    {
+        if (Input.GetKeyUp(ability2) && isCooldown2 == false)
+        {
+            isCooldown2 = true;
+            abilityImage2.fillAmount = 1;
 
+            //Efecto de la habilidad
+            PowerUp();
+            
+        }
+        if (isCooldown2)
+        {
+            PowerOff();
+            abilityImage2.fillAmount -= 1 / cooldown2 * Time.deltaTime;
+
+            if (abilityImage2.fillAmount <= 0)
+            {
+                abilityImage2.fillAmount = 0;
+                isCooldown2 = false;
+            }
+        }
+    }
     void PowerUp()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
+        //if (Input.GetKeyDown(KeyCode.E))
+       // {
             powerUpActivated = true;
             powerUpAvailable = false;
-            StartCoroutine(PowerUpCooldown());
+          //StartCoroutine(PowerUpCooldown());
             GetComponent<SpriteRenderer>().color = Color.yellow;
             agent.speed = agent.speed + powerUpSpeed;
             StartCoroutine(NormalForm());
-        }
+       // }
     }
 
     void PowerOff()
