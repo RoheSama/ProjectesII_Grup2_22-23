@@ -95874,11 +95874,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6887121871495450157, guid: 901315c7f65749b4585a1ba9375ceb3c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6887121871495450157, guid: 901315c7f65749b4585a1ba9375ceb3c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.02
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6887121871495450158, guid: 901315c7f65749b4585a1ba9375ceb3c, type: 3}
       propertyPath: m_Layer
@@ -95906,11 +95906,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6887121872436583789, guid: 901315c7f65749b4585a1ba9375ceb3c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5378802
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6887121872436583789, guid: 901315c7f65749b4585a1ba9375ceb3c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6717591
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6887121872436583789, guid: 901315c7f65749b4585a1ba9375ceb3c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -108762,9 +108762,22 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.193043, y: 0}
   serializedVersion: 2
-  m_Radius: 1.4
+  m_Radius: 1.3473113
+--- !u!114 &2055133028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055133018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 089b795d4a7cfde4199e36ee2e1e4a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1172473749}
 --- !u!1 &2070583112
 GameObject:
   m_ObjectHideFlags: 0

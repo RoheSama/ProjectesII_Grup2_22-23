@@ -74,7 +74,7 @@ public class PointAndClick : MonoBehaviour
 
     void PowerUp()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             powerUpAvailable = false;
             StartCoroutine(PowerUpCooldown());
@@ -92,7 +92,7 @@ public class PointAndClick : MonoBehaviour
 
     IEnumerator NormalForm()
     {
-        yield return new WaitForSeconds(15);
+        yield return new WaitForSeconds(5);
         PowerOff();
 
     }
