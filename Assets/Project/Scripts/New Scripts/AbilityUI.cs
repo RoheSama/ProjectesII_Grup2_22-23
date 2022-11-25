@@ -9,6 +9,7 @@ public class AbilityUI : MonoBehaviour
     public float cooldown1;
     bool isCooldown = false;
     public KeyCode ability1;
+    public TargetController targetController;
     void Start()
     {
         abilityImage1.fillAmount = 1;
@@ -25,7 +26,11 @@ public class AbilityUI : MonoBehaviour
         {
             isCooldown = true;
             abilityImage1.fillAmount = 1;
+
+            //Efecto de la habilidad
             Debug.Log("Ataque ejecutado");
+            targetController.targetedElement.SetActive(false);
+
         }
         if(isCooldown)
         {
