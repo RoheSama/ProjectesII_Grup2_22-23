@@ -21,7 +21,6 @@ public class PatternController : MonoBehaviour
     public GameObject soulEater;
   
     //Target
-    public targetScript targetScript;
     public TargetController targetController;
     
     //Update

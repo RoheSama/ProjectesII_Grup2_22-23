@@ -10,12 +10,6 @@ public class TargetController : MonoBehaviour
 
     int tabCounter = 0;
 
-
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         UpdateTab();
