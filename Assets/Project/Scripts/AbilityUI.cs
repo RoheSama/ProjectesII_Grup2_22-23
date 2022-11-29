@@ -27,6 +27,8 @@ public class AbilityUI : MonoBehaviour
     public bool powerUpActivated = false;
 
     NavMeshAgent agent;
+
+    public Slider shadowCooldown;
     void Start()
     {
         abilityImage1.fillAmount = 1;
@@ -38,10 +40,8 @@ public class AbilityUI : MonoBehaviour
 
     void Update()
     {
-        if (powerUpActivated)
-        {
             Ability1();
-        }
+ 
 
         if (powerUpAvailable)
         {
@@ -52,36 +52,40 @@ public class AbilityUI : MonoBehaviour
 
     void Ability1()
     {
-        if(Input.GetKeyUp(ability1)&& isCooldown == false)
+        if (powerUpActivated)
         {
-            isCooldown = true;
-            abilityImage1.fillAmount = 1;
-
-            //Efecto de la habilidad
-            //Debug.Log("Ataque ejecutado");
-            //targetController.targetedElement.SetActive(false);
-            //Animation
-            anim.SetTrigger("Attack");
-
-            //Detect enemies
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-
-            foreach (Collider2D enemy in hitEnemies)
+            if (Input.GetKeyUp(ability1) && isCooldown == false)
             {
-                Debug.Log("HIT");
-                enemy.GetComponent<EnemyHit>().TakeDamage(attackDamage);
+                isCooldown = true;
+                abilityImage1.fillAmount = 1;
+
+                //Efecto de la habilidad
+                //Debug.Log("Ataque ejecutado");
+                //targetController.targetedElement.SetActive(false);
+                //Animation
+                anim.SetTrigger("Attack");
+
+                //Detect enemies
+                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+                foreach (Collider2D enemy in hitEnemies)
+                {
+                    Debug.Log("HIT");
+                    enemy.GetComponent<EnemyHit>().TakeDamage(attackDamage);
+                }
             }
         }
-        if(isCooldown)
-        {
-            abilityImage1.fillAmount -= 1 / cooldown1 * Time.deltaTime;
-
-            if(abilityImage1.fillAmount <= 0)
+            if (isCooldown)
             {
-                abilityImage1.fillAmount = 0;
-                isCooldown = false;
+                abilityImage1.fillAmount -= 1 / cooldown1 * Time.deltaTime;
+
+                if (abilityImage1.fillAmount <= 0)
+                {
+                    abilityImage1.fillAmount = 0;
+                    isCooldown = false;
+                }
             }
-        }
+        
     }
 
     void PowerUp()
