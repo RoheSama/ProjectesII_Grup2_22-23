@@ -17,8 +17,6 @@ namespace ClearSky
         private int direction = 1;
         public bool alive = true;
 
-
-
         public ShowPhone showPhone;
 
         public float health = 0f;
