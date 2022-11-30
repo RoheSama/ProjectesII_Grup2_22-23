@@ -26,6 +26,7 @@ public class WaypointController : MonoBehaviour
     void Update()
     {
         FollowWaypoints();
+        AvoidVoids();
     }
     void FollowWaypoints()
     {
@@ -35,7 +36,9 @@ public class WaypointController : MonoBehaviour
         // Si el waypoint == al waypoint final -1, torna a començar la ruta de waypoints
         if(waypointsIndex == waypoints.Length -1)
         {
+            // Reset Index
             waypointsIndex = 0;
+            timeWaypointsIndex = 0;
         }
        
         // Si arribes al waypoint
@@ -59,6 +62,11 @@ public class WaypointController : MonoBehaviour
                 timer = 0;
             }
         }
+    }
+
+    void AvoidVoids()
+    {
+
     }
    
 }
