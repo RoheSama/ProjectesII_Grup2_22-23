@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyHit : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class EnemyHit : MonoBehaviour
 
     public Animator anim;
 
+    private bool enemyDied = false;
+
+    public Slider rageBar;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +40,16 @@ public class EnemyHit : MonoBehaviour
 
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
-        
+
+        enemyDied = true;
+    }
+
+    void UpdateRageBar()
+    {
+        if (enemyDied)
+        {
+            rageBar.value = +10;
+            enemyDied = false;
+        }
     }
 }
