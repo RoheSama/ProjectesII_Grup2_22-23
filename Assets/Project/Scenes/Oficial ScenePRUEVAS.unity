@@ -100870,7 +100870,7 @@ MonoBehaviour:
   - {fileID: 327378788}
   - {fileID: 239341093}
   - {fileID: 327378788}
-  timeAvoidingPlayer: 0
+  timeAvoidingPlayer: 8
 --- !u!1 &1590565337
 GameObject:
   m_ObjectHideFlags: 0
@@ -104173,7 +104173,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2055133018}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.1
+  m_Radius: 0.6
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50

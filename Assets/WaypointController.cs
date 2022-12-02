@@ -7,6 +7,7 @@ public class WaypointController : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
 
+
     //---Follow Waypoints
     bool followWaypoints = true;
 
@@ -90,15 +91,25 @@ public class WaypointController : MonoBehaviour
     {
       if(avoidPlayer)
         {
+            avoidPlayerTimer += Time.deltaTime;
+
             if(canGenerateRandomSecurePlace)
             {
-                randomSecurePlace = Random.Range(1, 3);
+                randomSecurePlace = Random.Range(0, securePlace.Length);
             }
            
             followWaypoints = false;
             navMeshAgent.destination = securePlace[randomSecurePlace].transform.position;
             canGenerateRandomSecurePlace = false;
+            navMeshAgent.speed = 3;
+
+            if(avoidPlayerTimer >= timeAvoidingPlayer)
+            {
+                avoidPlayer = false;
+                followWaypoints = true;
+                avoidPlayerTimer = 0;
+                navMeshAgent.speed = 1;
+            }
         }
     }
-   
 }
