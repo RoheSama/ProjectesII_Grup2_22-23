@@ -22,7 +22,7 @@ public class MainMenuPhone : MonoBehaviour
     // Button de Play 
     public void StartGame()
     {
-        SceneManager.LoadScene("SchoolScene");
+        SceneManager.LoadScene("Oficial ScenePRUEVAS");
     }
     
     // Button de Exit
