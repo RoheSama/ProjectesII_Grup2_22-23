@@ -69,6 +69,7 @@ public class WaypointController : MonoBehaviour
         else if(transform.position == navMeshAgent.destination)
         {
             if (!waypointsTimerReached)
+                //Començar contador
                 waypointsTimer += Time.deltaTime;
 
             if (!waypointsTimerReached && waypointsTimer >= timeWaypoints[timeWaypointsIndex])
@@ -79,6 +80,8 @@ public class WaypointController : MonoBehaviour
 
                 waypointsTimerReached = true;
             }
+           
+            // Si arribes al waypointsTimer
             if(waypointsTimerReached)
             {
                 waypointsTimerReached = false;
@@ -91,10 +94,13 @@ public class WaypointController : MonoBehaviour
     {
       if(avoidPlayer)
         {
+            // Comencçar contador
             avoidPlayerTimer += Time.deltaTime;
+
 
             if(canGenerateRandomSecurePlace)
             {
+                // Genera un numero random entre 0 i el maxim de randmosScurePlaces
                 randomSecurePlace = Random.Range(0, securePlace.Length);
             }
            
@@ -103,6 +109,7 @@ public class WaypointController : MonoBehaviour
             canGenerateRandomSecurePlace = false;
             navMeshAgent.speed = 3;
 
+            //Si arribes al temps de timeAvoidingPlayer
             if(avoidPlayerTimer >= timeAvoidingPlayer)
             {
                 avoidPlayer = false;
