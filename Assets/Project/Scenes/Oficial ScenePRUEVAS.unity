@@ -6652,7 +6652,10 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 0
   anim: {fileID: 2053518114221879489}
+  enemyDied: 0
   rageBar: {fileID: 0}
+  maxRage: 100
+  currentRage: 20
 --- !u!1 &157773566
 GameObject:
   m_ObjectHideFlags: 0
@@ -30269,7 +30272,10 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 0
   anim: {fileID: 2053518114221879489}
+  enemyDied: 0
   rageBar: {fileID: 0}
+  maxRage: 100
+  currentRage: 20
 --- !u!1 &432869777
 GameObject:
   m_ObjectHideFlags: 0
@@ -37385,6 +37391,37 @@ SortingGroup:
   m_SortingLayerID: -1989034469
   m_SortingLayer: 13
   m_SortingOrder: 0
+--- !u!1 &899931037
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 899931038}
+  m_Layer: 7
+  m_Name: ShotPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &899931038
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899931037}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.55, y: -0.44, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2055133019}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &919234889
 GameObject:
   m_ObjectHideFlags: 0
@@ -92694,7 +92731,10 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 0
   anim: {fileID: 2053518114221879489}
+  enemyDied: 0
   rageBar: {fileID: 0}
+  maxRage: 100
+  currentRage: 20
 --- !u!1 &990887683
 GameObject:
   m_ObjectHideFlags: 0
@@ -93220,7 +93260,10 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 0
   anim: {fileID: 2053518114221879489}
+  enemyDied: 0
   rageBar: {fileID: 0}
+  maxRage: 100
+  currentRage: 20
 --- !u!1001 &1026894344
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -94704,7 +94747,10 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 0
   anim: {fileID: 2053518114221879489}
+  enemyDied: 0
   rageBar: {fileID: 0}
+  maxRage: 100
+  currentRage: 20
 --- !u!1 &1116845642 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8233668366669173445, guid: 389d2366e1db64147aa81dd92ed3e4dd, type: 3}
@@ -96161,7 +96207,10 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 0
   anim: {fileID: 2053518114221879489}
+  enemyDied: 0
   rageBar: {fileID: 0}
+  maxRage: 100
+  currentRage: 20
 --- !u!1 &1157301569
 GameObject:
   m_ObjectHideFlags: 0
@@ -96593,7 +96642,10 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 0
   anim: {fileID: 2053518114221879489}
+  enemyDied: 0
   rageBar: {fileID: 0}
+  maxRage: 100
+  currentRage: 20
 --- !u!1 &1202439155
 GameObject:
   m_ObjectHideFlags: 0
@@ -97427,7 +97479,10 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 0
   anim: {fileID: 2053518114221879489}
+  enemyDied: 0
   rageBar: {fileID: 0}
+  maxRage: 100
+  currentRage: 20
 --- !u!1 &1282793739
 GameObject:
   m_ObjectHideFlags: 0
@@ -105856,7 +105911,10 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 0
   anim: {fileID: 2053518114221879489}
+  enemyDied: 0
   rageBar: {fileID: 0}
+  maxRage: 100
+  currentRage: 20
 --- !u!1 &1578973064
 GameObject:
   m_ObjectHideFlags: 0
@@ -106656,7 +106714,10 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 0
   anim: {fileID: 2053518114221879489}
+  enemyDied: 0
   rageBar: {fileID: 0}
+  maxRage: 100
+  currentRage: 20
 --- !u!1 &1754559497
 GameObject:
   m_ObjectHideFlags: 0
@@ -110696,6 +110757,12 @@ MonoBehaviour:
   powerUpActivated: 0
   powerUpDuration: 5
   shadowCooldown: {fileID: 1055496704}
+  rageBar: {fileID: 0}
+  maxRage: 100
+  currentRage: 20
+  offset: 0
+  projectile: {fileID: 6741877466556563078, guid: 267f332630ce7ea4daf7c69350a12f0c, type: 3}
+  shotPoint: {fileID: 899931038}
 --- !u!1 &2070583112
 GameObject:
   m_ObjectHideFlags: 0
@@ -110800,7 +110867,10 @@ MonoBehaviour:
   maxHealth: 10
   currentHealth: 0
   anim: {fileID: 2075045310}
+  enemyDied: 0
   rageBar: {fileID: 843331757}
+  maxRage: 100
+  currentRage: 20
 --- !u!58 &2075045308
 CircleCollider2D:
   m_ObjectHideFlags: 0

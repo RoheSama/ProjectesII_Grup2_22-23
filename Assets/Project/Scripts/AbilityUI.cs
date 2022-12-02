@@ -35,6 +35,15 @@ public class AbilityUI : MonoBehaviour
     NavMeshAgent agent;
 
     public Slider shadowCooldown;
+
+    public Slider rageBar;
+    public float maxRage = 100;
+    public float currentRage = 20;
+
+    public float offset;
+
+    public GameObject projectile;
+    public Transform shotPoint;
     void Start()
     {
         abilityImage1.fillAmount = 1;
@@ -49,10 +58,12 @@ public class AbilityUI : MonoBehaviour
     {
         Ability1();
         PowerUp();
+        //UpdateRageBar();
+        RangedAttack(); 
     }
 
     void Ability1()
-    {
+    { 
         if (powerUpActivated)
         {
             if (Input.GetKeyUp(ability1) && isCooldown == false)
@@ -142,13 +153,32 @@ public class AbilityUI : MonoBehaviour
         PowerOff();
     }
 
+    void RangedAttack()
+    {
+        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        float rotZ = Mathf.Atan2(difference.x, difference.y) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Instantiate(projectile, shotPoint.position, transform.rotation);
+        }
+    }
+
     //IEnumerator PowerUpCooldown()
     //{
     //    yield return new WaitForSeconds(10);
     //    powerUpAvailable = true;
 
     //}
-
+    //void UpdateRageBar()
+    //{
+    //    if (GetComponent<EnemyHit>().enemyDied)
+    //    {
+    //        rageBar.value = currentRage / maxRage;
+    //        GetComponent<EnemyHit>().enemyDied = false;
+    //    }
+    //}
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null)

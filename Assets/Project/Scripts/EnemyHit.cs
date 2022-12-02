@@ -10,15 +10,21 @@ public class EnemyHit : MonoBehaviour
 
     public Animator anim;
 
-    private bool enemyDied = false;
+    public bool enemyDied = false;
 
     public Slider rageBar;
+    public float maxRage = 100;
+    public float currentRage = 20;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
     }
 
+    //void Update()
+    //{
+    //    UpdateRageBar();
+    //}
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -41,15 +47,16 @@ public class EnemyHit : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
 
-        enemyDied = true;
+        //enemyDied = true;
+        UpdateRageBar();
     }
 
     void UpdateRageBar()
     {
-        if (enemyDied)
-        {
-            rageBar.value = +10;
+        
+            rageBar.value = currentRage / maxRage;
             enemyDied = false;
-        }
+            Debug.Log("Barrita");
+        
     }
 }
