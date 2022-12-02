@@ -6,18 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuPhone : MonoBehaviour
 {
     public GameObject mainMenu;
-    public Animator animator;
-
-    void Start()
-    {
-
-    }
-    //Button de On 
-    public void PowerButtonTouched()
-    {
-        mainMenu.SetActive(true);
-        animator.SetBool("activateEyes", true);
-    }
+    public GameObject optionsMenu;
 
     // Button de Play 
     public void StartGame()
@@ -25,6 +14,11 @@ public class MainMenuPhone : MonoBehaviour
         SceneManager.LoadScene("Oficial ScenePRUEVAS");
     }
     
+    public void Options()
+    {
+        optionsMenu.SetActive(false);
+    }
+
     // Button de Exit
     public void ExitGame()
     {
