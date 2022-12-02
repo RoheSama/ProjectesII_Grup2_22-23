@@ -7,7 +7,10 @@ public class WaypointController : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
 
-    //Waypoints
+    //---Follow Waypoints
+    bool followWaypoints = true;
+
+    //Waypoints for FollowWaypoints
     public GameObject []waypoints;
     int waypointsIndex = 0;
 
@@ -15,18 +18,38 @@ public class WaypointController : MonoBehaviour
     public int[] timeWaypoints;
     int timeWaypointsIndex = 0;
 
-    float timer = 0;
-    bool timerReached = false;
+    float waypointsTimer = 0;
+    bool waypointsTimerReached = false;
 
-    void Start()
-    {
-      
-    }
+    //Waypoints for AvoidPlayer function
+    public GameObject[] securePlace;
+    int securePlaceIndex = 0;
+
+    //---Avoid Player
+    bool avoidPlayer = false;
+    bool canGenerateRandomSecurePlace = true;
+    int randomSecurePlace;
+
+    // Avoid Player Timer
+    float avoidPlayerTimer = 0;
+    public int timeAvoidingPlayer;
+
 
     void Update()
     {
-        FollowWaypoints();
-        AvoidVoids();
+       
+        AvoidPlayer();
+        if (followWaypoints)
+        {
+            FollowWaypoints();
+        }
+        
+       
+        if (Input.GetKeyDown("e"))
+        {
+            avoidPlayer = true;
+            canGenerateRandomSecurePlace = true;
+        }
     }
     void FollowWaypoints()
     {
@@ -44,29 +67,38 @@ public class WaypointController : MonoBehaviour
         // Si arribes al waypoint
         else if(transform.position == navMeshAgent.destination)
         {
-            if (!timerReached)
-                timer += Time.deltaTime;
+            if (!waypointsTimerReached)
+                waypointsTimer += Time.deltaTime;
 
-            if (!timerReached && timer >= timeWaypoints[timeWaypointsIndex])
+            if (!waypointsTimerReached && waypointsTimer >= timeWaypoints[timeWaypointsIndex])
             {
                 // Index++
                 waypointsIndex++;
                 timeWaypointsIndex++;
 
-                //Set to false so that We don't run this again
-                timerReached = true;
+                waypointsTimerReached = true;
             }
-            if(timerReached)
+            if(waypointsTimerReached)
             {
-                timerReached = false;
-                timer = 0;
+                waypointsTimerReached = false;
+                waypointsTimer = 0;
             }
         }
     }
 
-    void AvoidVoids()
+    void AvoidPlayer()
     {
-
+      if(avoidPlayer)
+        {
+            if(canGenerateRandomSecurePlace)
+            {
+                randomSecurePlace = Random.Range(1, 3);
+            }
+           
+            followWaypoints = false;
+            navMeshAgent.destination = securePlace[randomSecurePlace].transform.position;
+            canGenerateRandomSecurePlace = false;
+        }
     }
    
 }
