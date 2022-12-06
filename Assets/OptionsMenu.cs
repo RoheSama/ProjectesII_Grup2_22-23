@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class OptionsMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Size1()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Screen.SetResolution(640, 480, false);
     }
 }
