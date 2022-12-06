@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Project/Scenes/SchoolScene.unity
     guid: 18c395eaec0d09b4e8a1908915fc541b
+  - enabled: 1
+    path: Assets/Project/Scenes/Oficial ScenePRUEVAS.unity
+    guid: 42ad1139359004248bcde660e6087b9e
   m_configObjects: {}
