@@ -352,7 +352,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3182755}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 173449648}
+        m_TargetAssemblyTypeName: ControlsMenu, Assembly-CSharp
+        m_MethodName: BackToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3182755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,7 +488,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 173449649}
+        m_TargetAssemblyTypeName: ScreenMenu, Assembly-CSharp
+        m_MethodName: Fullscreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &73346291
 GameObject:
@@ -564,7 +588,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_IsOn: 1
+  m_IsOn: 0
 --- !u!1 &89625834
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,7 +672,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 89625837}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 173449650}
+        m_TargetAssemblyTypeName: AudioMenu, Assembly-CSharp
+        m_MethodName: BackToOptionsMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &89625837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -963,6 +999,9 @@ GameObject:
   - component: {fileID: 173449645}
   - component: {fileID: 173449646}
   - component: {fileID: 173449647}
+  - component: {fileID: 173449648}
+  - component: {fileID: 173449649}
+  - component: {fileID: 173449650}
   m_Layer: 0
   m_Name: ------MENU MANAGER
   m_TagString: Untagged
@@ -1054,6 +1093,49 @@ MonoBehaviour:
   audioMenu: {fileID: 643550896}
   optionsMenu: {fileID: 513929408}
   mainMenu: {fileID: 676746127}
+--- !u!114 &173449648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173449640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 350294a6753ad9b43a39f91a86e2467e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlsMenu: {fileID: 992721073}
+  mainMenu: {fileID: 676746127}
+--- !u!114 &173449649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173449640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b4901961d354a0499fabefea5ed9ced, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenMenu: {fileID: 1773246284}
+  optionsMenu: {fileID: 513929408}
+  fullscreenToggle: {fileID: 50457005}
+--- !u!114 &173449650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173449640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40fda0e18afb2914e9f29ddda2a5eb39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionsMenu: {fileID: 513929408}
+  audioMenu: {fileID: 643550896}
 --- !u!1 &230364751
 GameObject:
   m_ObjectHideFlags: 0
@@ -2383,7 +2465,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 561429689}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 173449649}
+        m_TargetAssemblyTypeName: ScreenMenu, Assembly-CSharp
+        m_MethodName: Resolution2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &561429689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2926,7 +3020,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 804656048}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 173449649}
+        m_TargetAssemblyTypeName: ScreenMenu, Assembly-CSharp
+        m_MethodName: BackToOptionsMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &804656048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5358,7 +5464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!328 &1492476000
 VideoPlayer:
   m_ObjectHideFlags: 0
@@ -5626,7 +5732,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1528030432}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 173449649}
+        m_TargetAssemblyTypeName: ScreenMenu, Assembly-CSharp
+        m_MethodName: Resolution3
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1528030432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6885,7 +7003,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1866242579}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 173449649}
+        m_TargetAssemblyTypeName: ScreenMenu, Assembly-CSharp
+        m_MethodName: Resolution1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1866242579
 MonoBehaviour:
   m_ObjectHideFlags: 0
