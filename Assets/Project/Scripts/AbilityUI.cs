@@ -40,10 +40,6 @@ public class AbilityUI : MonoBehaviour
     public float maxRage = 100;
     public float currentRage = 20;
 
-    public float offset;
-
-    public GameObject projectile;
-    public Transform shotPoint;
     void Start()
     {
         abilityImage1.fillAmount = 1;
@@ -59,7 +55,6 @@ public class AbilityUI : MonoBehaviour
         Ability1();
         PowerUp();
         //UpdateRageBar();
-        RangedAttack(); 
     }
 
     void Ability1()
@@ -153,17 +148,7 @@ public class AbilityUI : MonoBehaviour
         PowerOff();
     }
 
-    void RangedAttack()
-    {
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        float rotZ = Mathf.Atan2(difference.x, difference.y) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Instantiate(projectile, shotPoint.position, transform.rotation);
-        }
-    }
+   
 
     //IEnumerator PowerUpCooldown()
     //{

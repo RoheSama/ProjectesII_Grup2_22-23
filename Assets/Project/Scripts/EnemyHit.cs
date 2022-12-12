@@ -10,21 +10,21 @@ public class EnemyHit : MonoBehaviour
 
     public Animator anim;
 
-    public bool enemyDied = false;
+    public bool updateRageBar = false;
 
-    public Slider rageBar;
-    public float maxRage = 100;
-    public float currentRage = 20;
+    [SerializeField]
+    private RageBar rageBar;
+
+    //public Slider rageBar;
+    //public float maxRage = 100;
+    //public float currentRage = 20;
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        rageBar = FindObjectOfType<RageBar>();  
     }
 
-    //void Update()
-    //{
-    //    UpdateRageBar();
-    //}
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -46,17 +46,16 @@ public class EnemyHit : MonoBehaviour
 
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
-
+        rageBar.UpdateRageBar();
+        //UpdateRageBar();
         //enemyDied = true;
-        UpdateRageBar();
     }
 
-    void UpdateRageBar()
-    {
-        
-            rageBar.value = currentRage / maxRage;
-            enemyDied = false;
-            Debug.Log("Barrita");
-        
-    }
+    //void UpdateRageBar()
+    //{
+
+    //    rageBar.value = currentRage / maxRage;
+    //    enemyDied = false;
+    //    Debug.Log("Barrita");
+    //}
 }

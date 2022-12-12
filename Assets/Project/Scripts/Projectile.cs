@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
@@ -13,24 +14,13 @@ public class Projectile : MonoBehaviour
     private void Start()
     {
         Invoke("DestroyProjectile", lifeTime);
+        GetComponent<Rigidbody2D>().AddForce(transform.right * speed, ForceMode2D.Impulse);
     }
-
-    private void Update()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.up, distance, solid);
-        if(hitInfo.collider != null)
-        {
-            if (hitInfo.collider.CompareTag("Target"))
-            {
-                Debug.Log("ENEMY DAMAGED");
-            }
-            DestroyProjectile();
-        }
-
-
-        transform.Translate(transform.up * speed * Time.deltaTime); 
+        //DamageEnemy
+        DestroyProjectile();
     }
-
     void DestroyProjectile()
     {
         //Instantiate(destroyEffect, transform.position, Quaternion.identity);
