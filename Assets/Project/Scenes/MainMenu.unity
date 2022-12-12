@@ -353,7 +353,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 173449648}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ControlsMenu, Assembly-CSharp
         m_MethodName: BackToMainMenu
         m_Mode: 1
@@ -999,7 +999,7 @@ GameObject:
   - component: {fileID: 173449645}
   - component: {fileID: 173449646}
   - component: {fileID: 173449647}
-  - component: {fileID: 173449648}
+  - component: {fileID: 173449651}
   - component: {fileID: 173449649}
   - component: {fileID: 173449650}
   m_Layer: 0
@@ -1093,20 +1093,6 @@ MonoBehaviour:
   audioMenu: {fileID: 643550896}
   optionsMenu: {fileID: 513929408}
   mainMenu: {fileID: 676746127}
---- !u!114 &173449648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 173449640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 350294a6753ad9b43a39f91a86e2467e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controlsMenu: {fileID: 992721073}
-  mainMenu: {fileID: 676746127}
 --- !u!114 &173449649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1134,8 +1120,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40fda0e18afb2914e9f29ddda2a5eb39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  optionsMenu: {fileID: 513929408}
   audioMenu: {fileID: 643550896}
+  optionsMenu: {fileID: 513929408}
+--- !u!114 &173449651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173449640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cd31b02d386ec443b7f56be43929dbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlsMenu: {fileID: 992721073}
+  mainMenu: {fileID: 676746127}
 --- !u!1 &230364751
 GameObject:
   m_ObjectHideFlags: 0
@@ -3631,7 +3631,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 909690463}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 173449651}
+        m_TargetAssemblyTypeName: ControlsMenu, Assembly-CSharp
+        m_MethodName: BackToMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &909690463
 MonoBehaviour:
   m_ObjectHideFlags: 0
