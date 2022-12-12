@@ -9,7 +9,6 @@ public class MenuController : MonoBehaviour
     public GameObject optionsMenu;
     public GameObject controlsMenu;
     public GameObject menuAnim;
-    public GameObject backButton;
     
     
     // Button de Play 
@@ -22,8 +21,6 @@ public class MenuController : MonoBehaviour
     public void Options()
     {  
         optionsMenu.SetActive(true);
-        backButton.SetActive(true);
-        menuAnim.SetActive(false);
         controlsMenu.SetActive(false);
         mainMenu.SetActive(false);
     }
@@ -32,20 +29,16 @@ public class MenuController : MonoBehaviour
     public void Controls()
     { 
         controlsMenu.SetActive(true);
-        backButton.SetActive(true);
         optionsMenu.SetActive(false);
-        menuAnim.SetActive(false);
         mainMenu.SetActive(false);
     }
 
     // Button de Back
     public void Back()
     {
-        menuAnim.SetActive(true);
         mainMenu.SetActive(true);
         controlsMenu.SetActive(false);
         optionsMenu.SetActive(false);
-        backButton.SetActive(false);
     }
     
     // Button de Exit
