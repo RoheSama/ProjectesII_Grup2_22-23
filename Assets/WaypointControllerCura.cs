@@ -21,6 +21,9 @@ public class WaypointControllerCura : MonoBehaviour
     float waypointsTimer = 0;
     bool waypointsTimerReached = false;
 
+    //Player
+    public Transform Player;
+
     void Update()
     {
         if (followWaypoints)
@@ -66,5 +69,10 @@ public class WaypointControllerCura : MonoBehaviour
                 waypointsTimer = 0;
             }
         }
+    }
+
+    void Chase()
+    {
+        navMeshAgent.SetDestination(Player.position);
     }
 }
