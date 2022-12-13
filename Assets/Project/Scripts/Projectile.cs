@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization.Formatters;
 using UnityEditor.PackageManager;
 using UnityEngine;
 
@@ -16,10 +17,16 @@ public class Projectile : MonoBehaviour
         Invoke("DestroyProjectile", lifeTime);
         GetComponent<Rigidbody2D>().AddForce(transform.right * speed, ForceMode2D.Impulse);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+
+
+    private void OnTriggerEnter(Collider2D collision)
     {
-        //DamageEnemy
-        DestroyProjectile();
+        if (collision.tag == "Target")
+        {
+            //DamageEnemy
+            DestroyProjectile();
+        }
+       
     }
     void DestroyProjectile()
     {

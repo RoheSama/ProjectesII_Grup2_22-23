@@ -6,17 +6,15 @@ using UnityEngine.UI;
 public class RageBar : MonoBehaviour
 {
     public Slider rageBar;
-    public float maxRage = 100;
-    public float currentRage = 0;
+    //public float maxRage = 100;
+    //public float currentRage = 0;
+    int progress = 0;
 
-    public void Start()
-    {
-        rageBar.value = currentRage;
-    }
     // Update is called once per frame
     public void UpdateRageBar()
     {
-        currentRage =+ 20;
+        progress++;
+        rageBar.value = progress;
         Debug.Log("Barrita");
     }
 }

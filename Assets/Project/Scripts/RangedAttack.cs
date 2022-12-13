@@ -20,8 +20,8 @@ public class RangedAttack : MonoBehaviour
     
     void Shot()
     {
-        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
-        difference.z = 1;
+        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) + transform.position;
+        //difference.z = 1;
         Quaternion rotation = Quaternion.LookRotation(difference, Vector3.back);
 
         if(cdShot <= 0)
