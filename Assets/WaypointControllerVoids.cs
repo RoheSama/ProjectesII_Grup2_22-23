@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class WaypointController : MonoBehaviour
+public class WaypointControllerVoids : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
 
