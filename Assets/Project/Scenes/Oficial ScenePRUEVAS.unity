@@ -5877,6 +5877,7 @@ MonoBehaviour:
   - {fileID: 1613426250}
   - {fileID: 858199718}
   timeWaypoints: 0a00000000000000000000000000000000000000050000000500000000000000
+  Player: {fileID: 2024040061}
 --- !u!114 &71831223
 MonoBehaviour:
   m_ObjectHideFlags: 0
