@@ -1,16 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.Serialization.Formatters;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
     public float speed;
     public float lifeTime;
-    public float distance;
-    public LayerMask solid;
+    //public float distance;
+    //public LayerMask solid;
     //public GameObject destroyEffect;
+    public int damage;
 
     private void Start()
     {
@@ -19,12 +18,14 @@ public class Projectile : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Target")
         {
             //DamageEnemy
+            //Destroy(collision.gameObject);
             DestroyProjectile();
+            collision.GetComponent<EnemyHit>().TakeDamage(damage);
         }
        
     }
