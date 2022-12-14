@@ -8,9 +8,13 @@ public class AbilityUI : MonoBehaviour
 {
     // Ability1
     public Image abilityImage1;
+    public Image abilityImageSM;
     public float cooldown1;
+    public float cooldownPowerUp;
+    public float currentCD;
     bool isCooldown = false;
     public KeyCode ability1;
+    public KeyCode powerUpKey;
     public TargetController targetController;
 
     //Rohe
@@ -26,10 +30,20 @@ public class AbilityUI : MonoBehaviour
     private bool powerUpAvailable = true;
     public bool powerUpActivated = false;
 
+    public float powerUpDuration;
+
     NavMeshAgent agent;
+
+    public Slider shadowCooldown;
+
+    public Slider rageBar;
+    public float maxRage = 100;
+    public float currentRage = 20;
+
     void Start()
     {
         abilityImage1.fillAmount = 1;
+        abilityImageSM.fillAmount = 1;
 
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
@@ -38,63 +52,87 @@ public class AbilityUI : MonoBehaviour
 
     void Update()
     {
-        if (powerUpActivated)
-        {
-            Ability1();
-        }
-
-        if (powerUpAvailable)
-        {
-            PowerUp();
-        }
-
+        Ability1();
+        PowerUp();
+        //UpdateRageBar();
     }
 
     void Ability1()
-    {
-        if(Input.GetKeyUp(ability1)&& isCooldown == false)
+    { 
+        if (powerUpActivated)
         {
-            isCooldown = true;
-            abilityImage1.fillAmount = 1;
-
-            //Efecto de la habilidad
-            //Debug.Log("Ataque ejecutado");
-            //targetController.targetedElement.SetActive(false);
-            //Animation
-            anim.SetTrigger("Attack");
-
-            //Detect enemies
-            Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-
-            foreach (Collider2D enemy in hitEnemies)
+            if (Input.GetKeyUp(ability1) && isCooldown == false)
             {
-                Debug.Log("HIT");
-                enemy.GetComponent<EnemyHit>().TakeDamage(attackDamage);
+                isCooldown = true;
+                abilityImage1.fillAmount = 1;
+
+                //Efecto de la habilidad
+                //Debug.Log("Ataque ejecutado");
+                //targetController.targetedElement.SetActive(false);
+                //Animation
+                anim.SetTrigger("Attack");
+
+                //Detect enemies
+                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+
+                foreach (Collider2D enemy in hitEnemies)
+                {
+                    Debug.Log("HIT");
+                    enemy.GetComponent<EnemyHit>().TakeDamage(attackDamage);
+                }
             }
         }
-        if(isCooldown)
-        {
-            abilityImage1.fillAmount -= 1 / cooldown1 * Time.deltaTime;
-
-            if(abilityImage1.fillAmount <= 0)
+            if (isCooldown)
             {
-                abilityImage1.fillAmount = 0;
-                isCooldown = false;
+                abilityImage1.fillAmount -= 1 / cooldown1 * Time.deltaTime;
+               
+
+            if (abilityImage1.fillAmount <= 0)
+                {
+                    abilityImage1.fillAmount = 0;
+                    isCooldown = false;
+                }
             }
-        }
+
+            
+        
     }
 
     void PowerUp()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(powerUpKey) && powerUpAvailable == true)
         {
-            powerUpActivated = true;
             powerUpAvailable = false;
-            StartCoroutine(PowerUpCooldown());
+            powerUpActivated = true;
+            currentCD = 0;
+            abilityImageSM.fillAmount = 1;
+            //StartCoroutine(PowerUpCooldown());
             GetComponent<SpriteRenderer>().color = Color.yellow;
             agent.speed = agent.speed + powerUpSpeed;
             StartCoroutine(NormalForm());
+           
+
         }
+
+        if (!powerUpAvailable)
+        {
+            abilityImageSM.fillAmount -= 1 / cooldownPowerUp * Time.deltaTime;
+            currentCD = Mathf.Clamp(currentCD, 0.0f, cooldownPowerUp);
+
+            if (abilityImageSM.fillAmount <= 0)
+            {
+                abilityImageSM.fillAmount = 0;
+                powerUpAvailable = true;
+            }
+            else
+            {
+                currentCD += Time.deltaTime;
+                currentCD = Mathf.Clamp(currentCD, 0.0f, powerUpDuration);
+            }
+        }
+
+        shadowCooldown.value = currentCD / powerUpDuration;
+        
     }
 
     void PowerOff()
@@ -106,18 +144,26 @@ public class AbilityUI : MonoBehaviour
 
     IEnumerator NormalForm()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(powerUpDuration);
         PowerOff();
-
     }
 
-    IEnumerator PowerUpCooldown()
-    {
-        yield return new WaitForSeconds(10);
-        powerUpAvailable = true;
+   
 
-    }
+    //IEnumerator PowerUpCooldown()
+    //{
+    //    yield return new WaitForSeconds(10);
+    //    powerUpAvailable = true;
 
+    //}
+    //void UpdateRageBar()
+    //{
+    //    if (GetComponent<EnemyHit>().enemyDied)
+    //    {
+    //        rageBar.value = currentRage / maxRage;
+    //        GetComponent<EnemyHit>().enemyDied = false;
+    //    }
+    //}
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null)
