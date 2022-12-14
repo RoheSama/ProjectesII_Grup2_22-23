@@ -73,6 +73,40 @@ public class PointAndClick : MonoBehaviour
        // anim.SetBool("Walk", true);         
     }
 
+    //void PowerUp()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.E))
+    //    {
+    //        powerUpActivated = true;
+    //        powerUpAvailable = false;
+    //        StartCoroutine(PowerUpCooldown());
+    //        GetComponent<SpriteRenderer>().color = Color.yellow;
+    //        agent.speed = agent.speed + powerUpSpeed;
+    //        StartCoroutine(NormalForm());
+    //    }
+    //}
+
+    //void PowerOff()
+    //{
+    //    GetComponent<SpriteRenderer>().color = Color.white;
+    //    agent.speed = agent.speed - powerUpSpeed;
+    //    powerUpActivated = false;
+    //}
+
+    //IEnumerator NormalForm()
+    //{
+    //    yield return new WaitForSeconds(5);
+    //    PowerOff();
+
+    //}
+
+    //IEnumerator PowerUpCooldown()
+    //{
+    //    yield return new WaitForSeconds(10);
+    //    powerUpAvailable = true;
+
+    //}
+
     public void Hurt()
     {
         anim.SetTrigger("hurt");
