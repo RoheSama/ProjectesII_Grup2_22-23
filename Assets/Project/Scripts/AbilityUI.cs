@@ -9,13 +9,24 @@ public class AbilityUI : MonoBehaviour
     // Ability1
     public Image abilityImage1;
     public Image abilityImageSM;
+    public Image abilityImageRA;
+
     public float cooldown1;
     public float cooldownPowerUp;
+    public float cooldownRanged;
     public float currentCD;
-    bool isCooldown = false;
+
+    bool isCooldown1 = false;
+    bool isCooldownRA = false;
+
     public KeyCode ability1;
     public KeyCode powerUpKey;
+    public KeyCode rangedKey;
+
     public TargetController targetController;
+
+    public Transform shotPosition;
+    public GameObject projectile;
 
     //Rohe
     public Animator anim;
@@ -23,7 +34,7 @@ public class AbilityUI : MonoBehaviour
 
     public Transform attackPoint;
     public float attackRange = 0.5f;
-    int attackDamage = 5;
+    int attackDamage = 10;
 
     private float powerUpSpeed = 1.5f;
 
@@ -36,14 +47,11 @@ public class AbilityUI : MonoBehaviour
 
     public Slider shadowCooldown;
 
-    public Slider rageBar;
-    public float maxRage = 100;
-    public float currentRage = 20;
-
     void Start()
     {
         abilityImage1.fillAmount = 1;
         abilityImageSM.fillAmount = 1;
+        abilityImageRA.fillAmount = 1;
 
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
@@ -54,6 +62,7 @@ public class AbilityUI : MonoBehaviour
     {
         Ability1();
         PowerUp();
+        RangedAttack();
         //UpdateRageBar();
     }
 
@@ -61,9 +70,9 @@ public class AbilityUI : MonoBehaviour
     { 
         if (powerUpActivated)
         {
-            if (Input.GetKeyUp(ability1) && isCooldown == false)
+            if (Input.GetKeyUp(ability1) && isCooldown1 == false)
             {
-                isCooldown = true;
+                isCooldown1 = true;
                 abilityImage1.fillAmount = 1;
 
                 //Efecto de la habilidad
@@ -82,7 +91,7 @@ public class AbilityUI : MonoBehaviour
                 }
             }
         }
-            if (isCooldown)
+            if (isCooldown1)
             {
                 abilityImage1.fillAmount -= 1 / cooldown1 * Time.deltaTime;
                
@@ -90,12 +99,9 @@ public class AbilityUI : MonoBehaviour
             if (abilityImage1.fillAmount <= 0)
                 {
                     abilityImage1.fillAmount = 0;
-                    isCooldown = false;
+                    isCooldown1 = false;
                 }
-            }
-
-            
-        
+            }       
     }
 
     void PowerUp()
@@ -148,22 +154,31 @@ public class AbilityUI : MonoBehaviour
         PowerOff();
     }
 
-   
+    void RangedAttack()
+    {
+        if (powerUpActivated)
+        {
+            if (Input.GetKeyUp(rangedKey) && isCooldownRA == false)
+            {
+                isCooldownRA = true;
+                abilityImageRA.fillAmount = 1;
 
-    //IEnumerator PowerUpCooldown()
-    //{
-    //    yield return new WaitForSeconds(10);
-    //    powerUpAvailable = true;
+                Instantiate(projectile, shotPosition.position, shotPosition.rotation);
+            }
+        }
+        if (isCooldownRA)
+        {
+            abilityImageRA.fillAmount -= 1 / cooldownRanged * Time.deltaTime;
 
-    //}
-    //void UpdateRageBar()
-    //{
-    //    if (GetComponent<EnemyHit>().enemyDied)
-    //    {
-    //        rageBar.value = currentRage / maxRage;
-    //        GetComponent<EnemyHit>().enemyDied = false;
-    //    }
-    //}
+
+            if (abilityImageRA.fillAmount <= 0)
+            {
+                abilityImageRA.fillAmount = 0;
+                isCooldownRA = false;
+            }
+        }
+    }
+    
     private void OnDrawGizmosSelected()
     {
         if (attackPoint == null)

@@ -22,7 +22,7 @@ public class EnemyHit : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        rageBar = FindObjectOfType<RageBar>();  
+        rageBar = FindObjectOfType<RageBar>();
     }
 
     public void TakeDamage(int damage)
@@ -51,11 +51,4 @@ public class EnemyHit : MonoBehaviour
         //enemyDied = true;
     }
 
-    //void UpdateRageBar()
-    //{
-
-    //    rageBar.value = currentRage / maxRage;
-    //    enemyDied = false;
-    //    Debug.Log("Barrita");
-    //}
 }
