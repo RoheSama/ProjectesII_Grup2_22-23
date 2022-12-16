@@ -12,6 +12,7 @@ TagManager:
   - Touchable
   - Curses_Background
   - Mark
+  - Waypoint
   layers:
   - Default
   - TransparentFX
@@ -90,4 +91,7 @@ TagManager:
     locked: 0
   - name: Phone
     uniqueID: 2407111009
+    locked: 0
+  - name: Waypoints
+    uniqueID: 2387940015
     locked: 0
