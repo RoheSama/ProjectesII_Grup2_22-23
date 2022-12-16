@@ -36758,7 +36758,7 @@ NavMeshAgent:
   m_Radius: 0.6
   m_Speed: 1
   m_Acceleration: 8
-  avoidancePriority: 40
+  avoidancePriority: 20
   m_AngularSpeed: 100
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
@@ -95616,7 +95616,7 @@ NavMeshAgent:
   m_Radius: 0.6
   m_Speed: 1
   m_Acceleration: 8
-  avoidancePriority: 99
+  avoidancePriority: 80
   m_AngularSpeed: 100
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
@@ -106262,7 +106262,7 @@ NavMeshAgent:
   m_Radius: 0.6
   m_Speed: 1
   m_Acceleration: 8
-  avoidancePriority: 80
+  avoidancePriority: 60
   m_AngularSpeed: 100
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
@@ -111443,7 +111443,7 @@ NavMeshAgent:
   m_Radius: 0.6
   m_Speed: 1
   m_Acceleration: 8
-  avoidancePriority: 20
+  avoidancePriority: 0
   m_AngularSpeed: 100
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
@@ -113709,7 +113709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rageBar: {fileID: 1672899107}
-  maxValue: 3
+  maxValue: 5
   raged: 0
   player: {fileID: 2055133018}
 --- !u!114 &1672899107
@@ -113757,7 +113757,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 695501114}
   m_Direction: 2
   m_MinValue: 0
-  m_MaxValue: 3
+  m_MaxValue: 5
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -116734,7 +116734,7 @@ NavMeshAgent:
   m_Radius: 0.6
   m_Speed: 1
   m_Acceleration: 8
-  avoidancePriority: 60
+  avoidancePriority: 40
   m_AngularSpeed: 100
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
