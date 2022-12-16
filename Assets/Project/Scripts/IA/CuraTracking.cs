@@ -7,6 +7,9 @@ public class CuraTracking : MonoBehaviour
 {
     public Transform Player;
     NavMeshAgent agent;
+    [SerializeField]
+    private AbilityUI player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +21,9 @@ public class CuraTracking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(Player.position);
+        if (player.powerUpActivated)
+        {
+            agent.SetDestination(Player.position);
+        }
     }
 }

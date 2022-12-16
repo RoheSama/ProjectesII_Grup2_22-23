@@ -10,10 +10,11 @@ public class RageBar : MonoBehaviour
     //public float currentRage = 0;
     int progress = 0;
     public float maxValue;
-    private float timeRemaining = 5f;
-    private const float timeMax = 5f;
+    private float timeRemaining = 10f;
+    private const float timeMax = 10f;
     public bool raged = false;
 
+    public GameObject player;
     // Update is called once per frame
     void Update()
     {
@@ -48,8 +49,14 @@ public class RageBar : MonoBehaviour
                 Debug.Log("ZERO");
             }
         }
-        
-     
+
+        if (raged)
+        {
+            player.GetComponent<SpriteRenderer>().color = Color.red;
+
+        }
+
+
     }
 
     public void UpdateRageBar()
