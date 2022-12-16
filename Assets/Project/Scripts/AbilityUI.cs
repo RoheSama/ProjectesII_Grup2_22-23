@@ -103,29 +103,6 @@ public class AbilityUI : MonoBehaviour
                 }
             }       
     }
-    void Ability2()
-    {
-        if (Input.GetKeyUp(ability2) && isCooldown2 == false)
-        {
-            isCooldown2 = true;
-            abilityImage2.fillAmount = 1;
-
-            //Efecto de la habilidad
-            PowerUp();
-            
-        }
-        if (isCooldown2)
-        {
-            PowerOff();
-            abilityImage2.fillAmount -= 1 / cooldown2 * Time.deltaTime;
-
-            if (abilityImage2.fillAmount <= 0)
-            {
-                abilityImage2.fillAmount = 0;
-                isCooldown2 = false;
-            }
-        }
-    }
     void PowerUp()
     {
         if (Input.GetKeyDown(powerUpKey) && powerUpAvailable == true)
