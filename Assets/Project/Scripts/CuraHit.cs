@@ -7,11 +7,11 @@ public class CuraHit : MonoBehaviour
 {
     public int maxHealth = 10;
     public int currentHealth;
-    public GameObject cura;
 
     public Animator anim;
 
     public bool updateRageBar = false;
+    public bool isCura;
 
     [SerializeField]
     private RageBar rageBar;
@@ -28,7 +28,21 @@ public class CuraHit : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (rageBar.raged)
+        if (isCura)
+        {
+            if (rageBar.raged)
+            {
+                currentHealth -= damage;
+
+                anim.SetTrigger("Hurt");
+
+                if (currentHealth <= 0)
+                {
+                    Die();
+                }
+            }
+        }
+        else
         {
             currentHealth -= damage;
 
@@ -40,6 +54,7 @@ public class CuraHit : MonoBehaviour
             }
         }
        
+       
     }
 
     void Die()
@@ -48,7 +63,7 @@ public class CuraHit : MonoBehaviour
 
         anim.SetBool("isDead", true);
         GetComponent<Collider2D>().enabled = false;
-        Destroy(cura);
+        Destroy(gameObject);
      
     }
 

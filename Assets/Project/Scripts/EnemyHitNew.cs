@@ -11,6 +11,7 @@ public class EnemyHitNew : MonoBehaviour
     public Animator anim;
 
     public bool updateRageBar = false;
+    public bool isCura;
 
     [SerializeField]
     private RageBar rageBar;
@@ -27,14 +28,33 @@ public class EnemyHitNew : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-
-        anim.SetTrigger("Hurt");
-
-        if(currentHealth <= 0)
+        if (isCura)
         {
-            Die();
+            if (rageBar.raged)
+            {
+                currentHealth -= damage;
+
+                anim.SetTrigger("Hurt");
+
+                if (currentHealth <= 0)
+                {
+                    Die();
+                }
+            }
         }
+        else
+        {
+            currentHealth -= damage;
+
+            anim.SetTrigger("Hurt");
+
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+        }
+
+
     }
 
     void Die()

@@ -23,8 +23,6 @@ public class AbilityUI : MonoBehaviour
     public KeyCode powerUpKey;
     public KeyCode rangedKey;
 
-    public TargetController targetController;
-
     public Transform shotPosition;
     public GameObject projectile;
 
@@ -92,18 +90,11 @@ public class AbilityUI : MonoBehaviour
                 foreach (Collider2D enemy in hitEnemies)
                 {
                     Debug.Log("HIT");
-                    if(enemy.tag == "Target")
-                    {
-                          enemy.GetComponent<EnemyHitNew>().TakeDamage(attackDamage);
-                    }
-                    else if(enemy.tag == "Cura")
-                    {
-                        Debug.Log("HIT Cura");
-                        cura.SetActive(false);
-                    }
+                    enemy.GetComponent<EnemyHitNew>().TakeDamage(attackDamage);
+                   
+              
                 }
 
-                
             }
         }
             if (isCooldown1)

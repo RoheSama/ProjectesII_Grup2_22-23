@@ -53,7 +53,6 @@ public class RageBar : MonoBehaviour
         if (raged)
         {
             player.GetComponent<SpriteRenderer>().color = Color.red;
-
         }
 
 
