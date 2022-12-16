@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EnemyHit : MonoBehaviour
+public class EnemyHitNew : MonoBehaviour
 {
     public int maxHealth = 10;
     public int currentHealth;
@@ -41,9 +41,9 @@ public class EnemyHit : MonoBehaviour
     {
         Debug.Log("Enemy died");
 
-        anim.SetBool("Dead", true);
+        anim.SetBool("isDead", true);
         GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
+        Destroy(gameObject);
         rageBar.UpdateRageBar();
         //UpdateRageBar();
         //enemyDied = true;

@@ -87,7 +87,7 @@ public class AbilityUI : MonoBehaviour
                 foreach (Collider2D enemy in hitEnemies)
                 {
                     Debug.Log("HIT");
-                    enemy.GetComponent<EnemyHit>().TakeDamage(attackDamage);
+                    enemy.GetComponent<EnemyHitNew>().TakeDamage(attackDamage);
                 }
             }
         }
