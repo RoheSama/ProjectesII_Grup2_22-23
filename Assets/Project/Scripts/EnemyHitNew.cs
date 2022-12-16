@@ -10,7 +10,6 @@ public class EnemyHitNew : MonoBehaviour
 
     public Animator anim;
 
-    public bool updateRageBar = false;
     public bool isCura;
 
     [SerializeField]

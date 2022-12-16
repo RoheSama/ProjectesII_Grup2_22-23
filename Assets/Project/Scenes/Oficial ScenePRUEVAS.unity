@@ -32332,7 +32332,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &500675249
 Transform:
   m_ObjectHideFlags: 0
@@ -36672,7 +36672,6 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 0
   anim: {fileID: 2053518114221879489}
-  updateRageBar: 0
   isCura: 0
   rageBar: {fileID: 1672899106}
 --- !u!114 &756125710
@@ -95531,7 +95530,6 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 0
   anim: {fileID: 2053518114221879489}
-  updateRageBar: 0
   isCura: 0
   rageBar: {fileID: 1672899106}
 --- !u!114 &1102070068
@@ -98358,24 +98356,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1283335255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1283335251}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 584e7facae1bbd9418d25b5d7585d76f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 410406444}
-  speed: 1.5
-  distanceBetween: 10
-  attackDamage: 10
-  attackSpeed: 0.5
-  canAttack: 0
 --- !u!70 &1283335256
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -98413,9 +98393,9 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.1
-  m_Speed: 2
+  m_Speed: 1
   m_Acceleration: 8
-  avoidancePriority: 50
+  avoidancePriority: 99
   m_AngularSpeed: 120
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
@@ -98454,9 +98434,28 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 0
   anim: {fileID: 0}
-  updateRageBar: 0
   isCura: 1
   rageBar: {fileID: 1672899106}
+--- !u!114 &1283335265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283335251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 380594f62cd06d0499a053b39e689b46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navMeshAgent: {fileID: 1283335260}
+  waypoints:
+  - {fileID: 777421714}
+  - {fileID: 85485063}
+  - {fileID: 1877410869}
+  - {fileID: 1627142290}
+  - {fileID: 858199718}
+  timeWaypoints: 03000000070000000c0000000400000000000000
 --- !u!1 &1284758319
 GameObject:
   m_ObjectHideFlags: 0
@@ -106177,7 +106176,6 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 0
   anim: {fileID: 2053518114221879489}
-  updateRageBar: 0
   isCura: 0
   rageBar: {fileID: 1672899106}
 --- !u!114 &1521537907
@@ -111359,7 +111357,6 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 0
   anim: {fileID: 2053518114221879489}
-  updateRageBar: 0
   isCura: 0
   rageBar: {fileID: 1672899106}
 --- !u!114 &1542512183
@@ -111985,7 +111982,6 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 0
   anim: {fileID: 2053518114221879489}
-  updateRageBar: 0
   isCura: 0
   rageBar: {fileID: 1672899106}
 --- !u!1 &1588865372
@@ -116652,7 +116648,6 @@ MonoBehaviour:
   maxHealth: 5
   currentHealth: 0
   anim: {fileID: 2053518114221879489}
-  updateRageBar: 0
   isCura: 0
   rageBar: {fileID: 1672899106}
 --- !u!114 &1951576973
@@ -118354,7 +118349,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 2055133018}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.6
+  m_Radius: 0.1
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 99

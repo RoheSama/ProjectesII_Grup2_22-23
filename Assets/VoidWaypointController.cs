@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class WaypointController : MonoBehaviour
+public class VoidWaypointController : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
-
 
     //---Follow Waypoints
     bool followWaypoints = true;
@@ -134,23 +133,23 @@ public class WaypointController : MonoBehaviour
 
     void Jam()
     {  
-        jamTimer += Time.deltaTime;
-        if(canGetCoords)
-        {
-            xCoords = navMeshAgent.transform.position.x;
-            yCoords = navMeshAgent.transform.position.y;
-            canGetCoords = false;
-        }
+        //jamTimer += Time.deltaTime;
+        //if(canGetCoords)
+        //{
+        //    xCoords = navMeshAgent.transform.position.x;
+        //    yCoords = navMeshAgent.transform.position.y;
+        //    canGetCoords = false;
+        //}
 
-        if(jamTimer >= timeToDetectJam)
-        {
-            if (!isInWaypoint && xCoords == navMeshAgent.transform.position.x || xCoords == navMeshAgent.transform.position.x  || yCoords == navMeshAgent.transform.position.y || yCoords == navMeshAgent.transform.position.y)
-            {
-               // Debug.Log("Atasco");
-            }
-            canGetCoords = true;
-            jamTimer = 0;
-        }
+        //if(jamTimer >= timeToDetectJam)
+        //{
+        //    if (!isInWaypoint && xCoords == navMeshAgent.transform.position.x || xCoords == navMeshAgent.transform.position.x  || yCoords == navMeshAgent.transform.position.y || yCoords == navMeshAgent.transform.position.y)
+        //    {
+        //        Debug.Log("Atasco");
+        //    }
+        //    canGetCoords = true;
+        //    jamTimer = 0;
+        //}
     }
 
     void IsInWaypoint()

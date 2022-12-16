@@ -91,8 +91,7 @@ public class AbilityUI : MonoBehaviour
                 {
                     Debug.Log("HIT");
                     enemy.GetComponent<EnemyHitNew>().TakeDamage(attackDamage);
-                   
-              
+                  
                 }
 
             }
