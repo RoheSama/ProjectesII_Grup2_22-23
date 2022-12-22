@@ -34,12 +34,10 @@ public class EnemyHitNew : MonoBehaviour
         {
             if (rageBar.raged)
             {
+                Instantiate(blood, transform.position, Quaternion.identity);
                 currentHealth -= damage;
 
                 anim.SetTrigger("Hurt");
-
-                Instantiate(blood, transform.position, Quaternion.identity);
-
                 if (currentHealth <= 0)
                 {
                     Die();

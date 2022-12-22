@@ -98246,11 +98246,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2053518115102101880, guid: 521aebf732701414da1c25c63cb8390b, type: 3}
   m_PrefabInstance: {fileID: 1283335249}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1283335252 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1280057925408222619, guid: 521aebf732701414da1c25c63cb8390b, type: 3}
-  m_PrefabInstance: {fileID: 1283335249}
-  m_PrefabAsset: {fileID: 0}
 --- !u!50 &1283335254
 Rigidbody2D:
   serializedVersion: 4
@@ -98272,22 +98267,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &1283335256
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1283335252}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 1.87}
-  m_Size: {x: 1.11, y: 3.97}
-  m_Direction: 0
 --- !u!210 &1283335257
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -98347,7 +98326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829ef1be20ea8834d81d4bb1f7c94b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 10
   currentHealth: 0
   anim: {fileID: 2053518114221879489}
   isCura: 1
@@ -98374,6 +98353,22 @@ MonoBehaviour:
   - {fileID: 1627142290}
   - {fileID: 858199718}
   timeWaypoints: 03000000070000000c0000000400000000000000
+--- !u!70 &1283335267
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283335251}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.014957905, y: 0.79029465}
+  m_Size: {x: 0.4700842, y: 1.6631489}
+  m_Direction: 0
 --- !u!1 &1284758319
 GameObject:
   m_ObjectHideFlags: 0
