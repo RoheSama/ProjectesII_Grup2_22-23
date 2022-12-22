@@ -80,6 +80,9 @@ TagManager:
   - name: Front 3
     uniqueID: 1220260211
     locked: 0
+  - name: Front 4
+    uniqueID: 1754665483
+    locked: 0
   - name: Furniture 2
     uniqueID: 4154268413
     locked: 0
