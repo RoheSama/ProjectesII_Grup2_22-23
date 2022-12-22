@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using static UnityEngine.UI.Extensions.Gradient2;
 
 public class AbilityUI : MonoBehaviour
 {
@@ -45,10 +46,10 @@ public class AbilityUI : MonoBehaviour
 
     public Slider shadowCooldown;
 
-
-
     public GameObject cura;
-
+
+
+    public GameObject shadowModeEffect;
 
     void Start()
     {
@@ -84,7 +85,7 @@ public class AbilityUI : MonoBehaviour
                 //Animation
                 anim.SetTrigger("Attack");
 
-                //Detect enemies
+                //Detect enemies
                 Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
                 foreach (Collider2D enemy in hitEnemies)
@@ -111,7 +112,7 @@ public class AbilityUI : MonoBehaviour
     void PowerUp()
     {
         if (Input.GetKeyDown(powerUpKey) && powerUpAvailable == true)
-        {
+        {            shadowModeEffect.SetActive(true);
             powerUpAvailable = false;
             powerUpActivated = true;
             currentCD = 0;
@@ -120,24 +121,22 @@ public class AbilityUI : MonoBehaviour
             GetComponent<SpriteRenderer>().color = Color.yellow;
             agent.speed = agent.speed + powerUpSpeed;
             StartCoroutine(NormalForm());
-           
-
         }
 
         if (!powerUpAvailable)
         {
             abilityImageSM.fillAmount -= 1 / cooldownPowerUp * Time.deltaTime;
-            currentCD = Mathf.Clamp(currentCD, 0.0f, cooldownPowerUp);
+            currentCD = Mathf.Clamp(currentCD, 0.0f, cooldownPowerUp);
 
             if (abilityImageSM.fillAmount <= 0)
             {
                 abilityImageSM.fillAmount = 0;
-                powerUpAvailable = true;
+                powerUpAvailable = true;                
             }
             else
             {
                 currentCD += Time.deltaTime;
-                currentCD = Mathf.Clamp(currentCD, 0.0f, powerUpDuration);
+                currentCD = Mathf.Clamp(currentCD, 0.0f, powerUpDuration);
             }
         }
 
@@ -149,7 +148,8 @@ public class AbilityUI : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().color = Color.white;
         agent.speed = agent.speed - powerUpSpeed;
-        powerUpActivated = false;
+        powerUpActivated = false;
+        shadowModeEffect.SetActive(false);
     }
 
     IEnumerator NormalForm()

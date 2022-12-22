@@ -15,6 +15,9 @@ public class EnemyHitNew : MonoBehaviour
     [SerializeField]
     private RageBar rageBar;
 
+    public GameObject blood;
+    public GameObject bloodDie;
+
     //public Slider rageBar;
     //public float maxRage = 100;
     //public float currentRage = 20;
@@ -35,14 +38,18 @@ public class EnemyHitNew : MonoBehaviour
 
                 anim.SetTrigger("Hurt");
 
+                Instantiate(blood, transform.position, Quaternion.identity);
+
                 if (currentHealth <= 0)
                 {
                     Die();
+                    Instantiate(bloodDie, transform.position, Quaternion.identity);
                 }
             }
         }
         else
         {
+            Instantiate(blood, transform.position, Quaternion.identity);
             currentHealth -= damage;
 
             anim.SetTrigger("Hurt");
@@ -50,6 +57,7 @@ public class EnemyHitNew : MonoBehaviour
             if (currentHealth <= 0)
             {
                 Die();
+                Instantiate(bloodDie, transform.position, Quaternion.identity);
             }
         }
 
