@@ -14,6 +14,7 @@ TagManager:
   - Mark
   - Waypoint
   - SecurePlaceToHide
+  - AttackTrigger
   layers:
   - Default
   - TransparentFX
