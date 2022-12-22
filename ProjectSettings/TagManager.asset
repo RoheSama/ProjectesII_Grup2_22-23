@@ -106,6 +106,9 @@ TagManager:
   - name: Front 4
     uniqueID: 1754665483
     locked: 0
+  - name: Front5
+    uniqueID: 498250241
+    locked: 0
   - name: Furniture 2
     uniqueID: 4154268413
     locked: 0
