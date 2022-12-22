@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
+using static UnityEngine.UI.Extensions.Gradient2;
 
 public class AbilityUI : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class AbilityUI : MonoBehaviour
     //Rohe
     public Animator anim;
     public LayerMask enemyLayers;
+    public LayerMask curaLayers;
 
     public Transform attackPoint;
     public float attackRange = 0.5f;
@@ -45,17 +47,13 @@ public class AbilityUI : MonoBehaviour
 
     public Slider shadowCooldown;
 
-
-
-    public GameObject cura;
-
+    public GameObject shadowModeEffect;
 
     void Start()
     {
         abilityImage1.fillAmount = 1;
         abilityImageSM.fillAmount = 1;
-        abilityImageRA.fillAmount = 1;
-
+        abilityImageRA.fillAmount = 1;
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -84,10 +82,17 @@ public class AbilityUI : MonoBehaviour
                 //Animation
                 anim.SetTrigger("Attack");
 
-                //Detect enemies
-                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-
-                foreach (Collider2D enemy in hitEnemies)
+                //Detect enemies
+                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);                Collider2D[] hitCura = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, curaLayers);
+
+                foreach (Collider2D cura in hitCura)
+                {
+                    Debug.Log("Cura HIT");
+                    cura.GetComponent<CuraHit>().TakeDamage(attackDamage);
+
+                }
+
+                foreach (Collider2D enemy in hitEnemies)
                 {
                     Debug.Log("HIT");
                     enemy.GetComponent<EnemyHitNew>().TakeDamage(attackDamage);
@@ -111,7 +116,7 @@ public class AbilityUI : MonoBehaviour
     void PowerUp()
     {
         if (Input.GetKeyDown(powerUpKey) && powerUpAvailable == true)
-        {
+        {            shadowModeEffect.SetActive(true);
             powerUpAvailable = false;
             powerUpActivated = true;
             currentCD = 0;
@@ -120,24 +125,22 @@ public class AbilityUI : MonoBehaviour
             GetComponent<SpriteRenderer>().color = Color.yellow;
             agent.speed = agent.speed + powerUpSpeed;
             StartCoroutine(NormalForm());
-           
-
         }
 
         if (!powerUpAvailable)
         {
             abilityImageSM.fillAmount -= 1 / cooldownPowerUp * Time.deltaTime;
-            currentCD = Mathf.Clamp(currentCD, 0.0f, cooldownPowerUp);
+            currentCD = Mathf.Clamp(currentCD, 0.0f, cooldownPowerUp);
 
             if (abilityImageSM.fillAmount <= 0)
             {
                 abilityImageSM.fillAmount = 0;
-                powerUpAvailable = true;
+                powerUpAvailable = true;                
             }
             else
             {
                 currentCD += Time.deltaTime;
-                currentCD = Mathf.Clamp(currentCD, 0.0f, powerUpDuration);
+                currentCD = Mathf.Clamp(currentCD, 0.0f, powerUpDuration);
             }
         }
 
@@ -149,7 +152,8 @@ public class AbilityUI : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().color = Color.white;
         agent.speed = agent.speed - powerUpSpeed;
-        powerUpActivated = false;
+        powerUpActivated = false;
+        shadowModeEffect.SetActive(false);
     }
 
     IEnumerator NormalForm()

@@ -18,11 +18,11 @@ public class RageBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(rageBar.value == maxValue)
+        if (rageBar.value == maxValue)
         {
             raged = true;
         }
-
+           
         if (raged)
         {
             rageBar.value = CalculateSliderValue();
@@ -46,7 +46,6 @@ public class RageBar : MonoBehaviour
             if (timeRemaining == 0)
             {
                 raged = false;
-                Debug.Log("ZERO");
             }
         }
 
