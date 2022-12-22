@@ -30,6 +30,7 @@ public class AbilityUI : MonoBehaviour
     //Rohe
     public Animator anim;
     public LayerMask enemyLayers;
+    public LayerMask curaLayers;
 
     public Transform attackPoint;
     public float attackRange = 0.5f;
@@ -46,17 +47,13 @@ public class AbilityUI : MonoBehaviour
 
     public Slider shadowCooldown;
 
-    public GameObject cura;
-
-
     public GameObject shadowModeEffect;
 
     void Start()
     {
         abilityImage1.fillAmount = 1;
         abilityImageSM.fillAmount = 1;
-        abilityImageRA.fillAmount = 1;
-
+        abilityImageRA.fillAmount = 1;
         agent = GetComponent<NavMeshAgent>();
         agent.updateRotation = false;
         agent.updateUpAxis = false;
@@ -86,9 +83,16 @@ public class AbilityUI : MonoBehaviour
                 anim.SetTrigger("Attack");
 
                 //Detect enemies
-                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
-
-                foreach (Collider2D enemy in hitEnemies)
+                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);                Collider2D[] hitCura = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, curaLayers);
+
+                foreach (Collider2D cura in hitCura)
+                {
+                    Debug.Log("Cura HIT");
+                    cura.GetComponent<CuraHit>().TakeDamage(attackDamage);
+
+                }
+
+                foreach (Collider2D enemy in hitEnemies)
                 {
                     Debug.Log("HIT");
                     enemy.GetComponent<EnemyHitNew>().TakeDamage(attackDamage);
