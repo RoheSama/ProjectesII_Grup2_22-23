@@ -36,7 +36,16 @@ public class VoidWaypointController : MonoBehaviour
     public int timeAvoidingPlayer;
 
 
-    //---JAM
+    // Hide In Secure Place function
+    bool canHideInSecurePlace = false;
+    public GameObject securePlaceToHide;
+    public GameObject iconSecurePlaceToHide;
+
+    public GameObject IASprite;
+
+
+    /// COMENTAT /// 
+
     float jamTimer = 0;
     int timeToDetectJam = 3;
     float xCoords;
@@ -47,13 +56,24 @@ public class VoidWaypointController : MonoBehaviour
     //Is In Waypoint
     bool isInWaypoint = false;
 
+    void Start()
+    {
+        iconSecurePlaceToHide.SetActive(false); 
+    }
+
     void Update()
     {
        // IsInWaypoint();
-        Jam();
+       // Jam();
         AvoidPlayer();
         if (followWaypoints)
-        {
+        {  
+            //Sortir del Hidden Place
+            IASprite.SetActive(true);
+            iconSecurePlaceToHide.SetActive(false);
+            canHideInSecurePlace = false;
+
+            //Seguir els Waypoints
             FollowWaypoints();
         }
         
@@ -61,6 +81,16 @@ public class VoidWaypointController : MonoBehaviour
         {
             avoidPlayer = true;
             canGenerateRandomSecurePlace = true;
+        }
+
+       if(avoidPlayer)
+        {
+            if (canHideInSecurePlace)
+            {
+                //Amagarse
+                IASprite.SetActive(false);
+                iconSecurePlaceToHide.SetActive(true);
+            }
         }
     }
     void FollowWaypoints()
@@ -131,8 +161,19 @@ public class VoidWaypointController : MonoBehaviour
         }
     }
 
-    void Jam()
-    {  
+
+    private void OnTriggerEnter2D(Collider2D other)
+    { 
+        if(other.CompareTag("SecurePlaceToHide"))
+        {
+            canHideInSecurePlace= true;
+        }
+    }
+    
+
+
+   // void Jam()
+   // {  
         //jamTimer += Time.deltaTime;
         //if(canGetCoords)
         //{
@@ -150,21 +191,21 @@ public class VoidWaypointController : MonoBehaviour
         //    canGetCoords = true;
         //    jamTimer = 0;
         //}
-    }
+   // }
 
-    void IsInWaypoint()
-    {
-        for(int i = 0; i<= waypoints.Length;i++)
-        {
-            if (transform.position != waypoints[i].transform.position)
-            {
-                isInWaypoint = false;
-            }
-            else
-                isInWaypoint = true;
-            Debug.Log("WAYPOINT");
-                break;
-        }
+    //void IsInWaypoint()
+    //{
+    //    for(int i = 0; i<= waypoints.Length;i++)
+    //    {
+    //        if (transform.position != waypoints[i].transform.position)
+    //        {
+    //            isInWaypoint = false;
+    //        }
+    //        else
+    //            isInWaypoint = true;
+    //        Debug.Log("WAYPOINT");
+    //            break;
+    //    }
         
-    }
+    //}
 }

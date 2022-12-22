@@ -13,6 +13,7 @@ TagManager:
   - Curses_Background
   - Mark
   - Waypoint
+  - SecurePlaceToHide
   layers:
   - Default
   - TransparentFX
