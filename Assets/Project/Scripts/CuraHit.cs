@@ -10,15 +10,10 @@ public class CuraHit : MonoBehaviour
 
     public Animator anim;
 
-    public bool updateRageBar = false;
-    public bool isCura;
 
     [SerializeField]
     private RageBar rageBar;
 
-    //public Slider rageBar;
-    //public float maxRage = 100;
-    //public float currentRage = 20;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,8 +23,7 @@ public class CuraHit : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        if (isCura)
-        {
+        
             if (rageBar.raged)
             {
                 currentHealth -= damage;
@@ -40,21 +34,7 @@ public class CuraHit : MonoBehaviour
                 {
                     Die();
                 }
-            }
-        }
-        else
-        {
-            currentHealth -= damage;
-
-            anim.SetTrigger("Hurt");
-
-            if (currentHealth <= 0)
-            {
-                Die();
-            }
-        }
-       
-       
+            }    
     }
 
     void Die()
