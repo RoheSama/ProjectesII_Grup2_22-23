@@ -54,7 +54,7 @@ public class VoidWaypointController : MonoBehaviour
     float toleranceX = 0;
     float toleranceY = 0;
 
-
+    public GameObject attackRange;
 
     //Player
     public GameObject player;
@@ -107,6 +107,7 @@ public class VoidWaypointController : MonoBehaviour
             weapon.SetActive(false);
             canHideInSecurePlace = false;
             canAttack= false;
+            attackRange.SetActive(false);
 
             //Seguir els Waypoints
             FollowWaypoints();
@@ -137,6 +138,7 @@ public class VoidWaypointController : MonoBehaviour
                     toleranceY = Random.Range(-1, 1);
                     weapon.transform.position = new Vector2(player.transform.position.x + toleranceX, player.transform.position.y + toleranceY);
                     weaponTimer = 0;
+                    attackRange.SetActive(true);
                 }
             }
         }

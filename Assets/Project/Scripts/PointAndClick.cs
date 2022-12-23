@@ -26,6 +26,8 @@ public class PointAndClick : MonoBehaviour
     private int direction = 1;
     Vector2 moveVelocity;
 
+    bool canSlow = false;
+
     //private float powerUpSpeed = 1.5f;
 
     //private bool powerUpAvailable = true;
@@ -56,6 +58,13 @@ public class PointAndClick : MonoBehaviour
             //{
             //    PowerUp();
             //}
+            if(canSlow == true)
+            {
+                Debug.Log("RELANTIZAO");
+                agent.speed = 0.5f;
+            }
+            else
+                agent.speed = 3.5f;
         }
     }
 
@@ -64,6 +73,7 @@ public class PointAndClick : MonoBehaviour
         if (Input.GetMouseButtonDown(1)) //Right Click
         {
             target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+           // canSlow= false;
         }
     }
 
@@ -111,4 +121,21 @@ public class PointAndClick : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
 
     }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Attack Range"))
+        {
+            canSlow = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Attack Range"))
+        {
+            canSlow = false;
+        }
+    }
+
 }
