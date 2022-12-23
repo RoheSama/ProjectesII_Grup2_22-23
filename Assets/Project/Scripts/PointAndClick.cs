@@ -28,6 +28,8 @@ public class PointAndClick : MonoBehaviour
 
     bool canSlow = false;
 
+    public GameObject bloodDie;
+
     //private float powerUpSpeed = 1.5f;
 
     //private bool powerUpAvailable = true;
@@ -109,9 +111,12 @@ public class PointAndClick : MonoBehaviour
         {
             Debug.Log("LOSE");
             health = 0;
-            anim.SetTrigger("die");
+            //anim.SetTrigger("die");
+            //Destroy(gameObject);
             alive = false;
             StartCoroutine(Wait());
+            Instantiate(bloodDie, transform.position, Quaternion.identity);
+            this.enabled = false;
         }
     }
 
