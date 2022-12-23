@@ -46,7 +46,7 @@ public class VoidWaypointController : MonoBehaviour
     //Attack
 
     bool canAttack = false;
-  //  public GameObject attackTrigger;
+    //public GameObject attackTrigger;
     public GameObject iconAttacking;
 
     public GameObject weapon;
@@ -65,17 +65,18 @@ public class VoidWaypointController : MonoBehaviour
     float posX;
     float posY;
 
+
     /// COMENTAT /// 
 
-    float jamTimer = 0;
-    int timeToDetectJam = 3;
-    float xCoords;
-    float yCoords;
-    bool canGetCoords = true;
+    //float jamTimer = 0;
+    //int timeToDetectJam = 3;
+    //float xCoords;
+    //float yCoords;
+    //bool canGetCoords = true;
 
 
-    //Is In Waypoint
-    bool isInWaypoint = false;
+    ////Is In Waypoint
+    //bool isInWaypoint = false;
 
     void Start()
     {
@@ -132,13 +133,17 @@ public class VoidWaypointController : MonoBehaviour
             {
                 if (weaponTimer >= 1)
                 {
-                    weapon.SetActive(true);
+                   // weapon.SetActive(true);
                     iconAttacking.SetActive(true);
                     toleranceX = Random.Range(-1, 1);
                     toleranceY = Random.Range(-1, 1);
                     weapon.transform.position = new Vector2(player.transform.position.x + toleranceX, player.transform.position.y + toleranceY);
                     weaponTimer = 0;
-                    attackRange.SetActive(true);
+                    if (IASprite.activeSelf == true)
+                    {
+                        attackRange.SetActive(true);
+                    }     
+               
                 }
             }
         }
