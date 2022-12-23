@@ -12,7 +12,7 @@ public class CuraTracking : MonoBehaviour
     private AbilityUI player;
 
     [SerializeField]
-    private float attackDamage = 10f;
+    private float attackDamage = 0.2f;
     [SerializeField]
     private float attackSpeed = 1f;
     [SerializeField]

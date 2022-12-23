@@ -14,7 +14,7 @@ public class PointAndClick : MonoBehaviour
     //others
     public float health = 0f;
     [SerializeField]
-    private float maxHealth = 100f;
+    private float maxHealth = 1f;
     public bool alive = true;
     public Animator anim;
     private Rigidbody2D rb;
