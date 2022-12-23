@@ -48,6 +48,8 @@ public class VoidWaypointController : MonoBehaviour
     bool canAttack = false;
     //public GameObject attackTrigger;
     public GameObject iconAttacking;
+    public GameObject iconWarning;
+
 
     public GameObject weapon;
     float weaponTimer = 0;
@@ -86,6 +88,7 @@ public class VoidWaypointController : MonoBehaviour
         playerPosY = player.transform.position.y;
         iconSecurePlaceToHide.SetActive(false);
         iconAttacking.SetActive(false);
+        iconWarning.SetActive(false);
     }
 
     void Update()
@@ -109,6 +112,7 @@ public class VoidWaypointController : MonoBehaviour
             canHideInSecurePlace = false;
             canAttack= false;
             attackRange.SetActive(false);
+            iconWarning.SetActive(false);
 
             //Seguir els Waypoints
             FollowWaypoints();
@@ -122,18 +126,21 @@ public class VoidWaypointController : MonoBehaviour
 
         if(avoidPlayer)
         {
+            iconWarning.SetActive(true);
             if (canHideInSecurePlace)
             {
                 //Amagarse
                 IASprite.SetActive(false);
                 iconSecurePlaceToHide.SetActive(true);
+                iconWarning.SetActive(false);
             }
 
             if(canAttack)
             {
                 if (weaponTimer >= 1)
                 {
-                   // weapon.SetActive(true);
+                    iconWarning.SetActive(false);
+                    // weapon.SetActive(true);
                     iconAttacking.SetActive(true);
                     toleranceX = Random.Range(-1, 1);
                     toleranceY = Random.Range(-1, 1);
@@ -143,7 +150,6 @@ public class VoidWaypointController : MonoBehaviour
                     {
                         attackRange.SetActive(true);
                     }     
-               
                 }
             }
         }
