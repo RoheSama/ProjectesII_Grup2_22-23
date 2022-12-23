@@ -147,6 +147,10 @@ public class VoidWaypointController : MonoBehaviour
                 }
             }
         }
+        if (IASprite.activeSelf == false)
+        {
+            attackRange.SetActive(false);
+        }
     }
     void FollowWaypoints()
     {
