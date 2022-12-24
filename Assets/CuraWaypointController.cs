@@ -25,8 +25,9 @@ public class CuraWaypointController : MonoBehaviour
     //public GameObject[] securePlace;
     //int securePlaceIndex = 0;
 
+    public GameObject player;
+    float timer = 0;
 
-    ////---Avoid Player
     //bool avoidPlayer = false;
     //bool canGenerateRandomSecurePlace = true;
     //int randomSecurePlace;
@@ -49,19 +50,27 @@ public class CuraWaypointController : MonoBehaviour
 
     void Update()
     {
+        timer += Time.deltaTime;
         // IsInWaypoint();
-        Jam();
+      //  Jam();
         //AvoidPlayer();
         if (followWaypoints)
         {
             FollowWaypoints();
         }
 
-        //if (Input.GetKeyDown("e"))
-        //{
-        //    avoidPlayer = true;
-        //    canGenerateRandomSecurePlace = true;
-        //}
+        if (Input.GetKeyDown("e"))
+        {
+            timer = 0;
+            navMeshAgent.destination = player.transform.position;
+            //    avoidPlayer = true;
+            //    canGenerateRandomSecurePlace = true;
+            followWaypoints = false;
+        }
+        if(timer > 10 && followWaypoints == false)
+        {
+            followWaypoints = true;
+        }
     }
     void FollowWaypoints()
     {
@@ -131,40 +140,40 @@ public class CuraWaypointController : MonoBehaviour
     //    }
     //}
 
-    void Jam()
-    {
-        jamTimer += Time.deltaTime;
-        if (canGetCoords)
-        {
-            xCoords = navMeshAgent.transform.position.x;
-            yCoords = navMeshAgent.transform.position.y;
-            canGetCoords = false;
-        }
+    //void Jam()
+    //{
+    //    jamTimer += Time.deltaTime;
+    //    if (canGetCoords)
+    //    {
+    //        xCoords = navMeshAgent.transform.position.x;
+    //        yCoords = navMeshAgent.transform.position.y;
+    //        canGetCoords = false;
+    //    }
 
-        if (jamTimer >= timeToDetectJam)
-        {
-            if (!isInWaypoint && xCoords == navMeshAgent.transform.position.x || xCoords == navMeshAgent.transform.position.x || yCoords == navMeshAgent.transform.position.y || yCoords == navMeshAgent.transform.position.y)
-            {
-                // Debug.Log("Atasco");
-            }
-            canGetCoords = true;
-            jamTimer = 0;
-        }
-    }
+    //    if (jamTimer >= timeToDetectJam)
+    //    {
+    //        if (!isInWaypoint && xCoords == navMeshAgent.transform.position.x || xCoords == navMeshAgent.transform.position.x || yCoords == navMeshAgent.transform.position.y || yCoords == navMeshAgent.transform.position.y)
+    //        {
+    //            // Debug.Log("Atasco");
+    //        }
+    //        canGetCoords = true;
+    //        jamTimer = 0;
+    //    }
+    //}
 
-    void IsInWaypoint()
-    {
-        for (int i = 0; i <= waypoints.Length; i++)
-        {
-            if (transform.position != waypoints[i].transform.position)
-            {
-                isInWaypoint = false;
-            }
-            else
-                isInWaypoint = true;
-            Debug.Log("WAYPOINT");
-            break;
-        }
+    //void IsInWaypoint()
+    //{
+    //    for (int i = 0; i <= waypoints.Length; i++)
+    //    {
+    //        if (transform.position != waypoints[i].transform.position)
+    //        {
+    //            isInWaypoint = false;
+    //        }
+    //        else
+    //            isInWaypoint = true;
+    //        Debug.Log("WAYPOINT");
+    //        break;
+    //    }
 
-    }
+    //}
 }

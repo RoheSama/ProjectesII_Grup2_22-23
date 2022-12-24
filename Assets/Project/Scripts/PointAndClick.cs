@@ -14,7 +14,7 @@ public class PointAndClick : MonoBehaviour
     //others
     public float health = 0f;
     [SerializeField]
-    private float maxHealth = 100f;
+    private float maxHealth = 1f;
     public bool alive = true;
     public Animator anim;
     private Rigidbody2D rb;
@@ -27,6 +27,8 @@ public class PointAndClick : MonoBehaviour
     Vector2 moveVelocity;
 
     bool canSlow = false;
+
+    public GameObject bloodDie;
 
     //private float powerUpSpeed = 1.5f;
 
@@ -109,9 +111,12 @@ public class PointAndClick : MonoBehaviour
         {
             Debug.Log("LOSE");
             health = 0;
-            anim.SetTrigger("die");
+            //anim.SetTrigger("die");
+            //Destroy(gameObject);
             alive = false;
             StartCoroutine(Wait());
+            Instantiate(bloodDie, transform.position, Quaternion.identity);
+            this.enabled = false;
         }
     }
 

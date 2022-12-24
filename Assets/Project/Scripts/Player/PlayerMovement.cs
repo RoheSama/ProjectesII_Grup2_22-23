@@ -97,7 +97,7 @@ namespace ClearSky
             {
                 health = 0f;
             }
-            
+            Debug.Log("dañito");
         }
 
         void Die()
