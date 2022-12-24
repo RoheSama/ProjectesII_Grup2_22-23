@@ -92,3 +92,6 @@ TagManager:
   - name: Waypoints
     uniqueID: 2387940015
     locked: 0
+  - name: Colliders
+    uniqueID: 3634183677
+    locked: 0
