@@ -59,71 +59,20 @@ TagManager:
   - name: Floor
     uniqueID: 4207922663
     locked: 0
-  - name: Back -7
-    uniqueID: 4051443669
-    locked: 0
-  - name: Back -6
-    uniqueID: 3203215973
-    locked: 0
-  - name: Back -5
-    uniqueID: 1182721139
-    locked: 0
-  - name: Back -4
-    uniqueID: 208057541
-    locked: 0
-  - name: Back -3
-    uniqueID: 1516070773
-    locked: 0
-  - name: Back -2
-    uniqueID: 1801284499
-    locked: 0
-  - name: Back -1
-    uniqueID: 1235624353
-    locked: 0
-  - name: Back 0
-    uniqueID: 1045519131
-    locked: 0
-  - name: Furniture 3
-    uniqueID: 1360912537
-    locked: 0
   - name: Back
-    uniqueID: 734993209
-    locked: 0
-  - name: Back 1
-    uniqueID: 3587614323
-    locked: 0
-  - name: Furniture
-    uniqueID: 3134009647
-    locked: 0
-  - name: Front
-    uniqueID: 2518751637
-    locked: 0
-  - name: Front 2
-    uniqueID: 2856007283
-    locked: 0
-  - name: Front 3
-    uniqueID: 1220260211
-    locked: 0
-  - name: Front 4
-    uniqueID: 1754665483
-    locked: 0
-  - name: Front5
-    uniqueID: 498250241
-    locked: 0
-  - name: Furniture 2
-    uniqueID: 4154268413
+    uniqueID: 3730364775
     locked: 0
   - name: Entity
     uniqueID: 859969739
     locked: 0
-  - name: Particles
-    uniqueID: 194905225
-    locked: 0
   - name: Player
     uniqueID: 2305932827
     locked: 0
-  - name: Phone
-    uniqueID: 2407111009
+  - name: Front
+    uniqueID: 2518751637
+    locked: 0
+  - name: Particles
+    uniqueID: 194905225
     locked: 0
   - name: Waypoints
     uniqueID: 2387940015
