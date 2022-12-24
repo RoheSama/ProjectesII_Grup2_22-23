@@ -59,8 +59,14 @@ TagManager:
   - name: Floor
     uniqueID: 4207922663
     locked: 0
+  - name: Back3
+    uniqueID: 3702843075
+    locked: 0
   - name: Back
     uniqueID: 3730364775
+    locked: 0
+  - name: Back 2
+    uniqueID: 2753952015
     locked: 0
   - name: Entity
     uniqueID: 859969739
@@ -68,8 +74,17 @@ TagManager:
   - name: Player
     uniqueID: 2305932827
     locked: 0
+  - name: Front 2
+    uniqueID: 473063997
+    locked: 0
   - name: Front
     uniqueID: 2518751637
+    locked: 0
+  - name: Front 3
+    uniqueID: 1837488231
+    locked: 0
+  - name: Front 4
+    uniqueID: 1208366495
     locked: 0
   - name: Particles
     uniqueID: 194905225
