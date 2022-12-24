@@ -92,6 +92,9 @@ TagManager:
   - name: Front 4
     uniqueID: 1208366495
     locked: 0
+  - name: Front 5
+    uniqueID: 1802976109
+    locked: 0
   - name: FurnitureFronTwall
     uniqueID: 2214972883
     locked: 0
