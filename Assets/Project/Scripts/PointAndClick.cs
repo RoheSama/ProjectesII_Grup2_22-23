@@ -89,7 +89,7 @@ public class PointAndClick : MonoBehaviour
     public void Hurt()
     {
         anim.SetTrigger("hurt");
-        camera.GetComponent<ScreenShake>().start = true;
+        camera.GetComponent<CameraController>().start = true;
     }
 
     public void UpdateHealth(float mod)
