@@ -11,7 +11,7 @@ namespace ClearSky
     public class PlayerMovement : MonoBehaviour
     {
         public float movePower = 10f;
-
+        
         private Rigidbody2D rb;
         public Animator anim;
         private int direction = 1;
