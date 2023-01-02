@@ -25,6 +25,12 @@ public class animatonScript : MonoBehaviour
 
     public float timeCounter = 0;
 
+    //Range Vision
+    public GameObject visionRangeDown;
+    public GameObject visionRangeUp;
+    public GameObject visionRangeLeft;
+    public GameObject visionRangeRight;
+
 
     void Start()
     {
@@ -57,6 +63,14 @@ public class animatonScript : MonoBehaviour
             animator.SetBool("MoveUp", false);
             animator.SetBool("MoveLeft", false);
             animator.SetBool("MoveRight", false);
+            if(visionRangeDown!= null)
+            {
+                visionRangeDown.SetActive(true);
+                visionRangeUp.SetActive(false);
+                visionRangeLeft.SetActive(false);
+                visionRangeRight.SetActive(false);
+            }
+         
         }
 
         ////Move Left
@@ -66,6 +80,14 @@ public class animatonScript : MonoBehaviour
             animator.SetBool("MoveDown", false);
             animator.SetBool("MoveUp", false);
             animator.SetBool("MoveRight", false);
+            if (visionRangeDown != null)
+            {
+                visionRangeDown.SetActive(false);
+                visionRangeUp.SetActive(false);
+                visionRangeLeft.SetActive(true);
+                visionRangeRight.SetActive(false);
+            }
+             
         }
 
         ////Move Right
@@ -75,6 +97,14 @@ public class animatonScript : MonoBehaviour
             animator.SetBool("MoveLeft", false);
             animator.SetBool("MoveDown", false);
             animator.SetBool("MoveUp", false);
+            if (visionRangeDown != null)
+            {
+                visionRangeDown.SetActive(false);
+                visionRangeUp.SetActive(false);
+                visionRangeLeft.SetActive(false);
+                visionRangeRight.SetActive(true);
+            }
+              
         }
 
         ////Move Up
@@ -84,6 +114,15 @@ public class animatonScript : MonoBehaviour
             animator.SetBool("MoveDown", false);
             animator.SetBool("MoveLeft", false);
             animator.SetBool("MoveRight", false);
-        }       
+            if (visionRangeDown != null)
+            {
+                visionRangeDown.SetActive(false);
+                visionRangeUp.SetActive(true);
+                visionRangeLeft.SetActive(false);
+                visionRangeRight.SetActive(false);
+            }
+               
+        }      
     }
+    
 }

@@ -6,6 +6,10 @@ using UnityEngine.AI;
 public class IABehaviour : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
+    public GameObject player;
+    //float playerPosX;
+    //float playerPosY;
+
 
     //---Follow Waypoints
     bool followWaypoints = true;
@@ -21,18 +25,61 @@ public class IABehaviour : MonoBehaviour
     float waypointsTimer = 0;
     bool waypointsTimerReached = false;
 
+    //Icono Danger
+    public GameObject dangerIcon;
+    public GameObject shadowIcon;
+
+    //LEVELS
+    bool level1 = true;
+    bool level2 = false;
+    bool level3 = false;
+
+
+    public GameObject detector;
+    int detectorIncrement = 0;
+    //Rincon de llorar
+
+
+    //Waypoints for Rincon De Llorar Function
+
+
+    bool goToRinconDeLlorar = true;
+    public GameObject myRinconDeLlorar;
+
+
+    // Rincon de Llorar Timer
+    float rinconDeLlorarTimer = 0;
+    public int timeInRinconDeLlorar;
+
+
     void Start()
     {
-       
+      dangerIcon.SetActive(false);
     }
 
     void Update()
     {
-        if (followWaypoints)
+      //  playerPosX = player.transform.position.x;
+      //  playerPosY= player.transform.position.y;
+
+        if (level1)
         {
-            FollowWaypoints();
+            
+
+            if (followWaypoints)
+            {
+                FollowWaypoints();
+            }
+            else if(dangerIcon.activeSelf)
+            {
+                RinconDeLlorar();
+                //navMeshAgent.destination = rinconDeLlorar.transform.position;
+               // navMeshAgent.speed = 4;
+            }
+            
         }
     }
+
     void FollowWaypoints()
     {
         // Anar cap al waypoint
@@ -72,6 +119,53 @@ public class IABehaviour : MonoBehaviour
             }
         }
     }
-
    
+    
+    void RinconDeLlorar()
+    {
+        rinconDeLlorarTimer += Time.deltaTime;
+        if(myRinconDeLlorar == null)
+        {
+            detector.transform.localScale= new Vector3(detectorIncrement, 1, 1);
+            detectorIncrement++;
+        }
+        else
+        {
+            detector.transform.localScale = new Vector3(1, 1, 1);
+            navMeshAgent.destination = myRinconDeLlorar.transform.position;
+            navMeshAgent.speed = 3;
+        }
+
+        if(rinconDeLlorarTimer >= timeInRinconDeLlorar)
+        {
+            dangerIcon.SetActive(false);
+            rinconDeLlorarTimer = 0;
+
+        }
+        if(dangerIcon.activeInHierarchy == false)
+        {
+            myRinconDeLlorar = null;
+            followWaypoints = true;
+            navMeshAgent.speed = 2;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player") && shadowIcon.activeSelf)
+        {
+            dangerIcon.SetActive(true);
+            followWaypoints = false;
+        }
+
+       else if(goToRinconDeLlorar)
+        {
+            if (other.CompareTag("Rincon_De_Llorar"))
+            {
+                myRinconDeLlorar = other.gameObject;
+                other.gameObject.SetActive(false);
+            }
+        }
+    }
+
 }
