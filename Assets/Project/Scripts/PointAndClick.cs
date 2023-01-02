@@ -29,6 +29,7 @@ public class PointAndClick : MonoBehaviour
     bool canSlow = false;
 
     public GameObject bloodDie;
+    public GameObject camera;
 
     //private float powerUpSpeed = 1.5f;
 
@@ -88,6 +89,7 @@ public class PointAndClick : MonoBehaviour
     public void Hurt()
     {
         anim.SetTrigger("hurt");
+        camera.GetComponent<CameraController>().start = true;
     }
 
     public void UpdateHealth(float mod)
