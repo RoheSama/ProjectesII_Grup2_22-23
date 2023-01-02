@@ -34,7 +34,10 @@ public class IABehaviour : MonoBehaviour
     bool level2 = false;
     bool level3 = false;
 
+    // Satanic Stars
+    public GameObject satanicStar01;
 
+    // Detector
     public GameObject detector;
     int detectorIncrement = 0;
     //Rincon de llorar
@@ -69,6 +72,10 @@ public class IABehaviour : MonoBehaviour
             else if(dangerIcon.activeSelf)
             {
                 RinconDeLlorar();
+                if(satanicStar01.activeSelf)
+                {
+                    satanicStar01.SetActive(false);
+                }
             }
         }
     }
