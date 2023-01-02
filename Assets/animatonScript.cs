@@ -18,15 +18,11 @@ public class animatonScript : MonoBehaviour
     public float diferrenceLastPositionXAndActualPositionX = 0;
     public float diferrenceLastPositionYAndActualPositionY = 0;
 
-    bool isUp = false;
-    bool isDown = false;
-    bool isLeft = false;
-    bool isRight = false;
+    public float leftValue = 0;
+    public float rightValue = 0;
+    public float upValue = 0;
+    public float downValue = 0;
 
-    bool canUp = true;
-    bool canDown = true;
-    bool canLeft = true;
-    bool canRight = true;
 
     public float timeCounter = 0;
 
@@ -54,9 +50,9 @@ public class animatonScript : MonoBehaviour
             timeCounter = 0;
         }
 
-      
+        
         //Move Down
-        if (diferrenceLastPositionYAndActualPositionY == 0)
+        if (diferrenceLastPositionYAndActualPositionY > downValue) //0
         {
             animator.SetBool("MoveDown", true);
             animator.SetBool("MoveUp", false);
@@ -65,7 +61,7 @@ public class animatonScript : MonoBehaviour
         }
 
         ////Move Left
-        if (diferrenceLastPositionXAndActualPositionX >0.2)
+        if (diferrenceLastPositionXAndActualPositionX >leftValue) //0.2
         {
             animator.SetBool("MoveLeft", true);
             animator.SetBool("MoveDown", false);
@@ -74,7 +70,7 @@ public class animatonScript : MonoBehaviour
         }
 
         ////Move Right
-        if (diferrenceLastPositionXAndActualPositionX < -0.2)
+        if (diferrenceLastPositionXAndActualPositionX < rightValue) //-0.2
         {
             animator.SetBool("MoveRight", true);
             animator.SetBool("MoveLeft", false);
@@ -83,7 +79,7 @@ public class animatonScript : MonoBehaviour
         }
 
         ////Move Up
-        if (diferrenceLastPositionYAndActualPositionY < -1)
+        if (diferrenceLastPositionYAndActualPositionY < upValue) //-1
         {
             animator.SetBool("MoveUp", true);
             animator.SetBool("MoveDown", false);
