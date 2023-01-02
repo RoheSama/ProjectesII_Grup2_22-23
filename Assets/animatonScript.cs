@@ -23,7 +23,6 @@ public class animatonScript : MonoBehaviour
     public float upValue = 0;
     public float downValue = 0;
 
-
     public float timeCounter = 0;
 
 
