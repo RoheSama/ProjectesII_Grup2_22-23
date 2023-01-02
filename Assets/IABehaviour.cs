@@ -39,9 +39,7 @@ public class IABehaviour : MonoBehaviour
     int detectorIncrement = 0;
     //Rincon de llorar
 
-
     //Waypoints for Rincon De Llorar Function
-
 
     bool goToRinconDeLlorar = true;
     public GameObject myRinconDeLlorar;
@@ -64,8 +62,6 @@ public class IABehaviour : MonoBehaviour
 
         if (level1)
         {
-            
-
             if (followWaypoints)
             {
                 FollowWaypoints();
@@ -73,10 +69,7 @@ public class IABehaviour : MonoBehaviour
             else if(dangerIcon.activeSelf)
             {
                 RinconDeLlorar();
-                //navMeshAgent.destination = rinconDeLlorar.transform.position;
-               // navMeshAgent.speed = 4;
             }
-            
         }
     }
 
@@ -144,6 +137,7 @@ public class IABehaviour : MonoBehaviour
         }
         if(dangerIcon.activeInHierarchy == false)
         {
+            myRinconDeLlorar.SetActive(true);
             myRinconDeLlorar = null;
             followWaypoints = true;
             navMeshAgent.speed = 2;
