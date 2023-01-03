@@ -80129,6 +80129,7 @@ MonoBehaviour:
   movePower: 10
   bloodDie: {fileID: 0}
   camera: {fileID: 0}
+  playerPos: {fileID: 0}
 --- !u!195 &1483598485
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -85598,6 +85599,7 @@ MonoBehaviour:
   powerUpDuration: 5
   shadowCooldown: {fileID: 1675453279}
   shadowModeEffect: {fileID: 1565056931}
+  shadowIcon: {fileID: 0}
 --- !u!114 &1722441298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85617,6 +85619,7 @@ MonoBehaviour:
   movePower: 10
   bloodDie: {fileID: 8551379422355991024, guid: 21b8c083463c5064b8dd17d8b65200d4, type: 3}
   camera: {fileID: 1419281790}
+  playerPos: {fileID: 1722441295}
 --- !u!195 &1722441299
 NavMeshAgent:
   m_ObjectHideFlags: 0
