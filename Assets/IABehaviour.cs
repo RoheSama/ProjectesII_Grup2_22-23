@@ -12,7 +12,7 @@ public class IABehaviour : MonoBehaviour
 
 
     //---Follow Waypoints
-    bool followWaypoints = true;
+    bool followWaypointsLevel0 = true;
 
     //Waypoints for FollowWaypoints
     public GameObject[] waypoints;
@@ -30,7 +30,8 @@ public class IABehaviour : MonoBehaviour
     public GameObject shadowIcon;
 
     //LEVELS
-    bool level1 = true;
+    bool level0 = true;
+    bool level1 = false;
     bool level2 = false;
     bool level3 = false;
 
@@ -53,6 +54,11 @@ public class IABehaviour : MonoBehaviour
     public int timeInRinconDeLlorar;
 
 
+    //Avoid Students
+    bool canAvoidStudents = false;
+    float avoidTemp = 0;
+    float avoidStudentsTemp = 0;
+
     void Start()
     {
       dangerIcon.SetActive(false);
@@ -62,25 +68,47 @@ public class IABehaviour : MonoBehaviour
     {
       //  playerPosX = player.transform.position.x;
       //  playerPosY= player.transform.position.y;
+      
+        //CHECK THE LEVEL
 
-        if (level1)
+        //Level 0
+        if(satanicStar01.activeInHierarchy == false)
         {
-            if (followWaypoints)
+            level0= false;
+            level1= true;
+        }
+        if (level0)
+        {
+            if (followWaypointsLevel0)
             {
-                FollowWaypoints();
+                FollowWaypointsLevel0();
             }
             else if(dangerIcon.activeSelf)
             {
-                RinconDeLlorar();
-                if(satanicStar01.activeSelf)
-                {
-                    satanicStar01.SetActive(false);
-                }
+                RinconDeLlorarLevel0(); 
             }
+        }
+
+        //Level 1
+        if (level1)
+        {
+            if (followWaypointsLevel0)
+            {
+                FollowWaypointsLevel0();
+            }
+            else if(canAvoidStudents)
+            {
+                Debug.Log("a");
+                AvoidStudents();
+            }
+            //else if (dangerIcon.activeSelf)
+            //{
+            //    RinconDeLlorarLevel0();
+           // }
         }
     }
 
-    void FollowWaypoints()
+    void FollowWaypointsLevel0()
     {
         // Anar cap al waypoint
         navMeshAgent.destination = waypoints[waypointsIndex].transform.position;
@@ -121,7 +149,7 @@ public class IABehaviour : MonoBehaviour
     }
    
     
-    void RinconDeLlorar()
+    void RinconDeLlorarLevel0()
     {
         rinconDeLlorarTimer += Time.deltaTime;
         if(myRinconDeLlorar == null)
@@ -142,31 +170,69 @@ public class IABehaviour : MonoBehaviour
             rinconDeLlorarTimer = 0;
 
         }
+       
+        //Vuelta a la normalidad
         if(dangerIcon.activeInHierarchy == false)
         {
             myRinconDeLlorar.SetActive(true);
             myRinconDeLlorar = null;
-            followWaypoints = true;
+            followWaypointsLevel0 = true;
             navMeshAgent.speed = 2;
+            if (satanicStar01.activeSelf)
+            {
+                satanicStar01.SetActive(false);
+            }
+        }
+    }
+
+
+    void AvoidStudents()
+    {
+        //waypointsIndex++;
+        avoidStudentsTemp+= Time.deltaTime;
+        navMeshAgent.speed = 4;
+
+        if (avoidStudentsTemp >=3)
+        {
+            avoidStudentsTemp = 0;
+            canAvoidStudents = false;
+            followWaypointsLevel0 = true;
+            navMeshAgent.speed = 2; 
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && shadowIcon.activeSelf)
+        if(level0)
         {
-            dangerIcon.SetActive(true);
-            followWaypoints = false;
+            if (other.CompareTag("Player") && shadowIcon.activeSelf)
+            {
+                dangerIcon.SetActive(true);
+                followWaypointsLevel0 = false;
+            }
+
+            else if (goToRinconDeLlorar)
+            {
+                if (other.CompareTag("Rincon_De_Llorar"))
+                {
+                    myRinconDeLlorar = other.gameObject;
+                    other.gameObject.SetActive(false);
+                }
+            }
         }
 
-       else if(goToRinconDeLlorar)
+        if(level1)
         {
-            if (other.CompareTag("Rincon_De_Llorar"))
+            if (other.CompareTag("Target"))
             {
-                myRinconDeLlorar = other.gameObject;
-                other.gameObject.SetActive(false);
+                followWaypointsLevel0 = false;
+                avoidTemp+= Time.deltaTime;
+                if (avoidTemp >=1)
+                {
+                    canAvoidStudents = true;
+                    avoidTemp = 0;
+                }
             }
         }
     }
-
 }
