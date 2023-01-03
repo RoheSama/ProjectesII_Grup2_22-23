@@ -6,11 +6,8 @@ using UnityEngine.AI;
 public class IABehaviour : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
-    public GameObject player;
-    //float playerPosX;
-    //float playerPosY;
-
-
+    public SpriteRenderer character;
+  
     //---Follow Waypoints
     bool followWaypointsLevel0 = true;
 
@@ -59,6 +56,14 @@ public class IABehaviour : MonoBehaviour
     float avoidTemp = 0;
     float avoidStudentsTemp = 0;
 
+    //Hide
+    bool goToHide = true;
+    bool canHide = false;
+    float hideTimer = 0;
+    public int timeHidden;
+    public GameObject myHidePlace;
+
+
     void Start()
     {
       dangerIcon.SetActive(false);
@@ -66,13 +71,12 @@ public class IABehaviour : MonoBehaviour
 
     void Update()
     {
-      //  playerPosX = player.transform.position.x;
-      //  playerPosY= player.transform.position.y;
-      
         //CHECK THE LEVEL
+       
+   
 
         //Level 0
-        if(satanicStar01.activeInHierarchy == false)
+        if (satanicStar01.activeInHierarchy == false)
         {
             level0= false;
             level1= true;
@@ -98,8 +102,11 @@ public class IABehaviour : MonoBehaviour
             }
             else if(canAvoidStudents)
             {
-                Debug.Log("a");
                 AvoidStudents();
+            }
+            else if(dangerIcon.activeSelf)
+            {
+                HideInHidePlace();
             }
             //else if (dangerIcon.activeSelf)
             //{
@@ -201,6 +208,29 @@ public class IABehaviour : MonoBehaviour
         }
     }
 
+    void HideInHidePlace()
+    {
+        hideTimer += Time.deltaTime;
+        if (myHidePlace == null)
+        {
+            detector.transform.localScale = new Vector3(detectorIncrement, 1, 1);
+            detectorIncrement++;
+        }
+        else
+        {
+            detector.transform.localScale = new Vector3(1, 1, 1);
+            navMeshAgent.destination = myHidePlace.transform.position;
+            navMeshAgent.speed = 3;
+        }
+
+        if(navMeshAgent.transform.position.x < myHidePlace.transform.position.x +1 && navMeshAgent.transform.position.x > myHidePlace.transform.position.x -1
+            && navMeshAgent.transform.position.y < myHidePlace.transform.position.y + 1 && navMeshAgent.transform.position.y > myHidePlace.transform.position.y - 1)
+        {
+            character.enabled = false;
+            navMeshAgent.speed = 0;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(level0)
@@ -221,18 +251,31 @@ public class IABehaviour : MonoBehaviour
             }
         }
 
-        if(level1)
+        if (level1)
         {
-            if (other.CompareTag("Target"))
+            if (other.CompareTag("Target")|| other.CompareTag("Player"))
             {
-                followWaypointsLevel0 = false;
-                avoidTemp+= Time.deltaTime;
-                if (avoidTemp >=1)
+
+                avoidTemp += Time.deltaTime;
+                if (avoidTemp >= 1)
                 {
+                    followWaypointsLevel0 = false;
                     canAvoidStudents = true;
                     avoidTemp = 0;
                 }
             }
-        }
-    }
+            if (other.CompareTag("Player") && shadowIcon.activeSelf)
+            {
+                dangerIcon.SetActive(true);
+                followWaypointsLevel0 = false;
+            }
+            else if (goToHide)
+            {
+                if (other.CompareTag("Hide_Place"))
+                {
+                    myHidePlace = other.gameObject;
+                    other.gameObject.SetActive(false);
+                }
+            }
+    }   }
 }

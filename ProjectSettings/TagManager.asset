@@ -17,6 +17,7 @@ TagManager:
   - AttackTrigger
   - Attack Range
   - Rincon_De_Llorar
+  - Hide_Place
   layers:
   - Default
   - TransparentFX
