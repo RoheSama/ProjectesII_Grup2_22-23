@@ -49,6 +49,9 @@ public class AbilityUI : MonoBehaviour
 
     public GameObject shadowModeEffect;
 
+    //Arnau
+    public GameObject shadowIcon;
+
     void Start()
     {
         abilityImage1.fillAmount = 1;
@@ -124,7 +127,7 @@ public class AbilityUI : MonoBehaviour
             //StartCoroutine(PowerUpCooldown());
             GetComponent<SpriteRenderer>().color = Color.yellow;
             agent.speed = agent.speed + powerUpSpeed;
-            StartCoroutine(NormalForm());
+            StartCoroutine(NormalForm());            //Arnau            shadowIcon.SetActive(true);
         }
 
         if (!powerUpAvailable)
@@ -154,6 +157,9 @@ public class AbilityUI : MonoBehaviour
         agent.speed = agent.speed - powerUpSpeed;
         powerUpActivated = false;
         shadowModeEffect.SetActive(false);
+
+        //Arnau
+        shadowIcon.SetActive(false);
     }
 
     IEnumerator NormalForm()

@@ -31,6 +31,8 @@ public class PointAndClick : MonoBehaviour
     public GameObject bloodDie;
     public GameObject camera;
 
+    public GameObject playerPos;
+
     //private float powerUpSpeed = 1.5f;
 
     //private bool powerUpAvailable = true;
@@ -47,6 +49,8 @@ public class PointAndClick : MonoBehaviour
 
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+
+        target = playerPos.transform.position;
     }
 
     // Update is called once per frame
