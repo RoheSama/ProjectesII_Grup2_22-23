@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private GameObject hud;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private KeyCode next;
+    [SerializeField] private Image sprite1;
+    [SerializeField] private Image sprite2;
+    [SerializeField, TextArea(4, 6)] private string[] dialogueImage;
 
     private float typingTime = 0.05f;
 
@@ -41,6 +45,18 @@ public class Dialogue : MonoBehaviour
                 StopAllCoroutines();
                 dialogueText.text = dialogueLines[lineIndex];
             }
+
+            if (dialogueImage[lineIndex] == "1")
+            {
+                sprite1.enabled = true;
+                sprite2.enabled = false;
+            }
+            else if(dialogueImage[lineIndex] == "2")
+            {
+                sprite2.enabled = true;
+                sprite1.enabled = false;
+            }
+
         }
         
     }
