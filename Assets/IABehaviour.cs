@@ -59,7 +59,8 @@ public class IABehaviour : MonoBehaviour
     //Hide
     bool goToHide = true;
     bool canHide = false;
-    float hideTimer = 0;
+    bool canActivateHideTimer = false;
+    public float hideTimer = 0;
     public int timeHidden;
     public GameObject myHidePlace;
     public GameObject myHideIcon;
@@ -108,11 +109,29 @@ public class IABehaviour : MonoBehaviour
             else if(dangerIcon.activeSelf)
             {
                 HideInHidePlace();
+                
             }
-            //else if (dangerIcon.activeSelf)
-            //{
-            //    RinconDeLlorarLevel0();
-           // }
+            
+            //HIDE FUNCTION
+            if (canActivateHideTimer)
+            {
+                hideTimer += Time.deltaTime;
+            }
+            if (hideTimer >= timeHidden)
+            {
+                Debug.Log("AAA");
+                hideTimer = 0;
+                followWaypointsLevel0 = true;
+                character.enabled = true;
+                myHideIcon.SetActive(false);
+                navMeshAgent.speed = 2;
+                Debug.Log("A");
+                dangerIcon.SetActive(true);
+                myHidePlace.tag = "Hide_Place";
+                canActivateHideTimer= false;
+                myHidePlace = null;
+                myHideIcon = null;
+            }
         }
     }
 
@@ -170,6 +189,7 @@ public class IABehaviour : MonoBehaviour
             detector.transform.localScale = new Vector3(1, 1, 1);
             navMeshAgent.destination = myRinconDeLlorar.transform.position;
             navMeshAgent.speed = 3;
+            Debug.Log("B");
         }
 
         if(rinconDeLlorarTimer >= timeInRinconDeLlorar)
@@ -186,6 +206,7 @@ public class IABehaviour : MonoBehaviour
             myRinconDeLlorar = null;
             followWaypointsLevel0 = true;
             navMeshAgent.speed = 2;
+            Debug.Log("C");
             if (satanicStar01.activeSelf)
             {
                 satanicStar01.SetActive(false);
@@ -199,19 +220,22 @@ public class IABehaviour : MonoBehaviour
         //waypointsIndex++;
         avoidStudentsTemp+= Time.deltaTime;
         navMeshAgent.speed = 4;
+        Debug.Log("D");
 
         if (avoidStudentsTemp >=3)
         {
             avoidStudentsTemp = 0;
             canAvoidStudents = false;
             followWaypointsLevel0 = true;
-            navMeshAgent.speed = 2; 
+            navMeshAgent.speed = 2;
+            Debug.Log("E");
         }
     }
 
     void HideInHidePlace()
     {
-        hideTimer += Time.deltaTime;
+       
+        //Detectar el HidePlace mas cercano
         if (myHidePlace == null)
         {
             detector.transform.localScale = new Vector3(detectorIncrement, 1, 1);
@@ -219,18 +243,26 @@ public class IABehaviour : MonoBehaviour
         }
         else
         {
+            // Volver a la normalidad una vez encontrado y ir hacia el HidePlace
             detector.transform.localScale = new Vector3(1, 1, 1);
             navMeshAgent.destination = myHidePlace.transform.position;
             navMeshAgent.speed = 3;
+            Debug.Log("F");
         }
-
-        if(navMeshAgent.transform.position.x < myHidePlace.transform.position.x +1 && navMeshAgent.transform.position.x > myHidePlace.transform.position.x -1
-            && navMeshAgent.transform.position.y < myHidePlace.transform.position.y + 1 && navMeshAgent.transform.position.y > myHidePlace.transform.position.y - 1)
+        if(myHidePlace != null)
         {
-            character.enabled = false;
-            myHideIcon = myHidePlace.transform.GetChild(0).gameObject;
-            myHideIcon.SetActive(true);
-            navMeshAgent.speed = 0;
+            if (navMeshAgent.transform.position.x < myHidePlace.transform.position.x + 2 && navMeshAgent.transform.position.x > myHidePlace.transform.position.x - 2
+           && navMeshAgent.transform.position.y < myHidePlace.transform.position.y + 2 && navMeshAgent.transform.position.y > myHidePlace.transform.position.y - 2)
+            {
+                character.enabled = false;
+                myHideIcon = myHidePlace.transform.GetChild(0).gameObject;
+                myHideIcon.SetActive(true);
+                navMeshAgent.speed = 0;
+                Debug.Log("G");
+                dangerIcon.SetActive(false);
+                canActivateHideTimer = true;
+                followWaypointsLevel0 = false;
+            }
         }
     }
 
@@ -256,7 +288,7 @@ public class IABehaviour : MonoBehaviour
 
         if (level1)
         {
-            if (other.CompareTag("Target")|| other.CompareTag("Player"))
+            if (other.CompareTag("Target")|| other.CompareTag("Player") && canActivateHideTimer==false)
             {
 
                 avoidTemp += Time.deltaTime;
@@ -279,8 +311,7 @@ public class IABehaviour : MonoBehaviour
                 if (other.CompareTag("Hide_Place"))
                 {
                     myHidePlace = other.gameObject;
-                    myHidePlace.GetComponent<SpriteRenderer>().color = new Color(100f,100f,100f);
-                    //other.gameObject.SetActive(false);
+                    myHidePlace.tag = "Hide_Place_Disabled";
                 }
             }
     }   }
