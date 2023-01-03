@@ -62,6 +62,7 @@ public class IABehaviour : MonoBehaviour
     float hideTimer = 0;
     public int timeHidden;
     public GameObject myHidePlace;
+    public GameObject myHideIcon;
 
 
     void Start()
@@ -227,6 +228,8 @@ public class IABehaviour : MonoBehaviour
             && navMeshAgent.transform.position.y < myHidePlace.transform.position.y + 1 && navMeshAgent.transform.position.y > myHidePlace.transform.position.y - 1)
         {
             character.enabled = false;
+            myHideIcon = myHidePlace.transform.GetChild(0).gameObject;
+            myHideIcon.SetActive(true);
             navMeshAgent.speed = 0;
         }
     }
@@ -264,17 +267,20 @@ public class IABehaviour : MonoBehaviour
                     avoidTemp = 0;
                 }
             }
+
             if (other.CompareTag("Player") && shadowIcon.activeSelf)
             {
                 dangerIcon.SetActive(true);
                 followWaypointsLevel0 = false;
             }
+
             else if (goToHide)
             {
                 if (other.CompareTag("Hide_Place"))
                 {
                     myHidePlace = other.gameObject;
-                    other.gameObject.SetActive(false);
+                    myHidePlace.GetComponent<SpriteRenderer>().color = new Color(100f,100f,100f);
+                    //other.gameObject.SetActive(false);
                 }
             }
     }   }
