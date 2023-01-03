@@ -196,13 +196,12 @@ public class IABehaviour : MonoBehaviour
         {
             dangerIcon.SetActive(false);
             rinconDeLlorarTimer = 0;
-
         }
        
         //Vuelta a la normalidad
         if(dangerIcon.activeInHierarchy == false)
         {
-            myRinconDeLlorar.SetActive(true);
+            myRinconDeLlorar.tag = "Rincon_De_Llorar";
             myRinconDeLlorar = null;
             followWaypointsLevel0 = true;
             navMeshAgent.speed = 2;
@@ -249,6 +248,7 @@ public class IABehaviour : MonoBehaviour
             navMeshAgent.speed = 3;
             Debug.Log("F");
         }
+
         if(myHidePlace != null)
         {
             if (navMeshAgent.transform.position.x < myHidePlace.transform.position.x + 2 && navMeshAgent.transform.position.x > myHidePlace.transform.position.x - 2
@@ -281,7 +281,7 @@ public class IABehaviour : MonoBehaviour
                 if (other.CompareTag("Rincon_De_Llorar"))
                 {
                     myRinconDeLlorar = other.gameObject;
-                    other.gameObject.SetActive(false);
+                    myRinconDeLlorar.tag = "Rincon_De_Llorar_Disabled";
                 }
             }
         }
