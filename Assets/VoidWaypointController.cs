@@ -41,7 +41,7 @@ public class VoidWaypointController : MonoBehaviour
    // public GameObject securePlaceToHide;
     public GameObject iconSecurePlaceToHide;
 
-    public GameObject IASprite;
+   // public GameObject IASprite;
 
     //Attack
 
@@ -105,7 +105,7 @@ public class VoidWaypointController : MonoBehaviour
         if (followWaypoints)
         {  
             //Sortir del Hidden Place
-            IASprite.SetActive(true);
+           // IASprite.SetActive(true);
             iconSecurePlaceToHide.SetActive(false);
             iconAttacking.SetActive(false);
             weapon.SetActive(false);
@@ -130,7 +130,7 @@ public class VoidWaypointController : MonoBehaviour
             if (canHideInSecurePlace)
             {
                 //Amagarse
-                IASprite.SetActive(false);
+              //  IASprite.SetActive(false);
                 iconSecurePlaceToHide.SetActive(true);
                 iconWarning.SetActive(false);
             }
@@ -146,17 +146,17 @@ public class VoidWaypointController : MonoBehaviour
                     toleranceY = Random.Range(-1, 1);
                     weapon.transform.position = new Vector2(player.transform.position.x + toleranceX, player.transform.position.y + toleranceY);
                     weaponTimer = 0;
-                    if (IASprite.activeSelf == true)
-                    {
-                        attackRange.SetActive(true);
-                    }     
+                    //if (//IASprite.activeSelf == true)
+                   // {
+                    //    attackRange.SetActive(true);
+                   // }     
                 }
             }
         }
-        if (IASprite.activeSelf == false)
-        {
-            attackRange.SetActive(false);
-        }
+        //if (//IASprite.activeSelf == false)
+       // {
+       //     attackRange.SetActive(false);
+       // }
     }
     void FollowWaypoints()
     {

@@ -16,6 +16,9 @@ TagManager:
   - SecurePlaceToHide
   - AttackTrigger
   - Attack Range
+  - Rincon_De_Llorar
+  - Hide_Place
+  - Hide_Place_Disabled
   layers:
   - Default
   - TransparentFX
