@@ -104,7 +104,7 @@ public class animatonScript : MonoBehaviour
                 visionRangeLeft.SetActive(false);
                 visionRangeRight.SetActive(true);
             }
-              
+
         }
 
         ////Move Up
@@ -122,7 +122,7 @@ public class animatonScript : MonoBehaviour
                 visionRangeRight.SetActive(false);
             }
                
-        }      
+        }  
     }
     
 }
