@@ -23018,9 +23018,7 @@ GameObject:
   - component: {fileID: 658573842}
   - component: {fileID: 658573843}
   - component: {fileID: 658573847}
-  - component: {fileID: 658573846}
   - component: {fileID: 658573845}
-  - component: {fileID: 658573844}
   - component: {fileID: 658573848}
   m_Layer: 7
   m_Name: Violet
@@ -23116,36 +23114,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &658573844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658573840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14f8fab08e6681b42a197780b8beb235, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  animator: {fileID: 658573843}
-  navmeshAgent: {fileID: 658573846}
-  actualPositionX: 0
-  actualPositionY: 0
-  lastPositionX: 0
-  lastPositionY: 0
-  diferrenceLastPositionXAndActualPositionX: 0
-  diferrenceLastPositionYAndActualPositionY: 0
-  leftValue: 0.5
-  rightValue: -0.5
-  upValue: -1
-  downValue: 0
-  timeCounter: 0
-  visionRangeDown: {fileID: 0}
-  visionRangeUp: {fileID: 0}
-  visionRangeLeft: {fileID: 0}
-  visionRangeRight: {fileID: 0}
 --- !u!70 &658573845
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -23162,28 +23130,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 3.9, y: 10.49}
   m_Direction: 0
---- !u!195 &658573846
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658573840}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.28
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 10.49
-  m_BaseOffset: 5.245
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!50 &658573847
 Rigidbody2D:
   serializedVersion: 4
@@ -23214,17 +23160,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 658573840}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 473f0dbdb72a3c6489cb583d7128a165, type: 3}
+  m_Script: {fileID: 11500000, guid: 5842daf40c5570843947a2fdbad433a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 1
-  alive: 1
   anim: {fileID: 658573843}
-  movePower: 10
-  bloodDie: {fileID: 8551379422355991024, guid: 21b8c083463c5064b8dd17d8b65200d4, type: 3}
-  camera: {fileID: 1419281790}
-  playerPos: {fileID: 658573840}
+  moveSpeed: 3
 --- !u!1 &673849328
 GameObject:
   m_ObjectHideFlags: 0
