@@ -45,12 +45,12 @@ public class AbilityUI : MonoBehaviour
 
     NavMeshAgent agent;
 
-    public Slider shadowCooldown;
+    public Image shadowCooldown;
 
     public GameObject shadowModeEffect;
 
     //Arnau
-    public GameObject shadowIcon;
+    //public GameObject shadowIcon;
 
     void Start()
     {
@@ -127,7 +127,7 @@ public class AbilityUI : MonoBehaviour
             //StartCoroutine(PowerUpCooldown());
             GetComponent<SpriteRenderer>().color = Color.yellow;
             agent.speed = agent.speed + powerUpSpeed;
-            StartCoroutine(NormalForm());            //Arnau            shadowIcon.SetActive(true);
+            StartCoroutine(NormalForm());            //Arnau            //shadowIcon.SetActive(true);
         }
 
         if (!powerUpAvailable)
@@ -147,7 +147,7 @@ public class AbilityUI : MonoBehaviour
             }
         }
 
-        shadowCooldown.value = currentCD / powerUpDuration;
+        shadowCooldown.fillAmount = currentCD / powerUpDuration;
         
     }
 
@@ -159,7 +159,7 @@ public class AbilityUI : MonoBehaviour
         shadowModeEffect.SetActive(false);
 
         //Arnau
-        shadowIcon.SetActive(false);
+        //shadowIcon.SetActive(false);
     }
 
     IEnumerator NormalForm()
