@@ -67,6 +67,7 @@ public class IABehaviour : MonoBehaviour
 
     //Sounds
     bool canAlertSound = true;
+    bool canActiveAlertSound = true;
 
     void Start()
     {
@@ -84,6 +85,12 @@ public class IABehaviour : MonoBehaviour
         {
             level0= false;
             level1= true;
+            //Audio
+            if (canActiveAlertSound)
+            {
+                canAlertSound = true;
+                canActiveAlertSound = false;
+            }
         }
         if (level0)
         {
@@ -133,6 +140,7 @@ public class IABehaviour : MonoBehaviour
                 canActivateHideTimer= false;
                 myHidePlace = null;
                 myHideIcon = null;
+                canAlertSound = true;
             }
         }
     }
@@ -193,7 +201,7 @@ public class IABehaviour : MonoBehaviour
             navMeshAgent.speed = 3;
             Debug.Log("B");
         }
-
+        //Audio
         if (myRinconDeLlorar != null)
         {
             if (navMeshAgent.transform.position.x < myRinconDeLlorar.transform.position.x + 2 && navMeshAgent.transform.position.x > myRinconDeLlorar.transform.position.x - 2
@@ -267,7 +275,9 @@ public class IABehaviour : MonoBehaviour
             if (navMeshAgent.transform.position.x < myHidePlace.transform.position.x + 2 && navMeshAgent.transform.position.x > myHidePlace.transform.position.x - 2
            && navMeshAgent.transform.position.y < myHidePlace.transform.position.y + 2 && navMeshAgent.transform.position.y > myHidePlace.transform.position.y - 2)
             {
+                //Audio
                 FindObjectOfType<AudioManager>().Play("hideVoids");
+
                 character.enabled = false;
                 myHideIcon = myHidePlace.transform.GetChild(0).gameObject;
                 myHideIcon.SetActive(true);
@@ -288,6 +298,7 @@ public class IABehaviour : MonoBehaviour
             {
                 dangerIcon.SetActive(true);
                 followWaypointsLevel0 = false;
+                //Audio
                 if (canAlertSound)
                 {
                     FindObjectOfType<AudioManager>().Play("AlertVoid");
@@ -321,6 +332,12 @@ public class IABehaviour : MonoBehaviour
 
             if (other.CompareTag("Player") && shadowIcon.activeSelf)
             {
+                //Audio
+                if (canAlertSound)
+                {
+                    FindObjectOfType<AudioManager>().Play("AlertVoid");
+                    canAlertSound = false;
+                }
                 dangerIcon.SetActive(true);
                 followWaypointsLevel0 = false;
             }
