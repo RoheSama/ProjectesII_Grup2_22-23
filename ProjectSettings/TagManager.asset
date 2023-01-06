@@ -19,6 +19,7 @@ TagManager:
   - Rincon_De_Llorar
   - Hide_Place
   - Hide_Place_Disabled
+  - Rincon_De_Llorar_Disabled
   layers:
   - Default
   - TransparentFX

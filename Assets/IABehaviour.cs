@@ -65,6 +65,8 @@ public class IABehaviour : MonoBehaviour
     public GameObject myHidePlace;
     public GameObject myHideIcon;
 
+    //Sounds
+    bool canAlertSound = true;
 
     void Start()
     {
@@ -192,7 +194,18 @@ public class IABehaviour : MonoBehaviour
             Debug.Log("B");
         }
 
-        if(rinconDeLlorarTimer >= timeInRinconDeLlorar)
+        if (myRinconDeLlorar != null)
+        {
+            if (navMeshAgent.transform.position.x < myRinconDeLlorar.transform.position.x + 2 && navMeshAgent.transform.position.x > myRinconDeLlorar.transform.position.x - 2
+           && navMeshAgent.transform.position.y < myRinconDeLlorar.transform.position.y + 2 && navMeshAgent.transform.position.y > myRinconDeLlorar.transform.position.y - 2)
+            {
+                //va rana
+                FindObjectOfType<AudioManager>().Play("CryVoid");
+            }
+        }
+
+
+        if (rinconDeLlorarTimer >= timeInRinconDeLlorar)
         {
             dangerIcon.SetActive(false);
             rinconDeLlorarTimer = 0;
@@ -254,6 +267,7 @@ public class IABehaviour : MonoBehaviour
             if (navMeshAgent.transform.position.x < myHidePlace.transform.position.x + 2 && navMeshAgent.transform.position.x > myHidePlace.transform.position.x - 2
            && navMeshAgent.transform.position.y < myHidePlace.transform.position.y + 2 && navMeshAgent.transform.position.y > myHidePlace.transform.position.y - 2)
             {
+                FindObjectOfType<AudioManager>().Play("hideVoids");
                 character.enabled = false;
                 myHideIcon = myHidePlace.transform.GetChild(0).gameObject;
                 myHideIcon.SetActive(true);
@@ -274,6 +288,11 @@ public class IABehaviour : MonoBehaviour
             {
                 dangerIcon.SetActive(true);
                 followWaypointsLevel0 = false;
+                if (canAlertSound)
+                {
+                    FindObjectOfType<AudioManager>().Play("AlertVoid");
+                    canAlertSound = false;
+                }
             }
 
             else if (goToRinconDeLlorar)

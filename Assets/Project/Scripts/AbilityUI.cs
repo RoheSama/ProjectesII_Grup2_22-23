@@ -127,7 +127,7 @@ public class AbilityUI : MonoBehaviour
             //StartCoroutine(PowerUpCooldown());
             GetComponent<SpriteRenderer>().color = Color.yellow;
             agent.speed = agent.speed + powerUpSpeed;
-            StartCoroutine(NormalForm());            //Arnau            shadowIcon.SetActive(true);
+            StartCoroutine(NormalForm());            //Arnau            shadowIcon.SetActive(true);
         }
 
         if (!powerUpAvailable)
