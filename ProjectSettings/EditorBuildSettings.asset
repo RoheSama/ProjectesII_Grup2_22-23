@@ -11,16 +11,16 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Project/Scenes/Phone.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Project/Scenes/TestScene.unity
     guid: d124e53fb8ad9494fb3655a49be7756a
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Project/Scenes/SchoolScene.unity
     guid: 18c395eaec0d09b4e8a1908915fc541b
   - enabled: 1
