@@ -22862,6 +22862,7 @@ GameObject:
   - component: {fileID: 658573841}
   - component: {fileID: 658573845}
   - component: {fileID: 658573849}
+  - component: {fileID: 658573850}
   m_Layer: 7
   m_Name: Character
   m_TagString: Player
@@ -22939,6 +22940,22 @@ MonoBehaviour:
   shadowModeEffect: {fileID: 1565056931}
   normalForm: {fileID: 1575902883}
   shadowForm: {fileID: 2112805158}
+  normalFace: {fileID: 1657095237}
+  shadowFace: {fileID: 1615502844}
+--- !u!114 &658573850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 658573840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9634e8672d7cd524593e9bc9caf785b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shadow: {fileID: 2112805158}
+  violet: {fileID: 1575902883}
 --- !u!1 &673849328
 GameObject:
   m_ObjectHideFlags: 0
@@ -23047,8 +23064,8 @@ RectTransform:
   m_Children:
   - {fileID: 1140496751}
   - {fileID: 969834017}
-  - {fileID: 1657095236}
   - {fileID: 1615502843}
+  - {fileID: 1657095236}
   m_Father: {fileID: 24146452}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -79617,7 +79634,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc802607ae27a37429577d0f475fc12f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 2112805159}
+  targetNormal: {fileID: 1575902884}
+  targetShadow: {fileID: 2112805159}
   duration: 0.5
   start: 0
   curve:
@@ -85086,7 +85104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1575902884
 Transform:
   m_ObjectHideFlags: 0
@@ -85226,7 +85244,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1615502843
 RectTransform:
   m_ObjectHideFlags: 0
@@ -85234,13 +85252,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1615502842}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 774644159}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -85316,7 +85334,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 774644159}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -85530,6 +85548,8 @@ MonoBehaviour:
   shadowModeEffect: {fileID: 1565056931}
   normalForm: {fileID: 0}
   shadowForm: {fileID: 0}
+  normalFace: {fileID: 0}
+  shadowFace: {fileID: 0}
 --- !u!114 &1722441298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86319,7 +86339,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2112805159
 Transform:
   m_ObjectHideFlags: 0
@@ -86420,7 +86440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 2112805163}
-  moveSpeed: 2
+  moveSpeed: 5
 --- !u!50 &2112805166
 Rigidbody2D:
   serializedVersion: 4
