@@ -14,12 +14,14 @@ public class MenuController : MonoBehaviour
     // Button de Play 
     public void StartGame()
     {
+        FindObjectOfType<AudioManager>().Play("ClickSound");
         SceneManager.LoadScene("BigMap");
     }
 
     // Button de Options
     public void Options()
-    {  
+    {
+        FindObjectOfType<AudioManager>().Play("ClickSound");
         optionsMenu.SetActive(true);
         controlsMenu.SetActive(false);
         mainMenu.SetActive(false);
@@ -27,7 +29,8 @@ public class MenuController : MonoBehaviour
 
     // Button de Controls
     public void Controls()
-    { 
+    {
+        FindObjectOfType<AudioManager>().Play("ClickSound");
         controlsMenu.SetActive(true);
         optionsMenu.SetActive(false);
         mainMenu.SetActive(false);
@@ -36,6 +39,7 @@ public class MenuController : MonoBehaviour
     // Button de Back
     public void Back()
     {
+        FindObjectOfType<AudioManager>().Play("ClickSound");
         mainMenu.SetActive(true);
         controlsMenu.SetActive(false);
         optionsMenu.SetActive(false);
@@ -44,6 +48,7 @@ public class MenuController : MonoBehaviour
     // Button de Exit
     public void ExitGame()
     {
+        FindObjectOfType<AudioManager>().Play("ClickSound");
         Application.Quit();
     }
 }
