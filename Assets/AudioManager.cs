@@ -2,6 +2,7 @@ using UnityEngine.Audio;
 
 using UnityEngine;
 using System;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -21,8 +22,17 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        //Play("Theme");
-        //Play("School");
+        if (SceneManager.GetActiveScene().name == "MainMenu")
+        {
+            Debug.Log("Hola");
+            Play("MainMenuTheme");
+        }
+        else if (SceneManager.GetActiveScene().name == "BigMap")
+        {
+            Play("Theme");
+            Play("School");
+        }
+
     }
 
     public void Play (string name)
