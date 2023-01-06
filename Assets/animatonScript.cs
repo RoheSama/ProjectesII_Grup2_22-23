@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class animatonScript : MonoBehaviour
 {
-    public int speed;
+    public float speed;
     public Animator animator;
     public NavMeshAgent navmeshAgent;
 
@@ -32,7 +32,7 @@ public class animatonScript : MonoBehaviour
     public GameObject visionRangeRight;
 
 
-    void Start()
+    void Start()    
     {
        
     }
@@ -41,7 +41,7 @@ public class animatonScript : MonoBehaviour
     {
         timeCounter += Time.deltaTime;
 
-        //animator.SetFloat("Speed", speed);
+        animator.SetFloat("Speed", speed);
 
         actualPositionX = navmeshAgent.transform.position.x;
         actualPositionY = navmeshAgent.transform.position.y;
@@ -55,7 +55,14 @@ public class animatonScript : MonoBehaviour
             timeCounter = 0;
         }
 
-        
+        if(diferrenceLastPositionXAndActualPositionX == 0 && diferrenceLastPositionYAndActualPositionY == 0)
+        {
+            if(animator.GetBool("MoveDown"))
+            {
+                animator.SetBool("MoveDown", false);
+                animator.SetBool("IdleDown", true);
+            }
+        }
         //Move Down
         if (diferrenceLastPositionYAndActualPositionY > downValue) //0
         {
