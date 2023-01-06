@@ -191,7 +191,14 @@ public class IABehaviour : MonoBehaviour
             navMeshAgent.speed = 3;
             Debug.Log("B");
         }
-
+        if(myRinconDeLlorar!= null)
+        {
+            if (navMeshAgent.transform.position == myRinconDeLlorar.transform.position)
+            {
+                //Llora
+            }
+        }
+       
         if(rinconDeLlorarTimer >= timeInRinconDeLlorar)
         {
             dangerIcon.SetActive(false);
@@ -274,6 +281,7 @@ public class IABehaviour : MonoBehaviour
             {
                 dangerIcon.SetActive(true);
                 followWaypointsLevel0 = false;
+
             }
 
             else if (goToRinconDeLlorar)
