@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class animatonScript : MonoBehaviour
 {
-    public int speed;
+    public float speed;
     public Animator animator;
     public NavMeshAgent navmeshAgent;
 
@@ -32,7 +32,7 @@ public class animatonScript : MonoBehaviour
     public GameObject visionRangeRight;
 
 
-    void Start()
+    void Start()    
     {
        
     }
@@ -41,7 +41,7 @@ public class animatonScript : MonoBehaviour
     {
         timeCounter += Time.deltaTime;
 
-        //animator.SetFloat("Speed", speed);
+      //  animator.SetFloat("Speed", speed);
 
         actualPositionX = navmeshAgent.transform.position.x;
         actualPositionY = navmeshAgent.transform.position.y;
@@ -55,6 +55,7 @@ public class animatonScript : MonoBehaviour
             timeCounter = 0;
         }
 
+       
         
         //Move Down
         if (diferrenceLastPositionYAndActualPositionY > downValue) //0
@@ -122,7 +123,55 @@ public class animatonScript : MonoBehaviour
                 visionRangeRight.SetActive(false);
             }
                
-        }  
+        }
+
+        if (diferrenceLastPositionXAndActualPositionX == 0 && diferrenceLastPositionYAndActualPositionY == 0)
+        {
+            if (animator.GetBool("MoveDown"))
+            {
+                animator.SetBool("MoveDown", false);
+                animator.SetBool("IdleDown", true);
+            }
+            if (animator.GetBool("MoveUp"))
+            {
+                animator.SetBool("MoveUp", false);
+                animator.SetBool("IdleUp", true);
+            }
+            if (animator.GetBool("MoveLeft"))
+            {
+                animator.SetBool("MoveLeft", false);
+                animator.SetBool("IdleLeft", true);
+            }
+            if (animator.GetBool("MoveRight"))
+            {
+                animator.SetBool("MoveRight", false);
+                animator.SetBool("IdleRight", true);
+            }
+        }
+
+        if (diferrenceLastPositionXAndActualPositionX != 0 && diferrenceLastPositionYAndActualPositionY != 0)
+        {
+            if (animator.GetBool("IdleDown"))
+            {
+                animator.SetBool("MoveDown", true);
+                animator.SetBool("IdleDown", false);
+            }
+            if (animator.GetBool("IdleUp"))
+            {
+                animator.SetBool("MoveUp", true);
+                animator.SetBool("IdleUp", false);
+            }
+            if (animator.GetBool("IdleLeft"))
+            {
+                animator.SetBool("MoveLeft", true);
+                animator.SetBool("IdleLeft", false);
+            }
+            if (animator.GetBool("IdleRight"))
+            {
+                animator.SetBool("MoveRight", true);
+                animator.SetBool("IdleRight", false);
+            }
+        }
     }
     
 }
