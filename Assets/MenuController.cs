@@ -14,7 +14,7 @@ public class MenuController : MonoBehaviour
     // Button de Play 
     public void StartGame()
     {
-        SceneManager.LoadScene("Oficial ScenePRUEVAS");
+        SceneManager.LoadScene("BigMap");
     }
 
     // Button de Options
