@@ -9,13 +9,46 @@ public class MenuController : MonoBehaviour
     public GameObject optionsMenu;
     public GameObject controlsMenu;
     public GameObject menuAnim;
-    
-    
+    public GameObject cinematic;
+    public GameObject title;
+    public GameObject logo;
+    public GameObject version;
+    public GameObject panel;
+    public GameObject skipCinematic;
+    public float timer;
+    bool activeTimer = false;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown("f"))
+        {
+            cinematic.SetActive(false);
+            SceneManager.LoadScene("BigMap");
+        }
+        if(activeTimer)
+        {
+            timer += Time.deltaTime;
+        }
+        if(timer >= 58)
+        {
+            SceneManager.LoadScene("BigMap");
+        }
+    }
+
     // Button de Play 
     public void StartGame()
     {
+
         FindObjectOfType<AudioManager>().Play("ClickSound");
-        SceneManager.LoadScene("BigMap");
+        menuAnim.SetActive(false);
+        cinematic.SetActive(true);
+        mainMenu.SetActive(false);
+        title.SetActive(false);
+        version.SetActive(false);
+        logo.SetActive(false);
+        panel.SetActive(false);
+        skipCinematic.SetActive(true);
+        activeTimer= true;
     }
 
     // Button de Options
