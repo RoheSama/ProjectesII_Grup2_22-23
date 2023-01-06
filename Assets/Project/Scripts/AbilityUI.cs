@@ -52,6 +52,9 @@ public class AbilityUI : MonoBehaviour
     public GameObject normalForm;
     public GameObject shadowForm;
 
+    public Image normalFace;
+    public Image shadowFace;
+
 
     //Arnau
     //public GameObject shadowIcon;
@@ -143,7 +146,7 @@ public class AbilityUI : MonoBehaviour
 
             if (abilityImageSM.fillAmount <= 0)
             {
-                abilityImageSM.fillAmount = 0;
+                abilityImageSM.fillAmount = 1;
                 powerUpAvailable = true;                
             }
             else
@@ -161,13 +164,24 @@ public class AbilityUI : MonoBehaviour
     {
         normalForm.SetActive(false);
         shadowForm.SetActive(true);
+        normalFace.enabled = false;
+        shadowFace.enabled = true;
     }
     void PowerOff()
-    {
-        //GetComponent<SpriteRenderer>().color = Color.white;
-        //agent.speed = agent.speed - powerUpSpeed;
+    {
+
+        //GetComponent<SpriteRenderer>().color = Color.white;
+
+        //agent.speed = agent.speed - powerUpSpeed;
+
+        normalForm.SetActive(true);
+        shadowForm.SetActive(false);
+
         powerUpActivated = false;
         shadowModeEffect.SetActive(false);
+
+        normalFace.enabled = true;
+        shadowFace.enabled = false;
 
         //Arnau
         //shadowIcon.SetActive(false);
@@ -176,7 +190,7 @@ public class AbilityUI : MonoBehaviour
     IEnumerator ShadowForm()
     {
         anim.SetTrigger("Transform");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.8f);
         PowerOn();
     }
     IEnumerator NormalForm()
