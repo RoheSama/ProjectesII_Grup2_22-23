@@ -16,6 +16,7 @@ public class TopDownMovement : MonoBehaviour
 
     private Vector2 input;
     private bool moving;
+    private bool moved = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,21 +38,25 @@ public class TopDownMovement : MonoBehaviour
     private void GetInput()
     {
         x = Input.GetAxisRaw("Horizontal");
+
         y = Input.GetAxisRaw("Vertical");
 
         input = new Vector2(x, y);
-        input.Normalize();  
+        input.Normalize();
     }
 
     private void Animate()
     {
-        if(input.magnitude > 0.1f || input.magnitude < -0.1f)
+        if (input.magnitude > 0.1f || input.magnitude < -0.1f)
         {
-            moving = true;  
+            Debug.Log("Moved");
+            moving = true;
+            moved = false;
         }
         else
         {
             moving = false;
+            moved = true;
         }
 
         if (moving)
@@ -59,7 +64,10 @@ public class TopDownMovement : MonoBehaviour
             anim.SetFloat("X", x);
             anim.SetFloat("Y", y);
         }
-
+        if(moved)
+        {
+            FindObjectOfType<AudioManager>().Play("walkViolet");
+        }
         anim.SetBool("Moving", moving);
     }
 }

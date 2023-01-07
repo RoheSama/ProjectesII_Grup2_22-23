@@ -49,6 +49,7 @@ public class MenuController : MonoBehaviour
         panel.SetActive(false);
         skipCinematic.SetActive(true);
         activeTimer= true;
+        FindObjectOfType<AudioManager>().Stop("MainMenuTheme");
     }
 
     // Button de Options
