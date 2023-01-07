@@ -68,7 +68,7 @@ public class EnemyHitNew : MonoBehaviour
     void Die()
     {
         //Debug.Log("Enemy died");
-
+        FindObjectOfType<AudioManager>().Play("DeathVoid");
         anim.SetBool("IsDead", true);
         GetComponent<Collider2D>().enabled = false;
         agent.speed = 0.0f;
