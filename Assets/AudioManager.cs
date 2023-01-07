@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
+    public GameObject shadow;
     public Sound[] sounds;
     void Awake()
     {
@@ -20,6 +21,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+
     private void Start()
     {
         if (SceneManager.GetActiveScene().name == "MainMenu")
@@ -29,7 +31,6 @@ public class AudioManager : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene().name == "BigMap")
         {
-            Play("Theme");
             Play("School");
         }
 
@@ -40,4 +41,12 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Play();
     }
+
+
+    public void Stop (string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        s.source.Stop();
+    }
+    
 }
