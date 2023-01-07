@@ -164,6 +164,7 @@ public class IABehaviour : MonoBehaviour
             {
 
                 FollowWaypointsLevel0();
+                dangerIcon.SetActive(false);
 
             }
 
@@ -190,7 +191,7 @@ public class IABehaviour : MonoBehaviour
             {
 
                 FollowWaypointsLevel0();
-
+                dangerIcon.SetActive(false);
             }
 
             else if (canAvoidStudents)
@@ -241,7 +242,7 @@ public class IABehaviour : MonoBehaviour
 
                 Debug.Log("A");
 
-                dangerIcon.SetActive(true);
+                dangerIcon.SetActive(false);
 
                 myHidePlace.tag = "Hide_Place";
 
@@ -575,15 +576,11 @@ public class IABehaviour : MonoBehaviour
             if (other.CompareTag("Target") || other.CompareTag("Player") && canActivateHideTimer == false)
 
             {
-
-
-
                 avoidTemp += Time.deltaTime;
 
                 if (avoidTemp >= 1)
 
                 {
-
                     followWaypointsLevel0 = false;
 
                     canAvoidStudents = true;
