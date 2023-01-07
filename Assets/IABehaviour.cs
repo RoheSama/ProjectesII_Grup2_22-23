@@ -128,10 +128,15 @@ public class IABehaviour : MonoBehaviour
             globalDangerIcon.SetActive(false);
         }
 
-        //CHECK THE LEVEL
+        if (Input.GetKeyDown("space"))
+        {
+            animator.SetBool("IsDead", true);
+        }
 
-        //Level 0
-        if (satanicStar01.activeInHierarchy == false)
+            //CHECK THE LEVEL
+
+            //Level 0
+            if (satanicStar01.activeInHierarchy == false)
 
         {
 
