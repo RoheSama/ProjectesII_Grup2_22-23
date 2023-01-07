@@ -235,8 +235,8 @@ public class AbilityUI : MonoBehaviour
     IEnumerator ShadowForm()
     {
         //audio
-        FindObjectOfType<AudioManager>().Play("transformShadow");
-        FindObjectOfType<AudioManager>().Play("screamShadow");
+        //FindObjectOfType<AudioManager>().Play("transformShadow");
+        //FindObjectOfType<AudioManager>().Play("screamShadow");
         anim.SetTrigger("Transform");
         yield return new WaitForSeconds(0.8f);
         PowerOn();
@@ -245,7 +245,7 @@ public class AbilityUI : MonoBehaviour
     {
         yield return new WaitForSeconds(powerUpDuration);
         //audio
-        FindObjectOfType<AudioManager>().Play("transformShadow");
+        //FindObjectOfType<AudioManager>().Play("transformShadow");
         PowerOff();
     }
 
