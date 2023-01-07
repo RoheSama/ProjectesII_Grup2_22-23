@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class EnemyHitNew : MonoBehaviour
@@ -18,6 +19,7 @@ public class EnemyHitNew : MonoBehaviour
     public GameObject blood;
     public GameObject bloodDie;
 
+    public NavMeshAgent agent;
     //public Slider rageBar;
     //public float maxRage = 100;
     //public float currentRage = 20;
@@ -67,12 +69,20 @@ public class EnemyHitNew : MonoBehaviour
     {
         //Debug.Log("Enemy died");
 
-        //anim.SetBool("isDead", true);
+        anim.SetBool("IsDead", true);
         GetComponent<Collider2D>().enabled = false;
-        Destroy(gameObject);
+        agent.speed = 0.0f;
+        StartCoroutine(VoidDestroy());
+        //Destroy(gameObject);
         //rageBar.UpdateRageBar();
         //UpdateRageBar();
         //enemyDied = true;
+    }
+
+    IEnumerator VoidDestroy()
+    {
+        yield return new WaitForSeconds(1.0f);
+        Destroy(gameObject);
     }
 
 }
