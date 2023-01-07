@@ -7,6 +7,7 @@ public class IABehaviour : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
     public SpriteRenderer character;
+    public Animator animator;
 
 
     //---Follow Waypoints
@@ -24,11 +25,8 @@ public class IABehaviour : MonoBehaviour
     bool waypointsTimerReached = false;
 
 
-
     //Icono Danger
-
     public GameObject dangerIcon;
-
     public GameObject shadowIcon;
 
 
@@ -228,8 +226,6 @@ public class IABehaviour : MonoBehaviour
 
             {
 
-                Debug.Log("AAA");
-
                 hideTimer = 0;
 
                 followWaypointsLevel0 = true;
@@ -240,7 +236,6 @@ public class IABehaviour : MonoBehaviour
 
                 navMeshAgent.speed = 2;
 
-                Debug.Log("A");
 
                 dangerIcon.SetActive(false);
 
@@ -319,13 +314,9 @@ public class IABehaviour : MonoBehaviour
         rinconDeLlorarTimer += Time.deltaTime;
 
         if (myRinconDeLlorar == null)
-
         {
-
             detector.transform.localScale = new Vector3(detectorIncrement, 1, 1);
-
             detectorIncrement++;
-
         }
 
         else
@@ -338,11 +329,25 @@ public class IABehaviour : MonoBehaviour
 
             navMeshAgent.speed = 3;
 
-            Debug.Log("B");
 
+            if (navMeshAgent.transform.position.x < myRinconDeLlorar.transform.position.x + 2 && navMeshAgent.transform.position.x > myRinconDeLlorar.transform.position.x - 2
+
+            && navMeshAgent.transform.position.y < myRinconDeLlorar.transform.position.y + 2 && navMeshAgent.transform.position.y > myRinconDeLlorar.transform.position.y - 2)
+            {
+                animator.SetBool("CanCry", true);
+                animator.SetBool("IdleUp", false);
+                animator.SetBool("IdleDown", false);
+                animator.SetBool("IdleLeft", false);
+                animator.SetBool("IdleRight", false);
+                animator.SetBool("MoveUp", false);
+                animator.SetBool("MoveDown", false);
+                animator.SetBool("MoveLeft", false);
+                animator.SetBool("MoveRight", false);
+            }
         }
 
-        ////Audio
+    
+
 
         //if (myRinconDeLlorar != null)
 
@@ -391,8 +396,8 @@ public class IABehaviour : MonoBehaviour
             followWaypointsLevel0 = true;
 
             navMeshAgent.speed = 2;
-
-            Debug.Log("C");
+           
+            animator.SetBool("CanCry", false);
 
             if (satanicStar01.activeSelf)
             {
@@ -417,9 +422,6 @@ public class IABehaviour : MonoBehaviour
 
         navMeshAgent.speed = 4;
 
-        Debug.Log("D");
-
-
 
         if (avoidStudentsTemp >= 3)
 
@@ -432,9 +434,6 @@ public class IABehaviour : MonoBehaviour
             followWaypointsLevel0 = true;
 
             navMeshAgent.speed = 2;
-
-            Debug.Log("E");
-
         }
 
     }
@@ -471,8 +470,6 @@ public class IABehaviour : MonoBehaviour
 
             navMeshAgent.speed = 3;
 
-            Debug.Log("F");
-
         }
 
 
@@ -500,8 +497,6 @@ public class IABehaviour : MonoBehaviour
                 myHideIcon.SetActive(true);
 
                 navMeshAgent.speed = 0;
-
-                Debug.Log("G");
 
                 dangerIcon.SetActive(false);
 
