@@ -9,11 +9,15 @@ public class Dialogue : MonoBehaviour
     [SerializeField, TextArea(4, 6)] private string[] dialogueLines;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private GameObject hud;
+    [SerializeField] private GameObject dialogueSystem;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private KeyCode next;
     [SerializeField] private Image sprite1;
     [SerializeField] private Image sprite2;
     [SerializeField, TextArea(4, 6)] private string[] dialogueImage;
+    [SerializeField, TextArea(4, 6)] private string[] dialogueName;
+    [SerializeField] private TMP_Text character1;
+    [SerializeField] private TMP_Text character2;
 
     private float typingTime = 0.05f;
 
@@ -46,21 +50,40 @@ public class Dialogue : MonoBehaviour
                 dialogueText.text = dialogueLines[lineIndex];
             }
 
-            if (dialogueImage[lineIndex] == "1")
-            {
-                sprite1.enabled = true;
-                sprite2.enabled = false;
-            }
-            else if(dialogueImage[lineIndex] == "2")
-            {
-                sprite2.enabled = true;
-                sprite1.enabled = false;
-            }
-
+            
         }
-        
+
+        ImageManager();
+        NamesManager(); 
     }
     
+    private void ImageManager()
+    {
+        if (dialogueImage[lineIndex] == "1")
+        {
+            sprite1.enabled = true;
+            sprite2.enabled = false;
+        }
+        else if (dialogueImage[lineIndex] == "2")
+        {
+            sprite2.enabled = true;
+            sprite1.enabled = false;
+        }
+    }
+
+    private void NamesManager()
+    {
+        if (dialogueImage[lineIndex] == "1")
+        {
+            character1.enabled = true;
+            character2.enabled = false;
+        }
+        else if (dialogueImage[lineIndex] == "2")
+        {
+            character2.enabled = true;
+            character1.enabled = false;
+        }
+    }
     private void StarDialogue()
     {
        
@@ -85,8 +108,10 @@ public class Dialogue : MonoBehaviour
             dialoguePanel.SetActive(false);
             hud.SetActive(true);
             startDialogue = false;
+            dialogueSystem.SetActive(false);
             Time.timeScale = 1f;
         }
+        
     }
 
     private IEnumerator ShowLine()

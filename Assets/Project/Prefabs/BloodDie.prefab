@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6473687583778605489}
   - component: {fileID: 7211814617749334217}
   - component: {fileID: 4294921968161512632}
-  - component: {fileID: 3857352983145484323}
+  - component: {fileID: -6168139147633175132}
   m_Layer: 0
   m_Name: BloodDie
   m_TagString: Untagged
@@ -4839,7 +4839,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1989034469
-  m_SortingLayer: 13
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -4871,7 +4871,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &3857352983145484323
+--- !u!114 &-6168139147633175132
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4880,6 +4880,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8551379422355991024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10ca2ede7996d384b95e075d253594b5, type: 3}
+  m_Script: {fileID: 11500000, guid: b6ee6eb885b050f439e4814093f86971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

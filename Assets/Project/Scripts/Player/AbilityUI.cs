@@ -28,6 +28,7 @@ public class AbilityUI : MonoBehaviour
 
     //Rohe
     public Animator anim;
+    public Animator shadowAnim;
     public LayerMask enemyLayers;
     public LayerMask curaLayers;
 
@@ -54,6 +55,11 @@ public class AbilityUI : MonoBehaviour
     public Image normalFace;
     public Image shadowFace;
 
+    //Attack Area
+    private bool attackAreaEnabled = false;
+    [SerializeField] private GameObject attackArea;
+    [SerializeField] LayerMask AoE;
+    
 
     //Arnau
     //public GameObject shadowIcon;
@@ -86,29 +92,30 @@ public class AbilityUI : MonoBehaviour
             {
                 isCooldown1 = true;
                 abilityImage1.fillAmount = 1;
+                AreaEnabled();
 
                 //Efecto de la habilidad
                 //Debug.Log("Ataque ejecutado");
                 //targetController.targetedElement.SetActive(false);
                 //Animation
-                anim.SetTrigger("Attack");
-
+                shadowAnim.SetTrigger("Attacking");
+                StartCoroutine(AttackAreaRoutine());
                 //Detect enemies
-                Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);                Collider2D[] hitCura = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, curaLayers);
+                //Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);                //Collider2D[] hitCura = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, curaLayers);
 
-                foreach (Collider2D cura in hitCura)
-                {
-                    Debug.Log("Cura HIT");
-                    cura.GetComponent<CuraHit>().TakeDamage(attackDamage);
+                //foreach (Collider2D cura in hitCura)
+                //{
+                //    Debug.Log("Cura HIT");
+                //    cura.GetComponent<CuraHit>().TakeDamage(attackDamage);
 
-                }
+                //}
 
-                foreach (Collider2D enemy in hitEnemies)
-                {
-                    Debug.Log("HIT");
-                    enemy.GetComponent<EnemyHitNew>().TakeDamage(attackDamage);
+                //foreach (Collider2D enemy in hitEnemies)
+                //{
+                //    Debug.Log("HIT");
+                //    enemy.GetComponent<EnemyHitNew>().TakeDamage(attackDamage);
 
-                }
+                //}
 
             }
         }
@@ -127,13 +134,37 @@ public class AbilityUI : MonoBehaviour
 
             {
 
-                abilityImage1.fillAmount = 0;
+                abilityImage1.fillAmount = 1;
 
                 isCooldown1 = false;
 
             }
 
         }
+    }    public void AreaEnabled()
+    {
+        attackAreaEnabled = true;
+    }    void AreaDamage()
+    {
+        Debug.Log("DAMAGE");
+        Vector2 origin = new Vector2(0f, 0f);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(attackPoint.position,3f, AoE);
+        foreach(Collider2D enemy in colliders)
+        {
+            if (enemy.GetComponent<EnemyHitNew>())
+            {
+                Debug.Log("DAMAGED");
+                enemy.GetComponent<EnemyHitNew>().TakeDamage(attackDamage);
+            }
+        }
+    }    IEnumerator AttackAreaRoutine()
+    {
+        attackArea.SetActive(true);
+        yield return new WaitForSeconds(0.4f);
+        AreaDamage();
+        yield return new WaitForSeconds(0.4f);
+        attackArea.SetActive(false);
+        attackAreaEnabled = false;
     }
     void PowerUp()
     {
