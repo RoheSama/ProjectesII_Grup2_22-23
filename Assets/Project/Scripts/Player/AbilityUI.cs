@@ -146,12 +146,14 @@ public class AbilityUI : MonoBehaviour
         attackAreaEnabled = true;
     }    void AreaDamage()
     {
+        Debug.Log("DAMAGE");
         Vector2 origin = new Vector2(0f, 0f);
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(origin, 5f, AoE);
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(attackPoint.position,3f, AoE);
         foreach(Collider2D enemy in colliders)
         {
             if (enemy.GetComponent<EnemyHitNew>())
             {
+                Debug.Log("DAMAGED");
                 enemy.GetComponent<EnemyHitNew>().TakeDamage(attackDamage);
             }
         }

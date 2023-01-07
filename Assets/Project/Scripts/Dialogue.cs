@@ -46,21 +46,26 @@ public class Dialogue : MonoBehaviour
                 dialogueText.text = dialogueLines[lineIndex];
             }
 
-            if (dialogueImage[lineIndex] == "1")
-            {
-                sprite1.enabled = true;
-                sprite2.enabled = false;
-            }
-            else if(dialogueImage[lineIndex] == "2")
-            {
-                sprite2.enabled = true;
-                sprite1.enabled = false;
-            }
-
+            
         }
-        
+
+        ImageManager();
+
     }
     
+    private void ImageManager()
+    {
+        if (dialogueImage[lineIndex] == "1")
+        {
+            sprite1.enabled = true;
+            sprite2.enabled = false;
+        }
+        else if (dialogueImage[lineIndex] == "2")
+        {
+            sprite2.enabled = true;
+            sprite1.enabled = false;
+        }
+    }
     private void StarDialogue()
     {
        
@@ -85,8 +90,11 @@ public class Dialogue : MonoBehaviour
             dialoguePanel.SetActive(false);
             hud.SetActive(true);
             startDialogue = false;
+            sprite2.enabled = false;
+            sprite1.enabled = false;
             Time.timeScale = 1f;
         }
+        
     }
 
     private IEnumerator ShowLine()
