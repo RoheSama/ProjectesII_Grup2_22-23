@@ -12,8 +12,8 @@ public class EnemyHitNew : MonoBehaviour
 
     public bool isCura;
 
-    [SerializeField]
-    private RageBar rageBar;
+    //[SerializeField]
+    //private RageBar rageBar;
 
     public GameObject blood;
     public GameObject bloodDie;
@@ -25,51 +25,52 @@ public class EnemyHitNew : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        rageBar = FindObjectOfType<RageBar>();
+        //rageBar = FindObjectOfType<RageBar>();
     }
 
     public void TakeDamage(int damage)
     {
-        if (isCura)
-        {
-            if (rageBar.raged)
-            {
-                Instantiate(blood, transform.position, Quaternion.identity);
-                currentHealth -= damage;
+        //if (isCura)
+        //{
+        //    if (rageBar.raged)
+        //    {
+        //        Instantiate(blood, transform.position, Quaternion.identity);
+        //        currentHealth -= damage;
+        //        Debug.Log("Damaged");
 
-                anim.SetTrigger("Hurt");
-                if (currentHealth <= 0)
-                {
-                    Die();
-                    Instantiate(bloodDie, transform.position, Quaternion.identity);
-                }
-            }
-        }
-        else
-        {
+        //        anim.SetTrigger("Hurt");
+        //        if (currentHealth <= 0)
+        //        {
+        //            Die();
+        //            Instantiate(bloodDie, transform.position, Quaternion.identity);
+        //        }
+        //    }
+        //}
+        //else
+        //{
             Instantiate(blood, transform.position, Quaternion.identity);
             currentHealth -= damage;
 
-            anim.SetTrigger("Hurt");
+            //anim.SetTrigger("Hurt");
 
             if (currentHealth <= 0)
             {
                 Die();
                 Instantiate(bloodDie, transform.position, Quaternion.identity);
             }
-        }
+        //}
 
 
     }
 
     void Die()
     {
-        Debug.Log("Enemy died");
+        //Debug.Log("Enemy died");
 
-        anim.SetBool("isDead", true);
+        //anim.SetBool("isDead", true);
         GetComponent<Collider2D>().enabled = false;
         Destroy(gameObject);
-        rageBar.UpdateRageBar();
+        //rageBar.UpdateRageBar();
         //UpdateRageBar();
         //enemyDied = true;
     }
