@@ -20,6 +20,7 @@ TagManager:
   - Hide_Place
   - Hide_Place_Disabled
   - Rincon_De_Llorar_Disabled
+  - DangerIcon
   layers:
   - Default
   - TransparentFX

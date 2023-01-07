@@ -49,7 +49,7 @@ public class TopDownMovement : MonoBehaviour
     {
         if (input.magnitude > 0.1f || input.magnitude < -0.1f)
         {
-            Debug.Log("Moved");
+           // Debug.Log("Moved");
             moving = true;
             moved = false;
         }

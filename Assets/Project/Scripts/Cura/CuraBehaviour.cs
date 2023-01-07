@@ -51,6 +51,7 @@ public class CuraBehaviour : MonoBehaviour
     public float chaseTime;
 
     public GameObject globalDangerIcon;
+    public GameObject[] globalDangerIcons;
 
     void Start()
     {
@@ -61,6 +62,26 @@ public class CuraBehaviour : MonoBehaviour
     {
         //CHECK THE LEVEL
 
+       if(globalDangerIcons[0].activeSelf || globalDangerIcons[1].activeSelf || globalDangerIcons[2].activeSelf || globalDangerIcons[3].activeSelf || globalDangerIcons[4].activeSelf || globalDangerIcons[5].activeSelf || globalDangerIcons[6].activeSelf)
+        {
+            followWaypointsLevel0 = false;
+        }
+
+       if(dangerIcon.activeSelf)
+        {
+            navMeshAgent.speed = 3f;
+            globalDangerIcon.SetActive(true);
+
+        }
+        else if (!dangerIcon.activeSelf)
+        {
+            globalDangerIcon.SetActive(false);
+        }
+
+        else
+        {
+            navMeshAgent.speed = 2;
+        }
         //Level 0
         if (satanicStar01.activeInHierarchy == false)
         {
@@ -85,7 +106,7 @@ public class CuraBehaviour : MonoBehaviour
                 dangerIcon.SetActive(false);
             }
 
-            else if (dangerIcon.activeSelf || globalDangerIcon)
+            else if (globalDangerIcons[0].activeSelf || globalDangerIcons[1].activeSelf || globalDangerIcons[2].activeSelf || globalDangerIcons[3].activeSelf || globalDangerIcons[4].activeSelf || globalDangerIcons[5].activeSelf || globalDangerIcons[6].activeSelf)
             {
                 ChasePlayer();
             }
