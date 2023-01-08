@@ -23,7 +23,7 @@ public class MenuController : MonoBehaviour
         if (Input.GetKeyDown("f"))
         {
             cinematic.SetActive(false);
-            SceneManager.LoadScene("BigMap");
+            SceneManager.LoadScene("TutorialScene");
         }
         if(activeTimer)
         {
@@ -31,7 +31,7 @@ public class MenuController : MonoBehaviour
         }
         if(timer >= 58)
         {
-            SceneManager.LoadScene("BigMap");
+            SceneManager.LoadScene("TutorialScene");
         }
     }
 
