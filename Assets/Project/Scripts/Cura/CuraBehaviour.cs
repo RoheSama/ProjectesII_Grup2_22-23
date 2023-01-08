@@ -24,11 +24,9 @@ public class CuraBehaviour : MonoBehaviour
     float waypointsTimer = 0;
     bool waypointsTimerReached = false;
 
-
     //Icono Danger
     public GameObject dangerIcon;
     public GameObject shadowIcon;
-
 
     //LEVELS
     bool level0 = true;
@@ -69,7 +67,7 @@ public class CuraBehaviour : MonoBehaviour
 
        if(dangerIcon.activeSelf)
         {
-            navMeshAgent.speed = 3f;
+            navMeshAgent.speed = 2.8f;
             globalDangerIcon.SetActive(true);
 
         }
@@ -80,8 +78,9 @@ public class CuraBehaviour : MonoBehaviour
 
         else
         {
-            navMeshAgent.speed = 2;
+            navMeshAgent.speed = 2.0f;
         }
+
         //Level 0
         if (satanicStar01.activeInHierarchy == false)
         {
