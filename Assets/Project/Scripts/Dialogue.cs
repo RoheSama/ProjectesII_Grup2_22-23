@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
+    //Detection
+    private bool isPlayerInRange;
+    [SerializeField] private GameObject interactAlert;
+
+    //Dialogue
     [SerializeField, TextArea(4, 6)] private string[] dialogueLines;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private GameObject hud;
@@ -18,6 +23,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField, TextArea(4, 6)] private string[] dialogueName;
     [SerializeField] private TMP_Text character1;
     [SerializeField] private TMP_Text character2;
+    [SerializeField] private TMP_Text character3;
 
     private float typingTime = 0.05f;
 
@@ -25,16 +31,11 @@ public class Dialogue : MonoBehaviour
     private bool startDialogue;
     private int lineIndex;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        startDialogue = true;
-    }
 
     // Update is called once per frame
     void Update()
     {
-        if (startDialogue && Input.GetKeyUp(next))
+        if (isPlayerInRange && Input.GetKeyUp(next))
         {
             if (!didDialogueStart)
             {
@@ -69,6 +70,11 @@ public class Dialogue : MonoBehaviour
             sprite2.enabled = true;
             sprite1.enabled = false;
         }
+        else if (dialogueImage[lineIndex] == "3")
+        {
+            sprite2.enabled = false;
+            sprite1.enabled = false;
+        }
     }
 
     private void NamesManager()
@@ -77,18 +83,25 @@ public class Dialogue : MonoBehaviour
         {
             character1.enabled = true;
             character2.enabled = false;
+            character3.enabled = false;
         }
         else if (dialogueImage[lineIndex] == "2")
         {
             character2.enabled = true;
             character1.enabled = false;
+            character3.enabled = false;
+        }
+        else if (dialogueImage[lineIndex] == "3")
+        {
+            character2.enabled = false;
+            character1.enabled = false;
+            character3.enabled = true;
         }
     }
     private void StarDialogue()
     {
-       
         didDialogueStart = true;
-        dialoguePanel.SetActive(true);
+        dialogueSystem.SetActive(true); 
         hud.SetActive(false);
         lineIndex = 0;
         Time.timeScale = 0f;
@@ -122,6 +135,27 @@ public class Dialogue : MonoBehaviour
         {
             dialogueText.text += ch;
             yield return new WaitForSecondsRealtime(typingTime);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            isPlayerInRange = true;
+            interactAlert.SetActive(true);
+            Debug.Log("dialogue");
+        }
+       
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            isPlayerInRange = false;
+            interactAlert.SetActive(false);
+            Debug.Log("nondialogue");
         }
     }
 }
