@@ -170,8 +170,11 @@ public class AbilityUI : MonoBehaviour
     }
     void PowerUp()
     {
-        if (Input.GetKeyDown(powerUpKey) && powerUpAvailable == true)
-        {            //shadowModeEffect.SetActive(true);
+        if (Input.GetKeyDown(powerUpKey) && powerUpAvailable == true)
+        {            if (Input.GetKeyDown(powerUpKey))
+            {
+                PowerOff();
+            }            //shadowModeEffect.SetActive(true);
             powerUpAvailable = false;
             powerUpActivated = true;
             currentCD = 0;

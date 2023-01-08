@@ -20,6 +20,7 @@ public class EnemyHitNew : MonoBehaviour
     public GameObject bloodDie;
 
     public NavMeshAgent agent;
+    public bool died;
     //public Slider rageBar;
     //public float maxRage = 100;
     //public float currentRage = 20;
@@ -68,6 +69,7 @@ public class EnemyHitNew : MonoBehaviour
     void Die()
     {
         //Debug.Log("Enemy died");
+        died = true;
         FindObjectOfType<AudioManager>().Play("DeathVoid");
         anim.SetBool("IsDead", true);
         GetComponent<Collider2D>().enabled = false;
@@ -83,6 +85,7 @@ public class EnemyHitNew : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         Destroy(gameObject);
+       
     }
 
 }

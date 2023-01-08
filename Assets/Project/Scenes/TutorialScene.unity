@@ -211,6 +211,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2075762617812982471, guid: 4cb41f124cfc24a48a382a0331ab846a, type: 3}
+      propertyPath: ability1
+      value: 323
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075762617812982471, guid: 4cb41f124cfc24a48a382a0331ab846a, type: 3}
       propertyPath: AoE.m_Bits
       value: 512
       objectReference: {fileID: 0}
@@ -222,6 +226,10 @@ PrefabInstance:
       propertyPath: normalFace
       value: 
       objectReference: {fileID: 1906224136}
+    - target: {fileID: 2075762617812982471, guid: 4cb41f124cfc24a48a382a0331ab846a, type: 3}
+      propertyPath: powerUpKey
+      value: 324
+      objectReference: {fileID: 0}
     - target: {fileID: 2075762617812982471, guid: 4cb41f124cfc24a48a382a0331ab846a, type: 3}
       propertyPath: shadowAnim
       value: 
@@ -850,7 +858,7 @@ MonoBehaviour:
     Your objective.'
   - To eradicate the student, you need to let the shadow demon possess you.
   - Press 'RIGHT CLICK' to let the shadow demon possess you.
-  - "\rOnce you are possessed, press 'LEFT CLICK' to eradicate the student."
+  - "\rOnce you're possessed, press 'LEFT CLICK' to eradicate the student."
   dialoguePanel: {fileID: 449766506}
   hud: {fileID: 1417909565}
   dialogueSystem: {fileID: 545700911}
@@ -77089,6 +77097,82 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &793723405
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 793723406}
+  - component: {fileID: 793723408}
+  - component: {fileID: 793723407}
+  m_Layer: 5
+  m_Name: Ability1 Icon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &793723406
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793723405}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 975006951}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -2.7, y: -83.16287}
+  m_SizeDelta: {x: 100, y: 90.3257}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &793723407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793723405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 7dcb5769a6d8f544892241e708d1e8d4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &793723408
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793723405}
+  m_CullTransparentMesh: 1
 --- !u!1 &858256256
 GameObject:
   m_ObjectHideFlags: 0
@@ -77799,6 +77883,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!224 &975006951 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2305149479199376456, guid: 95464befe3941ea40855a90dddcf8617, type: 3}
+  m_PrefabInstance: {fileID: 1537356636}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1005345212 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2305149477605908277, guid: 95464befe3941ea40855a90dddcf8617, type: 3}
@@ -77930,6 +78019,103 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &1167328094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1167328095}
+  - component: {fileID: 1167328098}
+  - component: {fileID: 1167328097}
+  - component: {fileID: 1167328096}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1167328095
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167328094}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1403647274}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!95 &1167328096
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167328094}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 83597330fb9d3fd4d8d6b1d8d192cd96, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1167328097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167328094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: afdb04c8ea5529e42a6afd208e54c87a, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1167328098
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167328094}
+  m_CullTransparentMesh: 1
 --- !u!1 &1295004418
 GameObject:
   m_ObjectHideFlags: 0
@@ -78040,6 +78226,82 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!1 &1353731267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1353731268}
+  - component: {fileID: 1353731270}
+  - component: {fileID: 1353731269}
+  m_Layer: 5
+  m_Name: SM Icon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1353731268
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353731267}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1681257915}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -83.16287}
+  m_SizeDelta: {x: 100, y: 90.3257}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1353731269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353731267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 2687b40479c9260469b0dfb41af7804e, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1353731270
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1353731267}
+  m_CullTransparentMesh: 1
 --- !u!1 &1372851665
 GameObject:
   m_ObjectHideFlags: 0
@@ -78083,6 +78345,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1403647273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1403647274}
+  - component: {fileID: 1403647275}
+  m_Layer: 5
+  m_Name: Transition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1403647274
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403647273}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1167328095}
+  m_Father: {fileID: 1930507738}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1403647275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1403647273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e49453e4c4c2574d8003d2a3a8d5bad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image: {fileID: 1167328094}
+  anim: {fileID: 1167328096}
 --- !u!1 &1417909565 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2305149477322110245, guid: 95464befe3941ea40855a90dddcf8617, type: 3}
@@ -78743,6 +79057,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &1681257915 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2305149478352317436, guid: 95464befe3941ea40855a90dddcf8617, type: 3}
+  m_PrefabInstance: {fileID: 1537356636}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1733015484
 GameObject:
   m_ObjectHideFlags: 0
@@ -78992,8 +79311,8 @@ GameObject:
   - component: {fileID: 1825328822}
   - component: {fileID: 1825328820}
   - component: {fileID: 1825328819}
-  - component: {fileID: 1825328818}
   - component: {fileID: 1825328824}
+  - component: {fileID: 1825328826}
   - component: {fileID: 1825328825}
   m_Layer: 9
   m_Name: IA
@@ -79018,25 +79337,6 @@ Transform:
   m_Father: {fileID: 579974124}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1825328818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825328816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 829ef1be20ea8834d81d4bb1f7c94b8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 5
-  currentHealth: 0
-  anim: {fileID: 1825328822}
-  isCura: 0
-  blood: {fileID: 7565307514328576958, guid: bffaa6ac790bb064a875874883a6c6e9, type: 3}
-  bloodDie: {fileID: 8551379422355991024, guid: 21b8c083463c5064b8dd17d8b65200d4, type: 3}
-  agent: {fileID: 1825328824}
 --- !u!70 &1825328819
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -79183,6 +79483,26 @@ MonoBehaviour:
   agent: {fileID: 1825328824}
   range: 3
   centrePoint: {fileID: 1825328817}
+--- !u!114 &1825328826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825328816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 829ef1be20ea8834d81d4bb1f7c94b8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  currentHealth: 0
+  anim: {fileID: 1825328822}
+  isCura: 0
+  blood: {fileID: 7565307514328576958, guid: bffaa6ac790bb064a875874883a6c6e9, type: 3}
+  bloodDie: {fileID: 8551379422355991024, guid: 21b8c083463c5064b8dd17d8b65200d4, type: 3}
+  agent: {fileID: 1825328824}
+  died: 0
 --- !u!1 &1888213018 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2075762617169267192, guid: 4cb41f124cfc24a48a382a0331ab846a, type: 3}
@@ -79545,8 +79865,7 @@ MonoBehaviour:
     I can see that you don't have much life left to live ...
   - 'Please, make me live longer. I will give you anything you want, I just want
     to keep living and make those assholes pay. It''s not fair! '
-  - Anything...? Hmmm, look, you are a very entertaining specimen, look, here's the
-    deal.
+  - Anything...? Hmmm, you are a very entertaining specimen, look, here's the deal.
   - 'I will posses your heart, and in exchange, I want you to bring me entertainment. '
   - I want you to kill, steal, stalk, whatever evil thing crosses your mind.
   - ...

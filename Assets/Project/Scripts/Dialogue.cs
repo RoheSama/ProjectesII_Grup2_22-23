@@ -100,8 +100,9 @@ public class Dialogue : MonoBehaviour
     }
     private void StarDialogue()
     {
-        didDialogueStart = true;
-        dialogueSystem.SetActive(true); 
+        didDialogueStart = true;     
+        dialogueSystem.SetActive(true);
+        dialoguePanel.SetActive(true);
         hud.SetActive(false);
         lineIndex = 0;
         Time.timeScale = 0f;
