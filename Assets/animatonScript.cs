@@ -71,7 +71,11 @@ public class animatonScript : MonoBehaviour
                 visionRangeLeft.SetActive(false);
                 visionRangeRight.SetActive(false);
             }
-         
+
+            if (animator.GetBool("CanCry"))
+            {
+                animator.SetBool("CanCry", false);
+            }
         }
 
         ////Move Left
@@ -88,7 +92,12 @@ public class animatonScript : MonoBehaviour
                 visionRangeLeft.SetActive(true);
                 visionRangeRight.SetActive(false);
             }
-             
+
+            if (animator.GetBool("CanCry"))
+            {
+                animator.SetBool("CanCry", false);
+            }
+
         }
 
         ////Move Right
@@ -104,6 +113,11 @@ public class animatonScript : MonoBehaviour
                 visionRangeUp.SetActive(false);
                 visionRangeLeft.SetActive(false);
                 visionRangeRight.SetActive(true);
+            }
+
+            if (animator.GetBool("CanCry"))
+            {
+                animator.SetBool("CanCry", false);
             }
 
         }
@@ -122,7 +136,12 @@ public class animatonScript : MonoBehaviour
                 visionRangeLeft.SetActive(false);
                 visionRangeRight.SetActive(false);
             }
-               
+
+            if (animator.GetBool("CanCry"))
+            {
+                animator.SetBool("CanCry", false);
+            }
+
         }
 
         if (diferrenceLastPositionXAndActualPositionX == 0 && diferrenceLastPositionYAndActualPositionY == 0)
@@ -171,6 +190,8 @@ public class animatonScript : MonoBehaviour
                 animator.SetBool("MoveRight", true);
                 animator.SetBool("IdleRight", false);
             }
+
+
         }
     }
     
