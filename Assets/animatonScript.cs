@@ -55,8 +55,6 @@ public class animatonScript : MonoBehaviour
             timeCounter = 0;
         }
 
-       
-        
         //Move Down
         if (diferrenceLastPositionYAndActualPositionY > downValue) //0
         {
@@ -97,7 +95,6 @@ public class animatonScript : MonoBehaviour
             {
                 animator.SetBool("CanCry", false);
             }
-
         }
 
         ////Move Right

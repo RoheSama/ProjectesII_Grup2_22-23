@@ -67,7 +67,7 @@ public class CuraBehaviour : MonoBehaviour
 
        if(dangerIcon.activeSelf)
         {
-            navMeshAgent.speed = 2.8f;
+            navMeshAgent.speed = 3.0f;
             globalDangerIcon.SetActive(true);
 
         }
@@ -160,7 +160,9 @@ public class CuraBehaviour : MonoBehaviour
         if (chaseTimer>= chaseTime)
         {
             chaseTimer = 0;
+            dangerIcon.SetActive(false);
             followWaypointsLevel0= true;
+
             if(level0)
             {
                 satanicStar01.SetActive(false);
