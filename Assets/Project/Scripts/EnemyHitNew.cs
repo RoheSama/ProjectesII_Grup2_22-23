@@ -21,6 +21,7 @@ public class EnemyHitNew : MonoBehaviour
 
     public NavMeshAgent agent;
     public bool died;
+    public GameObject voidsLeft;
     //public Slider rageBar;
     //public float maxRage = 100;
     //public float currentRage = 20;
@@ -33,24 +34,24 @@ public class EnemyHitNew : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        //if (isCura)
-        //{
-        //    if (rageBar.raged)
-        //    {
-        //        Instantiate(blood, transform.position, Quaternion.identity);
-        //        currentHealth -= damage;
-        //        Debug.Log("Damaged");
+        if (isCura)
+        {
+            if (voidsLeft.GetComponent<VoidsLeft>().moneyValue == 0)
+            {
+                Instantiate(blood, transform.position, Quaternion.identity);
+                currentHealth -= damage;
+                Debug.Log("Damaged");
 
-        //        anim.SetTrigger("Hurt");
-        //        if (currentHealth <= 0)
-        //        {
-        //            Die();
-        //            Instantiate(bloodDie, transform.position, Quaternion.identity);
-        //        }
-        //    }
-        //}
-        //else
-        //{
+                anim.SetTrigger("Hurt");
+                if (currentHealth <= 0)
+                {
+                    Die();
+                    Instantiate(bloodDie, transform.position, Quaternion.identity);
+                }
+            }
+        }
+        else
+        {
             Instantiate(blood, transform.position, Quaternion.identity);
             currentHealth -= damage;
 
@@ -61,7 +62,7 @@ public class EnemyHitNew : MonoBehaviour
                 Die();
                 Instantiate(bloodDie, transform.position, Quaternion.identity);
             }
-        //}
+        }
 
 
     }
@@ -75,6 +76,7 @@ public class EnemyHitNew : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         agent.speed = 0.0f;
         StartCoroutine(VoidDestroy());
+        voidsLeft.GetComponent<VoidsLeft>().studentKill();
         //Destroy(gameObject);
         //rageBar.UpdateRageBar();
         //UpdateRageBar();
