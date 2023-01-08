@@ -19,11 +19,13 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private KeyCode next;
     [SerializeField] private Image sprite1;
     [SerializeField] private Image sprite2;
+    [SerializeField] private Image sprite3;
     [SerializeField, TextArea(4, 6)] private string[] dialogueImage;
     [SerializeField, TextArea(4, 6)] private string[] dialogueName;
     [SerializeField] private TMP_Text character1;
     [SerializeField] private TMP_Text character2;
     [SerializeField] private TMP_Text character3;
+    [SerializeField] private TMP_Text character4;
 
     private float typingTime = 0.05f;
 
@@ -64,16 +66,25 @@ public class Dialogue : MonoBehaviour
         {
             sprite1.enabled = true;
             sprite2.enabled = false;
+            sprite3.enabled = false;
         }
         else if (dialogueImage[lineIndex] == "2")
         {
             sprite2.enabled = true;
             sprite1.enabled = false;
+            sprite3.enabled = false;
         }
         else if (dialogueImage[lineIndex] == "3")
         {
             sprite2.enabled = false;
             sprite1.enabled = false;
+            sprite3.enabled = false;
+        }
+        else if (dialogueImage[lineIndex] == "4")
+        {
+            sprite2.enabled = false;
+            sprite1.enabled = false;
+            sprite3.enabled = true;
         }
     }
 
@@ -84,18 +95,28 @@ public class Dialogue : MonoBehaviour
             character1.enabled = true;
             character2.enabled = false;
             character3.enabled = false;
+            character4.enabled = false;
         }
         else if (dialogueImage[lineIndex] == "2")
         {
             character2.enabled = true;
             character1.enabled = false;
             character3.enabled = false;
+            character4.enabled = false;
         }
         else if (dialogueImage[lineIndex] == "3")
         {
             character2.enabled = false;
             character1.enabled = false;
             character3.enabled = true;
+            character4.enabled = false;
+        }
+        else if (dialogueImage[lineIndex] == "4")
+        {
+            character2.enabled = false;
+            character1.enabled = false;
+            character3.enabled = false;
+            character4.enabled = true;
         }
     }
     private void StarDialogue()
