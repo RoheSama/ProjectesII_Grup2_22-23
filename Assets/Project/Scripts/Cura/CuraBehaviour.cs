@@ -185,7 +185,7 @@ public class CuraBehaviour : MonoBehaviour
         {
             if (other.CompareTag("Player") && shadowIcon.activeSelf)
             {
-                //dangerIcon.SetActive(true);
+                dangerIcon.SetActive(true);
                 followWaypointsLevel0 = false;
 
                 //Audio
