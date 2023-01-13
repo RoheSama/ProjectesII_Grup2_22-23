@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: e6f658c3f168400488e80995fb775bbd
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Biryani
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 425c97010ee0c704b8c3cede99c654d4, type: 3}
+  - {fileID: 12800000, guid: 437008562083c1e4abd08e48314ddce0, type: 3}
+  - {fileID: 12800000, guid: 9386412ed8590024294fdc2d3f7f9ed3, type: 3}
+  - {fileID: 12800000, guid: d143933d4d41d6540bd20e4a08e87341, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

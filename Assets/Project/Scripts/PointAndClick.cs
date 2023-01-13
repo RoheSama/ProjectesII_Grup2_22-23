@@ -29,6 +29,9 @@ public class PointAndClick : MonoBehaviour
     bool canSlow = false;
 
     public GameObject bloodDie;
+    public GameObject camera;
+
+    public GameObject playerPos;
 
     //private float powerUpSpeed = 1.5f;
 
@@ -46,6 +49,8 @@ public class PointAndClick : MonoBehaviour
 
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+
+        target = playerPos.transform.position;
     }
 
     // Update is called once per frame
@@ -88,6 +93,7 @@ public class PointAndClick : MonoBehaviour
     public void Hurt()
     {
         anim.SetTrigger("hurt");
+        camera.GetComponent<CameraController>().start = true;
     }
 
     public void UpdateHealth(float mod)

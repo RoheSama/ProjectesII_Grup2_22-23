@@ -41,13 +41,15 @@ public class VoidWaypointController : MonoBehaviour
    // public GameObject securePlaceToHide;
     public GameObject iconSecurePlaceToHide;
 
-    public GameObject IASprite;
+   // public GameObject IASprite;
 
     //Attack
 
     bool canAttack = false;
     //public GameObject attackTrigger;
     public GameObject iconAttacking;
+    public GameObject iconWarning;
+
 
     public GameObject weapon;
     float weaponTimer = 0;
@@ -86,6 +88,7 @@ public class VoidWaypointController : MonoBehaviour
         playerPosY = player.transform.position.y;
         iconSecurePlaceToHide.SetActive(false);
         iconAttacking.SetActive(false);
+        iconWarning.SetActive(false);
     }
 
     void Update()
@@ -102,13 +105,14 @@ public class VoidWaypointController : MonoBehaviour
         if (followWaypoints)
         {  
             //Sortir del Hidden Place
-            IASprite.SetActive(true);
+           // IASprite.SetActive(true);
             iconSecurePlaceToHide.SetActive(false);
             iconAttacking.SetActive(false);
             weapon.SetActive(false);
             canHideInSecurePlace = false;
             canAttack= false;
             attackRange.SetActive(false);
+            iconWarning.SetActive(false);
 
             //Seguir els Waypoints
             FollowWaypoints();
@@ -122,35 +126,37 @@ public class VoidWaypointController : MonoBehaviour
 
         if(avoidPlayer)
         {
+            iconWarning.SetActive(true);
             if (canHideInSecurePlace)
             {
                 //Amagarse
-                IASprite.SetActive(false);
+              //  IASprite.SetActive(false);
                 iconSecurePlaceToHide.SetActive(true);
+                iconWarning.SetActive(false);
             }
 
             if(canAttack)
             {
                 if (weaponTimer >= 1)
                 {
-                   // weapon.SetActive(true);
+                    iconWarning.SetActive(false);
+                    // weapon.SetActive(true);
                     iconAttacking.SetActive(true);
                     toleranceX = Random.Range(-1, 1);
                     toleranceY = Random.Range(-1, 1);
                     weapon.transform.position = new Vector2(player.transform.position.x + toleranceX, player.transform.position.y + toleranceY);
                     weaponTimer = 0;
-                    if (IASprite.activeSelf == true)
-                    {
-                        attackRange.SetActive(true);
-                    }     
-               
+                    //if (//IASprite.activeSelf == true)
+                   // {
+                    //    attackRange.SetActive(true);
+                   // }     
                 }
             }
         }
-        if (IASprite.activeSelf == false)
-        {
-            attackRange.SetActive(false);
-        }
+        //if (//IASprite.activeSelf == false)
+       // {
+       //     attackRange.SetActive(false);
+       // }
     }
     void FollowWaypoints()
     {
