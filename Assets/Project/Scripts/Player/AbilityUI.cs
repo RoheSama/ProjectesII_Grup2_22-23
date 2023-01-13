@@ -90,8 +90,7 @@ public class AbilityUI : MonoBehaviour
         {
             if (Input.GetKeyUp(ability1) && isCooldown1 == false)
             {
-
-                FindObjectOfType<AudioManager>().Play("attackShadow");
+                AudioManager.Instance.Play("attackShadow", this.gameObject);
                 isCooldown1 = true;
                 abilityImage1.fillAmount = 1;
                 AreaEnabled();
@@ -240,8 +239,8 @@ public class AbilityUI : MonoBehaviour
     IEnumerator ShadowForm()
     {
         //audio
-        FindObjectOfType<AudioManager>().Play("transformShadow");
-        FindObjectOfType<AudioManager>().Play("screamShadow");
+        AudioManager.Instance.Play("transformShadow", this.gameObject);
+        AudioManager.Instance.Play("screamShadow", this.gameObject);
         anim.SetTrigger("Transform");
         yield return new WaitForSeconds(0.8f);
         PowerOn();
@@ -250,7 +249,7 @@ public class AbilityUI : MonoBehaviour
     {
         yield return new WaitForSeconds(powerUpDuration);
         //audio
-        FindObjectOfType<AudioManager>().Play("transformShadow");
+        AudioManager.Instance.Play("transformShadow", this.gameObject);
         PowerOff();
     }
 

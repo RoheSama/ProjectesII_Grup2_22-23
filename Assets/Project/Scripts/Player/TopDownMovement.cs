@@ -66,7 +66,8 @@ public class TopDownMovement : MonoBehaviour
         }
         if(moved)
         {
-            FindObjectOfType<AudioManager>().Play("walkViolet");
+            AudioManager.Instance.Play("walkViolet", this.gameObject);
+
         }
         anim.SetBool("Moving", moving);
     }

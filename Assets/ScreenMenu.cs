@@ -15,31 +15,31 @@ public class ScreenMenu : MonoBehaviour
     }
     public void BackToOptionsMenu()
     {
-        FindObjectOfType<AudioManager>().Play("ClickSound");
+        AudioManager.Instance.Play("ClickSound", this.gameObject);
         screenMenu.SetActive(false);
         optionsMenu.SetActive(true);
     }
     public void Resolution1()
     {
-        FindObjectOfType<AudioManager>().Play("ClickSound");
+        AudioManager.Instance.Play("ClickSound", this.gameObject);
         fullscreenToggle.isOn = false;
         Screen.SetResolution(720, 480, false);
     }
     public void Resolution2()
     {
-        FindObjectOfType<AudioManager>().Play("ClickSound");
+        AudioManager.Instance.Play("ClickSound", this.gameObject);
         fullscreenToggle.isOn = false;
         Screen.SetResolution(1280, 720, false);
     }
     public void Resolution3()
     {
-        FindObjectOfType<AudioManager>().Play("ClickSound");
+        AudioManager.Instance.Play("ClickSound", this.gameObject);
         fullscreenToggle.isOn = false;
         Screen.SetResolution(1920, 1080, false);
     }
     public void Fullscreen()
     {
-        FindObjectOfType<AudioManager>().Play("ClickSound");
+        AudioManager.Instance.Play("ClickSound", this.gameObject);
         if (!fullscreenToggle.isOn)
         {
             Screen.SetResolution(1920, 1080, false);

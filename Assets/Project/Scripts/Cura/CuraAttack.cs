@@ -77,9 +77,7 @@ public class CuraAttack : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            FindObjectOfType<AudioManager>().Play("attackPriest");
-
-
+            AudioManager.Instance.Play("attackPriest", this.gameObject);
             StartCoroutine(AttackAreaRoutine());
         }
     }

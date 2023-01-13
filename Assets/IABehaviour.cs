@@ -534,7 +534,7 @@ public class IABehaviour : MonoBehaviour
 
                 {
 
-                    FindObjectOfType<AudioManager>().Play("AlertVoid");
+                    AudioManager.Instance.Play("AlertVoid", this.gameObject);
 
                     canAlertSound = false;
 
@@ -598,7 +598,8 @@ public class IABehaviour : MonoBehaviour
 
                 {
 
-                    FindObjectOfType<AudioManager>().Play("AlertVoid");
+                    AudioManager.Instance.Play("AlertVoid", this.gameObject);
+
 
                     canAlertSound = false;
 

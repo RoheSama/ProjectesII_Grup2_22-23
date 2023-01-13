@@ -60,7 +60,16 @@ public class CuraBehaviour : MonoBehaviour
     {
         //CHECK THE LEVEL
 
-       if(globalDangerIcons[0].activeSelf || globalDangerIcons[1].activeSelf || globalDangerIcons[2].activeSelf || globalDangerIcons[3].activeSelf || globalDangerIcons[4].activeSelf || globalDangerIcons[5].activeSelf || globalDangerIcons[6].activeSelf)
+        if(level0)
+        {
+            Debug.Log("LEVEL 0");
+        }
+        if (level1)
+        {
+            Debug.Log("LEVEL 1");
+        }
+
+        if (globalDangerIcons[0].activeSelf || globalDangerIcons[1].activeSelf || globalDangerIcons[2].activeSelf || globalDangerIcons[3].activeSelf || globalDangerIcons[4].activeSelf || globalDangerIcons[5].activeSelf || globalDangerIcons[6].activeSelf)
         {
             followWaypointsLevel0 = false;
         }
@@ -176,13 +185,13 @@ public class CuraBehaviour : MonoBehaviour
         {
             if (other.CompareTag("Player") && shadowIcon.activeSelf)
             {
-                dangerIcon.SetActive(true);
+                //dangerIcon.SetActive(true);
                 followWaypointsLevel0 = false;
 
                 //Audio
                 if (canAlertSound)
                 {
-                    FindObjectOfType<AudioManager>().Play("AlertVoid");
+                    AudioManager.Instance.Play("AlertVoid", this.gameObject);
                     canAlertSound = false;
                 }
             }
@@ -198,7 +207,7 @@ public class CuraBehaviour : MonoBehaviour
                 //Audio
                 if (canAlertSound)
                 {
-                    FindObjectOfType<AudioManager>().Play("AlertVoid");
+                    AudioManager.Instance.Play("AlertVoid", this.gameObject);
                     canAlertSound = false;
                 }
             }

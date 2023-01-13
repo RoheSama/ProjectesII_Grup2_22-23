@@ -8,7 +8,7 @@ public class AudioMenu : MonoBehaviour
     public GameObject optionsMenu;
     public void BackToOptionsMenu()
     {
-        FindObjectOfType<AudioManager>().Play("ClickSound");
+        AudioManager.Instance.Play("ClickSound", this.gameObject);
         audioMenu.SetActive(false);
         optionsMenu.SetActive(true);
     }

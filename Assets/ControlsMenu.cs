@@ -9,7 +9,7 @@ public class ControlsMenu : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        FindObjectOfType<AudioManager>().Play("ClickSound");
+        AudioManager.Instance.Play("ClickSound", this.gameObject);
         controlsMenu.SetActive(false);
         mainMenu.SetActive(true);
     }

@@ -11,21 +11,21 @@ public class OptionsMenu : MonoBehaviour
 
     public void ScreenMenu()
     {
-        FindObjectOfType<AudioManager>().Play("ClickSound");
+        AudioManager.Instance.Play("ClickSound", this.gameObject);
         optionsMenu.SetActive(false);
         screenMenu.SetActive(true);   
     }
 
     public void AudioMenu()
     {
-        FindObjectOfType<AudioManager>().Play("ClickSound");
+        AudioManager.Instance.Play("ClickSound", this.gameObject);
         optionsMenu.SetActive(false);
         audioMenu.SetActive(true);
     }
 
     public void BackToMainMenu()
     {
-        FindObjectOfType<AudioManager>().Play("ClickSound");
+        AudioManager.Instance.Play("ClickSound", this.gameObject);
         optionsMenu.SetActive(false);
         mainMenu.SetActive(true);
     }
