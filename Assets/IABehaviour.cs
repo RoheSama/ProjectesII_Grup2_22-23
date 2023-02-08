@@ -108,36 +108,26 @@ public class IABehaviour : MonoBehaviour
     bool canActiveAlertSound = true;
 
 
-    //Global Danger Icon
-    public GameObject globalDangerIcon;
-
 
     void Start()
     {
-        dangerIcon.SetActive(false);
+        
     }
 
     void Update()
     {
-        if (dangerIcon.activeSelf)
-        {
-            globalDangerIcon.SetActive(true);
-        }
-        else if (!dangerIcon.activeSelf)
-        {
-            globalDangerIcon.SetActive(false);
-        }
+        
 
             //CHECK THE LEVEL
 
             //Level 0
             if (satanicStar01.activeInHierarchy == false)
 
-        {
+            {
 
-            level0 = false;
+              level0 = false;
 
-            level1 = true;
+              level1 = true;
 
             //Audio
 
@@ -403,7 +393,6 @@ public class IABehaviour : MonoBehaviour
             {
                 satanicStar01.SetActive(false);
             }
-
         }
 
     }

@@ -48,9 +48,6 @@ public class CuraBehaviour : MonoBehaviour
     float chaseTimer;
     public float chaseTime;
 
-    public GameObject globalDangerIcon;
-    public GameObject[] globalDangerIcons;
-
     void Start()
     {
         dangerIcon.SetActive(false);
@@ -59,21 +56,19 @@ public class CuraBehaviour : MonoBehaviour
     void Update()
     {
         //CHECK THE LEVEL
-
-       if(globalDangerIcons[0].activeSelf || globalDangerIcons[1].activeSelf || globalDangerIcons[2].activeSelf || globalDangerIcons[3].activeSelf || globalDangerIcons[4].activeSelf || globalDangerIcons[5].activeSelf || globalDangerIcons[6].activeSelf)
+        if(level0)
         {
-            followWaypointsLevel0 = false;
+            Debug.Log("level0");
         }
 
-       if(dangerIcon.activeSelf)
+        if (level1)
+        {
+            Debug.Log("level1");
+        }
+
+        if (dangerIcon.activeSelf)
         {
             navMeshAgent.speed = 3.0f;
-            globalDangerIcon.SetActive(true);
-
-        }
-        else if (!dangerIcon.activeSelf)
-        {
-            globalDangerIcon.SetActive(false);
         }
 
         else
@@ -81,7 +76,7 @@ public class CuraBehaviour : MonoBehaviour
             navMeshAgent.speed = 2.0f;
         }
 
-        //Level 0
+        //Level 1
         if (satanicStar01.activeInHierarchy == false)
         {
             level0 = false;
@@ -97,7 +92,6 @@ public class CuraBehaviour : MonoBehaviour
 
         //Chase 
         if (level0 || level1)
-
         {
             if (followWaypointsLevel0)
             {
@@ -105,7 +99,7 @@ public class CuraBehaviour : MonoBehaviour
                 dangerIcon.SetActive(false);
             }
 
-            else if (globalDangerIcons[0].activeSelf || globalDangerIcons[1].activeSelf || globalDangerIcons[2].activeSelf || globalDangerIcons[3].activeSelf || globalDangerIcons[4].activeSelf || globalDangerIcons[5].activeSelf || globalDangerIcons[6].activeSelf)
+            else if(dangerIcon.activeSelf)
             {
                 ChasePlayer();
             }
