@@ -60,7 +60,11 @@ public class CuraBehaviour : MonoBehaviour
 
     void Update()
     {
-        //CHECK THE LEVEL
+
+
+        //DEBUG
+
+        /*
         if (level0)
         {
             Debug.Log("level0");
@@ -75,7 +79,9 @@ public class CuraBehaviour : MonoBehaviour
         {
             Debug.Log("level2");
         }
-
+        */
+        Debug.Log(chaseTimer);
+        
         if (!dangerIcon.activeSelf)
         {
             navMeshAgent.speed = 2.0f;
@@ -263,6 +269,14 @@ public class CuraBehaviour : MonoBehaviour
                 lastSeenPlayerIcon.transform.position = player.transform.position;
                 lastSeenPlayerIcon.SetActive(true);
             }
+
+            //if (other.CompareTag("Player"))
+            //{
+            //    if (chaseTimer > 0)
+            //    {
+            //        chaseTimer = 0;
+            //    }
+            //}   
         }
 
 
@@ -272,6 +286,11 @@ public class CuraBehaviour : MonoBehaviour
             {
                 lastSeenPlayerIcon.transform.position = player.transform.position;
                 lastSeenPlayerIcon.SetActive(true);
+
+                if (chaseTimer > 0)
+                {
+                    chaseTimer = 0;
+                }
             }
         }
     }
