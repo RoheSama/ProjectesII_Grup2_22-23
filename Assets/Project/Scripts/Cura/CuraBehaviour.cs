@@ -64,7 +64,7 @@ public class CuraBehaviour : MonoBehaviour
 
         //DEBUG
 
-        /*
+        
         if (level0)
         {
             Debug.Log("level0");
@@ -79,8 +79,8 @@ public class CuraBehaviour : MonoBehaviour
         {
             Debug.Log("level2");
         }
-        */
-        Debug.Log(chaseTimer);
+        
+        //Debug.Log(chaseTimer);
         
         if (!dangerIcon.activeSelf)
         {
@@ -226,24 +226,7 @@ public class CuraBehaviour : MonoBehaviour
             }
         }
 
-        if (level1)
-        {
-            if (other.CompareTag("Player"))
-            {
-                dangerIcon.SetActive(true);
-                followWaypoints = false;
-
-                //Audio
-                if (canAlertSound)
-                {
-                    FindObjectOfType<AudioManager>().Play("AlertVoid");
-                    canAlertSound = false;
-                }
-            }
-        }
-
-
-        if (level2)
+        if (level1||level2)
         {
             if (other.CompareTag("Player"))
             {
@@ -269,14 +252,6 @@ public class CuraBehaviour : MonoBehaviour
                 lastSeenPlayerIcon.transform.position = player.transform.position;
                 lastSeenPlayerIcon.SetActive(true);
             }
-
-            //if (other.CompareTag("Player"))
-            //{
-            //    if (chaseTimer > 0)
-            //    {
-            //        chaseTimer = 0;
-            //    }
-            //}   
         }
 
 
