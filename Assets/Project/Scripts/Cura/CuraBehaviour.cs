@@ -49,15 +49,19 @@ public class CuraBehaviour : MonoBehaviour
     float chaseTimer;
     public float chaseTime;
 
+    //Last Seen
+    public GameObject lastSeenPlayerIcon;
+
     void Start()
     {
         dangerIcon.SetActive(false);
+        lastSeenPlayerIcon.SetActive(false);
     }
 
     void Update()
     {
         //CHECK THE LEVEL
-        if(level0)
+        if (level0)
         {
             Debug.Log("level0");
         }
@@ -77,6 +81,7 @@ public class CuraBehaviour : MonoBehaviour
             navMeshAgent.speed = 2.0f;
         }
 
+        //Start at Level 0
 
         //Level 1
         if (satanicStar01.activeInHierarchy == false)
@@ -92,16 +97,12 @@ public class CuraBehaviour : MonoBehaviour
             level2 = true;
         }
 
-
         //Audio
         if (canActiveAlertSound)
         {
             canAlertSound = true;
             canActiveAlertSound = false;
         }
-
-
-
 
         //Chase 
         if (level0 || level1 || level2)
@@ -112,7 +113,7 @@ public class CuraBehaviour : MonoBehaviour
                 dangerIcon.SetActive(false);
             }
 
-            else if(dangerIcon.activeSelf)
+            else if (dangerIcon.activeSelf)
             {
                 ChasePlayer();
             }
@@ -137,7 +138,7 @@ public class CuraBehaviour : MonoBehaviour
         {
             if (!waypointsTimerReached)
             {
-                //Comen�ar temporitzador
+                //Iniciar temporitzador
                 waypointsTimer += Time.deltaTime;
             }
 
@@ -161,40 +162,43 @@ public class CuraBehaviour : MonoBehaviour
 
     void ChasePlayer()
     {
-        navMeshAgent.destination = player.transform.position;
+        navMeshAgent.destination = lastSeenPlayerIcon.transform.position;
         chaseTimer += Time.deltaTime;
 
-        if(level0)
+        if (level0)
         {
             navMeshAgent.speed = 3.0f;
+            //lastSeenPlayerIcon.SetActive(true);
         }
 
         if (level1)
         {
             navMeshAgent.speed = 4.0f;
+            //lastSeenPlayerIcon.SetActive(true);
         }
 
         if (level2)
         {
             navMeshAgent.speed = 4.0f;
+            //lastSeenPlayerIcon.SetActive(true);
         }
 
-        if (chaseTimer>= chaseTime)
+        if (chaseTimer >= chaseTime)
         {
             chaseTimer = 0;
             dangerIcon.SetActive(false);
-            followWaypoints= true;
+            followWaypoints = true;
 
-            if(level0)
+            if (level0)
             {
                 satanicStar01.SetActive(false);
             }
 
-            if(level1)
+            if (level1)
             {
                 satanicStar02.SetActive(false);
             }
-        }  
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -205,6 +209,7 @@ public class CuraBehaviour : MonoBehaviour
             {
                 dangerIcon.SetActive(true);
                 followWaypoints = false;
+                lastSeenPlayerIcon.SetActive(false);
 
                 //Audio
                 if (canAlertSound)
@@ -228,6 +233,46 @@ public class CuraBehaviour : MonoBehaviour
                     FindObjectOfType<AudioManager>().Play("AlertVoid");
                     canAlertSound = false;
                 }
+            }
+        }
+
+
+        if (level2)
+        {
+            if (other.CompareTag("Player"))
+            {
+                dangerIcon.SetActive(true);
+                followWaypoints = false;
+
+                //Audio
+                if (canAlertSound)
+                {
+                    FindObjectOfType<AudioManager>().Play("AlertVoid");
+                    canAlertSound = false;
+                }
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (level0)
+        {
+            if (other.CompareTag("Player") && shadowIcon.activeSelf)
+            {
+                lastSeenPlayerIcon.transform.position = player.transform.position;
+                lastSeenPlayerIcon.SetActive(true);
+                // lastSeenPlayerIcon.SetActive(false);
+                /*dangerIcon.SetActive(true);
+                followWaypoints = false;
+
+                //Audio
+                if (canAlertSound)
+                {
+                    FindObjectOfType<AudioManager>().Play("AlertVoid");
+                    canAlertSound = false;
+                }
+                */
             }
         }
     }
