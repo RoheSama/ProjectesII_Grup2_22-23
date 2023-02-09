@@ -262,17 +262,16 @@ public class CuraBehaviour : MonoBehaviour
             {
                 lastSeenPlayerIcon.transform.position = player.transform.position;
                 lastSeenPlayerIcon.SetActive(true);
-                // lastSeenPlayerIcon.SetActive(false);
-                /*dangerIcon.SetActive(true);
-                followWaypoints = false;
+            }
+        }
 
-                //Audio
-                if (canAlertSound)
-                {
-                    FindObjectOfType<AudioManager>().Play("AlertVoid");
-                    canAlertSound = false;
-                }
-                */
+
+        if (level1 || level2)
+        {
+            if (other.CompareTag("Player"))
+            {
+                lastSeenPlayerIcon.transform.position = player.transform.position;
+                lastSeenPlayerIcon.SetActive(true);
             }
         }
     }
