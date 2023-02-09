@@ -11,7 +11,7 @@ public class CuraBehaviour : MonoBehaviour
 
 
     //---Follow Waypoints
-    bool followWaypointsLevel0 = true;
+    bool followWaypoints = true;
 
     //Waypoints for FollowWaypoints
     public GameObject[] waypoints;
@@ -37,6 +37,7 @@ public class CuraBehaviour : MonoBehaviour
 
     // Satanic Stars
     public GameObject satanicStar01;
+    public GameObject satanicStar02;
 
 
     //Sounds
@@ -66,36 +67,48 @@ public class CuraBehaviour : MonoBehaviour
             Debug.Log("level1");
         }
 
-        if (dangerIcon.activeSelf)
+        if (level2)
         {
-            navMeshAgent.speed = 3.0f;
+            Debug.Log("level2");
         }
 
-        else
+        if (!dangerIcon.activeSelf)
         {
             navMeshAgent.speed = 2.0f;
         }
+
 
         //Level 1
         if (satanicStar01.activeInHierarchy == false)
         {
             level0 = false;
             level1 = true;
-            
-            //Audio
-            if (canActiveAlertSound)
-            {
-                canAlertSound = true;
-                canActiveAlertSound = false;
-            }
         }
 
-        //Chase 
-        if (level0 || level1)
+        //Level2
+        if (satanicStar02.activeInHierarchy == false)
         {
-            if (followWaypointsLevel0)
+            level1 = false;
+            level2 = true;
+        }
+
+
+        //Audio
+        if (canActiveAlertSound)
+        {
+            canAlertSound = true;
+            canActiveAlertSound = false;
+        }
+
+
+
+
+        //Chase 
+        if (level0 || level1 || level2)
+        {
+            if (followWaypoints)
             {
-                FollowWaypointsLevel0();
+                FollowWaypoints();
                 dangerIcon.SetActive(false);
             }
 
@@ -106,7 +119,7 @@ public class CuraBehaviour : MonoBehaviour
         }
     }
 
-    void FollowWaypointsLevel0()
+    void FollowWaypoints()
     {
         // Anar cap al waypoint
         navMeshAgent.destination = waypoints[waypointsIndex].transform.position;
@@ -151,15 +164,35 @@ public class CuraBehaviour : MonoBehaviour
         navMeshAgent.destination = player.transform.position;
         chaseTimer += Time.deltaTime;
 
+        if(level0)
+        {
+            navMeshAgent.speed = 3.0f;
+        }
+
+        if (level1)
+        {
+            navMeshAgent.speed = 4.0f;
+        }
+
+        if (level2)
+        {
+            navMeshAgent.speed = 4.0f;
+        }
+
         if (chaseTimer>= chaseTime)
         {
             chaseTimer = 0;
             dangerIcon.SetActive(false);
-            followWaypointsLevel0= true;
+            followWaypoints= true;
 
             if(level0)
             {
                 satanicStar01.SetActive(false);
+            }
+
+            if(level1)
+            {
+                satanicStar02.SetActive(false);
             }
         }  
     }
@@ -171,7 +204,7 @@ public class CuraBehaviour : MonoBehaviour
             if (other.CompareTag("Player") && shadowIcon.activeSelf)
             {
                 dangerIcon.SetActive(true);
-                followWaypointsLevel0 = false;
+                followWaypoints = false;
 
                 //Audio
                 if (canAlertSound)
@@ -187,7 +220,7 @@ public class CuraBehaviour : MonoBehaviour
             if (other.CompareTag("Player"))
             {
                 dangerIcon.SetActive(true);
-                followWaypointsLevel0 = false;
+                followWaypoints = false;
 
                 //Audio
                 if (canAlertSound)
