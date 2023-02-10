@@ -9,7 +9,6 @@ public class IABehaviour : MonoBehaviour
     public SpriteRenderer character;
     public Animator animator;
 
-
     //---Follow Waypoints
     bool followWaypointsLevel0 = true;
 
@@ -24,235 +23,121 @@ public class IABehaviour : MonoBehaviour
     float waypointsTimer = 0;
     bool waypointsTimerReached = false;
 
-
     //Icono Danger
     public GameObject dangerIcon;
     public GameObject shadowIcon;
 
-
-
     //LEVELS
-
     bool level0 = true;
-
     bool level1 = false;
-
     bool level2 = false;
-
     bool level3 = false;
 
-
-
     // Satanic Stars
-
     public GameObject satanicStar01;
 
-
-
     // Detector
-
     public GameObject detector;
-
     int detectorIncrement = 0;
 
-    //Rincon de llorar
-
-
-
     //Waypoints for Rincon De Llorar Function
-
     bool goToRinconDeLlorar = true;
     public GameObject myRinconDeLlorar;
-
 
     // Rincon de Llorar Timer
     float rinconDeLlorarTimer = 0;
     public int timeInRinconDeLlorar;
 
-
-
-
-
     //Avoid Students
-
     bool canAvoidStudents = false;
-
     float avoidTemp = 0;
-
     float avoidStudentsTemp = 0;
 
-
-
     //Hide
-
     bool goToHide = true;
-
     bool canHide = false;
-
     bool canActivateHideTimer = false;
-
     public float hideTimer = 0;
-
     public int timeHidden;
-
     public GameObject myHidePlace;
-
     public GameObject myHideIcon;
 
-
-
     //Sounds
-
     bool canAlertSound = true;
-
     bool canActiveAlertSound = true;
-
-
-    //Global Danger Icon
-    public GameObject globalDangerIcon;
-
-
-    void Start()
-    {
-        dangerIcon.SetActive(false);
-    }
 
     void Update()
     {
-        if (dangerIcon.activeSelf)
+        //CHECK THE LEVEL
+
+        //Level 0
+        if (satanicStar01.activeInHierarchy == false)
         {
-            globalDangerIcon.SetActive(true);
-        }
-        else if (!dangerIcon.activeSelf)
-        {
-            globalDangerIcon.SetActive(false);
-        }
-
-            //CHECK THE LEVEL
-
-            //Level 0
-            if (satanicStar01.activeInHierarchy == false)
-
-        {
-
             level0 = false;
-
             level1 = true;
 
             //Audio
-
             if (canActiveAlertSound)
-
             {
-
                 canAlertSound = true;
-
                 canActiveAlertSound = false;
-
             }
-
         }
 
         if (level0)
-
         {
-
             if (followWaypointsLevel0)
-
             {
-
                 FollowWaypointsLevel0();
                 dangerIcon.SetActive(false);
-
             }
 
             else if (dangerIcon.activeSelf)
-
             {
-
                 RinconDeLlorarLevel0();
-
             }
-
         }
 
-
-
         //Level 1
-
         if (level1)
-
         {
-
             if (followWaypointsLevel0)
-
             {
-
                 FollowWaypointsLevel0();
                 dangerIcon.SetActive(false);
             }
 
             else if (canAvoidStudents)
-
             {
-
                 AvoidStudents();
-
             }
 
             else if (dangerIcon.activeSelf)
-
             {
-
                 HideInHidePlace();
-
-
-
             }
 
-
-
             //HIDE FUNCTION
-
             if (canActivateHideTimer)
-
             {
-
                 hideTimer += Time.deltaTime;
-
             }
 
             if (hideTimer >= timeHidden)
-
             {
-
                 hideTimer = 0;
-
                 followWaypointsLevel0 = true;
-
                 character.enabled = true;
-
                 myHideIcon.SetActive(false);
-
                 navMeshAgent.speed = 2;
-
-
                 dangerIcon.SetActive(false);
-
                 myHidePlace.tag = "Hide_Place";
-
                 canActivateHideTimer = false;
-
                 myHidePlace = null;
-
                 myHideIcon = null;
-
                 canAlertSound = true;
-
             }
-
         }
-
     }
 
     void FollowWaypointsLevel0()
@@ -268,10 +153,7 @@ public class IABehaviour : MonoBehaviour
             timeWaypointsIndex = 0;
         }
 
-
-
         // Si arribes al waypoint
-
         else if (transform.position == navMeshAgent.destination)
         {
             if (!waypointsTimerReached)
@@ -279,8 +161,6 @@ public class IABehaviour : MonoBehaviour
                 //Comen�ar temporitzador
                 waypointsTimer += Time.deltaTime;
             }
-
-
 
             if (!waypointsTimerReached && waypointsTimer >= timeWaypoints[timeWaypointsIndex])
             {
@@ -291,10 +171,7 @@ public class IABehaviour : MonoBehaviour
                 waypointsTimerReached = true;
             }
 
-
-
             // Si arribes al waypointsTimer
-
             if (waypointsTimerReached)
             {
                 waypointsTimerReached = false;
@@ -302,17 +179,9 @@ public class IABehaviour : MonoBehaviour
             }
         }
     }
-
-
-
-
-
     void RinconDeLlorarLevel0()
-
     {
-
         rinconDeLlorarTimer += Time.deltaTime;
-
         if (myRinconDeLlorar == null)
         {
             detector.transform.localScale = new Vector3(detectorIncrement, 1, 1);
@@ -320,18 +189,12 @@ public class IABehaviour : MonoBehaviour
         }
 
         else
-
         {
-
             detector.transform.localScale = new Vector3(1, 1, 1);
-
             navMeshAgent.destination = myRinconDeLlorar.transform.position;
-
             navMeshAgent.speed = 3;
 
-
             if (navMeshAgent.transform.position.x < myRinconDeLlorar.transform.position.x + 2 && navMeshAgent.transform.position.x > myRinconDeLlorar.transform.position.x - 2
-
             && navMeshAgent.transform.position.y < myRinconDeLlorar.transform.position.y + 2 && navMeshAgent.transform.position.y > myRinconDeLlorar.transform.position.y - 2)
             {
                 animator.SetBool("CanCry", true);
@@ -346,289 +209,149 @@ public class IABehaviour : MonoBehaviour
             }
         }
 
-    
-
-
         //if (myRinconDeLlorar != null)
-
         //{
-
         //    if (navMeshAgent.transform.position.x < myRinconDeLlorar.transform.position.x + 2 && navMeshAgent.transform.position.x > myRinconDeLlorar.transform.position.x - 2
-
         //   && navMeshAgent.transform.position.y < myRinconDeLlorar.transform.position.y + 2 && navMeshAgent.transform.position.y > myRinconDeLlorar.transform.position.y - 2)
-
         //    {
-
         //        //va rana
-
         //        FindObjectOfType<AudioManager>().Play("CryVoid");
-
         //    }
-
         //}
 
 
-
-
-
         if (rinconDeLlorarTimer >= timeInRinconDeLlorar)
-
         {
-
             dangerIcon.SetActive(false);
-
             rinconDeLlorarTimer = 0;
-
         }
 
-
-
         //Vuelta a la normalidad
-
         if (dangerIcon.activeInHierarchy == false)
-
         {
-
             myRinconDeLlorar.tag = "Rincon_De_Llorar";
-
             myRinconDeLlorar = null;
-
             followWaypointsLevel0 = true;
-
             navMeshAgent.speed = 2;
-           
             animator.SetBool("CanCry", false);
 
             if (satanicStar01.activeSelf)
             {
                 satanicStar01.SetActive(false);
             }
-
         }
-
     }
-
-
-
-
 
     void AvoidStudents()
-
     {
-
         //waypointsIndex++;
-
         avoidStudentsTemp += Time.deltaTime;
-
         navMeshAgent.speed = 4;
 
-
         if (avoidStudentsTemp >= 3)
-
         {
-
             avoidStudentsTemp = 0;
-
             canAvoidStudents = false;
-
             followWaypointsLevel0 = true;
-
             navMeshAgent.speed = 2;
         }
-
     }
-
-
-
     void HideInHidePlace()
-
     {
-
-
-
         //Detectar el HidePlace mas cercano
-
         if (myHidePlace == null)
-
         {
-
             detector.transform.localScale = new Vector3(detectorIncrement, 1, 1);
-
             detectorIncrement++;
-
         }
 
         else
-
         {
-
             // Volver a la normalidad una vez encontrado y ir hacia el HidePlace
-
             detector.transform.localScale = new Vector3(1, 1, 1);
-
             navMeshAgent.destination = myHidePlace.transform.position;
-
             navMeshAgent.speed = 3;
-
         }
-
-
 
         if (myHidePlace != null)
-
         {
-
             if (navMeshAgent.transform.position.x < myHidePlace.transform.position.x + 2 && navMeshAgent.transform.position.x > myHidePlace.transform.position.x - 2
-
-           && navMeshAgent.transform.position.y < myHidePlace.transform.position.y + 2 && navMeshAgent.transform.position.y > myHidePlace.transform.position.y - 2)
-
+            && navMeshAgent.transform.position.y < myHidePlace.transform.position.y + 2 && navMeshAgent.transform.position.y > myHidePlace.transform.position.y - 2)
             {
-
-                ////Audio
-
-                //FindObjectOfType<AudioManager>().Play("hideVoids");
-
-
-
+                //Audio
                 character.enabled = false;
-
                 myHideIcon = myHidePlace.transform.GetChild(0).gameObject;
-
                 myHideIcon.SetActive(true);
-
                 navMeshAgent.speed = 0;
-
                 dangerIcon.SetActive(false);
-
                 canActivateHideTimer = true;
-
                 followWaypointsLevel0 = false;
-
             }
-
         }
-
     }
-
-
 
     private void OnTriggerEnter2D(Collider2D other)
-
     {
-
         if (level0)
-
         {
-
             if (other.CompareTag("Player") && shadowIcon.activeSelf)
-
             {
-
                 dangerIcon.SetActive(true);
-
                 followWaypointsLevel0 = false;
-
+                
                 //Audio
-
                 if (canAlertSound)
-
                 {
-
                     FindObjectOfType<AudioManager>().Play("AlertVoid");
-
                     canAlertSound = false;
-
                 }
-
             }
-
-
 
             else if (goToRinconDeLlorar)
-
             {
-
                 if (other.CompareTag("Rincon_De_Llorar"))
-
                 {
-
                     myRinconDeLlorar = other.gameObject;
-
                     myRinconDeLlorar.tag = "Rincon_De_Llorar_Disabled";
-
                 }
-
             }
-
         }
-
-
 
         if (level1)
-
         {
-
             if (other.CompareTag("Target") || other.CompareTag("Player") && canActivateHideTimer == false)
-
             {
                 avoidTemp += Time.deltaTime;
-
                 if (avoidTemp >= 1)
-
                 {
                     followWaypointsLevel0 = false;
-
                     canAvoidStudents = true;
-
                     avoidTemp = 0;
-
                 }
-
             }
 
 
 
-            if (other.CompareTag("Player") && shadowIcon.activeSelf)
-
+        if (other.CompareTag("Player") && shadowIcon.activeSelf)
+        {
+            //Audio
+            if (canAlertSound)
             {
-
-                //Audio
-
-                if (canAlertSound)
-
-                {
-
                     FindObjectOfType<AudioManager>().Play("AlertVoid");
-
                     canAlertSound = false;
-
-                }
-
-                dangerIcon.SetActive(true);
-
-                followWaypointsLevel0 = false;
-
             }
-
-
+                dangerIcon.SetActive(true);
+                followWaypointsLevel0 = false;
+        }
 
             else if (goToHide)
-
             {
-
                 if (other.CompareTag("Hide_Place"))
-
                 {
-
                     myHidePlace = other.gameObject;
-
                     myHidePlace.tag = "Hide_Place_Disabled";
-
                 }
-
             }
-
         }
     }
-
 }
