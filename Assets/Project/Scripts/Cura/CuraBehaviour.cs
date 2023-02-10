@@ -55,7 +55,7 @@ public class CuraBehaviour : MonoBehaviour
     void Start()
     {
         dangerIcon.SetActive(false);
-        lastSeenPlayerIcon.SetActive(false);
+        lastSeenPlayerIcon.SetActive(true);
     }
 
     void Update()
@@ -215,7 +215,8 @@ public class CuraBehaviour : MonoBehaviour
             {
                 dangerIcon.SetActive(true);
                 followWaypoints = false;
-                lastSeenPlayerIcon.SetActive(false);
+                lastSeenPlayerIcon.SetActive(true);
+                lastSeenPlayerIcon.transform.position = player.transform.position;
 
                 //Audio
                 if (canAlertSound)
@@ -232,6 +233,8 @@ public class CuraBehaviour : MonoBehaviour
             {
                 dangerIcon.SetActive(true);
                 followWaypoints = false;
+                lastSeenPlayerIcon.SetActive(true);
+                lastSeenPlayerIcon.transform.position = player.transform.position;
 
                 //Audio
                 if (canAlertSound)
