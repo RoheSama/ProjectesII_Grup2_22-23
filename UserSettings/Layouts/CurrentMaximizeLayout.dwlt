@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 7035
+  controlID: 7198
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 7025
+  controlID: 7158
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 7026
+  controlID: 7159
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,10 +223,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 282}
+      scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: fafaffff08fbffffbc6d0000126f00008e6f00005c710000f871000092720000ae720000d2740000
+      m_ExpandedIDs: fafaffff08fbffffbc6d00008e6f00005c710000f871000092720000ae720000d2740000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -525,9 +525,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -5.520274, y: -13.161273, z: 0.56467336}
+    m_Target: {x: -10.721096, y: -15.96813, z: 0.47700724}
     speed: 2
-    m_Value: {x: -5.5654545, y: -13.081001, z: 0.5669061}
+    m_Value: {x: -10.719746, y: -15.445398, z: 0.48388246}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -578,9 +578,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 5.184821
+    m_Target: 15.96577
     speed: 2
-    m_Value: 4.961551
+    m_Value: 15.278249
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -806,21 +806,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Project/Scripts/Cura
+    - Assets
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Project/Scripts/Cura
+  - Assets
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\ArnauPradas\Desktop\ProjectesII_Grup2_22-23
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 51}
-    m_SelectedIDs: 607f0000
-    m_LastClickedID: 32608
+    m_SelectedIDs: 767e0000
+    m_LastClickedID: 32374
     m_ExpandedIDs: 00000000767e0000787e00007a7e0000a87e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -876,7 +876,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300004c72000088780000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
