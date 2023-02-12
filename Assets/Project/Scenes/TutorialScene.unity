@@ -1229,8 +1229,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 3.9, y: 10.49}
+  m_Offset: {x: 0, y: -3.96}
+  m_Size: {x: 2.36, y: 2.54}
   m_Direction: 0
 --- !u!1 &793723405
 GameObject:
@@ -1608,6 +1608,7 @@ GameObject:
   - component: {fileID: 1001365581}
   - component: {fileID: 1001365580}
   - component: {fileID: 1001365579}
+  - component: {fileID: 1001365583}
   m_Layer: 0
   m_Name: mapLimit
   m_TagString: Untagged
@@ -2705,6 +2706,27 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!50 &1001365583
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001365577}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &1005345212 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2305149477605908277, guid: 95464befe3941ea40855a90dddcf8617, type: 3}
