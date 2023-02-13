@@ -68,33 +68,31 @@ public class IABehaviour : MonoBehaviour
 
     void Update()
     {
-        //CHECK THE LEVEL
+        //Audio
+        if (canActiveAlertSound)
+        {
+            canAlertSound = true;
+            canActiveAlertSound = false;
+        }
 
         //Level 0
         if (satanicStar01.activeInHierarchy == false)
         {
             level0 = false;
             level1 = true;
-
-            //Audio
-            if (canActiveAlertSound)
-            {
-                canAlertSound = true;
-                canActiveAlertSound = false;
-            }
         }
 
         if (level0)
         {
             if (followWaypointsLevel0)
             {
-                FollowWaypointsLevel0();
+                FollowWaypoints();
                 dangerIcon.SetActive(false);
             }
 
             else if (dangerIcon.activeSelf)
             {
-                RinconDeLlorarLevel0();
+                RinconDeLlorar();
             }
         }
 
@@ -103,7 +101,7 @@ public class IABehaviour : MonoBehaviour
         {
             if (followWaypointsLevel0)
             {
-                FollowWaypointsLevel0();
+                FollowWaypoints();
                 dangerIcon.SetActive(false);
             }
 
@@ -140,7 +138,7 @@ public class IABehaviour : MonoBehaviour
         }
     }
 
-    void FollowWaypointsLevel0()
+    void FollowWaypoints()
     {
         // Anar cap al waypoint
         navMeshAgent.destination = waypoints[waypointsIndex].transform.position;
@@ -179,7 +177,7 @@ public class IABehaviour : MonoBehaviour
             }
         }
     }
-    void RinconDeLlorarLevel0()
+    void RinconDeLlorar()
     {
         rinconDeLlorarTimer += Time.deltaTime;
         if (myRinconDeLlorar == null)
@@ -208,17 +206,6 @@ public class IABehaviour : MonoBehaviour
                 animator.SetBool("MoveRight", false);
             }
         }
-
-        //if (myRinconDeLlorar != null)
-        //{
-        //    if (navMeshAgent.transform.position.x < myRinconDeLlorar.transform.position.x + 2 && navMeshAgent.transform.position.x > myRinconDeLlorar.transform.position.x - 2
-        //   && navMeshAgent.transform.position.y < myRinconDeLlorar.transform.position.y + 2 && navMeshAgent.transform.position.y > myRinconDeLlorar.transform.position.y - 2)
-        //    {
-        //        //va rana
-        //        FindObjectOfType<AudioManager>().Play("CryVoid");
-        //    }
-        //}
-
 
         if (rinconDeLlorarTimer >= timeInRinconDeLlorar)
         {
