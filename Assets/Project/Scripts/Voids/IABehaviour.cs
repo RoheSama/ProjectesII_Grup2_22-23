@@ -61,6 +61,7 @@ public class IABehaviour : MonoBehaviour
     public int timeHidden;
     public GameObject myHidePlace;
     public GameObject myHideIcon;
+    public GameObject myHideTileMap;
 
     //Sounds
     bool canAlertSound = true;
@@ -133,6 +134,7 @@ public class IABehaviour : MonoBehaviour
                 canActivateHideTimer = false;
                 myHidePlace = null;
                 myHideIcon = null;
+                myHideTileMap = null;
                 canAlertSound = true;
             }
         }
@@ -268,7 +270,9 @@ public class IABehaviour : MonoBehaviour
                 //Audio
                 character.enabled = false;
                 myHideIcon = myHidePlace.transform.GetChild(0).gameObject;
+                myHideTileMap = myHidePlace.transform.GetChild(1).gameObject;
                 myHideIcon.SetActive(true);
+                myHideTileMap.SetActive(true);
                 navMeshAgent.speed = 0;
                 dangerIcon.SetActive(false);
                 canActivateHideTimer = true;
