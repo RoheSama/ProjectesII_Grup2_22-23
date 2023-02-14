@@ -116,7 +116,7 @@ public class IABehaviour : MonoBehaviour
                 HideInHidePlace();
             }
 
-            //HIDE FUNCTION
+            //HIDE FUNCTION FINISHED
             if (canActivateHideTimer)
             {
                 hideTimer += Time.deltaTime;
