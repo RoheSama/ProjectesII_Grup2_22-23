@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Unity.IO.LowLevel.Unsafe;
 
 public class Dialogue : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private GameObject dialogueSystem;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private KeyCode next;
+    [SerializeField] private KeyCode endDialogue;
     [SerializeField] private Image sprite1;
     [SerializeField] private Image sprite2;
     [SerializeField] private Image sprite3;
@@ -37,6 +39,7 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (isPlayerInRange && Input.GetKeyUp(next))
         {
             if (!didDialogueStart)
@@ -57,7 +60,12 @@ public class Dialogue : MonoBehaviour
         }
 
         ImageManager();
-        NamesManager(); 
+        NamesManager();
+
+        if (Input.GetKeyUp(endDialogue))
+        {
+            FinishDialogue();
+        }
     }
     
     private void ImageManager()
@@ -139,16 +147,20 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            didDialogueStart = false;
-            dialoguePanel.SetActive(false);
-            hud.SetActive(true);
-            startDialogue = false;
-            dialogueSystem.SetActive(false);
-            Time.timeScale = 1f;
+            FinishDialogue();
         }
         
     }
 
+    private void FinishDialogue()
+    {
+        didDialogueStart = false;
+        dialoguePanel.SetActive(false);
+        hud.SetActive(true);
+        startDialogue = false;
+        dialogueSystem.SetActive(false);
+        Time.timeScale = 1f;
+    }
     private IEnumerator ShowLine()
     {
         dialogueText.text = string.Empty;
