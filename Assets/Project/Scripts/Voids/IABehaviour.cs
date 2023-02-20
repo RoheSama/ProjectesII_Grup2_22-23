@@ -105,7 +105,7 @@ public class IABehaviour : MonoBehaviour
                 HideInHidePlace();
             }
 
-            else if (followWaypointsLevel0)
+            if (followWaypointsLevel0 && dangerIcon.activeInHierarchy==false)
             {
                 FollowWaypoints();
                 dangerIcon.SetActive(false);
