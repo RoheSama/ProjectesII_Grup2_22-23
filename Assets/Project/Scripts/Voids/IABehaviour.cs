@@ -37,8 +37,8 @@ public class IABehaviour : MonoBehaviour
     public GameObject satanicStar01;
 
     // Detector
-    public GameObject detector;
-    int detectorIncrement = 0;
+    public CircleCollider2D detector;
+    float detectorIncrement = 0;
 
     //Waypoints for Rincon De Llorar Function
     bool goToRinconDeLlorar = true;
@@ -100,7 +100,12 @@ public class IABehaviour : MonoBehaviour
         //Level 1
         if (level1)
         {
-            if (followWaypointsLevel0)
+            if (dangerIcon.activeSelf)
+            {
+                HideInHidePlace();
+            }
+
+            else if (followWaypointsLevel0)
             {
                 FollowWaypoints();
                 dangerIcon.SetActive(false);
@@ -109,11 +114,6 @@ public class IABehaviour : MonoBehaviour
             else if (canAvoidStudents)
             {
                 AvoidStudents();
-            }
-
-            else if (dangerIcon.activeSelf)
-            {
-                HideInHidePlace();
             }
 
             //HIDE FUNCTION FINISHED
@@ -184,7 +184,8 @@ public class IABehaviour : MonoBehaviour
         rinconDeLlorarTimer += Time.deltaTime;
         if (myRinconDeLlorar == null)
         {
-            detector.transform.localScale = new Vector3(detectorIncrement, 1, 1);
+            //detector.transform.localScale = new Vector3(detectorIncrement, detectorIncrement, detectorIncrement);
+            detector.radius = (detectorIncrement);
             detectorIncrement++;
         }
 
@@ -250,14 +251,16 @@ public class IABehaviour : MonoBehaviour
         //Detectar el HidePlace mas cercano
         if (myHidePlace == null)
         {
-            detector.transform.localScale = new Vector3(detectorIncrement, 1, 1);
+            //detector.transform.localScale = new Vector3(detectorIncrement, 1, 1);
+            detector.radius = detectorIncrement;
             detectorIncrement++;
         }
 
         else
         {
             // Volver a la normalidad una vez encontrado y ir hacia el HidePlace
-            detector.transform.localScale = new Vector3(1, 1, 1);
+            detector.radius = 1.0f;
+           // detector.transform.localScale = new Vector3(1, 1, 1);
             navMeshAgent.destination = myHidePlace.transform.position;
             navMeshAgent.speed = 3;
         }
