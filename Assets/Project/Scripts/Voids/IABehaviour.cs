@@ -128,6 +128,7 @@ public class IABehaviour : MonoBehaviour
                 followWaypointsLevel0 = true;
                 character.enabled = true;
                 myHideIcon.SetActive(false);
+                Debug.Log("BYE ICON");
                 navMeshAgent.speed = 2;
                 dangerIcon.SetActive(false);
                 myHidePlace.tag = "Hide_Place";
@@ -270,7 +271,6 @@ public class IABehaviour : MonoBehaviour
             if (navMeshAgent.transform.position.x < myHidePlace.transform.position.x + 2 && navMeshAgent.transform.position.x > myHidePlace.transform.position.x - 2
             && navMeshAgent.transform.position.y < myHidePlace.transform.position.y + 2 && navMeshAgent.transform.position.y > myHidePlace.transform.position.y - 2)
             {
-                //Audio
                 character.enabled = false;
                 myHideIcon = myHidePlace.transform.GetChild(0).gameObject;
                 myHideTileMap = myHidePlace.transform.GetChild(1).gameObject;
