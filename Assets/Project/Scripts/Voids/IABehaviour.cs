@@ -105,16 +105,18 @@ public class IABehaviour : MonoBehaviour
                 HideInHidePlace();
             }
 
+            if (canAvoidStudents && dangerIcon.activeInHierarchy==false)
+            {
+                Debug.Log("AVOID");
+                AvoidStudents();
+            }
+
             if (followWaypointsLevel0 && dangerIcon.activeInHierarchy==false)
             {
                 FollowWaypoints();
                 dangerIcon.SetActive(false);
             }
 
-            else if (canAvoidStudents)
-            {
-                AvoidStudents();
-            }
 
             //HIDE FUNCTION FINISHED
             if (canActivateHideTimer)
@@ -128,7 +130,6 @@ public class IABehaviour : MonoBehaviour
                 followWaypointsLevel0 = true;
                 character.enabled = true;
                 myHideIcon.SetActive(false);
-                Debug.Log("BYE ICON");
                 navMeshAgent.speed = 2;
                 dangerIcon.SetActive(false);
                 myHidePlace.tag = "Hide_Place";
@@ -235,7 +236,7 @@ public class IABehaviour : MonoBehaviour
 
     void AvoidStudents()
     {
-        //waypointsIndex++;
+        // waypointsIndex++;
         avoidStudentsTemp += Time.deltaTime;
         navMeshAgent.speed = 4;
 
