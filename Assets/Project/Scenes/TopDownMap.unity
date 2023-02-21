@@ -23988,7 +23988,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &747324531
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31790,7 +31790,7 @@ MonoBehaviour:
   satanicStar01: {fileID: 747324530}
   detector: {fileID: 189357361}
   myRinconDeLlorar: {fileID: 0}
-  timeInRinconDeLlorar: 10
+  timeInRinconDeLlorar: 20
   hideTimer: 0
   timeHidden: 3
   myHidePlace: {fileID: 0}

@@ -194,7 +194,7 @@ public class IABehaviour : MonoBehaviour
         {
             detector.transform.localScale = new Vector3(1, 1, 1);
             navMeshAgent.destination = myRinconDeLlorar.transform.position;
-            navMeshAgent.speed = 3;
+            navMeshAgent.speed = 5;
 
             if (navMeshAgent.transform.position.x < myRinconDeLlorar.transform.position.x + 2 && navMeshAgent.transform.position.x > myRinconDeLlorar.transform.position.x - 2
             && navMeshAgent.transform.position.y < myRinconDeLlorar.transform.position.y + 2 && navMeshAgent.transform.position.y > myRinconDeLlorar.transform.position.y - 2)
