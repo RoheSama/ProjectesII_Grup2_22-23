@@ -263,7 +263,7 @@ public class IABehaviour : MonoBehaviour
             detector.radius = 1.0f;
            // detector.transform.localScale = new Vector3(1, 1, 1);
             navMeshAgent.destination = myHidePlace.transform.position;
-            navMeshAgent.speed = 3;
+            navMeshAgent.speed = 5;
         }
 
         if (myHidePlace != null)
