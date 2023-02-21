@@ -35,6 +35,7 @@ public class IABehaviour : MonoBehaviour
 
     // Satanic Stars
     public GameObject satanicStar01;
+    public GameObject satanicStar02;
 
     // Detector
     public CircleCollider2D detector;
@@ -83,6 +84,13 @@ public class IABehaviour : MonoBehaviour
             level1 = true;
         }
 
+        //Level 1
+        if (satanicStar02.activeInHierarchy == false)
+        {
+            level1 = false;
+            level2 = true;
+        }
+
         if (level0)
         {
             if (followWaypointsLevel0)
@@ -107,7 +115,6 @@ public class IABehaviour : MonoBehaviour
 
             if (canAvoidStudents && dangerIcon.activeInHierarchy==false)
             {
-                Debug.Log("AVOID");
                 AvoidStudents();
             }
 
@@ -142,6 +149,21 @@ public class IABehaviour : MonoBehaviour
         }
 
         //Level2
+        if(level2)
+        {
+
+            if (canAvoidStudents && dangerIcon.activeInHierarchy == false)
+            {
+                AvoidStudents();
+            }
+
+            if (followWaypointsLevel0 || dangerIcon.activeInHierarchy==false)
+            {
+                FollowWaypoints();
+                navMeshAgent.speed = 4.0f;
+            }
+            
+        }
     }
 
     void FollowWaypoints()
@@ -240,7 +262,17 @@ public class IABehaviour : MonoBehaviour
     {
         // waypointsIndex++;
         avoidStudentsTemp += Time.deltaTime;
-        navMeshAgent.speed = 4;
+        if(level1)
+        {
+            navMeshAgent.speed = 4;
+
+        }
+
+        if (level2)
+        {
+            navMeshAgent.speed = 6;
+
+        }
 
         if (avoidStudentsTemp >= 3)
         {
