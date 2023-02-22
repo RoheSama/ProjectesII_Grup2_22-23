@@ -5,6 +5,10 @@ using UnityEngine.AI;
 
 public class IABehaviour : MonoBehaviour
 {
+    //Player NavMesh
+    public TopDownMovement playerMovement;
+
+    //Void
     public NavMeshAgent navMeshAgent;
     public SpriteRenderer character;
     public Animator animator;
@@ -69,7 +73,7 @@ public class IABehaviour : MonoBehaviour
     bool canActiveAlertSound = true;
 
     //Attack 
-
+    bool canAttack = false;
 
     void Update()
     {
@@ -339,6 +343,7 @@ public class IABehaviour : MonoBehaviour
 
     void VoidAttack()
     {
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -408,6 +413,13 @@ public class IABehaviour : MonoBehaviour
         //Level 2 Colliders
         if (level2)
         {
+            if (other.CompareTag("Player")&& dangerIcon.activeSelf)
+            {
+                navMeshAgent.speed = 0;
+                playerMovement.moveSpeed = 1;
+            }
+
+
             if (other.CompareTag("Target") || other.CompareTag("Player") && dangerIcon.activeInHierarchy == false)
             {
                 followWaypointsLevel0 = false;
