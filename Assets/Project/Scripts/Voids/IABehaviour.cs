@@ -74,10 +74,11 @@ public class IABehaviour : MonoBehaviour
 
     //Attack 
     bool canAttack = false;
+    float attackTimer;
+    public float attackTime;
 
     void Update()
     {
-
         //DEBUG AREA
         //
         //
@@ -86,7 +87,6 @@ public class IABehaviour : MonoBehaviour
         //
         //
         //
-
 
         //Audio
         if (canActiveAlertSound)
@@ -343,7 +343,16 @@ public class IABehaviour : MonoBehaviour
 
     void VoidAttack()
     {
+        attackTimer += Time.deltaTime;
 
+        navMeshAgent.speed = 0;
+        playerMovement.moveSpeed = 1;
+        if(attackTimer >= attackTime)
+        {
+            dangerIcon.SetActive(false);
+            navMeshAgent.speed = 2;
+            playerMovement.moveSpeed = 5;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -415,8 +424,7 @@ public class IABehaviour : MonoBehaviour
         {
             if (other.CompareTag("Player")&& dangerIcon.activeSelf)
             {
-                navMeshAgent.speed = 0;
-                playerMovement.moveSpeed = 1;
+                canAttack = true;
             }
 
 

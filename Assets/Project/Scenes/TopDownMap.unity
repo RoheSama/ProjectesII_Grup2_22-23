@@ -31783,6 +31783,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19decd7feb5d02045967ae689ceb61ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMovement: {fileID: 1754658608}
   navMeshAgent: {fileID: 1571445566}
   character: {fileID: 1571445576}
   animator: {fileID: 1571445569}
@@ -31805,14 +31806,7 @@ MonoBehaviour:
   myHidePlace: {fileID: 0}
   myHideIcon: {fileID: 0}
   myHideTileMap: {fileID: 0}
-  visionRangeTop: {fileID: 0}
-  visionRangeRight: {fileID: 0}
-  visionRangeDown: {fileID: 0}
-  visionRangeLeft: {fileID: 0}
-  attackRangeTop: {fileID: 0}
-  attackRangeRight: {fileID: 0}
-  attackRangeDown: {fileID: 0}
-  attackRangeLeft: {fileID: 0}
+  attackTime: 10
 --- !u!1 &1575185888
 GameObject:
   m_ObjectHideFlags: 0
@@ -34130,6 +34124,17 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 2075762617169267189, guid: 4cb41f124cfc24a48a382a0331ab846a, type: 3}
   m_PrefabInstance: {fileID: 1540533092}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1754658608 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2075762617169267187, guid: 4cb41f124cfc24a48a382a0331ab846a, type: 3}
+  m_PrefabInstance: {fileID: 1540533092}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1754658592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5842daf40c5570843947a2fdbad433a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1760659656
 GameObject:
   m_ObjectHideFlags: 0
