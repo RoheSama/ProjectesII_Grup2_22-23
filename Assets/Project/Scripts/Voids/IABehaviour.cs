@@ -175,10 +175,7 @@ public class IABehaviour : MonoBehaviour
                 {
                     navMeshAgent.speed = 4;
                 }
-                
-                
-            }
-            
+            }  
         }
     }
 
@@ -402,9 +399,9 @@ public class IABehaviour : MonoBehaviour
         {
             if (other.CompareTag("Target") || other.CompareTag("Player") && dangerIcon.activeInHierarchy == false)
             {
-                    followWaypointsLevel0 = false;
-                    canAvoidStudents = true;
-                    avoidTemp = 0;
+                followWaypointsLevel0 = false;
+                canAvoidStudents = true;
+                avoidTemp = 0;
             }
 
             if (other.CompareTag("Player") && shadowIcon.activeSelf)
