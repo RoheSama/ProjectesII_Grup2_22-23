@@ -70,6 +70,17 @@ public class IABehaviour : MonoBehaviour
 
     void Update()
     {
+
+        //DEBUG AREA
+        //
+        //
+        //
+
+        //
+        //
+        //
+
+
         //Audio
         if (canActiveAlertSound)
         {
@@ -160,7 +171,12 @@ public class IABehaviour : MonoBehaviour
             if (followWaypointsLevel0 || dangerIcon.activeInHierarchy==false)
             {
                 FollowWaypoints();
-                navMeshAgent.speed = 4.0f;
+                if(avoidStudentsTemp == 0)
+                {
+                    navMeshAgent.speed = 4;
+                }
+                
+                
             }
             
         }
@@ -265,13 +281,11 @@ public class IABehaviour : MonoBehaviour
         if(level1)
         {
             navMeshAgent.speed = 4;
-
         }
 
         if (level2)
         {
             navMeshAgent.speed = 6;
-
         }
 
         if (avoidStudentsTemp >= 3)
@@ -321,6 +335,7 @@ public class IABehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        //Level 0 Colliders
         if (level0)
         {
             if (other.CompareTag("Player") && shadowIcon.activeSelf)
@@ -346,6 +361,7 @@ public class IABehaviour : MonoBehaviour
             }
         }
 
+        //Level 1 Colliders
         if (level1)
         {
             if (other.CompareTag("Target") || other.CompareTag("Player") && canActivateHideTimer == false)
@@ -359,18 +375,16 @@ public class IABehaviour : MonoBehaviour
                 }
             }
 
-
-
         if (other.CompareTag("Player") && shadowIcon.activeSelf)
         {
             //Audio
             if (canAlertSound)
             {
-                    FindObjectOfType<AudioManager>().Play("AlertVoid");
-                    canAlertSound = false;
+                FindObjectOfType<AudioManager>().Play("AlertVoid");
+                canAlertSound = false;
             }
-                dangerIcon.SetActive(true);
-                followWaypointsLevel0 = false;
+            dangerIcon.SetActive(true);
+            followWaypointsLevel0 = false;
         }
 
             else if (goToHide)
@@ -381,6 +395,38 @@ public class IABehaviour : MonoBehaviour
                     myHidePlace.tag = "Hide_Place_Disabled";
                 }
             }
+        }
+
+        //Level 2 Colliders
+        if (level2)
+        {
+            if (other.CompareTag("Target") || other.CompareTag("Player") && dangerIcon.activeInHierarchy == false)
+            {
+                    followWaypointsLevel0 = false;
+                    canAvoidStudents = true;
+                    avoidTemp = 0;
+            }
+
+            if (other.CompareTag("Player") && shadowIcon.activeSelf)
+            {
+                //Audio
+                if (canAlertSound)
+                {
+                    FindObjectOfType<AudioManager>().Play("AlertVoid");
+                    canAlertSound = false;
+                }
+                dangerIcon.SetActive(true);
+                followWaypointsLevel0 = false;
+            }
+
+            //else if (goToHide)
+            //{
+            //    if (other.CompareTag("Hide_Place"))
+            //    {
+            //        myHidePlace = other.gameObject;
+            //        myHidePlace.tag = "Hide_Place_Disabled";
+            //    }
+            //}
         }
     }
 }
