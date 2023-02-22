@@ -68,6 +68,9 @@ public class IABehaviour : MonoBehaviour
     bool canAlertSound = true;
     bool canActiveAlertSound = true;
 
+    //Attack 
+
+
     void Update()
     {
 
@@ -162,6 +165,10 @@ public class IABehaviour : MonoBehaviour
         //Level2
         if(level2)
         {
+            if (dangerIcon.activeSelf)
+            {
+                VoidAttack();
+            }
 
             if (canAvoidStudents && dangerIcon.activeInHierarchy == false)
             {
@@ -330,6 +337,10 @@ public class IABehaviour : MonoBehaviour
         }
     }
 
+    void VoidAttack()
+    {
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         //Level 0 Colliders
@@ -415,15 +426,6 @@ public class IABehaviour : MonoBehaviour
                 dangerIcon.SetActive(true);
                 followWaypointsLevel0 = false;
             }
-
-            //else if (goToHide)
-            //{
-            //    if (other.CompareTag("Hide_Place"))
-            //    {
-            //        myHidePlace = other.gameObject;
-            //        myHidePlace.tag = "Hide_Place_Disabled";
-            //    }
-            //}
         }
     }
 }
