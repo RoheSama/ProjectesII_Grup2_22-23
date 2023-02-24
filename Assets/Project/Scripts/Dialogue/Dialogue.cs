@@ -37,7 +37,7 @@ public class Dialogue : MonoBehaviour
 
     private bool ended = false;
 
-    [SerializeField] private bool lastDialogue;
+    public bool lastDialogue = false;
     public bool chargeScene = false;
 
     // Update is called once per frame

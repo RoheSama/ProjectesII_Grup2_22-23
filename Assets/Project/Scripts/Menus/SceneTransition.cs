@@ -8,10 +8,11 @@ public class SceneTransition : MonoBehaviour
     [SerializeField] private GameObject image;
     public Animator anim;
 
+
     // Update is called once per frame
     void Update()
     {
-        if(FindObjectOfType<Dialogue>().chargeScene == true)
+        if(FindObjectOfType<Dialogue>().lastDialogue && FindObjectOfType<Dialogue>().chargeScene)
         {
             image.SetActive(true);
             StartCoroutine(LoadScene());

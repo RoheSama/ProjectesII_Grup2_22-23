@@ -12,44 +12,20 @@ public class EnemyTutorial : MonoBehaviour
 
     public bool isCura;
 
-    //[SerializeField]
-    //private RageBar rageBar;
-
     public GameObject blood;
     public GameObject bloodDie;
 
     public NavMeshAgent agent;
     public bool died;
-    //public Slider rageBar;
-    //public float maxRage = 100;
-    //public float currentRage = 20;
-    // Start is called before the first frame update
+
     void Start()
     {
         currentHealth = maxHealth;
-        //rageBar = FindObjectOfType<RageBar>();
     }
 
     public void TakeDamage(int damage)
     {
-        //if (isCura)
-        //{
-        //    if (rageBar.raged)
-        //    {
-        //        Instantiate(blood, transform.position, Quaternion.identity);
-        //        currentHealth -= damage;
-        //        Debug.Log("Damaged");
 
-        //        anim.SetTrigger("Hurt");
-        //        if (currentHealth <= 0)
-        //        {
-        //            Die();
-        //            Instantiate(bloodDie, transform.position, Quaternion.identity);
-        //        }
-        //    }
-        //}
-        //else
-        //{
         Instantiate(blood, transform.position, Quaternion.identity);
         currentHealth -= damage;
 
