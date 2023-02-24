@@ -1076,7 +1076,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &111447787
 Transform:
   m_ObjectHideFlags: 0
@@ -1265,7 +1265,6 @@ MonoBehaviour:
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
   chaseTime: 10
-  lastSeenPlayerIcon: {fileID: 253170970}
 --- !u!95 &111447796
 Animator:
   serializedVersion: 4
@@ -32464,7 +32463,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1093096780
 Transform:
   m_ObjectHideFlags: 0
