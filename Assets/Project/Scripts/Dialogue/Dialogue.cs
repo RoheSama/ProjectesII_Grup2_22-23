@@ -37,6 +37,8 @@ public class Dialogue : MonoBehaviour
 
     private bool ended = false;
 
+    [SerializeField] private bool lastDialogue;
+    public bool chargeScene = false;
 
     // Update is called once per frame
     void Update()
@@ -168,6 +170,10 @@ public class Dialogue : MonoBehaviour
         dialogueSystem.SetActive(false);
         Time.timeScale = 1f;
         ended = true;
+        if (lastDialogue)
+        {
+            chargeScene = true;
+        }
     }
     private IEnumerator ShowLine()
     {

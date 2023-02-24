@@ -29,7 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Project/Scenes/TutorialScene.unity
     guid: 7b2a299b9c152d54bad4e0b04f263fe1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Project/Scenes/BigMap.unity
     guid: d92839eadad21b94db323e1bc6bf05a5
+  - enabled: 1
+    path: Assets/Project/Scenes/TopDownMap.unity
+    guid: aa721991cd848d64f9fb1d4ca24971ce
   m_configObjects: {}
