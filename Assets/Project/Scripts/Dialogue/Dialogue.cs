@@ -35,6 +35,8 @@ public class Dialogue : MonoBehaviour
     private bool startDialogue;
     private int lineIndex;
 
+    private bool ended = false;
+
 
     // Update is called once per frame
     void Update()
@@ -65,6 +67,11 @@ public class Dialogue : MonoBehaviour
         if (Input.GetKeyUp(endDialogue))
         {
             FinishDialogue();
+        }
+
+        if(ended)
+        {
+            DestroyDialogue();
         }
     }
     
@@ -160,6 +167,7 @@ public class Dialogue : MonoBehaviour
         startDialogue = false;
         dialogueSystem.SetActive(false);
         Time.timeScale = 1f;
+        ended = true;
     }
     private IEnumerator ShowLine()
     {
@@ -170,6 +178,11 @@ public class Dialogue : MonoBehaviour
             dialogueText.text += ch;
             yield return new WaitForSecondsRealtime(typingTime);
         }
+    }
+
+    private void DestroyDialogue()
+    {
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

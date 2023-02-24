@@ -23,6 +23,6 @@ public class SceneTransition : MonoBehaviour
     {
         anim.SetTrigger("start");
         yield return new WaitForSeconds(1.3f);
-        SceneManager.LoadScene("BigMap");
+        SceneManager.LoadScene("TopDownMap");
     }
 }
