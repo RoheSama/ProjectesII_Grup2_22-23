@@ -50,12 +50,12 @@ public class CuraBehaviour : MonoBehaviour
     public float chaseTime;
 
     //Last Seen
-    public GameObject lastSeenPlayerIcon;
+    //public GameObject lastSeenPlayerIcon;
 
     void Start()
     {
         dangerIcon.SetActive(false);
-        lastSeenPlayerIcon.SetActive(true);
+        //lastSeenPlayerIcon.SetActive(true);
     }
 
     void Update()
@@ -168,25 +168,27 @@ public class CuraBehaviour : MonoBehaviour
 
     void ChasePlayer()
     {
-        navMeshAgent.destination = lastSeenPlayerIcon.transform.position;
+       // navMeshAgent.destination = lastSeenPlayerIcon.transform.position;
+       navMeshAgent.destination = player.transform.position;
+
         chaseTimer += Time.deltaTime;
 
         if (level0)
         {
             navMeshAgent.speed = 3.0f;
-            lastSeenPlayerIcon.SetActive(true);
+           // lastSeenPlayerIcon.SetActive(true);
         }
 
         if (level1)
         {
             navMeshAgent.speed = 4.0f;
-            lastSeenPlayerIcon.SetActive(true);
+            //lastSeenPlayerIcon.SetActive(true);
         }
 
         if (level2)
         {
             navMeshAgent.speed = 4.0f;
-            lastSeenPlayerIcon.SetActive(true);
+           // lastSeenPlayerIcon.SetActive(true);
         }
 
         if (chaseTimer >= chaseTime)
@@ -215,8 +217,8 @@ public class CuraBehaviour : MonoBehaviour
             {
                 dangerIcon.SetActive(true);
                 followWaypoints = false;
-                lastSeenPlayerIcon.SetActive(true);
-                lastSeenPlayerIcon.transform.position = player.transform.position;
+                // lastSeenPlayerIcon.SetActive(true);
+                //lastSeenPlayerIcon.transform.position = player.transform.position;
 
                 //Audio
                 if (canAlertSound)
@@ -233,8 +235,8 @@ public class CuraBehaviour : MonoBehaviour
             {
                 dangerIcon.SetActive(true);
                 followWaypoints = false;
-                lastSeenPlayerIcon.SetActive(true);
-                lastSeenPlayerIcon.transform.position = player.transform.position;
+                //lastSeenPlayerIcon.SetActive(true);
+                //lastSeenPlayerIcon.transform.position = player.transform.position;
 
                 //Audio
                 if (canAlertSound)
@@ -252,8 +254,8 @@ public class CuraBehaviour : MonoBehaviour
         {
             if (other.CompareTag("Player") && shadowIcon.activeSelf)
             {
-                lastSeenPlayerIcon.transform.position = player.transform.position;
-                lastSeenPlayerIcon.SetActive(true);
+               // lastSeenPlayerIcon.transform.position = player.transform.position;
+               // lastSeenPlayerIcon.SetActive(true);
             }
         }
 
@@ -262,13 +264,13 @@ public class CuraBehaviour : MonoBehaviour
         {
             if (other.CompareTag("Player"))
             {
-                lastSeenPlayerIcon.transform.position = player.transform.position;
-                lastSeenPlayerIcon.SetActive(true);
+               // lastSeenPlayerIcon.transform.position = player.transform.position;
+                //lastSeenPlayerIcon.SetActive(true);
 
-                if (chaseTimer > 0)
+                /*if (chaseTimer > 0)
                 {
                     chaseTimer = 0;
-                }
+                }*/
             }
         }
     }
