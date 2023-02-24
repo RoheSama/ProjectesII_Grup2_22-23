@@ -64,7 +64,7 @@ public class CuraBehaviour : MonoBehaviour
 
         //DEBUG
 
-        
+
         if (level0)
         {
             Debug.Log("level0");
@@ -79,9 +79,9 @@ public class CuraBehaviour : MonoBehaviour
         {
             Debug.Log("level2");
         }
-        
+
         //Debug.Log(chaseTimer);
-        
+
         if (!dangerIcon.activeSelf)
         {
             navMeshAgent.speed = 2.0f;
@@ -131,7 +131,7 @@ public class CuraBehaviour : MonoBehaviour
         // Anar cap al waypoint
         navMeshAgent.destination = waypoints[waypointsIndex].transform.position;
 
-        // Si el waypoint == al waypoint final -1, torna a comen�ar la ruta de waypoints
+        // Si el waypoint == al waypoint final -1, torna a comen ar la ruta de waypoints
         if (waypointsIndex == waypoints.Length - 1)
         {
             // Reset Index
@@ -174,19 +174,19 @@ public class CuraBehaviour : MonoBehaviour
         if (level0)
         {
             navMeshAgent.speed = 3.0f;
-            //lastSeenPlayerIcon.SetActive(true);
+            lastSeenPlayerIcon.SetActive(true);
         }
 
         if (level1)
         {
             navMeshAgent.speed = 4.0f;
-            //lastSeenPlayerIcon.SetActive(true);
+            lastSeenPlayerIcon.SetActive(true);
         }
 
         if (level2)
         {
             navMeshAgent.speed = 4.0f;
-            //lastSeenPlayerIcon.SetActive(true);
+            lastSeenPlayerIcon.SetActive(true);
         }
 
         if (chaseTimer >= chaseTime)
@@ -227,7 +227,7 @@ public class CuraBehaviour : MonoBehaviour
             }
         }
 
-        if (level1||level2)
+        if (level1 || level2)
         {
             if (other.CompareTag("Player"))
             {
