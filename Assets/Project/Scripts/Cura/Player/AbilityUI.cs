@@ -174,7 +174,9 @@ public class AbilityUI : MonoBehaviour
         {            if (Input.GetKeyDown(powerUpKey))
             {
                 PowerOff();
-            }            //shadowModeEffect.SetActive(true);
+            }
+
+            ScreenShake.Instance.ShakeCamera(5f, 0.1f);            //shadowModeEffect.SetActive(true);
             powerUpAvailable = false;
             powerUpActivated = true;
             currentCD = 0;
@@ -211,7 +213,6 @@ public class AbilityUI : MonoBehaviour
 
     void PowerOn()
     {
-        
         normalForm.SetActive(false);
         shadowForm.SetActive(true);
         normalFace.enabled = false;
