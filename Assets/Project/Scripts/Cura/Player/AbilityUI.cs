@@ -176,7 +176,7 @@ public class AbilityUI : MonoBehaviour
                 PowerOff();
             }
 
-            ScreenShake.Instance.ShakeCamera(5f, 0.1f);            //shadowModeEffect.SetActive(true);
+                        //shadowModeEffect.SetActive(true);
             powerUpAvailable = false;
             powerUpActivated = true;
             currentCD = 0;
@@ -217,6 +217,7 @@ public class AbilityUI : MonoBehaviour
         shadowForm.SetActive(true);
         normalFace.enabled = false;
         shadowFace.enabled = true;
+        ScreenShake.Instance.ShakeCamera(0f, 0.0f);
     }
     void PowerOff()
     {
@@ -244,6 +245,7 @@ public class AbilityUI : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("transformShadow");
         FindObjectOfType<AudioManager>().Play("screamShadow");
         anim.SetTrigger("Transform");
+        ScreenShake.Instance.ShakeCamera(3f, 0.1f);
         yield return new WaitForSeconds(0.8f);
         PowerOn();
     }
