@@ -364,7 +364,10 @@ public class IABehaviour : MonoBehaviour
             if (other.CompareTag("Player") && shadowIcon.activeSelf)
             {
                 dangerIcon.SetActive(true);
-                //curaBehaviour.lastSeenPlayerIcon.transform.position = dangerIcon.transform.position;
+                Debug.Log("ALerta");
+                curaBehaviour.dangerIcon.SetActive(true);
+                curaBehaviour.followWaypoints = false;
+                curaBehaviour.lastSeenPlayerIcon.transform.position = dangerIcon.transform.position;
                 followWaypointsLevel0 = false;
 
                 //Audio

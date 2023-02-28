@@ -11,7 +11,7 @@ public class CuraBehaviour : MonoBehaviour
 
 
     //---Follow Waypoints
-    bool followWaypoints = true;
+    public bool followWaypoints = true;
 
     //Waypoints for FollowWaypoints
     public GameObject[] waypoints;
@@ -118,7 +118,7 @@ public class CuraBehaviour : MonoBehaviour
                 dangerIcon.SetActive(false);
             }
 
-            else if (dangerIcon.activeSelf && canGoToLastPos)
+            else if (dangerIcon.activeSelf)
             {
                 GoToLastPos();
             }
