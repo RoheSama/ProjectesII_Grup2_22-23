@@ -162,10 +162,12 @@ public class AbilityUI : MonoBehaviour
     }    IEnumerator AttackAreaRoutine()
     {
         attackArea.SetActive(true);
+        ScreenShake.Instance.ShakeCamera(1f, 0.1f);
         yield return new WaitForSeconds(0.4f);
         AreaDamage();
         yield return new WaitForSeconds(0.4f);
         attackArea.SetActive(false);
+        ScreenShake.Instance.ShakeCamera(0f, 0.1f);
         attackAreaEnabled = false;
     }
     void PowerUp()
@@ -245,7 +247,7 @@ public class AbilityUI : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("transformShadow");
         FindObjectOfType<AudioManager>().Play("screamShadow");
         anim.SetTrigger("Transform");
-        ScreenShake.Instance.ShakeCamera(3f, 0.1f);
+        ScreenShake.Instance.ShakeCamera(2f, 0.1f);
         yield return new WaitForSeconds(0.8f);
         PowerOn();
     }
