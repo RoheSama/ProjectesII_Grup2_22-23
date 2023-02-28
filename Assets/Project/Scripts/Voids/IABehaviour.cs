@@ -7,6 +7,7 @@ public class IABehaviour : MonoBehaviour
 {
     //Player NavMesh
     public TopDownMovement playerMovement;
+    public CuraBehaviour curaBehaviour;
 
     //Void
     public NavMeshAgent navMeshAgent;
@@ -131,12 +132,12 @@ public class IABehaviour : MonoBehaviour
                 HideInHidePlace();
             }
 
-            if (canAvoidStudents && dangerIcon.activeInHierarchy==false)
+            if (canAvoidStudents && dangerIcon.activeInHierarchy == false)
             {
                 AvoidStudents();
             }
 
-            if (followWaypointsLevel0 && dangerIcon.activeInHierarchy==false)
+            if (followWaypointsLevel0 && dangerIcon.activeInHierarchy == false)
             {
                 FollowWaypoints();
                 dangerIcon.SetActive(false);
@@ -167,7 +168,7 @@ public class IABehaviour : MonoBehaviour
         }
 
         //Level2
-        if(level2)
+        if (level2)
         {
             if (dangerIcon.activeSelf)
             {
@@ -179,14 +180,14 @@ public class IABehaviour : MonoBehaviour
                 AvoidStudents();
             }
 
-            if (followWaypointsLevel0 || dangerIcon.activeInHierarchy==false)
+            if (followWaypointsLevel0 || dangerIcon.activeInHierarchy == false)
             {
                 FollowWaypoints();
-                if(avoidStudentsTemp == 0)
+                if (avoidStudentsTemp == 0)
                 {
                     navMeshAgent.speed = 4;
                 }
-            }  
+            }
         }
     }
 
@@ -195,7 +196,7 @@ public class IABehaviour : MonoBehaviour
         // Anar cap al waypoint
         navMeshAgent.destination = waypoints[waypointsIndex].transform.position;
 
-        // Si el waypoint == al waypoint final -1, torna a comen�ar la ruta de waypoints
+        // Si el waypoint == al waypoint final -1, torna a comen ar la ruta de waypoints
         if (waypointsIndex == waypoints.Length - 1)
         {
             // Reset Index
@@ -208,7 +209,7 @@ public class IABehaviour : MonoBehaviour
         {
             if (!waypointsTimerReached)
             {
-                //Comen�ar temporitzador
+                //Comen ar temporitzador
                 waypointsTimer += Time.deltaTime;
             }
 
@@ -286,7 +287,7 @@ public class IABehaviour : MonoBehaviour
     {
         // waypointsIndex++;
         avoidStudentsTemp += Time.deltaTime;
-        if(level1)
+        if (level1)
         {
             navMeshAgent.speed = 4;
         }
@@ -318,7 +319,7 @@ public class IABehaviour : MonoBehaviour
         {
             // Volver a la normalidad una vez encontrado y ir hacia el HidePlace
             detector.radius = 1.0f;
-           // detector.transform.localScale = new Vector3(1, 1, 1);
+            // detector.transform.localScale = new Vector3(1, 1, 1);
             navMeshAgent.destination = myHidePlace.transform.position;
             navMeshAgent.speed = 5;
         }
@@ -347,7 +348,7 @@ public class IABehaviour : MonoBehaviour
 
         navMeshAgent.speed = 0;
         playerMovement.moveSpeed = 1;
-        if(attackTimer >= attackTime)
+        if (attackTimer >= attackTime)
         {
             dangerIcon.SetActive(false);
             navMeshAgent.speed = 2;
@@ -363,8 +364,9 @@ public class IABehaviour : MonoBehaviour
             if (other.CompareTag("Player") && shadowIcon.activeSelf)
             {
                 dangerIcon.SetActive(true);
+                //curaBehaviour.lastSeenPlayerIcon.transform.position = dangerIcon.transform.position;
                 followWaypointsLevel0 = false;
-                
+
                 //Audio
                 if (canAlertSound)
                 {
@@ -397,17 +399,18 @@ public class IABehaviour : MonoBehaviour
                 }
             }
 
-        if (other.CompareTag("Player") && shadowIcon.activeSelf)
-        {
-            //Audio
-            if (canAlertSound)
+            if (other.CompareTag("Player") && shadowIcon.activeSelf)
             {
-                FindObjectOfType<AudioManager>().Play("AlertVoid");
-                canAlertSound = false;
+                //Audio
+                if (canAlertSound)
+                {
+                    FindObjectOfType<AudioManager>().Play("AlertVoid");
+                    canAlertSound = false;
+                }
+                dangerIcon.SetActive(true);
+                //curaBehaviour.lastSeenPlayerIcon.transform.position = dangerIcon.transform.position;
+                followWaypointsLevel0 = false;
             }
-            dangerIcon.SetActive(true);
-            followWaypointsLevel0 = false;
-        }
 
             else if (goToHide)
             {
@@ -422,7 +425,7 @@ public class IABehaviour : MonoBehaviour
         //Level 2 Colliders
         if (level2)
         {
-            if (other.CompareTag("Player")&& dangerIcon.activeSelf)
+            if (other.CompareTag("Player") && dangerIcon.activeSelf)
             {
                 canAttack = true;
             }
@@ -444,6 +447,7 @@ public class IABehaviour : MonoBehaviour
                     canAlertSound = false;
                 }
                 dangerIcon.SetActive(true);
+                // curaBehaviour.lastSeenPlayerIcon.transform.position = dangerIcon.transform.position;
                 followWaypointsLevel0 = false;
             }
         }
