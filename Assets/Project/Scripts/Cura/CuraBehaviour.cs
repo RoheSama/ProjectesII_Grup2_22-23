@@ -50,7 +50,8 @@ public class CuraBehaviour : MonoBehaviour
     public float chaseTime;
 
     //Last Seen
-    //public GameObject lastSeenPlayerIcon;
+    public GameObject lastSeenPlayerIcon;
+    bool canGoToLastPos = false;
 
     void Start()
     {
@@ -63,21 +64,19 @@ public class CuraBehaviour : MonoBehaviour
 
 
         //DEBUG
-
-
         if (level0)
         {
-            Debug.Log("level0");
+           // Debug.Log("level0");
         }
 
         if (level1)
         {
-            Debug.Log("level1");
+           // Debug.Log("level1");
         }
 
         if (level2)
         {
-            Debug.Log("level2");
+           // Debug.Log("level2");
         }
 
         //Debug.Log(chaseTimer);
@@ -119,9 +118,9 @@ public class CuraBehaviour : MonoBehaviour
                 dangerIcon.SetActive(false);
             }
 
-            else if (dangerIcon.activeSelf)
+            else if (dangerIcon.activeSelf && canGoToLastPos)
             {
-                ChasePlayer();
+                GoToLastPos();
             }
         }
     }
@@ -168,15 +167,15 @@ public class CuraBehaviour : MonoBehaviour
 
     void ChasePlayer()
     {
-       // navMeshAgent.destination = lastSeenPlayerIcon.transform.position;
-       navMeshAgent.destination = player.transform.position;
+        // navMeshAgent.destination = lastSeenPlayerIcon.transform.position;
+        navMeshAgent.destination = player.transform.position;
 
         chaseTimer += Time.deltaTime;
 
         if (level0)
         {
             navMeshAgent.speed = 3.0f;
-           // lastSeenPlayerIcon.SetActive(true);
+            // lastSeenPlayerIcon.SetActive(true);
         }
 
         if (level1)
@@ -188,7 +187,7 @@ public class CuraBehaviour : MonoBehaviour
         if (level2)
         {
             navMeshAgent.speed = 4.0f;
-           // lastSeenPlayerIcon.SetActive(true);
+            // lastSeenPlayerIcon.SetActive(true);
         }
 
         if (chaseTimer >= chaseTime)
@@ -209,14 +208,19 @@ public class CuraBehaviour : MonoBehaviour
         }
     }
 
+    void GoToLastPos()
+    {
+        navMeshAgent.destination = lastSeenPlayerIcon.transform.position;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (level0)
         {
             if (other.CompareTag("Player") && shadowIcon.activeSelf)
             {
-                dangerIcon.SetActive(true);
-                followWaypoints = false;
+                //dangerIcon.SetActive(true);
+                //followWaypoints = false;
                 // lastSeenPlayerIcon.SetActive(true);
                 //lastSeenPlayerIcon.transform.position = player.transform.position;
 
@@ -233,8 +237,8 @@ public class CuraBehaviour : MonoBehaviour
         {
             if (other.CompareTag("Player"))
             {
-                dangerIcon.SetActive(true);
-                followWaypoints = false;
+                //dangerIcon.SetActive(true);
+                //followWaypoints = false;
                 //lastSeenPlayerIcon.SetActive(true);
                 //lastSeenPlayerIcon.transform.position = player.transform.position;
 
@@ -254,8 +258,8 @@ public class CuraBehaviour : MonoBehaviour
         {
             if (other.CompareTag("Player") && shadowIcon.activeSelf)
             {
-               // lastSeenPlayerIcon.transform.position = player.transform.position;
-               // lastSeenPlayerIcon.SetActive(true);
+                // lastSeenPlayerIcon.transform.position = player.transform.position;
+                // lastSeenPlayerIcon.SetActive(true);
             }
         }
 
@@ -264,7 +268,7 @@ public class CuraBehaviour : MonoBehaviour
         {
             if (other.CompareTag("Player"))
             {
-               // lastSeenPlayerIcon.transform.position = player.transform.position;
+                // lastSeenPlayerIcon.transform.position = player.transform.position;
                 //lastSeenPlayerIcon.SetActive(true);
 
                 /*if (chaseTimer > 0)
