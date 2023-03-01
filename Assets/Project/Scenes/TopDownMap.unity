@@ -1266,6 +1266,7 @@ MonoBehaviour:
   shadowIcon: {fileID: 1754658592}
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
+  chaseTimer: 0
   chaseTime: 10
   lastSeenPlayerIcon: {fileID: 253170970}
   lastSeenPlayerTimer: 0
