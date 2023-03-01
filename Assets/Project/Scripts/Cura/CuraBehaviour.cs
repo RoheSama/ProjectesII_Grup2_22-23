@@ -49,6 +49,7 @@ public class CuraBehaviour : MonoBehaviour
     //Chase
     float chaseTimer;
     public float chaseTime;
+    bool canChase = false;
 
     //Last Seen
     public GameObject lastSeenPlayerIcon;
@@ -121,13 +122,18 @@ public class CuraBehaviour : MonoBehaviour
         //Chase 
         if (level0 || level1 || level2)
         {
-            if (followWaypoints)
+            if(canChase)
+            {
+                ChasePlayer();
+            }
+
+            if (followWaypoints && canChase == false)
             {
                 FollowWaypoints();
                 dangerIcon.SetActive(false);
             }
 
-            else if (dangerIcon.activeSelf)
+            else if (dangerIcon.activeSelf && canChase == false)
             {
                 GoToLastPos();
             }
@@ -183,19 +189,19 @@ public class CuraBehaviour : MonoBehaviour
 
         if (level0)
         {
-            navMeshAgent.speed = 3.0f;
+            navMeshAgent.speed = 4.0f;
             // lastSeenPlayerIcon.SetActive(true);
         }
 
         if (level1)
         {
-            navMeshAgent.speed = 4.0f;
+            navMeshAgent.speed = 5.0f;
             //lastSeenPlayerIcon.SetActive(true);
         }
 
         if (level2)
         {
-            navMeshAgent.speed = 4.0f;
+            navMeshAgent.speed = 6.0f;
             // lastSeenPlayerIcon.SetActive(true);
         }
 
@@ -219,7 +225,10 @@ public class CuraBehaviour : MonoBehaviour
 
     void GoToLastPos()
     {
-        navMeshAgent.destination = lastSeenPlayerIcon.transform.position;
+        if(canChase== false)
+        {
+            navMeshAgent.destination = lastSeenPlayerIcon.transform.position;
+        }
 
         if (navMeshAgent.transform.position.x < lastSeenPlayerIcon.transform.position.x + 13 && navMeshAgent.transform.position.x > lastSeenPlayerIcon.transform.position.x - 13
             && navMeshAgent.transform.position.y < lastSeenPlayerIcon.transform.position.y + 13 && navMeshAgent.transform.position.y > lastSeenPlayerIcon.transform.position.y - 13 ||
@@ -284,6 +293,7 @@ public class CuraBehaviour : MonoBehaviour
         {
             if (other.CompareTag("Player") && shadowIcon.activeSelf)
             {
+                canChase = true;
                 //dangerIcon.SetActive(true);
                 //followWaypoints = false;
                 // lastSeenPlayerIcon.SetActive(true);
@@ -302,6 +312,7 @@ public class CuraBehaviour : MonoBehaviour
         {
             if (other.CompareTag("Player"))
             {
+                canChase = true;
                 //dangerIcon.SetActive(true);
                 //followWaypoints = false;
                 //lastSeenPlayerIcon.SetActive(true);
