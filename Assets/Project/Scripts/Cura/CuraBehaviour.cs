@@ -47,7 +47,7 @@ public class CuraBehaviour : MonoBehaviour
 
 
     //Chase
-    float chaseTimer;
+    public float chaseTimer;
     public float chaseTime;
     bool canChase = false;
 
@@ -210,6 +210,7 @@ public class CuraBehaviour : MonoBehaviour
             chaseTimer = 0;
             dangerIcon.SetActive(false);
             followWaypoints = true;
+            canChase = false;
 
            //if (level0)
            // {

@@ -120,6 +120,7 @@ public class IABehaviour : MonoBehaviour
 
             else if (dangerIcon.activeSelf)
             {
+                satanicStar01.SetActive(false);
                 RinconDeLlorar();
             }
         }
