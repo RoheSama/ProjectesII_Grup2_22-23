@@ -194,13 +194,13 @@ public class CuraBehaviour : MonoBehaviour
 
         if (level1)
         {
-            navMeshAgent.speed = 5.5f;
+            navMeshAgent.speed = 7.5f;
             //lastSeenPlayerIcon.SetActive(true);
         }
 
         if (level2)
         {
-            navMeshAgent.speed = 6.5f;
+            navMeshAgent.speed = 8.0f;
             // lastSeenPlayerIcon.SetActive(true);
         }
 
