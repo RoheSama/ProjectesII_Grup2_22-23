@@ -276,10 +276,10 @@ public class IABehaviour : MonoBehaviour
             navMeshAgent.speed = 2;
             animator.SetBool("CanCry", false);
 
-            if (satanicStar01.activeSelf)
-            {
-                satanicStar01.SetActive(false);
-            }
+           // if (satanicStar01.activeSelf)
+           // {
+           //     satanicStar01.SetActive(false);
+           // }
         }
     }
 

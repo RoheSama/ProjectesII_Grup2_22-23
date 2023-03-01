@@ -211,15 +211,15 @@ public class CuraBehaviour : MonoBehaviour
             dangerIcon.SetActive(false);
             followWaypoints = true;
 
-            if (level0)
-            {
-                satanicStar01.SetActive(false);
-            }
+           //if (level0)
+           // {
+           //     satanicStar01.SetActive(false);
+           // }
 
-            if (level1)
-            {
-                satanicStar02.SetActive(false);
-            }
+           // if (level1)
+           // {
+           //     satanicStar02.SetActive(false);
+           // }
         }
     }
 
@@ -275,15 +275,15 @@ public class CuraBehaviour : MonoBehaviour
             dangerIcon.SetActive(false);
             followWaypoints = true;
 
-            if (level0)
-            {
-                satanicStar01.SetActive(false);
-            }
+            //if (level0)
+           // {
+           //     satanicStar01.SetActive(false);
+           // }
 
-            if (level1)
-            {
-                satanicStar02.SetActive(false);
-            }
+           // if (level1)
+           // {
+           //     satanicStar02.SetActive(false);
+           // }
         }
     }
 
