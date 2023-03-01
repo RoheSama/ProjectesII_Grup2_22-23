@@ -218,13 +218,21 @@ public class CuraBehaviour : MonoBehaviour
     void GoToLastPos()
     {
         navMeshAgent.destination = lastSeenPlayerIcon.transform.position;
+
+        if (navMeshAgent.transform.position.x < lastSeenPlayerIcon.transform.position.x + 10 && navMeshAgent.transform.position.x > lastSeenPlayerIcon.transform.position.x - 10
+            && navMeshAgent.transform.position.y < lastSeenPlayerIcon.transform.position.y + 10 && navMeshAgent.transform.position.y > lastSeenPlayerIcon.transform.position.y - 10)
+        {
+            navMeshAgent.speed = 15;
+        }
+        else navMeshAgent.speed = 4.0f;
+
         if (navMeshAgent.transform.position.x < lastSeenPlayerIcon.transform.position.x + 2 && navMeshAgent.transform.position.x > lastSeenPlayerIcon.transform.position.x - 2
             && navMeshAgent.transform.position.y < lastSeenPlayerIcon.transform.position.y + 2 && navMeshAgent.transform.position.y > lastSeenPlayerIcon.transform.position.y - 2)
         {
             lastSeenPlayerTimer += Time.deltaTime;
         }
           
-        if (level0)
+       /* if (level0)
         {
             navMeshAgent.speed = 4.0f;
             // lastSeenPlayerIcon.SetActive(true);
@@ -240,7 +248,7 @@ public class CuraBehaviour : MonoBehaviour
         {
             navMeshAgent.speed = 6.0f;
             // lastSeenPlayerIcon.SetActive(true);
-        }
+        }*/
 
         if (lastSeenPlayerTimer >= lastSeenPlayerTime)
         {
