@@ -367,7 +367,7 @@ public class IABehaviour : MonoBehaviour
                 Debug.Log("ALerta");
                 curaBehaviour.dangerIcon.SetActive(true);
                 curaBehaviour.followWaypoints = false;
-                curaBehaviour.lastSeenPlayerIcon.transform.position = dangerIcon.transform.position;
+                curaBehaviour.lastSeenPlayerIcon.transform.position = new Vector3(dangerIcon.transform.position.x, dangerIcon.transform.position.y-1, dangerIcon.transform.position.z);
                 followWaypointsLevel0 = false;
 
                 //Audio

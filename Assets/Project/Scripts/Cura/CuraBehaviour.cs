@@ -8,6 +8,7 @@ public class CuraBehaviour : MonoBehaviour
     public NavMeshAgent navMeshAgent;
     public SpriteRenderer character;
     public GameObject player;
+    public GameObject cura;
 
 
     //---Follow Waypoints
@@ -52,6 +53,8 @@ public class CuraBehaviour : MonoBehaviour
     //Last Seen
     public GameObject lastSeenPlayerIcon;
     bool canGoToLastPos = false;
+    public float lastSeenPlayerTimer;
+    public float lastSeenPlayerTime;
 
     void Start()
     {
@@ -83,7 +86,11 @@ public class CuraBehaviour : MonoBehaviour
 
         if (!dangerIcon.activeSelf)
         {
-            navMeshAgent.speed = 2.0f;
+            navMeshAgent.speed = 3.0f;
+        }
+        if (dangerIcon.activeSelf)
+        {
+            followWaypoints = false;
         }
 
         //Start at Level 0
@@ -211,6 +218,46 @@ public class CuraBehaviour : MonoBehaviour
     void GoToLastPos()
     {
         navMeshAgent.destination = lastSeenPlayerIcon.transform.position;
+        if (navMeshAgent.transform.position.x < lastSeenPlayerIcon.transform.position.x + 2 && navMeshAgent.transform.position.x > lastSeenPlayerIcon.transform.position.x - 2
+            && navMeshAgent.transform.position.y < lastSeenPlayerIcon.transform.position.y + 2 && navMeshAgent.transform.position.y > lastSeenPlayerIcon.transform.position.y - 2)
+        {
+            lastSeenPlayerTimer += Time.deltaTime;
+        }
+          
+        if (level0)
+        {
+            navMeshAgent.speed = 4.0f;
+            // lastSeenPlayerIcon.SetActive(true);
+        }
+
+        if (level1)
+        {
+            navMeshAgent.speed = 5.0f;
+            //lastSeenPlayerIcon.SetActive(true);
+        }
+
+        if (level2)
+        {
+            navMeshAgent.speed = 6.0f;
+            // lastSeenPlayerIcon.SetActive(true);
+        }
+
+        if (lastSeenPlayerTimer >= lastSeenPlayerTime)
+        {
+            lastSeenPlayerTimer = 0;
+            dangerIcon.SetActive(false);
+            followWaypoints = true;
+
+            if (level0)
+            {
+                satanicStar01.SetActive(false);
+            }
+
+            if (level1)
+            {
+                satanicStar02.SetActive(false);
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
