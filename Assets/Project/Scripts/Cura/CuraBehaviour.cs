@@ -56,6 +56,8 @@ public class CuraBehaviour : MonoBehaviour
     public float lastSeenPlayerTimer;
     public float lastSeenPlayerTime;
 
+    bool curaCanSpeedRun = false;
+
     void Start()
     {
         dangerIcon.SetActive(false);
@@ -219,10 +221,18 @@ public class CuraBehaviour : MonoBehaviour
     {
         navMeshAgent.destination = lastSeenPlayerIcon.transform.position;
 
-        if (navMeshAgent.transform.position.x < lastSeenPlayerIcon.transform.position.x + 10 && navMeshAgent.transform.position.x > lastSeenPlayerIcon.transform.position.x - 10
-            && navMeshAgent.transform.position.y < lastSeenPlayerIcon.transform.position.y + 10 && navMeshAgent.transform.position.y > lastSeenPlayerIcon.transform.position.y - 10)
+        if (navMeshAgent.transform.position.x < lastSeenPlayerIcon.transform.position.x + 13 && navMeshAgent.transform.position.x > lastSeenPlayerIcon.transform.position.x - 13
+            && navMeshAgent.transform.position.y < lastSeenPlayerIcon.transform.position.y + 13 && navMeshAgent.transform.position.y > lastSeenPlayerIcon.transform.position.y - 13 ||
+            navMeshAgent.transform.position.x < player.transform.position.x + 13 && navMeshAgent.transform.position.x > player.transform.position.x - 13
+            && navMeshAgent.transform.position.y < player.transform.position.y + 13 && navMeshAgent.transform.position.y > player.transform.position.y - 13)
         {
-            navMeshAgent.speed = 15;
+            curaCanSpeedRun = true;
+        }
+        else curaCanSpeedRun = false;
+
+        if(curaCanSpeedRun == false)
+        {
+            navMeshAgent.speed = 20;
         }
         else navMeshAgent.speed = 4.0f;
 
