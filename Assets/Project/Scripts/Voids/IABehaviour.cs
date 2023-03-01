@@ -412,7 +412,10 @@ public class IABehaviour : MonoBehaviour
                     canAlertSound = false;
                 }
                 dangerIcon.SetActive(true);
-                //curaBehaviour.lastSeenPlayerIcon.transform.position = dangerIcon.transform.position;
+                Debug.Log("ALerta");
+                curaBehaviour.dangerIcon.SetActive(true);
+                curaBehaviour.followWaypoints = false;
+                curaBehaviour.lastSeenPlayerIcon.transform.position = new Vector3(dangerIcon.transform.position.x, dangerIcon.transform.position.y - 1, dangerIcon.transform.position.z);
                 followWaypointsLevel0 = false;
             }
 
@@ -451,7 +454,10 @@ public class IABehaviour : MonoBehaviour
                     canAlertSound = false;
                 }
                 dangerIcon.SetActive(true);
-                // curaBehaviour.lastSeenPlayerIcon.transform.position = dangerIcon.transform.position;
+                Debug.Log("ALerta");
+                curaBehaviour.dangerIcon.SetActive(true);
+                curaBehaviour.followWaypoints = false;
+                curaBehaviour.lastSeenPlayerIcon.transform.position = new Vector3(dangerIcon.transform.position.x, dangerIcon.transform.position.y - 1, dangerIcon.transform.position.z);
                 followWaypointsLevel0 = false;
             }
         }

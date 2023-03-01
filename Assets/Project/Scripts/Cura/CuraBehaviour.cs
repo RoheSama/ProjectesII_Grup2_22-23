@@ -179,7 +179,6 @@ public class CuraBehaviour : MonoBehaviour
         }
     }
 
-
     void ChasePlayer()
     {
         // navMeshAgent.destination = lastSeenPlayerIcon.transform.position;
