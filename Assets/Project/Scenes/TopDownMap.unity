@@ -291,7 +291,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 589.2, y: 461}
+  m_AnchoredPosition: {x: 590, y: 460}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &29775641
@@ -5159,6 +5159,7 @@ MonoBehaviour:
   shadowIcon: {fileID: 1754658592}
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
+  satanicStar01Animator: {fileID: 747324534}
   detector: {fileID: 1284317810}
   myRinconDeLlorar: {fileID: 0}
   timeInRinconDeLlorar: 20
@@ -20129,7 +20130,7 @@ RectTransform:
   m_GameObject: {fileID: 421118003}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.78, z: 1.1149}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 772014980}
@@ -20137,7 +20138,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 742.10004, y: 459.2}
+  m_AnchoredPosition: {x: 740, y: 460}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &421118005
@@ -22118,6 +22119,7 @@ MonoBehaviour:
   shadowIcon: {fileID: 1754658592}
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
+  satanicStar01Animator: {fileID: 747324534}
   detector: {fileID: 1482620883}
   myRinconDeLlorar: {fileID: 0}
   timeInRinconDeLlorar: 20
@@ -24098,6 +24100,7 @@ MonoBehaviour:
   shadowIcon: {fileID: 1754658592}
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
+  satanicStar01Animator: {fileID: 747324534}
   detector: {fileID: 1564404004}
   myRinconDeLlorar: {fileID: 0}
   timeInRinconDeLlorar: 20
@@ -24996,7 +24999,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 890.4, y: 461}
+  m_AnchoredPosition: {x: 890, y: 460}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &617038784
@@ -25629,6 +25632,7 @@ MonoBehaviour:
   shadowIcon: {fileID: 1754658592}
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
+  satanicStar01Animator: {fileID: 747324534}
   detector: {fileID: 723342074}
   myRinconDeLlorar: {fileID: 0}
   timeInRinconDeLlorar: 20
@@ -28022,7 +28026,7 @@ RectTransform:
   m_GameObject: {fileID: 717954797}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.78, z: 1.1149}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 772014980}
@@ -28030,7 +28034,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 891.30005, y: 459.2}
+  m_AnchoredPosition: {x: 890, y: 460}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &717954799
@@ -28381,6 +28385,7 @@ GameObject:
   - component: {fileID: 747324531}
   - component: {fileID: 747324533}
   - component: {fileID: 747324532}
+  - component: {fileID: 747324534}
   m_Layer: 5
   m_Name: starDark1
   m_TagString: Untagged
@@ -28397,7 +28402,7 @@ RectTransform:
   m_GameObject: {fileID: 747324530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.78, z: 1.1149}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 772014980}
@@ -28405,7 +28410,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 590.1, y: 459.2}
+  m_AnchoredPosition: {x: 590, y: 460}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &747324532
@@ -28446,6 +28451,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 747324530}
   m_CullTransparentMesh: 1
+--- !u!95 &747324534
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747324530}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0cf6f4006922516438ca8e3541e81b87, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &761041531
 GameObject:
   m_ObjectHideFlags: 0
@@ -30544,6 +30569,7 @@ MonoBehaviour:
   shadowIcon: {fileID: 1754658592}
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
+  satanicStar01Animator: {fileID: 747324534}
   detector: {fileID: 1549188748}
   myRinconDeLlorar: {fileID: 0}
   timeInRinconDeLlorar: 20
@@ -30627,6 +30653,52 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &939083548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 939083550}
+  - component: {fileID: 939083549}
+  m_Layer: 0
+  m_Name: Stars Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &939083549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939083548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30130c0db6b7f0b449c98f932b02a0b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  satanicStar02: {fileID: 421118003}
+  voidsLeft: {fileID: 2050071519}
+--- !u!4 &939083550
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939083548}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 11.812061, y: 29.360388, z: 0.04042601}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &947108510 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2305149477322110245, guid: 95464befe3941ea40855a90dddcf8617, type: 3}
@@ -37445,6 +37517,7 @@ MonoBehaviour:
   shadowIcon: {fileID: 1754658592}
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
+  satanicStar01Animator: {fileID: 747324534}
   detector: {fileID: 208751109}
   myRinconDeLlorar: {fileID: 0}
   timeInRinconDeLlorar: 20
@@ -39577,7 +39650,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 741.2, y: 461}
+  m_AnchoredPosition: {x: 740, y: 460}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1443433919
@@ -41814,6 +41887,7 @@ MonoBehaviour:
   shadowIcon: {fileID: 1754658592}
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
+  satanicStar01Animator: {fileID: 747324534}
   detector: {fileID: 189357361}
   myRinconDeLlorar: {fileID: 0}
   timeInRinconDeLlorar: 20
@@ -42306,6 +42380,7 @@ MonoBehaviour:
   shadowIcon: {fileID: 1754658592}
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
+  satanicStar01Animator: {fileID: 747324534}
   detector: {fileID: 457344437}
   myRinconDeLlorar: {fileID: 0}
   timeInRinconDeLlorar: 20
@@ -45801,52 +45876,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1814391525
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1814391527}
-  - component: {fileID: 1814391526}
-  m_Layer: 0
-  m_Name: Game Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1814391526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1814391525}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30130c0db6b7f0b449c98f932b02a0b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  satanicStar02: {fileID: 421118003}
-  voidsLeft: {fileID: 2050071519}
---- !u!4 &1814391527
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1814391525}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.9141297, y: 22.497648, z: 0.23712932}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 15
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1815358452
 GameObject:
   m_ObjectHideFlags: 0
@@ -46230,6 +46259,7 @@ MonoBehaviour:
   shadowIcon: {fileID: 1754658592}
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
+  satanicStar01Animator: {fileID: 747324534}
   detector: {fileID: 1633768529}
   myRinconDeLlorar: {fileID: 0}
   timeInRinconDeLlorar: 20
@@ -48496,6 +48526,7 @@ MonoBehaviour:
   shadowIcon: {fileID: 1754658592}
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
+  satanicStar01Animator: {fileID: 747324534}
   detector: {fileID: 489891811}
   myRinconDeLlorar: {fileID: 0}
   timeInRinconDeLlorar: 20
