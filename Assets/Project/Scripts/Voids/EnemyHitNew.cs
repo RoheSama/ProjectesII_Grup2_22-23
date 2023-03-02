@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class EnemyHitNew : MonoBehaviour
 {
+    public IABehaviour iABehaviour;
     public int maxHealth = 10;
     public int currentHealth;
 
@@ -26,6 +27,7 @@ public class EnemyHitNew : MonoBehaviour
     //public float maxRage = 100;
     //public float currentRage = 20;
     // Start is called before the first frame update
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -36,7 +38,7 @@ public class EnemyHitNew : MonoBehaviour
     {
         if (isCura)
         {
-            if (voidsLeft.GetComponent<VoidsLeft>().moneyValue == 0)
+            if (voidsLeft.GetComponent<VoidsLeft>().totalVoids == 0)
             {
                 Instantiate(blood, transform.position, Quaternion.identity);
                 currentHealth -= damage;
@@ -57,14 +59,12 @@ public class EnemyHitNew : MonoBehaviour
 
             //anim.SetTrigger("Hurt");
 
-            if (currentHealth <= 0)
+            if (currentHealth <= 0 && iABehaviour.canDie==true)
             {
                 Die();
                 Instantiate(bloodDie, transform.position, Quaternion.identity);
             }
         }
-
-
     }
 
     void Die()
@@ -77,6 +77,7 @@ public class EnemyHitNew : MonoBehaviour
         agent.speed = 0.0f;
         StartCoroutine(VoidDestroy());
         voidsLeft.GetComponent<VoidsLeft>().studentKill();
+        iABehaviour.isDead = true;
         //Destroy(gameObject);
         //rageBar.UpdateRageBar();
         //UpdateRageBar();
@@ -87,7 +88,6 @@ public class EnemyHitNew : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         Destroy(gameObject);
-       
     }
 
 }
