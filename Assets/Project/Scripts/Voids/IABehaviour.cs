@@ -105,6 +105,8 @@ public class IABehaviour : MonoBehaviour
             //Hacer que el void salga si ha entrado en un escondite mientras moría (BUGS)
             navMeshAgent.enabled = false;
             hideTimer = 100;
+            //Desactivar Ataque si el student muere
+            attackTimer = 100;
         }
 
         //Level 0
@@ -366,7 +368,7 @@ public class IABehaviour : MonoBehaviour
         {
             dangerIcon.SetActive(false);
             navMeshAgent.speed = 2;
-            playerMovement.moveSpeed = 5;
+            playerMovement.moveSpeed = 8;
         }
     }
 

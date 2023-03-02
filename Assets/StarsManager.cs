@@ -9,7 +9,7 @@ public class StarsManager : MonoBehaviour
 
     void Update()
     {
-        if(voidsLeft.totalVoids == 5)
+        if(voidsLeft.totalVoids <= 9)
         {
             satanicStar02.SetActive(false);
         }
