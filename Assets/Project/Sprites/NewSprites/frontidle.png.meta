@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 120
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -107,12 +107,12 @@ TextureImporter:
       name: frontidle_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1536
-        width: 819.2
-        height: 1536
-      alignment: 9
-      pivot: {x: 0.49131513, y: 0.5217821}
+        x: 162
+        y: 1653
+        width: 474
+        height: 1225
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -128,12 +128,12 @@ TextureImporter:
       name: frontidle_1
       rect:
         serializedVersion: 2
-        x: 819
-        y: 1533
-        width: 819
-        height: 1536
-      alignment: 9
-      pivot: {x: 0.48757043, y: 0.5291888}
+        x: 957
+        y: 1653
+        width: 524
+        height: 1234
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -149,12 +149,12 @@ TextureImporter:
       name: frontidle_2
       rect:
         serializedVersion: 2
-        x: 1638
-        y: 1536
-        width: 819.2
-        height: 1536
-      alignment: 9
-      pivot: {x: 0.5031052, y: 0.52731913}
+        x: 1779
+        y: 1641
+        width: 562
+        height: 1246
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -170,12 +170,12 @@ TextureImporter:
       name: frontidle_3
       rect:
         serializedVersion: 2
-        x: 2457
-        y: 1536
-        width: 819.2
-        height: 1536
-      alignment: 9
-      pivot: {x: 0.52841157, y: 0.527417}
+        x: 2626
+        y: 1653
+        width: 523
+        height: 1234
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -191,12 +191,12 @@ TextureImporter:
       name: frontidle_4
       rect:
         serializedVersion: 2
-        x: 3276
-        y: 1536
-        width: 819.2
-        height: 1536
-      alignment: 9
-      pivot: {x: 0.5379373, y: 0.5268863}
+        x: 3482
+        y: 1659
+        width: 474
+        height: 1225
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -212,12 +212,12 @@ TextureImporter:
       name: frontidle_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 819.2
-        height: 1536
-      alignment: 9
-      pivot: {x: 0.47467744, y: 0.5271277}
+        x: 161
+        y: 122
+        width: 473
+        height: 1225
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -233,12 +233,12 @@ TextureImporter:
       name: frontidle_6
       rect:
         serializedVersion: 2
-        x: 819
-        y: 0
-        width: 819.2
-        height: 1536
-      alignment: 9
-      pivot: {x: 0.4826896, y: 0.52485055}
+        x: 961
+        y: 111
+        width: 524
+        height: 1234
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -254,12 +254,12 @@ TextureImporter:
       name: frontidle_7
       rect:
         serializedVersion: 2
-        x: 1638
-        y: 0
-        width: 819.2
-        height: 1536
-      alignment: 9
-      pivot: {x: 0.51124156, y: 0.5246157}
+        x: 1781
+        y: 102
+        width: 563
+        height: 1246
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -275,12 +275,12 @@ TextureImporter:
       name: frontidle_8
       rect:
         serializedVersion: 2
-        x: 2456
-        y: 1
-        width: 819
-        height: 1536
-      alignment: 9
-      pivot: {x: 0.5135926, y: 0.5340356}
+        x: 2624
+        y: 126
+        width: 524
+        height: 1234
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -296,12 +296,12 @@ TextureImporter:
       name: frontidle_9
       rect:
         serializedVersion: 2
-        x: 3276
-        y: 0
-        width: 819.2
-        height: 1536
-      alignment: 9
-      pivot: {x: 0.5266118, y: 0.53513765}
+        x: 3479
+        y: 134
+        width: 474
+        height: 1225
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

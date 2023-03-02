@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 120
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -102,18 +102,238 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: shadowfrontidle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 819.2
+        height: 1536
+      alignment: 9
+      pivot: {x: 0.49158317, y: 0.51}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1108e03ed047c6488842f043307d454
+      internalID: 416185828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowfrontidle_1
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 1536
+        width: 819.2
+        height: 1536
+      alignment: 9
+      pivot: {x: 0.502848, y: 0.51}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cad9d3f7c4527d4cbfa0ed0a8d6cd16
+      internalID: 1970455910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowfrontidle_2
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 1536
+        width: 819.2
+        height: 1536
+      alignment: 9
+      pivot: {x: 0.51939666, y: 0.51}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e888457383350054d863f9f09be6e46c
+      internalID: 1517762502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowfrontidle_3
+      rect:
+        serializedVersion: 2
+        x: 2457
+        y: 1536
+        width: 819.2
+        height: 1536
+      alignment: 9
+      pivot: {x: 0.5375734, y: 0.51}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4cec3d735250e643bb4ba72a25d7119
+      internalID: -1678703206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowfrontidle_4
+      rect:
+        serializedVersion: 2
+        x: 3276
+        y: 1536
+        width: 819.2
+        height: 1536
+      alignment: 9
+      pivot: {x: 0.545204, y: 0.51}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 779ec2841d763014ca4887f87c4994c9
+      internalID: 62235105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowfrontidle_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 819.2
+        height: 1536
+      alignment: 9
+      pivot: {x: 0.4906195, y: 0.49}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35a4b777f1d628b4e83e3a6e81f9bdd9
+      internalID: -1694260650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowfrontidle_6
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 0
+        width: 819.2
+        height: 1536
+      alignment: 9
+      pivot: {x: 0.50151706, y: 0.51}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b75500b99a814cc4699fe22857367ba6
+      internalID: 1727829405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowfrontidle_7
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 0
+        width: 819.2
+        height: 1536
+      alignment: 9
+      pivot: {x: 0.51427156, y: 0.51}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd46507eb20613f4c88babee57b8b18d
+      internalID: 1880575485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowfrontidle_8
+      rect:
+        serializedVersion: 2
+        x: 2457
+        y: 0
+        width: 819.2
+        height: 1536
+      alignment: 9
+      pivot: {x: 0.5372122, y: 0.51}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e96e89a70bc3b6469ba1325e1439dde
+      internalID: -1412106893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowfrontidle_9
+      rect:
+        serializedVersion: 2
+        x: 3276
+        y: 0
+        width: 819.2
+        height: 1536
+      alignment: 9
+      pivot: {x: 0.54382175, y: 0.51}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f291ea8100541874ca90c2c28d4db904
+      internalID: 507790071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: dc3b320ad4792c949a58adb578c0389a
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      shadowfrontidle_1: 1970455910
+      shadowfrontidle_6: 1727829405
+      shadowfrontidle_4: 62235105
+      shadowfrontidle_7: 1880575485
+      shadowfrontidle_0: 416185828
+      shadowfrontidle_9: 507790071
+      shadowfrontidle_3: -1678703206
+      shadowfrontidle_8: -1412106893
+      shadowfrontidle_2: 1517762502
+      shadowfrontidle_5: -1694260650
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

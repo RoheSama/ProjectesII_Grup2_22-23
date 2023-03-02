@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 120
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -102,18 +102,245 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: frontback_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 1654
+        width: 469
+        height: 1224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee2d3527b4a3d7743bb30715503b3638
+      internalID: 2089883399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frontback_1
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 1662
+        width: 520
+        height: 1226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aadbe5c16ca74549bca98dbf943df6a
+      internalID: -56058886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frontback_2
+      rect:
+        serializedVersion: 2
+        x: 1778
+        y: 1641
+        width: 571
+        height: 1246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe2d90bedeeee9940b41b3099092cc9c
+      internalID: -1954389113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frontback_4
+      rect:
+        serializedVersion: 2
+        x: 2634
+        y: 1662
+        width: 521
+        height: 1226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdb32ea2feb969845a7762656eded81a
+      internalID: 873197811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frontback_5
+      rect:
+        serializedVersion: 2
+        x: 3487
+        y: 1661
+        width: 468
+        height: 1224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7962ae0192a5a174ab91a7658550d8c3
+      internalID: -627136136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frontback_8
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 124
+        width: 469
+        height: 1224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbc9e45c788bcd0449f016aff8f7e4a4
+      internalID: -1140551021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frontback_9
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 120
+        width: 521
+        height: 1226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49dcdbb65d8f2704d9a78bd4d1395083
+      internalID: 394812957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frontback_10
+      rect:
+        serializedVersion: 2
+        x: 1779
+        y: 104
+        width: 571
+        height: 1246
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b29f547c6ba05f48b0d19a4475ddadd
+      internalID: -1568727760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frontback_11
+      rect:
+        serializedVersion: 2
+        x: 2633
+        y: 134
+        width: 520
+        height: 1226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebe131ec1d3c2d341ab2c60ed4b21f15
+      internalID: -1917756817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: frontback_12
+      rect:
+        serializedVersion: 2
+        x: 3483
+        y: 136
+        width: 468
+        height: 1224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83d3583befe08e34785cd0e9a8ae3902
+      internalID: -384567713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 38a993423a5be724484825d054493684
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      frontback_7: 1878364576
+      frontback_9: 394812957
+      frontback_15: -1176361137
+      frontback_10: -1568727760
+      frontback_1: -56058886
+      frontback_4: 873197811
+      frontback_5: -627136136
+      frontback_14: -1304554714
+      frontback_13: 1872677291
+      frontback_6: -1287687243
+      frontback_12: -384567713
+      frontback_8: -1140551021
+      frontback_3: 2028404972
+      frontback_2: -1954389113
+      frontback_16: 119845013
+      frontback_0: 2089883399
+      frontback_11: -1917756817
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

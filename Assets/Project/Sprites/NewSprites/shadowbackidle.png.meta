@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 120
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -102,18 +102,238 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: shadowbackidle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 819.2
+        height: 1536
+      alignment: 9
+      pivot: {x: 0.49, y: 0.5896356}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d9efff775dc99428a94317d0f746c8
+      internalID: 367196146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowbackidle_1
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 1536
+        width: 819.2
+        height: 1536
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5896356}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e9b21616a269934ab670c3d2785148b
+      internalID: -601438817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowbackidle_2
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 1536
+        width: 819.2
+        height: 1536
+      alignment: 9
+      pivot: {x: 0.51820636, y: 0.5896356}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ddb06644f229be42864379df48d8fce
+      internalID: -1836576709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowbackidle_3
+      rect:
+        serializedVersion: 2
+        x: 2457
+        y: 1536
+        width: 819.2
+        height: 1536
+      alignment: 9
+      pivot: {x: 0.5313894, y: 0.5896356}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 481819dbc904e034cb76a474c500f46e
+      internalID: -393237640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowbackidle_4
+      rect:
+        serializedVersion: 2
+        x: 3276
+        y: 1536
+        width: 819.2
+        height: 1536
+      alignment: 9
+      pivot: {x: 0.54656476, y: 0.5896356}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e614caca17e4b6143a0a3cd97ae7a048
+      internalID: -7035873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowbackidle_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 819.2
+        height: 1536
+      alignment: 9
+      pivot: {x: 0.48939726, y: 0.49999988}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39f274cc3e167846af15ea6f3954484
+      internalID: 361524059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowbackidle_6
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 0
+        width: 819.2
+        height: 1536
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a13f3cb319d3c849b37732935f205e4
+      internalID: -2033682321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowbackidle_7
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 0
+        width: 819.2
+        height: 1536
+      alignment: 9
+      pivot: {x: 0.5155197, y: 0.50137967}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 425e567f38270204ab1702c4dad922e0
+      internalID: -1365205200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowbackidle_8
+      rect:
+        serializedVersion: 2
+        x: 2457
+        y: 0
+        width: 819.2
+        height: 1536
+      alignment: 9
+      pivot: {x: 0.5379325, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d957e2b4c28ac6d4996620c9a47044ed
+      internalID: 232870882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowbackidle_9
+      rect:
+        serializedVersion: 2
+        x: 3276
+        y: 0
+        width: 819.2
+        height: 1536
+      alignment: 9
+      pivot: {x: 0.54770976, y: 0.49999997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 073b007936c262640bcad1f45cf82277
+      internalID: -430401634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: df091a80646b1634ca9934071640392a
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      shadowbackidle_3: -393237640
+      shadowbackidle_6: -2033682321
+      shadowbackidle_1: -601438817
+      shadowbackidle_8: 232870882
+      shadowbackidle_9: -430401634
+      shadowbackidle_2: -1836576709
+      shadowbackidle_7: -1365205200
+      shadowbackidle_5: 361524059
+      shadowbackidle_0: 367196146
+      shadowbackidle_4: -7035873
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
