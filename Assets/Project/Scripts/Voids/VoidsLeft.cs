@@ -5,16 +5,23 @@ using UnityEngine;
 
 public class VoidsLeft : MonoBehaviour
 {
-    public int totalVoids;
-    public TMP_Text voidsCounter;
+    public int moneyValue = 5;
+    public TMP_Text moneyCounter;
     
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
     void Update()
     {
-        voidsCounter.SetText(totalVoids.ToString());
+        moneyCounter.SetText(moneyValue.ToString());
     }
 
    public void studentKill()
     {
-        totalVoids--;
+        moneyValue--;
     }
 }

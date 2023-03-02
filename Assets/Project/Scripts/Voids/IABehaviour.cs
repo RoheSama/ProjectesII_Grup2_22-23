@@ -41,8 +41,6 @@ public class IABehaviour : MonoBehaviour
     // Satanic Stars
     public GameObject satanicStar01;
     public GameObject satanicStar02;
-    public Animator satanicStar01Animator;
-    public Animator satanicStar02Animator;
 
     // Detector
     public CircleCollider2D detector;
@@ -80,10 +78,6 @@ public class IABehaviour : MonoBehaviour
     float attackTimer;
     public float attackTime;
 
-    //Void Behaviour
-    public bool isDead = false;
-    public bool canDie = true;
-
     void Update()
     {
         //DEBUG AREA
@@ -102,29 +96,15 @@ public class IABehaviour : MonoBehaviour
             canActiveAlertSound = false;
         }
 
-        if(isDead)
-        {
-            //Hacer que el void salga si ha entrado en un escondite mientras moría (BUGS)
-            navMeshAgent.enabled = false;
-            hideTimer = 100;
-            //Desactivar Ataque si el student muere
-            attackTimer = 100;
-        }
-
-        if (satanicStar02Animator.GetBool("CanStartSatanicStar02") == true)
-        {
-            satanicStar01Animator.SetBool("CanStartSatanicStar01", false);
-        }
-
-        //Level 0 to 1
-        if (satanicStar01Animator.GetBool("CanStartSatanicStar01") == true)
+        //Level 0
+        if (satanicStar01.activeInHierarchy == false)
         {
             level0 = false;
             level1 = true;
         }
 
-        //Level 1 o 2
-        if (satanicStar02Animator.GetBool("CanStartSatanicStar02") == true)
+        //Level 1
+        if (satanicStar02.activeInHierarchy == false)
         {
             level1 = false;
             level2 = true;
@@ -140,11 +120,8 @@ public class IABehaviour : MonoBehaviour
 
             else if (dangerIcon.activeSelf)
             {
-                if(satanicStar02Animator.GetBool("CanStartSatanicStar02") == false)
-                {
-                    satanicStar01Animator.SetBool("CanStartSatanicStar01", true);
-                    RinconDeLlorar();
-                }
+                satanicStar01.SetActive(false);
+                RinconDeLlorar();
             }
         }
 
@@ -188,7 +165,6 @@ public class IABehaviour : MonoBehaviour
                 myHideIcon = null;
                 myHideTileMap = null;
                 canAlertSound = true;
-                canDie = true;
             }
         }
 
@@ -301,9 +277,7 @@ public class IABehaviour : MonoBehaviour
             navMeshAgent.speed = 2;
             animator.SetBool("CanCry", false);
 
-           // if (
-           //
-           // 01.activeSelf)
+           // if (satanicStar01.activeSelf)
            // {
            //     satanicStar01.SetActive(false);
            // }
@@ -365,7 +339,6 @@ public class IABehaviour : MonoBehaviour
                 dangerIcon.SetActive(false);
                 canActivateHideTimer = true;
                 followWaypointsLevel0 = false;
-                canDie = false;
             }
         }
     }
@@ -380,7 +353,7 @@ public class IABehaviour : MonoBehaviour
         {
             dangerIcon.SetActive(false);
             navMeshAgent.speed = 2;
-            playerMovement.moveSpeed = 8;
+            playerMovement.moveSpeed = 5;
         }
     }
 
