@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class StarsManager : MonoBehaviour
 {
-    public GameObject satanicStar02;
+    public Animator satanicStar02Animator;
     public VoidsLeft voidsLeft;
 
     void Update()
     {
         if(voidsLeft.totalVoids <= 9)
         {
-            satanicStar02.SetActive(false);
+            satanicStar02Animator.SetBool("CanStartSatanicStar02", true);
+            satanicStar02Animator.SetBool("CanStartSatanicStar01", false);
         }
     }
 }

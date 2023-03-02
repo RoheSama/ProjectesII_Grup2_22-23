@@ -5160,6 +5160,7 @@ MonoBehaviour:
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
   satanicStar01Animator: {fileID: 747324534}
+  satanicStar02Animator: {fileID: 421118007}
   detector: {fileID: 1284317810}
   myRinconDeLlorar: {fileID: 0}
   timeInRinconDeLlorar: 20
@@ -20114,6 +20115,7 @@ GameObject:
   - component: {fileID: 421118004}
   - component: {fileID: 421118006}
   - component: {fileID: 421118005}
+  - component: {fileID: 421118007}
   m_Layer: 5
   m_Name: starDark2
   m_TagString: Untagged
@@ -20179,6 +20181,26 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421118003}
   m_CullTransparentMesh: 1
+--- !u!95 &421118007
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 421118003}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 057776149b76be0498ef6e19019ec188, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &421829091
 GameObject:
   m_ObjectHideFlags: 0
@@ -22120,6 +22142,7 @@ MonoBehaviour:
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
   satanicStar01Animator: {fileID: 747324534}
+  satanicStar02Animator: {fileID: 421118007}
   detector: {fileID: 1482620883}
   myRinconDeLlorar: {fileID: 0}
   timeInRinconDeLlorar: 20
@@ -24101,6 +24124,7 @@ MonoBehaviour:
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
   satanicStar01Animator: {fileID: 747324534}
+  satanicStar02Animator: {fileID: 421118007}
   detector: {fileID: 1564404004}
   myRinconDeLlorar: {fileID: 0}
   timeInRinconDeLlorar: 20
@@ -25633,6 +25657,7 @@ MonoBehaviour:
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
   satanicStar01Animator: {fileID: 747324534}
+  satanicStar02Animator: {fileID: 421118007}
   detector: {fileID: 723342074}
   myRinconDeLlorar: {fileID: 0}
   timeInRinconDeLlorar: 20
@@ -30570,6 +30595,7 @@ MonoBehaviour:
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
   satanicStar01Animator: {fileID: 747324534}
+  satanicStar02Animator: {fileID: 421118007}
   detector: {fileID: 1549188748}
   myRinconDeLlorar: {fileID: 0}
   timeInRinconDeLlorar: 20
@@ -30682,7 +30708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30130c0db6b7f0b449c98f932b02a0b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  satanicStar02: {fileID: 421118003}
+  satanicStar02Animator: {fileID: 421118007}
   voidsLeft: {fileID: 2050071519}
 --- !u!4 &939083550
 Transform:
@@ -37518,6 +37544,7 @@ MonoBehaviour:
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
   satanicStar01Animator: {fileID: 747324534}
+  satanicStar02Animator: {fileID: 421118007}
   detector: {fileID: 208751109}
   myRinconDeLlorar: {fileID: 0}
   timeInRinconDeLlorar: 20
@@ -41888,6 +41915,7 @@ MonoBehaviour:
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
   satanicStar01Animator: {fileID: 747324534}
+  satanicStar02Animator: {fileID: 421118007}
   detector: {fileID: 189357361}
   myRinconDeLlorar: {fileID: 0}
   timeInRinconDeLlorar: 20
@@ -42381,6 +42409,7 @@ MonoBehaviour:
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
   satanicStar01Animator: {fileID: 747324534}
+  satanicStar02Animator: {fileID: 421118007}
   detector: {fileID: 457344437}
   myRinconDeLlorar: {fileID: 0}
   timeInRinconDeLlorar: 20
@@ -46260,6 +46289,7 @@ MonoBehaviour:
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
   satanicStar01Animator: {fileID: 747324534}
+  satanicStar02Animator: {fileID: 421118007}
   detector: {fileID: 1633768529}
   myRinconDeLlorar: {fileID: 0}
   timeInRinconDeLlorar: 20
@@ -48527,6 +48557,7 @@ MonoBehaviour:
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
   satanicStar01Animator: {fileID: 747324534}
+  satanicStar02Animator: {fileID: 421118007}
   detector: {fileID: 489891811}
   myRinconDeLlorar: {fileID: 0}
   timeInRinconDeLlorar: 20

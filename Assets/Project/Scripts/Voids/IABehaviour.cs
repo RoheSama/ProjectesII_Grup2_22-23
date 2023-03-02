@@ -42,6 +42,7 @@ public class IABehaviour : MonoBehaviour
     public GameObject satanicStar01;
     public GameObject satanicStar02;
     public Animator satanicStar01Animator;
+    public Animator satanicStar02Animator;
 
     // Detector
     public CircleCollider2D detector;
@@ -110,6 +111,11 @@ public class IABehaviour : MonoBehaviour
             attackTimer = 100;
         }
 
+        if (satanicStar02Animator.GetBool("CanStartSatanicStar02") == true)
+        {
+            satanicStar01Animator.SetBool("CanStartSatanicStar01", false);
+        }
+
         //Level 0 to 1
         if (satanicStar01Animator.GetBool("CanStartSatanicStar01") == true)
         {
@@ -118,7 +124,7 @@ public class IABehaviour : MonoBehaviour
         }
 
         //Level 1 o 2
-        if (satanicStar02.activeInHierarchy == false)
+        if (satanicStar02Animator.GetBool("CanStartSatanicStar02") == true)
         {
             level1 = false;
             level2 = true;
@@ -134,8 +140,11 @@ public class IABehaviour : MonoBehaviour
 
             else if (dangerIcon.activeSelf)
             {
-                satanicStar01Animator.SetBool("CanStartSatanicStar01", true);
-                RinconDeLlorar();
+                if(satanicStar02Animator.GetBool("CanStartSatanicStar02") == false)
+                {
+                    satanicStar01Animator.SetBool("CanStartSatanicStar01", true);
+                    RinconDeLlorar();
+                }
             }
         }
 
