@@ -78,6 +78,9 @@ public class IABehaviour : MonoBehaviour
     float attackTimer;
     public float attackTime;
 
+    //Void Behaviour
+    public bool isDead = false;
+
     void Update()
     {
         //DEBUG AREA
@@ -94,6 +97,11 @@ public class IABehaviour : MonoBehaviour
         {
             canAlertSound = true;
             canActiveAlertSound = false;
+        }
+
+        if(isDead)
+        {
+            navMeshAgent.enabled = false;
         }
 
         //Level 0

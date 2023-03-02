@@ -1085,7 +1085,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111447786}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -48.57, y: 43.32, z: 0}
+  m_LocalPosition: {x: -2.9, y: 6.9, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1113,6 +1113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829ef1be20ea8834d81d4bb1f7c94b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iABehaviour: {fileID: 0}
   maxHealth: 5
   currentHealth: 0
   anim: {fileID: 111447796}
@@ -3689,7 +3690,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 3.5, y: 1.5, z: 0}
+  m_ChunkCullingBounds: {x: 1.1, y: 0.3, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -5004,6 +5005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829ef1be20ea8834d81d4bb1f7c94b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iABehaviour: {fileID: 285078788}
   maxHealth: 5
   currentHealth: 0
   anim: {fileID: 285078789}
@@ -5166,6 +5168,7 @@ MonoBehaviour:
   myHideIcon: {fileID: 0}
   myHideTileMap: {fileID: 0}
   attackTime: 10
+  isDead: 0
 --- !u!95 &285078789
 Animator:
   serializedVersion: 4
@@ -20505,7 +20508,7 @@ Transform:
   m_Children:
   - {fileID: 282223349}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &455348276
 GameObject:
@@ -21201,7 +21204,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2017091039629933252, guid: 1b717eafedf1b044b8a04aae954eafeb, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2017091039629933252, guid: 1b717eafedf1b044b8a04aae954eafeb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21960,6 +21963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829ef1be20ea8834d81d4bb1f7c94b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iABehaviour: {fileID: 502423018}
   maxHealth: 5
   currentHealth: 0
   anim: {fileID: 502423019}
@@ -22122,6 +22126,7 @@ MonoBehaviour:
   myHideIcon: {fileID: 0}
   myHideTileMap: {fileID: 0}
   attackTime: 10
+  isDead: 0
 --- !u!95 &502423019
 Animator:
   serializedVersion: 4
@@ -22311,7 +22316,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.9, y: 4.13, z: -10}
+  m_LocalPosition: {x: 26.98, y: 19.71, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23391,7 +23396,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &576846957
 MonoBehaviour:
@@ -23937,6 +23942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829ef1be20ea8834d81d4bb1f7c94b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iABehaviour: {fileID: 594028856}
   maxHealth: 5
   currentHealth: 0
   anim: {fileID: 594028857}
@@ -24099,6 +24105,7 @@ MonoBehaviour:
   myHideIcon: {fileID: 0}
   myHideTileMap: {fileID: 0}
   attackTime: 10
+  isDead: 0
 --- !u!95 &594028857
 Animator:
   serializedVersion: 4
@@ -24459,7 +24466,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 3.5, y: 1.5, z: 0}
+  m_ChunkCullingBounds: {x: 1.1, y: 0.3, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0
@@ -25465,6 +25472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829ef1be20ea8834d81d4bb1f7c94b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iABehaviour: {fileID: 663236696}
   maxHealth: 5
   currentHealth: 0
   anim: {fileID: 663236697}
@@ -25627,6 +25635,7 @@ MonoBehaviour:
   myHideIcon: {fileID: 0}
   myHideTileMap: {fileID: 0}
   attackTime: 10
+  isDead: 0
 --- !u!95 &663236697
 Animator:
   serializedVersion: 4
@@ -27962,13 +27971,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 717077013}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.9, y: 4.13, z: -10}
+  m_LocalPosition: {x: 26.98, y: 19.71, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1084888502}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &717077016
 MonoBehaviour:
@@ -29846,8 +29855,8 @@ Transform:
   m_LocalScale: {x: 10, y: 15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 650432567}
-  m_RootOrder: 6
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
 --- !u!60 &858439795
 PolygonCollider2D:
@@ -30377,6 +30386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829ef1be20ea8834d81d4bb1f7c94b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iABehaviour: {fileID: 924910209}
   maxHealth: 5
   currentHealth: 0
   anim: {fileID: 924910210}
@@ -30539,6 +30549,7 @@ MonoBehaviour:
   myHideIcon: {fileID: 0}
   myHideTileMap: {fileID: 0}
   attackTime: 10
+  isDead: 0
 --- !u!95 &924910210
 Animator:
   serializedVersion: 4
@@ -32057,8 +32068,8 @@ Transform:
   m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 139803049}
-  m_RootOrder: 4
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1088006958
 GameObject:
@@ -37275,6 +37286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829ef1be20ea8834d81d4bb1f7c94b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iABehaviour: {fileID: 1279481046}
   maxHealth: 5
   currentHealth: 0
   anim: {fileID: 1279481047}
@@ -37437,6 +37449,7 @@ MonoBehaviour:
   myHideIcon: {fileID: 0}
   myHideTileMap: {fileID: 0}
   attackTime: 10
+  isDead: 0
 --- !u!95 &1279481047
 Animator:
   serializedVersion: 4
@@ -40683,7 +40696,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2075762617439345465, guid: 4cb41f124cfc24a48a382a0331ab846a, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2075762617439345465, guid: 4cb41f124cfc24a48a382a0331ab846a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -41538,7 +41551,6 @@ GameObject:
   - component: {fileID: 1571445566}
   - component: {fileID: 1571445565}
   - component: {fileID: 1571445572}
-  - component: {fileID: 1571445574}
   - component: {fileID: 1571445575}
   m_Layer: 9
   m_Name: IA
@@ -41627,7 +41639,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!95 &1571445569
 Animator:
   serializedVersion: 4
@@ -41664,18 +41676,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.007737756, y: 0.006995678}
   m_Size: {x: 0.5360887, y: 1.3991737}
   m_Direction: 0
---- !u!114 &1571445574
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571445563}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2622e1c424327c4e9497052f6d94897, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1571445575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41688,6 +41688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829ef1be20ea8834d81d4bb1f7c94b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iABehaviour: {fileID: 1571445578}
   maxHealth: 5
   currentHealth: 0
   anim: {fileID: 1571445569}
@@ -41816,6 +41817,7 @@ MonoBehaviour:
   myHideIcon: {fileID: 0}
   myHideTileMap: {fileID: 0}
   attackTime: 10
+  isDead: 0
 --- !u!1 &1575185888
 GameObject:
   m_ObjectHideFlags: 0
@@ -42143,6 +42145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829ef1be20ea8834d81d4bb1f7c94b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iABehaviour: {fileID: 1602766700}
   maxHealth: 5
   currentHealth: 0
   anim: {fileID: 1602766701}
@@ -42305,6 +42308,7 @@ MonoBehaviour:
   myHideIcon: {fileID: 0}
   myHideTileMap: {fileID: 0}
   attackTime: 10
+  isDead: 0
 --- !u!95 &1602766701
 Animator:
   serializedVersion: 4
@@ -44805,7 +44809,7 @@ Transform:
   - {fileID: 1115547941}
   - {fileID: 1560280164}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1726689582
 GameObject:
@@ -45166,7 +45170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2305149478369681236, guid: 95464befe3941ea40855a90dddcf8617, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2305149478369681236, guid: 95464befe3941ea40855a90dddcf8617, type: 3}
       propertyPath: m_AnchorMax.x
@@ -46018,6 +46022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829ef1be20ea8834d81d4bb1f7c94b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iABehaviour: {fileID: 1819549373}
   maxHealth: 5
   currentHealth: 0
   anim: {fileID: 1819549374}
@@ -46180,6 +46185,7 @@ MonoBehaviour:
   myHideIcon: {fileID: 0}
   myHideTileMap: {fileID: 0}
   attackTime: 10
+  isDead: 0
 --- !u!95 &1819549374
 Animator:
   serializedVersion: 4
@@ -48281,6 +48287,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 829ef1be20ea8834d81d4bb1f7c94b8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  iABehaviour: {fileID: 1949713070}
   maxHealth: 5
   currentHealth: 0
   anim: {fileID: 1949713071}
@@ -48443,6 +48450,7 @@ MonoBehaviour:
   myHideIcon: {fileID: 0}
   myHideTileMap: {fileID: 0}
   attackTime: 10
+  isDead: 0
 --- !u!95 &1949713071
 Animator:
   serializedVersion: 4
@@ -48676,7 +48684,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5846776955885482334, guid: 9647e44b1c2e61f439079f5f2f732dcc, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5846776955885482334, guid: 9647e44b1c2e61f439079f5f2f732dcc, type: 3}
       propertyPath: m_AnchorMax.x
