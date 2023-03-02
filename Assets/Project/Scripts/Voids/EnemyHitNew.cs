@@ -59,7 +59,7 @@ public class EnemyHitNew : MonoBehaviour
 
             //anim.SetTrigger("Hurt");
 
-            if (currentHealth <= 0)
+            if (currentHealth <= 0 && iABehaviour.canDie==true)
             {
                 Die();
                 Instantiate(bloodDie, transform.position, Quaternion.identity);

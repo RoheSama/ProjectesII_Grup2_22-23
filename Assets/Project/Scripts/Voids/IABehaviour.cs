@@ -80,6 +80,7 @@ public class IABehaviour : MonoBehaviour
 
     //Void Behaviour
     public bool isDead = false;
+    public bool canDie = true;
 
     void Update()
     {
@@ -175,6 +176,7 @@ public class IABehaviour : MonoBehaviour
                 myHideIcon = null;
                 myHideTileMap = null;
                 canAlertSound = true;
+                canDie = true;
             }
         }
 
@@ -349,6 +351,7 @@ public class IABehaviour : MonoBehaviour
                 dangerIcon.SetActive(false);
                 canActivateHideTimer = true;
                 followWaypointsLevel0 = false;
+                canDie = false;
             }
         }
     }
