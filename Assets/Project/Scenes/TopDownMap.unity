@@ -45403,6 +45403,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 213694461}
     - target: {fileID: 2075762617812982471, guid: 4cb41f124cfc24a48a382a0331ab846a, type: 3}
+      propertyPath: normalAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4f0333eb25fdb7445b1b007d18b1c788, type: 2}
+    - target: {fileID: 2075762617812982471, guid: 4cb41f124cfc24a48a382a0331ab846a, type: 3}
+      propertyPath: powerUpAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: c6b72e3a2f741b940bb66adb7389144b, type: 2}
+    - target: {fileID: 2075762617812982471, guid: 4cb41f124cfc24a48a382a0331ab846a, type: 3}
       propertyPath: abilityImage1
       value: 
       objectReference: {fileID: 700746806}

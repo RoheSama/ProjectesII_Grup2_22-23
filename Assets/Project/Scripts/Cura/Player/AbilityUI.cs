@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
+using UnityEngine.AI;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
 
 public class AbilityUI : MonoBehaviour
 {
@@ -60,7 +61,9 @@ public class AbilityUI : MonoBehaviour
     [SerializeField] private GameObject attackArea;
     [SerializeField] LayerMask AoE;
 
-    public Material powerUpShadder;
+    //Rendering
+    public RenderPipelineAsset powerUpAsset;
+    public RenderPipelineAsset normalAsset;
     //Arnau
     //public GameObject shadowIcon;
 
@@ -70,7 +73,7 @@ public class AbilityUI : MonoBehaviour
         abilityImageSM.fillAmount = 1;
         normalForm.SetActive(true);
         shadowForm.SetActive(false);
-        
+
         //abilityImageRA.fillAmount = 1;
         //agent = GetComponent<NavMeshAgent>();
         //agent.updateRotation = false;
@@ -221,6 +224,7 @@ public class AbilityUI : MonoBehaviour
         normalFace.enabled = false;
         shadowFace.enabled = true;
         ScreenShake.Instance.ShakeCamera(0f, 0.0f);
+        GraphicsSettings.renderPipelineAsset = powerUpAsset;
     }
     void PowerOff()
     {
@@ -237,7 +241,7 @@ public class AbilityUI : MonoBehaviour
 
         normalFace.enabled = true;
         shadowFace.enabled = false;
-
+        GraphicsSettings.renderPipelineAsset = normalAsset;
         //Arnau
         //shadowIcon.SetActive(false);
     }
