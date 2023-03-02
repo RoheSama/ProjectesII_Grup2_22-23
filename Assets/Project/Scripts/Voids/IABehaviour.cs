@@ -101,7 +101,9 @@ public class IABehaviour : MonoBehaviour
 
         if(isDead)
         {
+            //Hacer que el void salga si ha entrado en un escondite mientras moría (BUGS)
             navMeshAgent.enabled = false;
+            hideTimer = 100;
         }
 
         //Level 0
