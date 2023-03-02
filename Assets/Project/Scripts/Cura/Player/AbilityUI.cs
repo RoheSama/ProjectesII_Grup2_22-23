@@ -59,8 +59,8 @@ public class AbilityUI : MonoBehaviour
     private bool attackAreaEnabled = false;
     [SerializeField] private GameObject attackArea;
     [SerializeField] LayerMask AoE;
-    
 
+    public Material powerUpShadder;
     //Arnau
     //public GameObject shadowIcon;
 
@@ -70,6 +70,7 @@ public class AbilityUI : MonoBehaviour
         abilityImageSM.fillAmount = 1;
         normalForm.SetActive(true);
         shadowForm.SetActive(false);
+        
         //abilityImageRA.fillAmount = 1;
         //agent = GetComponent<NavMeshAgent>();
         //agent.updateRotation = false;

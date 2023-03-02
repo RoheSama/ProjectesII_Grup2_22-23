@@ -45411,6 +45411,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1843159688}
     - target: {fileID: 2075762617812982471, guid: 4cb41f124cfc24a48a382a0331ab846a, type: 3}
+      propertyPath: powerUpShadder
+      value: 
+      objectReference: {fileID: 2100000, guid: 38d8b7592a13312499d371307438aafe, type: 2}
+    - target: {fileID: 2075762617812982471, guid: 4cb41f124cfc24a48a382a0331ab846a, type: 3}
       propertyPath: shadowCooldown
       value: 
       objectReference: {fileID: 64667448}
