@@ -107,12 +107,12 @@ TextureImporter:
       name: shadowfrontidle_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1536
-        width: 819.2
-        height: 1536
-      alignment: 9
-      pivot: {x: 0.49158317, y: 0.51}
+        x: 123
+        y: 1744
+        width: 592
+        height: 1218
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -128,12 +128,12 @@ TextureImporter:
       name: shadowfrontidle_1
       rect:
         serializedVersion: 2
-        x: 819
-        y: 1536
-        width: 819.2
-        height: 1536
-      alignment: 9
-      pivot: {x: 0.502848, y: 0.51}
+        x: 963
+        y: 1730
+        width: 521
+        height: 1232
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -149,12 +149,12 @@ TextureImporter:
       name: shadowfrontidle_2
       rect:
         serializedVersion: 2
-        x: 1638
-        y: 1536
-        width: 819.2
-        height: 1536
-      alignment: 9
-      pivot: {x: 0.51939666, y: 0.51}
+        x: 1820
+        y: 1725
+        width: 471
+        height: 1236
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -170,12 +170,12 @@ TextureImporter:
       name: shadowfrontidle_3
       rect:
         serializedVersion: 2
-        x: 2457
-        y: 1536
-        width: 819.2
-        height: 1536
-      alignment: 9
-      pivot: {x: 0.5375734, y: 0.51}
+        x: 2629
+        y: 1730
+        width: 573
+        height: 1232
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -191,12 +191,12 @@ TextureImporter:
       name: shadowfrontidle_4
       rect:
         serializedVersion: 2
-        x: 3276
-        y: 1536
-        width: 819.2
-        height: 1536
-      alignment: 9
-      pivot: {x: 0.545204, y: 0.51}
+        x: 3443
+        y: 1744
+        width: 558
+        height: 1218
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -209,106 +209,106 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadowfrontidle_5
+      name: shadowfrontidle_36
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 819.2
-        height: 1536
-      alignment: 9
-      pivot: {x: 0.4906195, y: 0.49}
+        x: 123
+        y: 243
+        width: 558
+        height: 1218
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35a4b777f1d628b4e83e3a6e81f9bdd9
-      internalID: -1694260650
+      spriteID: 500ded5a3cf04fa469f06ba72a078485
+      internalID: -2140369474
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadowfrontidle_6
+      name: shadowfrontidle_38
       rect:
         serializedVersion: 2
-        x: 819
-        y: 0
-        width: 819.2
-        height: 1536
-      alignment: 9
-      pivot: {x: 0.50151706, y: 0.51}
+        x: 962
+        y: 228
+        width: 590
+        height: 1232
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b75500b99a814cc4699fe22857367ba6
-      internalID: 1727829405
+      spriteID: a440181002dd63541b78918f1ab05cd8
+      internalID: 739051374
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadowfrontidle_7
+      name: shadowfrontidle_39
       rect:
         serializedVersion: 2
-        x: 1638
-        y: 0
-        width: 819.2
-        height: 1536
-      alignment: 9
-      pivot: {x: 0.51427156, y: 0.51}
+        x: 1816
+        y: 223
+        width: 471
+        height: 1236
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd46507eb20613f4c88babee57b8b18d
-      internalID: 1880575485
+      spriteID: ff6455c7f3309544e9e16f3f8808e56a
+      internalID: -1339135022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadowfrontidle_8
+      name: shadowfrontidle_41
       rect:
         serializedVersion: 2
-        x: 2457
-        y: 0
-        width: 819.2
-        height: 1536
-      alignment: 9
-      pivot: {x: 0.5372122, y: 0.51}
+        x: 2629
+        y: 228
+        width: 587
+        height: 1232
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e96e89a70bc3b6469ba1325e1439dde
-      internalID: -1412106893
+      spriteID: 5db6a5c61cbecfd4d9f617c722743870
+      internalID: -1725911861
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadowfrontidle_9
+      name: shadowfrontidle_42
       rect:
         serializedVersion: 2
-        x: 3276
-        y: 0
-        width: 819.2
-        height: 1536
-      alignment: 9
-      pivot: {x: 0.54382175, y: 0.51}
+        x: 3442
+        y: 242
+        width: 558
+        height: 1218
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f291ea8100541874ca90c2c28d4db904
-      internalID: 507790071
+      spriteID: 92deb6dcabf050247875a2d31158e49e
+      internalID: -1796064763
       vertices: []
       indices: 
       edges: []
@@ -324,16 +324,75 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      shadowfrontidle_65: 910152201
+      shadowfrontidle_24: 528490941
+      shadowfrontidle_57: 1416434955
       shadowfrontidle_1: 1970455910
-      shadowfrontidle_6: 1727829405
-      shadowfrontidle_4: 62235105
+      shadowfrontidle_18: 1179597066
+      shadowfrontidle_51: -1872493443
+      shadowfrontidle_29: -127548065
+      shadowfrontidle_48: -1417976854
+      shadowfrontidle_30: 2033299875
       shadowfrontidle_7: 1880575485
       shadowfrontidle_0: 416185828
-      shadowfrontidle_9: 507790071
-      shadowfrontidle_3: -1678703206
+      shadowfrontidle_43: 126432783
+      shadowfrontidle_44: -79996542
+      shadowfrontidle_66: 1383016017
+      shadowfrontidle_19: -943068867
+      shadowfrontidle_58: 1321233597
+      shadowfrontidle_55: -142724061
+      shadowfrontidle_36: -2140369474
+      shadowfrontidle_39: -1339135022
+      shadowfrontidle_56: 59141613
+      shadowfrontidle_54: 1802320640
+      shadowfrontidle_62: -1560894159
+      shadowfrontidle_26: 1145213139
       shadowfrontidle_8: -1412106893
+      shadowfrontidle_40: 2091364488
+      shadowfrontidle_38: 739051374
+      shadowfrontidle_32: 1324613830
+      shadowfrontidle_45: -1030041854
+      shadowfrontidle_10: 960936497
+      shadowfrontidle_35: -302284441
+      shadowfrontidle_20: 248883837
+      shadowfrontidle_37: 657130216
+      shadowfrontidle_64: 1781076818
+      shadowfrontidle_16: -1810082046
+      shadowfrontidle_47: 1544393681
+      shadowfrontidle_59: 848188902
+      shadowfrontidle_11: 1908358309
+      shadowfrontidle_6: 1727829405
+      shadowfrontidle_42: -1796064763
+      shadowfrontidle_25: -913185277
+      shadowfrontidle_53: 545089950
+      shadowfrontidle_4: 62235105
+      shadowfrontidle_27: -919271781
+      shadowfrontidle_68: 1232026702
+      shadowfrontidle_9: 507790071
+      shadowfrontidle_50: 554886204
+      shadowfrontidle_15: -44131394
+      shadowfrontidle_14: 533388212
+      shadowfrontidle_31: -344631343
+      shadowfrontidle_3: -1678703206
+      shadowfrontidle_61: 1401979366
+      shadowfrontidle_41: -1725911861
+      shadowfrontidle_13: 2142627351
+      shadowfrontidle_28: -1996794545
+      shadowfrontidle_23: -25716663
+      shadowfrontidle_12: -255436847
+      shadowfrontidle_17: 2125651564
+      shadowfrontidle_22: -1356532513
+      shadowfrontidle_52: -673109290
+      shadowfrontidle_49: 2013822693
       shadowfrontidle_2: 1517762502
+      shadowfrontidle_46: 2116512742
+      shadowfrontidle_34: 935378824
+      shadowfrontidle_33: 1704379063
+      shadowfrontidle_21: 2076602050
       shadowfrontidle_5: -1694260650
+      shadowfrontidle_60: -1781570992
+      shadowfrontidle_63: -1531412455
+      shadowfrontidle_67: 992278239
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
