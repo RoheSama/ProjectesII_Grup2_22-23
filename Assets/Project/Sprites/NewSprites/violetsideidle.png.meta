@@ -102,18 +102,238 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: violetsideidle_0
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 1664
+        width: 347
+        height: 1294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4972d8b95bf170d4e9625d0e1bc079da
+      internalID: -512238282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: violetsideidle_1
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 1665
+        width: 348
+        height: 1289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e76c61b1f6d96c74e9933e566d925c54
+      internalID: -621863879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: violetsideidle_2
+      rect:
+        serializedVersion: 2
+        x: 1868
+        y: 1663
+        width: 349
+        height: 1288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30c7b9bb42a9ab140886b003eaf6c9cd
+      internalID: -739128235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: violetsideidle_3
+      rect:
+        serializedVersion: 2
+        x: 2701
+        y: 1667
+        width: 346
+        height: 1289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d774d530976d5d54cb3658f7a2706424
+      internalID: 373076422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: violetsideidle_4
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 1662
+        width: 346
+        height: 1294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 123a096fe1930f54e894fc8c01116507
+      internalID: -173313707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: violetsideidle_5
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 104
+        width: 347
+        height: 1294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07ff6cbc717efd040b2d82edccb99040
+      internalID: -603362173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: violetsideidle_6
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 105
+        width: 348
+        height: 1289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3a5f71398cdffd46abc92f82cf71c3c
+      internalID: 712557561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: violetsideidle_7
+      rect:
+        serializedVersion: 2
+        x: 1868
+        y: 103
+        width: 349
+        height: 1288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a1e9f2ce75f002409c46f73f8cdf343
+      internalID: -294087983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: violetsideidle_8
+      rect:
+        serializedVersion: 2
+        x: 2700
+        y: 105
+        width: 347
+        height: 1289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd0edb50d4c771f428f21edb127fbde8
+      internalID: -847049175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: violetsideidle_9
+      rect:
+        serializedVersion: 2
+        x: 3521
+        y: 104
+        width: 346
+        height: 1294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fa0fbdd55820f048a3285989cf8f3c4
+      internalID: -1976834977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 61e059357f2230047a6cff1bf2e387d9
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      violetsideidle_1: -621863879
+      violetsideidle_7: -294087983
+      violetsideidle_5: -603362173
+      violetsideidle_9: -1976834977
+      violetsideidle_2: -739128235
+      violetsideidle_3: 373076422
+      violetsideidle_0: -512238282
+      violetsideidle_6: 712557561
+      violetsideidle_8: -847049175
+      violetsideidle_4: -173313707
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -102,18 +102,360 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: shadowside2idle_0
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 1636
+        width: 346
+        height: 1318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ddad776bb782cb49b7c46f0a2d316f9
+      internalID: 1543708345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowside2idle_1
+      rect:
+        serializedVersion: 2
+        x: 1086
+        y: 1637
+        width: 344
+        height: 1318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c286b87132ba33c419cae934c1e4c01c
+      internalID: -186062202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowside2idle_2
+      rect:
+        serializedVersion: 2
+        x: 1912
+        y: 1640
+        width: 347
+        height: 1312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14fa8046cc637f24d991404830afffd7
+      internalID: -985667117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowside2idle_3
+      rect:
+        serializedVersion: 2
+        x: 2756
+        y: 1646
+        width: 345
+        height: 1308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05e547ddbf74dd34ba1bed48fd0342c3
+      internalID: 948251435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowside2idle_4
+      rect:
+        serializedVersion: 2
+        x: 3572
+        y: 1641
+        width: 343
+        height: 1313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c72dd2391ab72e49959f00ad02af865
+      internalID: -1235961932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowside2idle_67
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 133
+        width: 346
+        height: 1317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba7566a13e4437a4eba8a1c5fe1f2638
+      internalID: -1885979243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowside2idle_68
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 134
+        width: 350
+        height: 1317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4add2f3ad2d9144a854ef4fd994fac2
+      internalID: -1796987042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowside2idle_70
+      rect:
+        serializedVersion: 2
+        x: 1916
+        y: 136
+        width: 345
+        height: 1312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e1f0afa273f3aa4bbeb35c9e477bb3f
+      internalID: 582688763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowside2idle_71
+      rect:
+        serializedVersion: 2
+        x: 2749
+        y: 143
+        width: 351
+        height: 1308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba4144c9b9be034418cdc03d2a394066
+      internalID: -1109633213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadowside2idle_73
+      rect:
+        serializedVersion: 2
+        x: 3573
+        y: 138
+        width: 343
+        height: 1313
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3b98617b37234a488dce053f2d2d13d
+      internalID: -931856824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d306583fa7689924abc36d9d2d27a0ce
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      shadowside2idle_125: -177654079
+      shadowside2idle_33: 1248705977
+      shadowside2idle_70: 582688763
+      shadowside2idle_8: -1761607314
+      shadowside2idle_58: 1567425111
+      shadowside2idle_106: 1723546165
+      shadowside2idle_107: 1895485641
+      shadowside2idle_51: 1982146472
+      shadowside2idle_52: 1873569484
+      shadowside2idle_56: 1806160401
+      shadowside2idle_117: -1702246709
+      shadowside2idle_1: -186062202
+      shadowside2idle_13: 842077192
+      shadowside2idle_46: -76847353
+      shadowside2idle_28: 538826965
+      shadowside2idle_69: -203089872
+      shadowside2idle_64: -443641001
+      shadowside2idle_80: -1566125410
+      shadowside2idle_3: 948251435
+      shadowside2idle_41: 1319315046
+      shadowside2idle_112: 1034583114
+      shadowside2idle_103: 350741391
+      shadowside2idle_40: -1304525461
+      shadowside2idle_43: -180911002
+      shadowside2idle_38: -249167439
+      shadowside2idle_10: 429909336
+      shadowside2idle_63: 488823831
+      shadowside2idle_95: -992930914
+      shadowside2idle_111: 465580236
+      shadowside2idle_19: 87061061
+      shadowside2idle_77: -1092272512
+      shadowside2idle_121: -2087296873
+      shadowside2idle_100: -1324416535
+      shadowside2idle_57: -595395769
+      shadowside2idle_4: -1235961932
+      shadowside2idle_20: -1375158591
+      shadowside2idle_6: -1671684111
+      shadowside2idle_88: -257757513
+      shadowside2idle_130: -1040992598
+      shadowside2idle_128: -1906472324
+      shadowside2idle_123: -794707841
+      shadowside2idle_92: -563004053
+      shadowside2idle_60: 713585041
+      shadowside2idle_93: 63138383
+      shadowside2idle_86: 1896480650
+      shadowside2idle_16: 1027079780
+      shadowside2idle_42: -1016997401
+      shadowside2idle_37: -208498974
+      shadowside2idle_18: -728401874
+      shadowside2idle_114: 708018601
+      shadowside2idle_0: 1543708345
+      shadowside2idle_118: 1281214296
+      shadowside2idle_39: 649675206
+      shadowside2idle_48: 1082646835
+      shadowside2idle_131: -115268179
+      shadowside2idle_110: 2013621255
+      shadowside2idle_30: 525522404
+      shadowside2idle_11: 1201947842
+      shadowside2idle_87: -1333881166
+      shadowside2idle_101: -754697911
+      shadowside2idle_78: -291381703
+      shadowside2idle_105: 1858090255
+      shadowside2idle_9: 519063771
+      shadowside2idle_119: 845950019
+      shadowside2idle_36: -1589872525
+      shadowside2idle_73: -931856824
+      shadowside2idle_91: -1251230346
+      shadowside2idle_116: 416409144
+      shadowside2idle_12: -795978761
+      shadowside2idle_23: -954482715
+      shadowside2idle_27: 1262892641
+      shadowside2idle_83: 1192692346
+      shadowside2idle_97: -1159410050
+      shadowside2idle_34: 1652735379
+      shadowside2idle_50: -337166919
+      shadowside2idle_5: 771098488
+      shadowside2idle_74: -334413035
+      shadowside2idle_67: -1885979243
+      shadowside2idle_85: 2057047360
+      shadowside2idle_7: 1877685144
+      shadowside2idle_25: 344141053
+      shadowside2idle_126: 911524048
+      shadowside2idle_90: 1529300436
+      shadowside2idle_61: -1681376269
+      shadowside2idle_82: -223027260
+      shadowside2idle_96: 1209982918
+      shadowside2idle_127: 1842466454
+      shadowside2idle_98: -1441064825
+      shadowside2idle_113: -336654530
+      shadowside2idle_29: 1579669757
+      shadowside2idle_68: -1796987042
+      shadowside2idle_122: -327686150
+      shadowside2idle_21: 404457066
+      shadowside2idle_54: -939025401
+      shadowside2idle_45: -1352528577
+      shadowside2idle_65: 1629446013
+      shadowside2idle_76: -205540202
+      shadowside2idle_31: -1790372864
+      shadowside2idle_55: -2033555338
+      shadowside2idle_35: -1442729553
+      shadowside2idle_72: -1710480865
+      shadowside2idle_79: 1448962376
+      shadowside2idle_108: -329319951
+      shadowside2idle_75: -1051531510
+      shadowside2idle_2: -985667117
+      shadowside2idle_26: 28529560
+      shadowside2idle_22: 1733152141
+      shadowside2idle_71: -1109633213
+      shadowside2idle_66: 60336369
+      shadowside2idle_89: -1134095118
+      shadowside2idle_53: -1982983344
+      shadowside2idle_15: -289099653
+      shadowside2idle_32: 558916848
+      shadowside2idle_124: -2009787496
+      shadowside2idle_59: 405920000
+      shadowside2idle_17: 82467720
+      shadowside2idle_47: 794609393
+      shadowside2idle_44: 1237369215
+      shadowside2idle_102: -1800075416
+      shadowside2idle_62: 1495120794
+      shadowside2idle_115: -1235637480
+      shadowside2idle_120: 1490939412
+      shadowside2idle_129: -173941815
+      shadowside2idle_84: -1397272469
+      shadowside2idle_94: -210033369
+      shadowside2idle_104: 1601685643
+      shadowside2idle_99: 2136423523
+      shadowside2idle_14: 1206316644
+      shadowside2idle_81: 2104810263
+      shadowside2idle_24: -778918852
+      shadowside2idle_49: 589462091
+      shadowside2idle_109: 1148517437
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
