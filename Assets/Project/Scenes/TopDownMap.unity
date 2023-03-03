@@ -29866,6 +29866,16 @@ MonoBehaviour:
   normalStrength: 5
   normalSmoothing: 1
   computingNormal: 0
+--- !u!212 &855456639 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2075762616632364664, guid: 4cb41f124cfc24a48a382a0331ab846a, type: 3}
+  m_PrefabInstance: {fileID: 1540533092}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &855456642 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2075762616632364667, guid: 4cb41f124cfc24a48a382a0331ab846a, type: 3}
+  m_PrefabInstance: {fileID: 1540533092}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &858439793
 GameObject:
   m_ObjectHideFlags: 0
@@ -118079,10 +118089,10 @@ MonoBehaviour:
   health: 0
   maxHealth: 1
   alive: 1
-  anim: {fileID: 1754658606}
-  camera: {fileID: 519420028}
+  anim: {fileID: 855456642}
   blood: {fileID: 7565307514328576958, guid: bffaa6ac790bb064a875874883a6c6e9, type: 3}
   bloodDie: {fileID: 8551379422355991024, guid: 21b8c083463c5064b8dd17d8b65200d4, type: 3}
+  character: {fileID: 855456639}
 --- !u!1 &2083088338
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,9 +13,10 @@ public class PlayerHealth : MonoBehaviour
     public bool alive = true;
     public Animator anim;
 
-    public GameObject camera;
     public GameObject blood;
     public GameObject bloodDie;
+
+    public SpriteRenderer character;
 
     // Start is called before the first frame update
     void Start()
@@ -76,10 +77,16 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    IEnumerator DieAnimation()
+    {
+        anim.SetTrigger("Die");
+        yield return new WaitForSeconds(0.75f);
+        character.enabled = false;
+    }
+
     IEnumerator Wait()
     {
-
-        anim.SetTrigger("Die");
+        StartCoroutine(DieAnimation());
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("MainMenu");
     }
