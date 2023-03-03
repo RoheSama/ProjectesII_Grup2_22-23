@@ -67,30 +67,40 @@ public class CuraBehaviour : MonoBehaviour
 
     void Update()
     {
-
-
         //DEBUG
         if (level0)
         {
-           // Debug.Log("level0");
+            // Debug.Log("level0");
+            if (!dangerIcon.activeSelf)
+            {
+                navMeshAgent.speed = 5.0f;
+            }
         }
 
         if (level1)
         {
-           // Debug.Log("level1");
+            // Debug.Log("level1");
+            if (!dangerIcon.activeSelf)
+            {
+                navMeshAgent.speed = 6.0f;
+            }
         }
 
         if (level2)
         {
-           // Debug.Log("level2");
+            // Debug.Log("level2");
+            if (!dangerIcon.activeSelf)
+            {
+                navMeshAgent.speed = 7.0f;
+            }
         }
 
         //Debug.Log(chaseTimer);
 
-        if (!dangerIcon.activeSelf)
-        {
-            navMeshAgent.speed = 3.0f;
-        }
+        //if (!dangerIcon.activeSelf)
+        //{
+        //    navMeshAgent.speed = 5.0f;
+        //}
         if (dangerIcon.activeSelf)
         {
             followWaypoints = false;
@@ -188,7 +198,7 @@ public class CuraBehaviour : MonoBehaviour
 
         if (level0)
         {
-            navMeshAgent.speed = 4.0f;
+            navMeshAgent.speed = 7.0f;
             // lastSeenPlayerIcon.SetActive(true);
         }
 
