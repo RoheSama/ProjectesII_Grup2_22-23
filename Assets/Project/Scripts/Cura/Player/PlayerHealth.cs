@@ -12,11 +12,15 @@ public class PlayerHealth : MonoBehaviour
     private float maxHealth = 1f;
     public bool alive = true;
     public Animator anim;
+    public Animator animShadow;
 
     public GameObject blood;
     public GameObject bloodDie;
 
     public SpriteRenderer character;
+    public SpriteRenderer characterShadow;
+
+    public RenderPipelineAsset normalAsset;
 
     // Start is called before the first frame update
     void Start()
@@ -79,9 +83,20 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator DieAnimation()
     {
-        anim.SetTrigger("Die");
-        yield return new WaitForSeconds(0.75f);
-        character.enabled = false;
+        if (FindObjectOfType<AbilityUI>().powerUpActivated == false)
+        {
+            anim.SetTrigger("Die");
+            yield return new WaitForSeconds(0.75f);
+            character.enabled = false;
+        }
+        else
+        {
+            animShadow.SetTrigger("Die");
+            yield return new WaitForSeconds(0.75f);
+            characterShadow.enabled = false;
+            GraphicsSettings.renderPipelineAsset = normalAsset;
+        }
+        
     }
 
     IEnumerator Wait()
