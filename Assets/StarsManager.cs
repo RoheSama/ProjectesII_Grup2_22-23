@@ -9,7 +9,7 @@ public class StarsManager : MonoBehaviour
 
     void Update()
     {
-        if(voidsLeft.totalVoids <= 9)
+        if(voidsLeft.totalVoids <= 8)
         {
             satanicStar02Animator.SetBool("CanStartSatanicStar02", true);
             satanicStar02Animator.SetBool("CanStartSatanicStar01", false);
