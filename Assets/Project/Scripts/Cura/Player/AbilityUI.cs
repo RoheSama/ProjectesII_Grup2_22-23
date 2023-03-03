@@ -226,10 +226,9 @@ public class AbilityUI : MonoBehaviour
         ScreenShake.Instance.ShakeCamera(0f, 0.0f);
         GraphicsSettings.renderPipelineAsset = powerUpAsset;
     }
-    void PowerOff()
+    void PowerOff()
     {
-
-        //GetComponent<SpriteRenderer>().color = Color.white;
+         //GetComponent<SpriteRenderer>().color = Color.white;
 
         //agent.speed = agent.speed - powerUpSpeed;
 
@@ -261,6 +260,8 @@ public class AbilityUI : MonoBehaviour
         yield return new WaitForSeconds(powerUpDuration);
         //audio
         FindObjectOfType<AudioManager>().Play("transformShadow");
+        shadowAnim.SetTrigger("Detransformation");
+        yield return new WaitForSeconds(0.8f);
         PowerOff();
     }
 
