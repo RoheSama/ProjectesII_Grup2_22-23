@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: abbd31a77d3e89e4c84adb1234a3943b
+guid: 1911b62a31782e948a6e0d4e89805a58
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 120
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: WalkShadowF_0
+      name: runbackwardss_0
       rect:
         serializedVersion: 2
-        x: 64
-        y: 363
-        width: 390
-        height: 1044
+        x: 182
+        y: 1517
+        width: 481
+        height: 1285
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5cec3e807ec409340900280ae8bf0210
-      internalID: -1165511640
+      spriteID: 64bbb933ab77eea40accfebef9aef492
+      internalID: -1441440597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkShadowF_1
+      name: runbackwardss_1
       rect:
         serializedVersion: 2
-        x: 573
-        y: 364
-        width: 380
-        height: 1043
+        x: 1000
+        y: 1596
+        width: 483
+        height: 1207
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a8819dbd14bdb24aa44f92674b05930
-      internalID: -107530851
+      spriteID: 1823f6d26f302b74bb530d38a95fb196
+      internalID: -1141276114
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkShadowF_2
+      name: runbackwardss_2
       rect:
         serializedVersion: 2
-        x: 1038
-        y: 363
-        width: 383
-        height: 1044
+        x: 1811
+        y: 1502
+        width: 466
+        height: 1302
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,20 +160,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 60365438372799946919620f0d60c612
-      internalID: 651446931
+      spriteID: 2468a0cbd529e7e4d98ca5be720f9ee9
+      internalID: 1243983017
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkShadowF_3
+      name: runbackwardss_3
       rect:
         serializedVersion: 2
-        x: 1504
-        y: 364
-        width: 380
-        height: 1043
+        x: 2670
+        y: 1496
+        width: 466
+        height: 1306
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -181,20 +181,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7491ec38fb724164491af526fd0dc7a7
-      internalID: 574824479
+      spriteID: 791bfd00ee4e143458758c9f99bdfaa2
+      internalID: 1056281261
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: WalkShadowF_4
+      name: runbackwardss_4
       rect:
         serializedVersion: 2
-        x: 1976
-        y: 364
-        width: 380
-        height: 1043
+        x: 3491
+        y: 1496
+        width: 452
+        height: 1306
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,8 +202,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02f95f00440543f4e87388b80c051917
-      internalID: -574127470
+      spriteID: 7ce4b2bf7819809459c5a26371681665
+      internalID: -1741158862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runbackwardss_5
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 75
+        width: 481
+        height: 1285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba11c5494378c5f4786277f39affb5db
+      internalID: 1900152785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runbackwardss_6
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 152
+        width: 483
+        height: 1207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a5f6f1c2de8ab4c906a95a6301441a
+      internalID: 684778149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runbackwardss_7
+      rect:
+        serializedVersion: 2
+        x: 1841
+        y: 58
+        width: 466
+        height: 1302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c48bfd1ae3053204a932ad8e0f7986ce
+      internalID: -363845488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runbackwardss_8
+      rect:
+        serializedVersion: 2
+        x: 2671
+        y: 53
+        width: 466
+        height: 1306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f2b0a9f8102aee4e9a895392fcc200d
+      internalID: -612087338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: runbackwardss_9
+      rect:
+        serializedVersion: 2
+        x: 3506
+        y: 53
+        width: 452
+        height: 1306
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b885c086d5a67b41a6a761cf1156db3
+      internalID: -1647994212
       vertices: []
       indices: 
       edges: []
@@ -211,7 +316,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 8fa791984fe0d0f41bc3ec0ef775ab3d
+    spriteID: 97ae035455bb2b94bb6542fe43fafdb4
     internalID: 0
     vertices: []
     indices: 
@@ -219,11 +324,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      WalkShadowF_1: -107530851
-      WalkShadowF_3: 574824479
-      WalkShadowF_0: -1165511640
-      WalkShadowF_2: 651446931
-      WalkShadowF_4: -574127470
+      runbackwardss_8: -612087338
+      runbackwardss_6: 684778149
+      runbackwardss_1: -1141276114
+      runbackwardss_0: -1441440597
+      runbackwardss_9: -1647994212
+      runbackwardss_5: 1900152785
+      runbackwardss_7: -363845488
+      runbackwardss_2: 1243983017
+      runbackwardss_4: -1741158862
+      runbackwardss_3: 1056281261
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

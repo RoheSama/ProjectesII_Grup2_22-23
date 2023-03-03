@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8bc4954bd87231546bf224e013ea28dd
+guid: 4c9887a95ad52594bbee759f91717620
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,211 +104,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shadowbackidle_0
+      name: newTransformationShadow_0
       rect:
         serializedVersion: 2
-        x: 122
-        y: 1744
-        width: 593
-        height: 1218
+        x: 78
+        y: 1525
+        width: 572
+        height: 1265
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25d9efff775dc99428a94317d0f746c8
-      internalID: 367196146
+      spriteID: c39d53979e71a68468c264e52f9f928d
+      internalID: 2004149001
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadowbackidle_1
+      name: newTransformationShadow_2
       rect:
         serializedVersion: 2
         x: 966
-        y: 1730
-        width: 521
-        height: 1232
+        y: 1493
+        width: 503
+        height: 1305
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e9b21616a269934ab670c3d2785148b
-      internalID: -601438817
+      spriteID: 03d71015019f6224ea65234d53cbd6a0
+      internalID: -1654123325
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadowbackidle_2
+      name: newTransformationShadow_3
       rect:
         serializedVersion: 2
-        x: 1821
-        y: 1725
-        width: 471
+        x: 1775
+        y: 1467
+        width: 578
+        height: 1332
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cb77e8f67660cb43b5b7df74a246674
+      internalID: -1088567210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newTransformationShadow_4
+      rect:
+        serializedVersion: 2
+        x: 2596
+        y: 1493
+        width: 548
+        height: 1364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bd2c13b0ad12d845aa5e1851544a7ff
+      internalID: -2080293944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newTransformationShadow_5
+      rect:
+        serializedVersion: 2
+        x: 3386
+        y: 1543
+        width: 644
+        height: 1269
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb42e100ba84bb4780cbe34c81a519d
+      internalID: 2058198566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newTransformationShadow_8
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 24
+        width: 582
+        height: 1421
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d671bb41dc970d347b6ea06fdf84a5e6
+      internalID: 1904452890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newTransformationShadow_10
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 25
+        width: 577
+        height: 1237
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 125a79ef95197c0479a2ea572d489337
+      internalID: -1319797627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: newTransformationShadow_11
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 26
+        width: 604
         height: 1236
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ddb06644f229be42864379df48d8fce
-      internalID: -1836576709
+      spriteID: a85b1985dfde210408af68362b5dbc2c
+      internalID: 1586755173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadowbackidle_3
+      name: newTransformationShadow_13
       rect:
         serializedVersion: 2
-        x: 2629
-        y: 1730
-        width: 573
-        height: 1232
+        x: 2609
+        y: 29
+        width: 526
+        height: 1233
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 481819dbc904e034cb76a474c500f46e
-      internalID: -393237640
+      spriteID: a9b3188e63e123547bf981b5ae6735c2
+      internalID: 1445840813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadowbackidle_4
+      name: newTransformationShadow_15
       rect:
         serializedVersion: 2
-        x: 3442
-        y: 1744
-        width: 558
-        height: 1218
+        x: 3425
+        y: 29
+        width: 568
+        height: 1233
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e614caca17e4b6143a0a3cd97ae7a048
-      internalID: -7035873
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shadowbackidle_37
-      rect:
-        serializedVersion: 2
-        x: 123
-        y: 242
-        width: 558
-        height: 1218
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d70529b31cc9844498ad8f2c2c78afde
-      internalID: -1882271297
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shadowbackidle_39
-      rect:
-        serializedVersion: 2
-        x: 963
-        y: 228
-        width: 589
-        height: 1232
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 31804d3657312cf45a68f1ab096546ab
-      internalID: -1773996637
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shadowbackidle_40
-      rect:
-        serializedVersion: 2
-        x: 1815
-        y: 223
-        width: 471
-        height: 1236
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d8ca8ce62d54cff48bcabebe07e5bf35
-      internalID: 382489003
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shadowbackidle_42
-      rect:
-        serializedVersion: 2
-        x: 2628
-        y: 228
-        width: 588
-        height: 1232
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e668753ce3bae74a918d0b58109bcc6
-      internalID: -40255511
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: shadowbackidle_43
-      rect:
-        serializedVersion: 2
-        x: 3442
-        y: 242
-        width: 558
-        height: 1218
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f3e4e3c7a937cd84bbaa121e61b4f6c3
-      internalID: 1714054976
+      spriteID: 47e3c9e27d1bef24da66b05f24be42d3
+      internalID: -1112394192
       vertices: []
       indices: 
       edges: []
@@ -316,7 +316,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: df091a80646b1634ca9934071640392a
+    spriteID: aca3b78a2da91f142b799a841a7afbd6
     internalID: 0
     vertices: []
     indices: 
@@ -324,76 +324,23 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      shadowbackidle_23: -1420527770
-      shadowbackidle_21: 279688960
-      shadowbackidle_3: -393237640
-      shadowbackidle_6: -2033682321
-      shadowbackidle_31: 394926843
-      shadowbackidle_69: 1509048510
-      shadowbackidle_1: -601438817
-      shadowbackidle_13: 1326148361
-      shadowbackidle_8: 232870882
-      shadowbackidle_43: 1714054976
-      shadowbackidle_53: 2071587554
-      shadowbackidle_24: -194852505
-      shadowbackidle_66: -1157792205
-      shadowbackidle_12: 1732638386
-      shadowbackidle_9: -430401634
-      shadowbackidle_55: -1699123591
-      shadowbackidle_67: -1766720163
-      shadowbackidle_54: -2707558
-      shadowbackidle_7: -1365205200
-      shadowbackidle_20: 1402432449
-      shadowbackidle_0: 367196146
-      shadowbackidle_14: -1894434250
-      shadowbackidle_40: 382489003
-      shadowbackidle_34: 859781714
-      shadowbackidle_46: -207897246
-      shadowbackidle_56: -1991083177
-      shadowbackidle_35: -1232313687
-      shadowbackidle_58: -366311400
-      shadowbackidle_60: 1030552070
-      shadowbackidle_65: 1832111549
-      shadowbackidle_25: -701763356
-      shadowbackidle_62: -1475831617
-      shadowbackidle_28: -91816379
-      shadowbackidle_37: -1882271297
-      shadowbackidle_51: -248198093
-      shadowbackidle_52: 596540919
-      shadowbackidle_10: -1538305280
-      shadowbackidle_44: -1337198884
-      shadowbackidle_27: -1333496883
-      shadowbackidle_18: 797960071
-      shadowbackidle_39: -1773996637
-      shadowbackidle_32: -1502468338
-      shadowbackidle_50: -895326709
-      shadowbackidle_30: -1416673662
-      shadowbackidle_19: 1969794990
-      shadowbackidle_42: -40255511
-      shadowbackidle_45: -1992622217
-      shadowbackidle_63: 1058097188
-      shadowbackidle_64: -2019580905
-      shadowbackidle_41: -282078567
-      shadowbackidle_59: -2017078141
-      shadowbackidle_49: -367602853
-      shadowbackidle_61: 1367537866
-      shadowbackidle_17: 206728522
-      shadowbackidle_16: 665731322
-      shadowbackidle_2: -1836576709
-      shadowbackidle_47: -180421109
-      shadowbackidle_48: 1586763421
-      shadowbackidle_5: 361524059
-      shadowbackidle_38: 2007373476
-      shadowbackidle_29: -1945386372
-      shadowbackidle_15: 1866933256
-      shadowbackidle_57: 1345615214
-      shadowbackidle_11: 609876378
-      shadowbackidle_4: -7035873
-      shadowbackidle_22: 1875212576
-      shadowbackidle_26: -980529006
-      shadowbackidle_68: -1774767985
-      shadowbackidle_33: -1639485881
-      shadowbackidle_36: -1573645515
+      newTransformationShadow_5: 2058198566
+      newTransformationShadow_9: -177742697
+      newTransformationShadow_15: -1112394192
+      newTransformationShadow_6: -652105473
+      newTransformationShadow_3: -1088567210
+      newTransformationShadow_16: -1895606813
+      newTransformationShadow_0: 2004149001
+      newTransformationShadow_11: 1586755173
+      newTransformationShadow_1: -1800874344
+      newTransformationShadow_12: 1405139096
+      newTransformationShadow_7: 1305230009
+      newTransformationShadow_4: -2080293944
+      newTransformationShadow_13: 1445840813
+      newTransformationShadow_8: 1904452890
+      newTransformationShadow_2: -1654123325
+      newTransformationShadow_10: -1319797627
+      newTransformationShadow_14: 480867695
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

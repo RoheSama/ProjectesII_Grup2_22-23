@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c79e766cca8de1a4d8440884a29f5807
+guid: 0db3cf011760e4b428270c9c7f253c6b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -104,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: shadowside_0
+      name: runforwards_0
       rect:
         serializedVersion: 2
-        x: 168
-        y: 1641
-        width: 356
-        height: 1313
+        x: 182
+        y: 1517
+        width: 481
+        height: 1285
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efbea72d53d1a38439d6f7282f8121e6
-      internalID: -823613530
+      spriteID: d15e87549370f92428af6a1f3d9ef792
+      internalID: -138925431
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadowside_2
+      name: runforwards_1
       rect:
         serializedVersion: 2
-        x: 985
-        y: 1645
-        width: 356
-        height: 1313
+        x: 1000
+        y: 1596
+        width: 483
+        height: 1207
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dd8ba93e793d5cb4d974c5d7e942c1b9
-      internalID: -1256205999
+      spriteID: 6a3b28c50b9fd00419fc108c73ff7a04
+      internalID: -2127941540
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadowside_3
+      name: runforwards_2
       rect:
         serializedVersion: 2
-        x: 1823
-        y: 1640
-        width: 356
-        height: 1313
+        x: 1811
+        y: 1502
+        width: 466
+        height: 1302
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,41 +160,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8374f2b8788567a4d8807702461f5c58
-      internalID: -1890907870
+      spriteID: bb3eae7aea99804418e8f4988fcd1368
+      internalID: -12856428
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadowside_4
+      name: runforwards_3
       rect:
         serializedVersion: 2
-        x: 2656
-        y: 1637
-        width: 356
-        height: 1316
-      alignment: 9
-      pivot: {x: 0.48063746, y: 0.49439794}
+        x: 2670
+        y: 1496
+        width: 466
+        height: 1306
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cb548223322597640be040e58738d613
-      internalID: 1447783759
+      spriteID: a56b746c8a8c8024e8b05cf2c7c2b748
+      internalID: 1052271920
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadowside_5
+      name: runforwards_4
       rect:
         serializedVersion: 2
         x: 3491
-        y: 1636
-        width: 349
-        height: 1318
+        y: 1496
+        width: 452
+        height: 1306
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -202,20 +202,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df1aeb4e71932914cac32815d10dcab2
-      internalID: 1063928719
+      spriteID: 8d84f068737186a4cab701f12468f869
+      internalID: 1854039585
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadowside_47
+      name: runforwards_5
       rect:
         serializedVersion: 2
-        x: 180
-        y: 138
-        width: 343
-        height: 1313
+        x: 161
+        y: 75
+        width: 481
+        height: 1285
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,20 +223,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a751715bc7fd8f408d518ca1e96f7e6
-      internalID: 73784375
+      spriteID: 717d71dd8c49ef049a73a086e7b67525
+      internalID: -235530200
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadowside_48
+      name: runforwards_6
       rect:
         serializedVersion: 2
-        x: 985
-        y: 143
-        width: 356
-        height: 1313
+        x: 982
+        y: 152
+        width: 483
+        height: 1207
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,20 +244,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 438c5b0deb58bd14a884d8028957ff2c
-      internalID: -1224640928
+      spriteID: 755557e6b89fdd642b8eaf463ed11e44
+      internalID: 1311179977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadowside_49
+      name: runforwards_7
       rect:
         serializedVersion: 2
-        x: 1828
-        y: 134
-        width: 356
-        height: 1313
+        x: 1841
+        y: 58
+        width: 466
+        height: 1302
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,20 +265,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0942ba748713a845a82a1f88dd278d8
-      internalID: 1761555259
+      spriteID: d47f61c5a24e72a47939d6959842d63f
+      internalID: -1282416839
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadowside_50
+      name: runforwards_8
       rect:
         serializedVersion: 2
-        x: 2659
-        y: 134
-        width: 356
-        height: 1317
+        x: 2671
+        y: 53
+        width: 466
+        height: 1306
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,20 +286,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a228bf51446019340a1e233b1e0f040d
-      internalID: -877532457
+      spriteID: cdad926273aead34792514056a9d910b
+      internalID: -1522649586
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: shadowside_52
+      name: runforwards_9
       rect:
         serializedVersion: 2
-        x: 3491
-        y: 133
-        width: 349
-        height: 1318
+        x: 3506
+        y: 53
+        width: 452
+        height: 1306
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,8 +307,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46a0642bafd77904c831828b2449c14f
-      internalID: 355654800
+      spriteID: 54c9e414bcf66da428b9a10989e2167f
+      internalID: -527825576
       vertices: []
       indices: 
       edges: []
@@ -316,7 +316,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 526aa9ab0e97988458be2a52de0c80c7
+    spriteID: 28fc33b0d7920b24a9f377e534ca0355
     internalID: 0
     vertices: []
     indices: 
@@ -324,97 +324,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      shadowside_20: -948547259
-      shadowside_51: -821355942
-      shadowside_23: 541099660
-      shadowside_53: -923763229
-      shadowside_89: -2082166654
-      shadowside_84: -821486468
-      shadowside_31: 567599961
-      shadowside_25: 833055114
-      shadowside_13: 1520118380
-      shadowside_14: -1251594906
-      shadowside_44: 1056717040
-      shadowside_56: -691493321
-      shadowside_48: -1224640928
-      shadowside_1: 1075626383
-      shadowside_43: 412513871
-      shadowside_71: 1825317291
-      shadowside_30: -94282550
-      shadowside_35: 1091665031
-      shadowside_29: -1857617093
-      shadowside_88: -180349720
-      shadowside_42: 2050525780
-      shadowside_45: 264555392
-      shadowside_55: -1796459557
-      shadowside_52: 355654800
-      shadowside_80: -1489511214
-      shadowside_17: -2020932665
-      shadowside_33: 290727103
-      shadowside_90: -1543169755
-      shadowside_85: 1826084417
-      shadowside_36: 1860838055
-      shadowside_11: 2099632668
-      shadowside_65: -324262661
-      shadowside_81: -729048377
-      shadowside_87: -548399865
-      shadowside_40: -340272585
-      shadowside_2: -1256205999
-      shadowside_59: -1914369406
-      shadowside_24: -456025399
-      shadowside_47: 73784375
-      shadowside_8: 1531906380
-      shadowside_67: 952868599
-      shadowside_49: 1761555259
-      shadowside_39: 1229655667
-      shadowside_19: 26986739
-      shadowside_28: -23604404
-      shadowside_75: 1387921006
-      shadowside_77: -2146751298
-      shadowside_62: -2036218902
-      shadowside_74: -122301634
-      shadowside_54: -1080386254
-      shadowside_82: 57551919
-      shadowside_6: -2021059657
-      shadowside_9: -1577849842
-      shadowside_7: -1374538189
-      shadowside_86: 1413117216
-      shadowside_4: 1447783759
-      shadowside_68: 1108419531
-      shadowside_16: 146468832
-      shadowside_22: 1793260353
-      shadowside_58: -296372280
-      shadowside_34: -2126575172
-      shadowside_0: -823613530
-      shadowside_63: -1195895401
-      shadowside_32: -1324602750
-      shadowside_46: 644547348
-      shadowside_38: 639177282
-      shadowside_78: 634420708
-      shadowside_61: 1339671127
-      shadowside_83: 307224150
-      shadowside_76: -1750225499
-      shadowside_64: -738692627
-      shadowside_70: 1100748739
-      shadowside_60: -1714968207
-      shadowside_66: 1047040218
-      shadowside_27: -741954457
-      shadowside_37: -832809760
-      shadowside_73: 203213369
-      shadowside_50: -877532457
-      shadowside_18: -1791406126
-      shadowside_10: -1763654353
-      shadowside_72: -468336385
-      shadowside_12: 1221747846
-      shadowside_26: 1297822218
-      shadowside_3: -1890907870
-      shadowside_69: -976008841
-      shadowside_41: -710684625
-      shadowside_57: -1470930543
-      shadowside_79: 1160274200
-      shadowside_15: 959406563
-      shadowside_21: 1493388333
-      shadowside_5: 1063928719
+      runforwards_5: -235530200
+      runforwards_7: -1282416839
+      runforwards_8: -1522649586
+      runforwards_0: -138925431
+      runforwards_1: -2127941540
+      runforwards_2: -12856428
+      runforwards_3: 1052271920
+      runforwards_4: 1854039585
+      runforwards_6: 1311179977
+      runforwards_9: -527825576
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

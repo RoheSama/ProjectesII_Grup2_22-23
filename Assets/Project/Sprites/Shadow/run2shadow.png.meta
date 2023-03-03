@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 914477294099a034c80f0d296471af73
+guid: 6671f2d3afed5484cbd25023d3d633ca
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 120
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -104,106 +104,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SIdleW_0
+      name: run2shadow_0
       rect:
         serializedVersion: 2
-        x: 368
-        y: 197
-        width: 295
-        height: 1098
+        x: 27
+        y: 1506
+        width: 842
+        height: 1159
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 401a3e00abdb81349a1efd612e83e049
-      internalID: 43939185
+      spriteID: 651a377667d4bb7459d89ebb773f04ee
+      internalID: -1755673586
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SIdleW_1
+      name: run2shadow_1
       rect:
         serializedVersion: 2
-        x: 962
-        y: 197
-        width: 295
-        height: 1098
+        x: 901
+        y: 1442
+        width: 653
+        height: 1221
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88802937d428c2848816b100c73d08c8
-      internalID: -2034060375
+      spriteID: 60f47a24b3ac8d340a693bbb095bbe44
+      internalID: -622387059
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SIdleW_2
+      name: run2shadow_2
       rect:
         serializedVersion: 2
-        x: 1625
-        y: 197
-        width: 293
-        height: 1098
+        x: 1752
+        y: 1451
+        width: 504
+        height: 1211
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 050021f717def814689532490c28d353
-      internalID: 684854447
+      spriteID: 88ab346ce1704bc4a83eb52df5c8e783
+      internalID: -2032772805
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SIdleW_3
+      name: run2shadow_3
       rect:
         serializedVersion: 2
-        x: 2176
-        y: 197
-        width: 295
-        height: 1098
+        x: 2489
+        y: 1461
+        width: 752
+        height: 1202
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5393e74c05db11489e7a09dc8236fbd
-      internalID: -384626023
+      spriteID: d9d2a0307656a8c40a6133a4b11c4c8e
+      internalID: 1300355829
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SIdleW_4
+      name: run2shadow_4
       rect:
         serializedVersion: 2
-        x: 2727
-        y: 197
-        width: 295
-        height: 1098
+        x: 3325
+        y: 1436
+        width: 748
+        height: 1228
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 46f7852067906bd469a180538a10a420
-      internalID: 1140485844
+      spriteID: 97a17075b80d91d4c812a09be1f30567
+      internalID: 2039889932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run2shadow_5
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 80
+        width: 842
+        height: 1159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e5e655ad45adbc4aaa99451ba46a59f
+      internalID: -481772830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run2shadow_6
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 19
+        width: 653
+        height: 1221
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cb4b6eda67a1764286657ce32b2f972
+      internalID: 1599559594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run2shadow_7
+      rect:
+        serializedVersion: 2
+        x: 1646
+        y: 31
+        width: 504
+        height: 1211
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d4ffb95655c7ef42bab7dc5348f1d9f
+      internalID: 1456749009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run2shadow_8
+      rect:
+        serializedVersion: 2
+        x: 2369
+        y: 41
+        width: 751
+        height: 1202
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 920d26ce1149fe2419af3fee94a45847
+      internalID: 1977670696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: run2shadow_9
+      rect:
+        serializedVersion: 2
+        x: 3265
+        y: 24
+        width: 806
+        height: 1220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c0d19529e98b6c49a91b4f111007e34
+      internalID: 402489552
       vertices: []
       indices: 
       edges: []
@@ -211,7 +316,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 88814b5e8ffae79499ac9b56207986e2
+    spriteID: 3dcafe76f768df340a8747f9bc1be7a5
     internalID: 0
     vertices: []
     indices: 
@@ -219,11 +324,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SIdleW_4: 1140485844
-      SIdleW_0: 43939185
-      SIdleW_2: 684854447
-      SIdleW_3: -384626023
-      SIdleW_1: -2034060375
+      run2shadow_4: 2039889932
+      run2shadow_6: 1599559594
+      run2shadow_7: 1456749009
+      run2shadow_9: 402489552
+      run2shadow_1: -622387059
+      run2shadow_3: 1300355829
+      run2shadow_0: -1755673586
+      run2shadow_2: -2032772805
+      run2shadow_5: -481772830
+      run2shadow_8: 1977670696
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
