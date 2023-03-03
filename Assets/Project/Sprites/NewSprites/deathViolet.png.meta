@@ -102,18 +102,238 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: deathViolet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1536
+        width: 819.2
+        height: 1536
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60b7b18b64522e04c803e022fdaa79ec
+      internalID: -1930762165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deathViolet_1
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 1536
+        width: 819.2
+        height: 1536
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e45443d5a2f50845865cd87c54a5ca8
+      internalID: -1202000261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deathViolet_2
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 1536
+        width: 819.2
+        height: 1536
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 345891de911cff940b3a9c71ce819840
+      internalID: 2018821810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deathViolet_3
+      rect:
+        serializedVersion: 2
+        x: 2457
+        y: 1536
+        width: 819.2
+        height: 1536
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8da3ec7dd82bbb4b9db6c92aa3842be
+      internalID: -1572948222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deathViolet_4
+      rect:
+        serializedVersion: 2
+        x: 3276
+        y: 1536
+        width: 819.2
+        height: 1536
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5fd246cc4053a14db3186344f4ff32b
+      internalID: 637205416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deathViolet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 819.2
+        height: 1536
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bb46017d217f964aabf2c1fa170694c
+      internalID: -1022919351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deathViolet_6
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 0
+        width: 819.2
+        height: 1536
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c6fcbfccc0971949a3db2d1f1da6925
+      internalID: 934418760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deathViolet_7
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 0
+        width: 819.2
+        height: 1536
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dead39d324a66644aa614cd444aa115
+      internalID: 606661405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deathViolet_8
+      rect:
+        serializedVersion: 2
+        x: 2457
+        y: 0
+        width: 819.2
+        height: 1536
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c6aa4349e4f5643a6b18cadc73ac1c
+      internalID: -546450263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: deathViolet_9
+      rect:
+        serializedVersion: 2
+        x: 3276
+        y: 0
+        width: 819.2
+        height: 1536
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d8e57e823630f14ab0a5f0a426e5a73
+      internalID: 779233817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: bad7103bcf048c14eaf9f09e603fa4e1
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      deathViolet_6: 934418760
+      deathViolet_1: -1202000261
+      deathViolet_7: 606661405
+      deathViolet_5: -1022919351
+      deathViolet_8: -546450263
+      deathViolet_0: -1930762165
+      deathViolet_3: -1572948222
+      deathViolet_4: 637205416
+      deathViolet_9: 779233817
+      deathViolet_2: 2018821810
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
