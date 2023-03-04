@@ -84,6 +84,10 @@ public class IABehaviour : MonoBehaviour
     public bool isDead = false;
     public bool canDie = true;
 
+    //Trail
+    public TrailRenderer trailRenderer;
+    public GameObject shadow;
+
     void Update()
     {
         //DEBUG AREA
@@ -110,6 +114,12 @@ public class IABehaviour : MonoBehaviour
             //Desactivar Ataque si el student muere
             attackTimer = 100;
         }
+
+        if (shadow.activeSelf)
+        {
+            trailRenderer.enabled = true;
+        }
+        else trailRenderer.enabled = false;
 
         if (satanicStar02Animator.GetBool("CanStartSatanicStar02") == true)
         {
@@ -283,6 +293,7 @@ public class IABehaviour : MonoBehaviour
                 animator.SetBool("MoveDown", false);
                 animator.SetBool("MoveLeft", false);
                 animator.SetBool("MoveRight", false);
+                animator.SetBool("CanAttack", false);
             }
         }
 
@@ -299,14 +310,6 @@ public class IABehaviour : MonoBehaviour
             myRinconDeLlorar = null;
             followWaypointsLevel0 = true;
             navMeshAgent.speed = 2;
-            animator.SetBool("CanCry", false);
-
-           // if (
-           //
-           // 01.activeSelf)
-           // {
-           //     satanicStar01.SetActive(false);
-           // }
         }
     }
 
@@ -376,6 +379,18 @@ public class IABehaviour : MonoBehaviour
 
         navMeshAgent.speed = 0;
         playerMovement.moveSpeed = 1;
+
+        animator.SetBool("CanCry", false);
+        animator.SetBool("IdleUp", false);
+        animator.SetBool("IdleDown", false);
+        animator.SetBool("IdleLeft", false);
+        animator.SetBool("IdleRight", false);
+        animator.SetBool("MoveUp", false);
+        animator.SetBool("MoveDown", false);
+        animator.SetBool("MoveLeft", false);
+        animator.SetBool("MoveRight", false);
+        animator.SetBool("CanAttack", true);
+
         if (attackTimer >= attackTime)
         {
             dangerIcon.SetActive(false);
@@ -392,7 +407,7 @@ public class IABehaviour : MonoBehaviour
             if (other.CompareTag("Player") && shadowIcon.activeSelf)
             {
                 dangerIcon.SetActive(true);
-                Debug.Log("ALerta");
+                Debug.Log("Alerta");
                 curaBehaviour.dangerIcon.SetActive(true);
                 curaBehaviour.followWaypoints = false;
                 curaBehaviour.lastSeenPlayerIcon.transform.position = new Vector3(dangerIcon.transform.position.x, dangerIcon.transform.position.y-1, dangerIcon.transform.position.z);
@@ -439,7 +454,7 @@ public class IABehaviour : MonoBehaviour
                     canAlertSound = false;
                 }
                 dangerIcon.SetActive(true);
-                Debug.Log("ALerta");
+                Debug.Log("Alerta");
                 curaBehaviour.dangerIcon.SetActive(true);
                 curaBehaviour.followWaypoints = false;
                 curaBehaviour.lastSeenPlayerIcon.transform.position = new Vector3(dangerIcon.transform.position.x, dangerIcon.transform.position.y - 1, dangerIcon.transform.position.z);
@@ -481,7 +496,7 @@ public class IABehaviour : MonoBehaviour
                     canAlertSound = false;
                 }
                 dangerIcon.SetActive(true);
-                Debug.Log("ALerta");
+                Debug.Log("Alerta");
                 curaBehaviour.dangerIcon.SetActive(true);
                 curaBehaviour.followWaypoints = false;
                 curaBehaviour.lastSeenPlayerIcon.transform.position = new Vector3(dangerIcon.transform.position.x, dangerIcon.transform.position.y - 1, dangerIcon.transform.position.z);
