@@ -5252,6 +5252,8 @@ MonoBehaviour:
   attackTime: 10
   isDead: 0
   canDie: 1
+  trailRenderer: {fileID: 0}
+  shadow: {fileID: 0}
 --- !u!95 &285078789
 Animator:
   serializedVersion: 4
@@ -22221,6 +22223,8 @@ MonoBehaviour:
   attackTime: 10
   isDead: 0
   canDie: 1
+  trailRenderer: {fileID: 0}
+  shadow: {fileID: 0}
 --- !u!95 &502423019
 Animator:
   serializedVersion: 4
@@ -24203,6 +24207,8 @@ MonoBehaviour:
   attackTime: 10
   isDead: 0
   canDie: 1
+  trailRenderer: {fileID: 0}
+  shadow: {fileID: 0}
 --- !u!95 &594028857
 Animator:
   serializedVersion: 4
@@ -25736,6 +25742,8 @@ MonoBehaviour:
   attackTime: 10
   isDead: 0
   canDie: 1
+  trailRenderer: {fileID: 0}
+  shadow: {fileID: 0}
 --- !u!95 &663236697
 Animator:
   serializedVersion: 4
@@ -30685,6 +30693,8 @@ MonoBehaviour:
   attackTime: 10
   isDead: 0
   canDie: 1
+  trailRenderer: {fileID: 0}
+  shadow: {fileID: 0}
 --- !u!95 &924910210
 Animator:
   serializedVersion: 4
@@ -37634,6 +37644,8 @@ MonoBehaviour:
   attackTime: 10
   isDead: 0
   canDie: 1
+  trailRenderer: {fileID: 0}
+  shadow: {fileID: 0}
 --- !u!95 &1279481047
 Animator:
   serializedVersion: 4
@@ -42010,6 +42022,8 @@ MonoBehaviour:
   attackTime: 10
   isDead: 0
   canDie: 1
+  trailRenderer: {fileID: 1571445579}
+  shadow: {fileID: 1754658592}
 --- !u!96 &1571445579
 TrailRenderer:
   serializedVersion: 2
@@ -42621,6 +42635,8 @@ MonoBehaviour:
   attackTime: 10
   isDead: 0
   canDie: 1
+  trailRenderer: {fileID: 0}
+  shadow: {fileID: 0}
 --- !u!95 &1602766701
 Animator:
   serializedVersion: 4
@@ -46506,6 +46522,8 @@ MonoBehaviour:
   attackTime: 10
   isDead: 0
   canDie: 1
+  trailRenderer: {fileID: 0}
+  shadow: {fileID: 0}
 --- !u!95 &1819549374
 Animator:
   serializedVersion: 4
@@ -48774,6 +48792,8 @@ MonoBehaviour:
   attackTime: 10
   isDead: 0
   canDie: 1
+  trailRenderer: {fileID: 0}
+  shadow: {fileID: 0}
 --- !u!95 &1949713071
 Animator:
   serializedVersion: 4

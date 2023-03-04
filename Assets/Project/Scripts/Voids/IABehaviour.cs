@@ -84,6 +84,10 @@ public class IABehaviour : MonoBehaviour
     public bool isDead = false;
     public bool canDie = true;
 
+    //Trail
+    public TrailRenderer trailRenderer;
+    public GameObject shadow;
+
     void Update()
     {
         //DEBUG AREA
@@ -110,6 +114,12 @@ public class IABehaviour : MonoBehaviour
             //Desactivar Ataque si el student muere
             attackTimer = 100;
         }
+
+        if (shadow.activeSelf)
+        {
+            trailRenderer.enabled = true;
+        }
+        else trailRenderer.enabled = false;
 
         if (satanicStar02Animator.GetBool("CanStartSatanicStar02") == true)
         {
