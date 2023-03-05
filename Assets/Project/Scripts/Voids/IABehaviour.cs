@@ -358,7 +358,6 @@ public class IABehaviour : MonoBehaviour
         //Detectar el HidePlace mas cercano
         if (myHidePlace == null)
         {
-            //detector.transform.localScale = new Vector3(detectorIncrement, 1, 1);
             detector.radius = detectorIncrement;
             detectorIncrement++;
         }
@@ -367,7 +366,6 @@ public class IABehaviour : MonoBehaviour
         {
             // Volver a la normalidad una vez encontrado y ir hacia el HidePlace
             detector.radius = 1.0f;
-            // detector.transform.localScale = new Vector3(1, 1, 1);
             navMeshAgent.destination = myHidePlace.transform.position;
             navMeshAgent.speed = 5;
         }

@@ -50,6 +50,7 @@ public class CuraBehaviour : MonoBehaviour
     public float chaseTimer;
     public float chaseTime;
     bool canChase = false;
+    public bool playerIsVisible = false;
 
     //Last Seen
     public GameObject lastSeenPlayerIcon;
@@ -59,10 +60,10 @@ public class CuraBehaviour : MonoBehaviour
 
     bool curaCanSpeedRun = false;
 
+
     void Start()
     {
         dangerIcon.SetActive(false);
-        //lastSeenPlayerIcon.SetActive(true);
     }
 
     void Update()
@@ -204,22 +205,12 @@ public class CuraBehaviour : MonoBehaviour
             // lastSeenPlayerIcon.SetActive(true);
         }
 
-        if (chaseTimer >= chaseTime)
+        if (chaseTimer >= chaseTime && playerIsVisible == false)
         {
             chaseTimer = 0;
             dangerIcon.SetActive(false);
             followWaypoints = true;
             canChase = false;
-
-           //if (level0)
-           // {
-           //     satanicStar01.SetActive(false);
-           // }
-
-           // if (level1)
-           // {
-           //     satanicStar02.SetActive(false);
-           // }
         }
     }
 
@@ -237,6 +228,7 @@ public class CuraBehaviour : MonoBehaviour
         {
             curaCanSpeedRun = true;
         }
+
         else curaCanSpeedRun = false;
 
         if (curaCanSpeedRun == false)
@@ -250,55 +242,29 @@ public class CuraBehaviour : MonoBehaviour
             navMeshAgent.acceleration = 8;
         }
 
-            if (navMeshAgent.transform.position.x < lastSeenPlayerIcon.transform.position.x + 2 && navMeshAgent.transform.position.x > lastSeenPlayerIcon.transform.position.x - 2
+        if (navMeshAgent.transform.position.x < lastSeenPlayerIcon.transform.position.x + 2 && navMeshAgent.transform.position.x > lastSeenPlayerIcon.transform.position.x - 2
             && navMeshAgent.transform.position.y < lastSeenPlayerIcon.transform.position.y + 2 && navMeshAgent.transform.position.y > lastSeenPlayerIcon.transform.position.y - 2)
         {
             lastSeenPlayerTimer += Time.deltaTime;
         }
-          
-       /* if (level0)
-        {
-            navMeshAgent.speed = 4.0f;
-            // lastSeenPlayerIcon.SetActive(true);
-        }
 
-        if (level1)
-        {
-            navMeshAgent.speed = 5.0f;
-            //lastSeenPlayerIcon.SetActive(true);
-        }
-
-        if (level2)
-        {
-            navMeshAgent.speed = 6.0f;
-            // lastSeenPlayerIcon.SetActive(true);
-        }*/
 
         if (lastSeenPlayerTimer >= lastSeenPlayerTime)
         {
             lastSeenPlayerTimer = 0;
             dangerIcon.SetActive(false);
             followWaypoints = true;
-
-            //if (level0)
-           // {
-           //     satanicStar01.SetActive(false);
-           // }
-
-           // if (level1)
-           // {
-           //     satanicStar02.SetActive(false);
-           // }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (level0)
+        if (level0||level1||level2)
         {
-            if (other.CompareTag("Player") && shadowIcon.activeSelf)
+            if (other.CompareTag("Player"))
             {
                 canChase = true;
+                playerIsVisible = true;
                 //dangerIcon.SetActive(true);
                 //followWaypoints = false;
                 // lastSeenPlayerIcon.SetActive(true);
@@ -313,50 +279,53 @@ public class CuraBehaviour : MonoBehaviour
             }
         }
 
-        if (level1 || level2)
-        {
-            if (other.CompareTag("Player"))
-            {
-                canChase = true;
-                //dangerIcon.SetActive(true);
-                //followWaypoints = false;
-                //lastSeenPlayerIcon.SetActive(true);
-                //lastSeenPlayerIcon.transform.position = player.transform.position;
+        //if (level1 || level2)
+        //{
+        //    if (other.CompareTag("Player"))
+        //    {
+        //        canChase = true;
+        //        dangerIcon.SetActive(true);
+        //        followWaypoints = false;
+        //        playerIsVisible = true;
+        //        //lastSeenPlayerIcon.SetActive(true);
+        //        //lastSeenPlayerIcon.transform.position = player.transform.position;
 
-                //Audio
-                if (canAlertSound)
-                {
-                    FindObjectOfType<AudioManager>().Play("AlertVoid");
-                    canAlertSound = false;
-                }
-            }
-        }
+        //        //Audio
+        //        if (canAlertSound)
+        //        {
+        //            FindObjectOfType<AudioManager>().Play("AlertVoid");
+        //            canAlertSound = false;
+        //        }
+        //    }
+        //}
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (level0)
+        if (level0||level1||level2)
         {
-            if (other.CompareTag("Player") && shadowIcon.activeSelf)
+            if (other.CompareTag("Player"))
             {
+                playerIsVisible = false;
                 // lastSeenPlayerIcon.transform.position = player.transform.position;
                 // lastSeenPlayerIcon.SetActive(true);
             }
         }
 
 
-        if (level1 || level2)
-        {
-            if (other.CompareTag("Player"))
-            {
-                // lastSeenPlayerIcon.transform.position = player.transform.position;
-                //lastSeenPlayerIcon.SetActive(true);
+        //if (level1 || level2)
+        //{
+        //    if (other.CompareTag("Player"))
+        //    {
+        //        playerIsVisible = false;
+        //        // lastSeenPlayerIcon.transform.position = player.transform.position;
+        //        //lastSeenPlayerIcon.SetActive(true);
 
-                /*if (chaseTimer > 0)
-                {
-                    chaseTimer = 0;
-                }*/
-            }
-        }
+        //        /*if (chaseTimer > 0)
+        //        {
+        //            chaseTimer = 0;
+        //        }*/
+        //    }
+        //}
     }
 }
