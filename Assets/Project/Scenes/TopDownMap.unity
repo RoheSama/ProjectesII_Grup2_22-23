@@ -1848,7 +1848,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101428242}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -38, y: -4.1, z: -0.005335629}
+  m_LocalPosition: {x: 36.53, y: 4.38, z: -0.005335629}
   m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2074,6 +2074,8 @@ MonoBehaviour:
   shadowIcon: {fileID: 1754658592}
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
+  satanicStar01Animator: {fileID: 747324534}
+  satanicStar02Animator: {fileID: 421118007}
   chaseTimer: 0
   chaseTime: 10
   playerIsVisible: 0
@@ -18222,7 +18224,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 620410297}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -49, y: 41.3, z: -0.005335629}
+  m_LocalPosition: {x: 1.21, y: 29.92, z: -0.005335629}
   m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23996,7 +23998,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 784150810}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 40.3, y: 42.2, z: -0.005335629}
+  m_LocalPosition: {x: -38.5, y: 7.3, z: -0.005335629}
   m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -48100,7 +48102,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666286738}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.6, y: 4.1, z: -0.005335629}
+  m_LocalPosition: {x: 0.9, y: -15.9, z: -0.005335629}
   m_LocalScale: {x: 0.29999998, y: 0.29999998, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

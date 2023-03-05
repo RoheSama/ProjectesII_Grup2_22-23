@@ -10,7 +10,6 @@ public class CuraBehaviour : MonoBehaviour
     public GameObject player;
     public GameObject cura;
 
-
     //---Follow Waypoints
     public bool followWaypoints = true;
 
@@ -35,16 +34,15 @@ public class CuraBehaviour : MonoBehaviour
     bool level2 = false;
     bool level3 = false;
 
-
     // Satanic Stars
     public GameObject satanicStar01;
     public GameObject satanicStar02;
-
+    public Animator satanicStar01Animator;
+    public Animator satanicStar02Animator;
 
     //Sounds
     bool canAlertSound = true;
     bool canActiveAlertSound = true;
-
 
     //Chase
     public float chaseTimer;
@@ -59,7 +57,6 @@ public class CuraBehaviour : MonoBehaviour
     public float lastSeenPlayerTime;
 
     bool curaCanSpeedRun = false;
-
 
     void Start()
     {
@@ -99,19 +96,20 @@ public class CuraBehaviour : MonoBehaviour
 
         //Start at Level 0
 
-        //Level 1
-        if (satanicStar01.activeInHierarchy == false)
+        //Level 0 to 1
+        if (satanicStar01Animator.GetBool("CanStartSatanicStar01") == true)
         {
             level0 = false;
             level1 = true;
         }
 
-        //Level2
-        if (satanicStar02.activeInHierarchy == false)
+        //Level 1 o 2
+        if (satanicStar02Animator.GetBool("CanStartSatanicStar02") == true)
         {
             level1 = false;
             level2 = true;
         }
+
 
         //Audio
         if (canActiveAlertSound)
@@ -259,13 +257,13 @@ public class CuraBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (level0||level1||level2)
+        if (level0)
         {
-            if (other.CompareTag("Player"))
+            if (other.CompareTag("Player") && shadowIcon.activeSelf)
             {
                 canChase = true;
                 playerIsVisible = true;
-                //dangerIcon.SetActive(true);
+                dangerIcon.SetActive(true);
                 //followWaypoints = false;
                 // lastSeenPlayerIcon.SetActive(true);
                 //lastSeenPlayerIcon.transform.position = player.transform.position;
@@ -279,26 +277,27 @@ public class CuraBehaviour : MonoBehaviour
             }
         }
 
-        //if (level1 || level2)
-        //{
-        //    if (other.CompareTag("Player"))
-        //    {
-        //        canChase = true;
-        //        dangerIcon.SetActive(true);
-        //        followWaypoints = false;
-        //        playerIsVisible = true;
-        //        //lastSeenPlayerIcon.SetActive(true);
-        //        //lastSeenPlayerIcon.transform.position = player.transform.position;
+        if (level1 || level2)
+        {
+            if (other.CompareTag("Player"))
+            {
+                canChase = true;
+                playerIsVisible = true;
+                dangerIcon.SetActive(true);
+                //followWaypoints = false;
+                //        //lastSeenPlayerIcon.SetActive(true);
+                //        //lastSeenPlayerIcon.transform.position = player.transform.position;
 
-        //        //Audio
-        //        if (canAlertSound)
-        //        {
-        //            FindObjectOfType<AudioManager>().Play("AlertVoid");
-        //            canAlertSound = false;
-        //        }
-        //    }
-        //}
-    }
+
+                        //Audio
+                        if (canAlertSound)
+                        {
+                             FindObjectOfType<AudioManager>().Play("AlertVoid");
+                            canAlertSound = false;
+                        }
+                    }
+                }
+            }
 
     private void OnTriggerExit2D(Collider2D other)
     {
@@ -311,7 +310,6 @@ public class CuraBehaviour : MonoBehaviour
                 // lastSeenPlayerIcon.SetActive(true);
             }
         }
-
 
         //if (level1 || level2)
         //{
