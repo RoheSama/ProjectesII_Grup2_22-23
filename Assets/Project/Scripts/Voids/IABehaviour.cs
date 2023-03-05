@@ -421,7 +421,7 @@ public class IABehaviour : MonoBehaviour
     {
         //Level 0 Colliders
         if (level0)
-        {
+        {   
             if (other.CompareTag("Player") && shadowIcon.activeSelf)
             {
                 dangerIcon.SetActive(true);

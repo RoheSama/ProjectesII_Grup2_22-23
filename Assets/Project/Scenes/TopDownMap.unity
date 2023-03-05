@@ -13138,7 +13138,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 50
+  m_Time: 30
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 2
@@ -18745,7 +18745,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 50
+  m_Time: 30
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 2
@@ -38985,7 +38985,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 50
+  m_Time: 30
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 2
@@ -39720,7 +39720,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 50
+  m_Time: 30
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 2
@@ -42193,7 +42193,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 50
+  m_Time: 30
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 2
@@ -44235,7 +44235,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 50
+  m_Time: 30
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 2
@@ -45335,7 +45335,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 50
+  m_Time: 30
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 2
@@ -47015,7 +47015,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 50
+  m_Time: 30
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 2
@@ -49284,7 +49284,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 50
+  m_Time: 30
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 2
@@ -50416,7 +50416,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 50
+  m_Time: 30
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 2
