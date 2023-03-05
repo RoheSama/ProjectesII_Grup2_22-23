@@ -2235,7 +2235,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -31782,11 +31782,11 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 1, y: 7, z: 0}
+  - first: {x: 0, y: 7, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileIndex: 3
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -35656,17 +35656,21 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 615
     m_Data: {fileID: 11400000, guid: e5b8d6a74b1120045bd3d15b629966d6, type: 2}
-  - m_RefCount: 5
+  - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: c7275b02b46379945908c05bafdd9e91, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: b650e4dd5a31d9a4dbf4a5baf9c34cb3, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: 36db66d0b672b3d4cb90edc30cd8970f, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 615
     m_Data: {fileID: 21300000, guid: 2cf42d8ef1d2eb7459adf7dd493a5ad7, type: 3}
-  - m_RefCount: 5
+  - m_RefCount: 4
     m_Data: {fileID: 21300000, guid: 75aebf922abf09143a4beb5749853c10, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300000, guid: 162e7c70b490ecd42961b7482764f89e, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: f435a41a07a263c4ea99f6b0ae2dee78, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 622
     m_Data:
