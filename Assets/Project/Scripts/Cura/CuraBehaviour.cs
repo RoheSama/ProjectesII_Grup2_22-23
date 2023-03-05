@@ -135,7 +135,7 @@ public class CuraBehaviour : MonoBehaviour
                 CanGoToCross();
             }
 
-            if (followWaypoints && canChase == false)
+            if (followWaypoints && canChase == false && canGoToCross==false)
             {
                 FollowWaypoints();
                 dangerIcon.SetActive(false);
@@ -266,8 +266,12 @@ public class CuraBehaviour : MonoBehaviour
     void CanGoToCross()
     {
         navMeshAgent.destination = cross.transform.position;
-        cross = null;
-        canGoToCross= false;
+        if(navMeshAgent.transform.position.x < cross.transform.position.x + 2 && navMeshAgent.transform.position.x > cross.transform.position.x - 2
+        && navMeshAgent.transform.position.y < cross.transform.position.y + 2 && navMeshAgent.transform.position.y > cross.transform.position.y - 2)
+        {
+            cross = null;
+            canGoToCross = false;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -291,7 +295,7 @@ public class CuraBehaviour : MonoBehaviour
                 }
             }
 
-            else if(other.CompareTag("Cross") )
+            else if(other.CompareTag("CrossDisabled") )
             {
                 canGoToCross= true;
                 cross = other.gameObject;
@@ -317,9 +321,10 @@ public class CuraBehaviour : MonoBehaviour
                  }
             }
 
-            else if (other.CompareTag("Cross"))
+            else if (other.CompareTag("CrossDisabled"))
             {
                 canGoToCross = true;
+                cross = other.gameObject;
             }
         }
     }
