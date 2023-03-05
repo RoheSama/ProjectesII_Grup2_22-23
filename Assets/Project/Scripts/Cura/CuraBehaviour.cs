@@ -10,7 +10,6 @@ public class CuraBehaviour : MonoBehaviour
     public GameObject player;
     public GameObject cura;
 
-
     //---Follow Waypoints
     public bool followWaypoints = true;
 
@@ -35,16 +34,15 @@ public class CuraBehaviour : MonoBehaviour
     bool level2 = false;
     bool level3 = false;
 
-
     // Satanic Stars
     public GameObject satanicStar01;
     public GameObject satanicStar02;
-
+    public Animator satanicStar01Animator;
+    public Animator satanicStar02Animator;
 
     //Sounds
     bool canAlertSound = true;
     bool canActiveAlertSound = true;
-
 
     //Chase
     public float chaseTimer;
@@ -59,6 +57,10 @@ public class CuraBehaviour : MonoBehaviour
     public float lastSeenPlayerTime;
 
     bool curaCanSpeedRun = false;
+
+    //Cross
+    bool canGoToCross = false;
+    public GameObject cross;
 
 
     void Start()
@@ -99,15 +101,15 @@ public class CuraBehaviour : MonoBehaviour
 
         //Start at Level 0
 
-        //Level 1
-        if (satanicStar01.activeInHierarchy == false)
+        //Level 0 to 1
+        if (satanicStar01Animator.GetBool("CanStartSatanicStar01") == true)
         {
             level0 = false;
             level1 = true;
         }
 
-        //Level2
-        if (satanicStar02.activeInHierarchy == false)
+        //Level 1 o 2
+        if (satanicStar02Animator.GetBool("CanStartSatanicStar02") == true)
         {
             level1 = false;
             level2 = true;
@@ -128,7 +130,12 @@ public class CuraBehaviour : MonoBehaviour
                 ChasePlayer();
             }
 
-            if (followWaypoints && canChase == false)
+            else if (canGoToCross)
+            {
+                CanGoToCross();
+            }
+
+            if (followWaypoints && canChase == false && canGoToCross==false)
             {
                 FollowWaypoints();
                 dangerIcon.SetActive(false);
@@ -182,7 +189,6 @@ public class CuraBehaviour : MonoBehaviour
 
     void ChasePlayer()
     {
-        // navMeshAgent.destination = lastSeenPlayerIcon.transform.position;
         navMeshAgent.destination = player.transform.position;
 
         chaseTimer += Time.deltaTime;
@@ -257,17 +263,28 @@ public class CuraBehaviour : MonoBehaviour
         }
     }
 
+    void CanGoToCross()
+    {
+        navMeshAgent.destination = cross.transform.position;
+        if(navMeshAgent.transform.position.x < cross.transform.position.x + 2 && navMeshAgent.transform.position.x > cross.transform.position.x - 2
+        && navMeshAgent.transform.position.y < cross.transform.position.y + 2 && navMeshAgent.transform.position.y > cross.transform.position.y - 2)
+        {
+            cross = null;
+            canGoToCross = false;
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (level0||level1||level2)
+        if (level0)
         {
-            if (other.CompareTag("Player"))
+            if (other.CompareTag("Player") && shadowIcon.activeSelf)
             {
                 canChase = true;
                 playerIsVisible = true;
-                //dangerIcon.SetActive(true);
+                dangerIcon.SetActive(true);
                 //followWaypoints = false;
-                // lastSeenPlayerIcon.SetActive(true);
+                //lastSeenPlayerIcon.SetActive(true);
                 //lastSeenPlayerIcon.transform.position = player.transform.position;
 
                 //Audio
@@ -277,27 +294,39 @@ public class CuraBehaviour : MonoBehaviour
                     canAlertSound = false;
                 }
             }
+
+            else if(other.CompareTag("CrossDisabled") )
+            {
+                canGoToCross= true;
+                cross = other.gameObject;
+            }
         }
 
-        //if (level1 || level2)
-        //{
-        //    if (other.CompareTag("Player"))
-        //    {
-        //        canChase = true;
-        //        dangerIcon.SetActive(true);
-        //        followWaypoints = false;
-        //        playerIsVisible = true;
-        //        //lastSeenPlayerIcon.SetActive(true);
-        //        //lastSeenPlayerIcon.transform.position = player.transform.position;
+        if (level1 || level2)
+        {
+            if (other.CompareTag("Player"))
+            {
+                canChase = true;
+                playerIsVisible = true;
+                dangerIcon.SetActive(true);
+                //followWaypoints = false;
+                //lastSeenPlayerIcon.SetActive(true);
+                //lastSeenPlayerIcon.transform.position = player.transform.position;
+                
+                //Audio
+                 if (canAlertSound)
+                 {
+                    FindObjectOfType<AudioManager>().Play("AlertVoid");
+                    canAlertSound = false;
+                 }
+            }
 
-        //        //Audio
-        //        if (canAlertSound)
-        //        {
-        //            FindObjectOfType<AudioManager>().Play("AlertVoid");
-        //            canAlertSound = false;
-        //        }
-        //    }
-        //}
+            else if (other.CompareTag("CrossDisabled"))
+            {
+                canGoToCross = true;
+                cross = other.gameObject;
+            }
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -311,7 +340,6 @@ public class CuraBehaviour : MonoBehaviour
                 // lastSeenPlayerIcon.SetActive(true);
             }
         }
-
 
         //if (level1 || level2)
         //{
