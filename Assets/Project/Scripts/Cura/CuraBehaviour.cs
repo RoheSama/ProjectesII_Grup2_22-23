@@ -60,6 +60,8 @@ public class CuraBehaviour : MonoBehaviour
 
     //Cross
     bool canGoToCross = false;
+    public GameObject cross;
+
 
     void Start()
     {
@@ -113,7 +115,6 @@ public class CuraBehaviour : MonoBehaviour
             level2 = true;
         }
 
-
         //Audio
         if (canActiveAlertSound)
         {
@@ -131,7 +132,7 @@ public class CuraBehaviour : MonoBehaviour
 
             else if (canGoToCross)
             {
-                //canGoToCross();
+                CanGoToCross();
             }
 
             if (followWaypoints && canChase == false)
@@ -262,6 +263,13 @@ public class CuraBehaviour : MonoBehaviour
         }
     }
 
+    void CanGoToCross()
+    {
+        navMeshAgent.destination = cross.transform.position;
+        cross = null;
+        canGoToCross= false;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (level0)
@@ -286,6 +294,7 @@ public class CuraBehaviour : MonoBehaviour
             else if(other.CompareTag("Cross") )
             {
                 canGoToCross= true;
+                cross = other.gameObject;
             }
         }
 
