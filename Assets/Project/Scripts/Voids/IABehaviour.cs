@@ -88,6 +88,8 @@ public class IABehaviour : MonoBehaviour
     public TrailRenderer trailRenderer;
     public GameObject shadow;
 
+    public bool standInTable = false;
+
     void Update()
     {
         //DEBUG AREA
@@ -142,7 +144,22 @@ public class IABehaviour : MonoBehaviour
 
         if (level0)
         {
-            if (followWaypointsLevel0)
+            if(standInTable)
+            {
+                navMeshAgent.speed = 0;
+                animator.SetBool("CanCry", false);
+                animator.SetBool("IdleUp", false);
+                animator.SetBool("IdleDown", true);
+                animator.SetBool("IdleLeft", false);
+                animator.SetBool("IdleRight", false);
+                animator.SetBool("MoveUp", false);
+                animator.SetBool("MoveDown", false);
+                animator.SetBool("MoveLeft", false);
+                animator.SetBool("MoveRight", false);
+                animator.SetBool("CanAttack", false);
+            }
+
+            if (followWaypointsLevel0 && standInTable==false)
             {
                 FollowWaypoints();
                 dangerIcon.SetActive(false);
@@ -153,6 +170,7 @@ public class IABehaviour : MonoBehaviour
                 if(satanicStar02Animator.GetBool("CanStartSatanicStar02") == false)
                 {
                     satanicStar01Animator.SetBool("CanStartSatanicStar01", true);
+                    standInTable= false;
                     RinconDeLlorar();
                 }
             }
