@@ -23370,7 +23370,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 735665263}
-  - component: {fileID: 735665262}
   - component: {fileID: 735665264}
   m_Layer: 0
   m_Name: Sound Manager
@@ -23379,18 +23378,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &735665262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 735665261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eee0d97ed04e62f43adde658a78689ca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &735665263
 Transform:
   m_ObjectHideFlags: 0

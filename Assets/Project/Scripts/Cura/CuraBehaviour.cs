@@ -58,6 +58,9 @@ public class CuraBehaviour : MonoBehaviour
 
     bool curaCanSpeedRun = false;
 
+    //Cross
+    bool canGoToCross = false;
+
     void Start()
     {
         dangerIcon.SetActive(false);
@@ -126,6 +129,11 @@ public class CuraBehaviour : MonoBehaviour
                 ChasePlayer();
             }
 
+            else if (canGoToCross)
+            {
+                //canGoToCross();
+            }
+
             if (followWaypoints && canChase == false)
             {
                 FollowWaypoints();
@@ -180,7 +188,6 @@ public class CuraBehaviour : MonoBehaviour
 
     void ChasePlayer()
     {
-        // navMeshAgent.destination = lastSeenPlayerIcon.transform.position;
         navMeshAgent.destination = player.transform.position;
 
         chaseTimer += Time.deltaTime;
@@ -265,7 +272,7 @@ public class CuraBehaviour : MonoBehaviour
                 playerIsVisible = true;
                 dangerIcon.SetActive(true);
                 //followWaypoints = false;
-                // lastSeenPlayerIcon.SetActive(true);
+                //lastSeenPlayerIcon.SetActive(true);
                 //lastSeenPlayerIcon.transform.position = player.transform.position;
 
                 //Audio
@@ -274,6 +281,11 @@ public class CuraBehaviour : MonoBehaviour
                     FindObjectOfType<AudioManager>().Play("AlertVoid");
                     canAlertSound = false;
                 }
+            }
+
+            else if(other.CompareTag("Cross") )
+            {
+                canGoToCross= true;
             }
         }
 
@@ -285,19 +297,23 @@ public class CuraBehaviour : MonoBehaviour
                 playerIsVisible = true;
                 dangerIcon.SetActive(true);
                 //followWaypoints = false;
-                //        //lastSeenPlayerIcon.SetActive(true);
-                //        //lastSeenPlayerIcon.transform.position = player.transform.position;
-
-
-                        //Audio
-                        if (canAlertSound)
-                        {
-                             FindObjectOfType<AudioManager>().Play("AlertVoid");
-                            canAlertSound = false;
-                        }
-                    }
-                }
+                //lastSeenPlayerIcon.SetActive(true);
+                //lastSeenPlayerIcon.transform.position = player.transform.position;
+                
+                //Audio
+                 if (canAlertSound)
+                 {
+                    FindObjectOfType<AudioManager>().Play("AlertVoid");
+                    canAlertSound = false;
+                 }
             }
+
+            else if (other.CompareTag("Cross"))
+            {
+                canGoToCross = true;
+            }
+        }
+    }
 
     private void OnTriggerExit2D(Collider2D other)
     {
