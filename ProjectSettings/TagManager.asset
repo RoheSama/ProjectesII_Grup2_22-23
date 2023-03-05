@@ -21,6 +21,7 @@ TagManager:
   - Hide_Place_Disabled
   - Rincon_De_Llorar_Disabled
   - DangerIcon
+  - Table_Place
   layers:
   - Default
   - TransparentFX

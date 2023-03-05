@@ -88,6 +88,8 @@ public class IABehaviour : MonoBehaviour
     public TrailRenderer trailRenderer;
     public GameObject shadow;
 
+    public bool standInTable = false;
+
     void Update()
     {
         //DEBUG AREA
@@ -142,7 +144,22 @@ public class IABehaviour : MonoBehaviour
 
         if (level0)
         {
-            if (followWaypointsLevel0)
+            if(standInTable)
+            {
+                navMeshAgent.speed = 0;
+                animator.SetBool("CanCry", false);
+                animator.SetBool("IdleUp", false);
+                animator.SetBool("IdleDown", true);
+                animator.SetBool("IdleLeft", false);
+                animator.SetBool("IdleRight", false);
+                animator.SetBool("MoveUp", false);
+                animator.SetBool("MoveDown", false);
+                animator.SetBool("MoveLeft", false);
+                animator.SetBool("MoveRight", false);
+                animator.SetBool("CanAttack", false);
+            }
+
+            if (followWaypointsLevel0 && standInTable==false)
             {
                 FollowWaypoints();
                 dangerIcon.SetActive(false);
@@ -153,6 +170,7 @@ public class IABehaviour : MonoBehaviour
                 if(satanicStar02Animator.GetBool("CanStartSatanicStar02") == false)
                 {
                     satanicStar01Animator.SetBool("CanStartSatanicStar01", true);
+                    standInTable= false;
                     RinconDeLlorar();
                 }
             }
@@ -340,7 +358,6 @@ public class IABehaviour : MonoBehaviour
         //Detectar el HidePlace mas cercano
         if (myHidePlace == null)
         {
-            //detector.transform.localScale = new Vector3(detectorIncrement, 1, 1);
             detector.radius = detectorIncrement;
             detectorIncrement++;
         }
@@ -349,7 +366,6 @@ public class IABehaviour : MonoBehaviour
         {
             // Volver a la normalidad una vez encontrado y ir hacia el HidePlace
             detector.radius = 1.0f;
-            // detector.transform.localScale = new Vector3(1, 1, 1);
             navMeshAgent.destination = myHidePlace.transform.position;
             navMeshAgent.speed = 5;
         }
@@ -403,7 +419,7 @@ public class IABehaviour : MonoBehaviour
     {
         //Level 0 Colliders
         if (level0)
-        {
+        {   
             if (other.CompareTag("Player") && shadowIcon.activeSelf)
             {
                 dangerIcon.SetActive(true);
