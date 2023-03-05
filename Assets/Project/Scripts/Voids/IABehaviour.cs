@@ -75,6 +75,8 @@ public class IABehaviour : MonoBehaviour
     bool canAlertSound = true;
     bool canActiveAlertSound = true;
 
+    public AudioSourceVoids audioSourceVoids;
+
     //Attack 
     bool canAttack = false;
     float attackTimer;
@@ -89,6 +91,8 @@ public class IABehaviour : MonoBehaviour
     public GameObject shadow;
 
     public bool standInTable = false;
+
+
 
     void Update()
     {
@@ -385,6 +389,7 @@ public class IABehaviour : MonoBehaviour
                 canActivateHideTimer = true;
                 followWaypointsLevel0 = false;
                 canDie = false;
+                audioSourceVoids.hideVoidOn();
             }
         }
     }

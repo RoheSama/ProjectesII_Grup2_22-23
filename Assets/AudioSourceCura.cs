@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioSourceVoids : MonoBehaviour
+public class AudioSourceCura : MonoBehaviour
 {
     public AudioSource audioSource;
     public AudioClip audioClipWalk;
-    public AudioClip audioCry;
-    public AudioClip audioHide;
 
     public GameObject gameObjectVoid;
 
@@ -48,18 +46,6 @@ public class AudioSourceVoids : MonoBehaviour
     public void walkingVoidOn()
     {
         audioSource.clip = audioClipWalk;
-        audioSource.Play();
-    }
-
-    public void cryingVoidOn()
-    {
-        audioSource.clip = audioCry;
-        audioSource.Play();
-    }
-
-    public void hideVoidOn()
-    {
-        audioSource.clip = audioHide;
         audioSource.Play();
     }
 }
