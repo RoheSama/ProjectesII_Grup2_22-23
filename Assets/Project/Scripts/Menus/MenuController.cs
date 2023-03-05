@@ -29,7 +29,7 @@ public class MenuController : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
-        if(timer >= 58)
+        if(timer >= 68)
         {
             SceneManager.LoadScene("TutorialScene");
         }
