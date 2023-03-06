@@ -17,17 +17,27 @@ public class TopDownMovement : MonoBehaviour
     private Vector2 input;
     private bool moving;
     private bool moved = false;
-    // Start is called before the first frame update
+    public float shadowSpeed;
+    public GameObject shadow;
+    public  float violetSpeed;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();   
     }
 
-    // Update is called once per frame
     void Update()
     {
         GetInput();
         Animate();
+        if(shadow.activeSelf)
+        {
+            moveSpeed = shadowSpeed;
+        }
+        else
+        {
+            moveSpeed = violetSpeed;
+        }
     }
 
     private void FixedUpdate()
@@ -69,5 +79,14 @@ public class TopDownMovement : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("walkViolet");
         }
         anim.SetBool("Moving", moving);
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("CrossEnabledRange"))
+        {
+            Debug.Log("HE SALIDO DE LA CRUZ");
+            shadowSpeed = 8;
+        }
     }
 }

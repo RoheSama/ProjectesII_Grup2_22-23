@@ -23,6 +23,8 @@ TagManager:
   - DangerIcon
   - Cross
   - CrossDisabled
+  - CrossEnabled
+  - CrossEnabledRange
   layers:
   - Default
   - TransparentFX

@@ -29,10 +29,10 @@ public class CuraBehaviour : MonoBehaviour
     public GameObject shadowIcon;
 
     //LEVELS
-    bool level0 = true;
-    bool level1 = false;
-    bool level2 = false;
-    bool level3 = false;
+    public bool level0 = true;
+    public bool level1 = false;
+    public bool level2 = false;
+    public bool level3 = false;
 
     // Satanic Stars
     public GameObject satanicStar01;
@@ -47,7 +47,7 @@ public class CuraBehaviour : MonoBehaviour
     //Chase
     public float chaseTimer;
     public float chaseTime;
-    bool canChase = false;
+    public bool canChase = false;
     public bool playerIsVisible = false;
 
     //Last Seen
@@ -61,6 +61,8 @@ public class CuraBehaviour : MonoBehaviour
     //Cross
     bool canGoToCross = false;
     public GameObject cross;
+    public GameObject crossEnabled;
+    public GameObject crossDisabled;
 
 
     void Start()
@@ -132,7 +134,7 @@ public class CuraBehaviour : MonoBehaviour
 
             else if (canGoToCross)
             {
-                CanGoToCross();
+                GoToCross();
             }
 
             if (followWaypoints && canChase == false && canGoToCross==false)
@@ -263,12 +265,20 @@ public class CuraBehaviour : MonoBehaviour
         }
     }
 
-    void CanGoToCross()
+    void GoToCross()
     {
         navMeshAgent.destination = cross.transform.position;
-        if(navMeshAgent.transform.position.x < cross.transform.position.x + 2 && navMeshAgent.transform.position.x > cross.transform.position.x - 2
-        && navMeshAgent.transform.position.y < cross.transform.position.y + 2 && navMeshAgent.transform.position.y > cross.transform.position.y - 2)
+        if(navMeshAgent.transform.position.x < cross.transform.position.x + 1 && navMeshAgent.transform.position.x > cross.transform.position.x - 1
+        && navMeshAgent.transform.position.y < cross.transform.position.y + 1 && navMeshAgent.transform.position.y > cross.transform.position.y - 1)
         {
+            cross.tag = "CrossEnabled";
+            crossEnabled = cross.transform.GetChild(0).gameObject;
+            crossEnabled.SetActive(true);
+            crossDisabled= cross.transform.GetChild(1).gameObject;
+            crossDisabled.SetActive(false);
+           
+            crossEnabled = null;
+            crossDisabled = null;
             cross = null;
             canGoToCross = false;
         }
