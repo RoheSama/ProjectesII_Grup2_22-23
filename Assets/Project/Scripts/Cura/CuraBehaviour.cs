@@ -271,7 +271,8 @@ public class CuraBehaviour : MonoBehaviour
         if(navMeshAgent.transform.position.x < cross.transform.position.x + 1 && navMeshAgent.transform.position.x > cross.transform.position.x - 1
         && navMeshAgent.transform.position.y < cross.transform.position.y + 1 && navMeshAgent.transform.position.y > cross.transform.position.y - 1)
         {
-            crossEnabled= cross.transform.GetChild(0).gameObject;
+            cross.tag = "CrossEnabled";
+            crossEnabled = cross.transform.GetChild(0).gameObject;
             crossEnabled.SetActive(true);
             crossDisabled= cross.transform.GetChild(1).gameObject;
             crossDisabled.SetActive(false);

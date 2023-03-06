@@ -15,13 +15,12 @@ public class AudioSourceCura : MonoBehaviour
     public float lastY;
 
     public float timer;
-    // Start is called before the first frame update
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         x = gameObjectVoid.transform.position.x;
@@ -37,7 +36,6 @@ public class AudioSourceCura : MonoBehaviour
 
         if (x < lastX + 0.1f && x > lastX - 0.1f && y < lastY + 0.1f && y > lastY - 0.1f)
         {
-            Debug.Log("Hasf");
             walkingVoidOn();
         }
 
