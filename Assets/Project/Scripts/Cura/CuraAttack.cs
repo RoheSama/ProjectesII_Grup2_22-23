@@ -17,16 +17,21 @@ public class CuraAttack : MonoBehaviour
     [SerializeField] private GameObject player;
 
     private float curaDamage = 0.2f;
-    // Start is called before the first frame update
+
+    public bool curaCanAttack;
+    public CuraBehaviour curaBehaviour;
+
     void Start()
     {
-        
+        curaCanAttack = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if(curaBehaviour.level1 || curaBehaviour.canChase)
+        {
+            curaCanAttack = true;
+        }
     }
 
     public void AreaEnabled()
@@ -78,9 +83,11 @@ public class CuraAttack : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             FindObjectOfType<AudioManager>().Play("attackPriest");
-
-
-            StartCoroutine(AttackAreaRoutine());
+            if(curaCanAttack)
+            {
+                StartCoroutine(AttackAreaRoutine());
+            }
+           
         }
     }
 }

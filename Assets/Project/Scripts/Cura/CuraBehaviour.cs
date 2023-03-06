@@ -29,10 +29,10 @@ public class CuraBehaviour : MonoBehaviour
     public GameObject shadowIcon;
 
     //LEVELS
-    bool level0 = true;
-    bool level1 = false;
-    bool level2 = false;
-    bool level3 = false;
+    public bool level0 = true;
+    public bool level1 = false;
+    public bool level2 = false;
+    public bool level3 = false;
 
     // Satanic Stars
     public GameObject satanicStar01;
@@ -47,7 +47,7 @@ public class CuraBehaviour : MonoBehaviour
     //Chase
     public float chaseTimer;
     public float chaseTime;
-    bool canChase = false;
+    public bool canChase = false;
     public bool playerIsVisible = false;
 
     //Last Seen

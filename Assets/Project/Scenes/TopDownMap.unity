@@ -2394,12 +2394,17 @@ MonoBehaviour:
   timeWaypoints: 0500000002000000050000000800000000000000
   dangerIcon: {fileID: 174115205}
   shadowIcon: {fileID: 1754658592}
+  level0: 1
+  level1: 0
+  level2: 0
+  level3: 0
   satanicStar01: {fileID: 747324530}
   satanicStar02: {fileID: 421118003}
   satanicStar01Animator: {fileID: 747324534}
   satanicStar02Animator: {fileID: 421118007}
   chaseTimer: 0
   chaseTime: 10
+  canChase: 0
   playerIsVisible: 0
   lastSeenPlayerIcon: {fileID: 253170970}
   lastSeenPlayerTimer: 0
@@ -2502,6 +2507,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   player: {fileID: 2068016082}
+  curaCanAttack: 0
+  curaBehaviour: {fileID: 111447795}
 --- !u!58 &111447799
 CircleCollider2D:
   m_ObjectHideFlags: 0
