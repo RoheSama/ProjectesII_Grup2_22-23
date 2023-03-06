@@ -21,6 +21,8 @@ TagManager:
   - Hide_Place_Disabled
   - Rincon_De_Llorar_Disabled
   - DangerIcon
+  - Cross
+  - CrossDisabled
   layers:
   - Default
   - TransparentFX

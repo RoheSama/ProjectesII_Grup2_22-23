@@ -75,6 +75,8 @@ public class IABehaviour : MonoBehaviour
     bool canAlertSound = true;
     bool canActiveAlertSound = true;
 
+    public AudioSourceVoids audioSourceVoids;
+
     //Attack 
     bool canAttack = false;
     float attackTimer;
@@ -83,6 +85,14 @@ public class IABehaviour : MonoBehaviour
     //Void Behaviour
     public bool isDead = false;
     public bool canDie = true;
+
+    //Trail
+    public TrailRenderer trailRenderer;
+    public GameObject shadow;
+
+    public bool standInTable = false;
+
+
 
     void Update()
     {
@@ -111,6 +121,12 @@ public class IABehaviour : MonoBehaviour
             attackTimer = 100;
         }
 
+        if (shadow.activeSelf)
+        {
+            trailRenderer.enabled = true;
+        }
+        else trailRenderer.enabled = false;
+
         if (satanicStar02Animator.GetBool("CanStartSatanicStar02") == true)
         {
             satanicStar01Animator.SetBool("CanStartSatanicStar01", false);
@@ -132,7 +148,22 @@ public class IABehaviour : MonoBehaviour
 
         if (level0)
         {
-            if (followWaypointsLevel0)
+            if(standInTable)
+            {
+                navMeshAgent.speed = 0;
+                animator.SetBool("CanCry", false);
+                animator.SetBool("IdleUp", false);
+                animator.SetBool("IdleDown", true);
+                animator.SetBool("IdleLeft", false);
+                animator.SetBool("IdleRight", false);
+                animator.SetBool("MoveUp", false);
+                animator.SetBool("MoveDown", false);
+                animator.SetBool("MoveLeft", false);
+                animator.SetBool("MoveRight", false);
+                animator.SetBool("CanAttack", false);
+            }
+
+            if (followWaypointsLevel0 && standInTable==false)
             {
                 FollowWaypoints();
                 dangerIcon.SetActive(false);
@@ -143,6 +174,7 @@ public class IABehaviour : MonoBehaviour
                 if(satanicStar02Animator.GetBool("CanStartSatanicStar02") == false)
                 {
                     satanicStar01Animator.SetBool("CanStartSatanicStar01", true);
+                    standInTable= false;
                     RinconDeLlorar();
                 }
             }
@@ -283,6 +315,7 @@ public class IABehaviour : MonoBehaviour
                 animator.SetBool("MoveDown", false);
                 animator.SetBool("MoveLeft", false);
                 animator.SetBool("MoveRight", false);
+                animator.SetBool("CanAttack", false);
             }
         }
 
@@ -299,14 +332,6 @@ public class IABehaviour : MonoBehaviour
             myRinconDeLlorar = null;
             followWaypointsLevel0 = true;
             navMeshAgent.speed = 2;
-            animator.SetBool("CanCry", false);
-
-           // if (
-           //
-           // 01.activeSelf)
-           // {
-           //     satanicStar01.SetActive(false);
-           // }
         }
     }
 
@@ -337,7 +362,6 @@ public class IABehaviour : MonoBehaviour
         //Detectar el HidePlace mas cercano
         if (myHidePlace == null)
         {
-            //detector.transform.localScale = new Vector3(detectorIncrement, 1, 1);
             detector.radius = detectorIncrement;
             detectorIncrement++;
         }
@@ -346,7 +370,6 @@ public class IABehaviour : MonoBehaviour
         {
             // Volver a la normalidad una vez encontrado y ir hacia el HidePlace
             detector.radius = 1.0f;
-            // detector.transform.localScale = new Vector3(1, 1, 1);
             navMeshAgent.destination = myHidePlace.transform.position;
             navMeshAgent.speed = 5;
         }
@@ -366,6 +389,7 @@ public class IABehaviour : MonoBehaviour
                 canActivateHideTimer = true;
                 followWaypointsLevel0 = false;
                 canDie = false;
+                audioSourceVoids.hideVoidOn();
             }
         }
     }
@@ -376,6 +400,18 @@ public class IABehaviour : MonoBehaviour
 
         navMeshAgent.speed = 0;
         playerMovement.moveSpeed = 1;
+
+        animator.SetBool("CanCry", false);
+        animator.SetBool("IdleUp", false);
+        animator.SetBool("IdleDown", false);
+        animator.SetBool("IdleLeft", false);
+        animator.SetBool("IdleRight", false);
+        animator.SetBool("MoveUp", false);
+        animator.SetBool("MoveDown", false);
+        animator.SetBool("MoveLeft", false);
+        animator.SetBool("MoveRight", false);
+        animator.SetBool("CanAttack", true);
+
         if (attackTimer >= attackTime)
         {
             dangerIcon.SetActive(false);
@@ -388,11 +424,11 @@ public class IABehaviour : MonoBehaviour
     {
         //Level 0 Colliders
         if (level0)
-        {
+        {   
             if (other.CompareTag("Player") && shadowIcon.activeSelf)
             {
                 dangerIcon.SetActive(true);
-                Debug.Log("ALerta");
+                Debug.Log("Alerta");
                 curaBehaviour.dangerIcon.SetActive(true);
                 curaBehaviour.followWaypoints = false;
                 curaBehaviour.lastSeenPlayerIcon.transform.position = new Vector3(dangerIcon.transform.position.x, dangerIcon.transform.position.y-1, dangerIcon.transform.position.z);
@@ -439,7 +475,7 @@ public class IABehaviour : MonoBehaviour
                     canAlertSound = false;
                 }
                 dangerIcon.SetActive(true);
-                Debug.Log("ALerta");
+                Debug.Log("Alerta");
                 curaBehaviour.dangerIcon.SetActive(true);
                 curaBehaviour.followWaypoints = false;
                 curaBehaviour.lastSeenPlayerIcon.transform.position = new Vector3(dangerIcon.transform.position.x, dangerIcon.transform.position.y - 1, dangerIcon.transform.position.z);
@@ -481,7 +517,7 @@ public class IABehaviour : MonoBehaviour
                     canAlertSound = false;
                 }
                 dangerIcon.SetActive(true);
-                Debug.Log("ALerta");
+                Debug.Log("Alerta");
                 curaBehaviour.dangerIcon.SetActive(true);
                 curaBehaviour.followWaypoints = false;
                 curaBehaviour.lastSeenPlayerIcon.transform.position = new Vector3(dangerIcon.transform.position.x, dangerIcon.transform.position.y - 1, dangerIcon.transform.position.z);
