@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using Unity.IO.LowLevel.Unsafe;
 
 public class Dialogue : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private GameObject dialogueSystem;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private KeyCode next;
+    [SerializeField] private KeyCode endDialogue;
     [SerializeField] private Image sprite1;
     [SerializeField] private Image sprite2;
     [SerializeField] private Image sprite3;
@@ -33,10 +35,15 @@ public class Dialogue : MonoBehaviour
     private bool startDialogue;
     private int lineIndex;
 
+    private bool ended = false;
+
+    public bool lastDialogue = false;
+    public bool chargeScene = false;
 
     // Update is called once per frame
     void Update()
     {
+
         if (isPlayerInRange && Input.GetKeyUp(next))
         {
             if (!didDialogueStart)
@@ -53,13 +60,23 @@ public class Dialogue : MonoBehaviour
                 dialogueText.text = dialogueLines[lineIndex];
             }
 
-            
+
         }
 
         ImageManager();
-        NamesManager(); 
+        NamesManager();
+
+        if (Input.GetKeyUp(endDialogue))
+        {
+            FinishDialogue();
+        }
+
+        if (ended)
+        {
+            DestroyDialogue();
+        }
     }
-    
+
     private void ImageManager()
     {
         if (dialogueImage[lineIndex] == "1")
@@ -121,7 +138,7 @@ public class Dialogue : MonoBehaviour
     }
     private void StarDialogue()
     {
-        didDialogueStart = true;     
+        didDialogueStart = true;
         dialogueSystem.SetActive(true);
         dialoguePanel.SetActive(true);
         hud.SetActive(false);
@@ -133,42 +150,56 @@ public class Dialogue : MonoBehaviour
     private void NextDialogueLine()
     {
         lineIndex++;
-        if(lineIndex < dialogueLines.Length)
+        if (lineIndex < dialogueLines.Length)
         {
             StartCoroutine(ShowLine());
         }
         else
         {
-            didDialogueStart = false;
-            dialoguePanel.SetActive(false);
-            hud.SetActive(true);
-            startDialogue = false;
-            dialogueSystem.SetActive(false);
-            Time.timeScale = 1f;
+            FinishDialogue();
         }
-        
+
     }
 
+    private void FinishDialogue()
+    {
+        didDialogueStart = false;
+        dialoguePanel.SetActive(false);
+        hud.SetActive(true);
+        startDialogue = false;
+        dialogueSystem.SetActive(false);
+        Time.timeScale = 1f;
+        ended = true;
+        if (lastDialogue)
+        {
+            chargeScene = true;
+        }
+    }
     private IEnumerator ShowLine()
     {
         dialogueText.text = string.Empty;
 
-        foreach(char ch in dialogueLines[lineIndex])
+        foreach (char ch in dialogueLines[lineIndex])
         {
             dialogueText.text += ch;
             yield return new WaitForSecondsRealtime(typingTime);
         }
     }
 
+    private void DestroyDialogue()
+    {
+        Destroy(gameObject);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             isPlayerInRange = true;
             interactAlert.SetActive(true);
             Debug.Log("dialogue");
         }
-       
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
