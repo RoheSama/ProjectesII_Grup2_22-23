@@ -92,7 +92,11 @@ public class IABehaviour : MonoBehaviour
 
     public bool standInTable = false;
 
-
+    void Start()
+    {
+        shadow.SetActive(true);
+        shadow.SetActive(false);
+    }
 
     void Update()
     {
