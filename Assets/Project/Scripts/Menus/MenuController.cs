@@ -59,6 +59,7 @@ public class MenuController : MonoBehaviour
         optionsMenu.SetActive(true);
         controlsMenu.SetActive(false);
         mainMenu.SetActive(false);
+        logo.SetActive(false);
     }
 
     // Button de Controls
@@ -68,6 +69,7 @@ public class MenuController : MonoBehaviour
         controlsMenu.SetActive(true);
         optionsMenu.SetActive(false);
         mainMenu.SetActive(false);
+        logo.SetActive(false);
     }
 
     // Button de Back
@@ -77,6 +79,7 @@ public class MenuController : MonoBehaviour
         mainMenu.SetActive(true);
         controlsMenu.SetActive(false);
         optionsMenu.SetActive(false);
+        logo.SetActive(true);
     }
     
     // Button de Exit
