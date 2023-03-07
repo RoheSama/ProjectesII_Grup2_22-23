@@ -39,7 +39,6 @@ public class AudioSourceVoids : MonoBehaviour
 
         if (x < lastX + 0.1f && x > lastX - 0.1f && y < lastY + 0.1f && y > lastY - 0.1f)
         {
-            Debug.Log("Hasf");
             walkingVoidOn();
         }
 
