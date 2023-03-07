@@ -7,6 +7,7 @@ public class VoidsLeft : MonoBehaviour
 {
     public int totalVoids;
     public TMP_Text voidsCounter;
+    public int voidsKilled;
     
     void Update()
     {
@@ -16,5 +17,6 @@ public class VoidsLeft : MonoBehaviour
    public void studentKill()
     {
         totalVoids--;
+        voidsKilled++;
     }
 }
