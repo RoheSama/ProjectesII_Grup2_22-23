@@ -11,7 +11,7 @@ public class SceneTransition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(FindObjectOfType<EnemyHitNew>().died == true)
+        if(FindObjectOfType<Dialogue>().chargeScene == true)
         {
             image.SetActive(true);
             StartCoroutine(LoadScene());
@@ -23,6 +23,6 @@ public class SceneTransition : MonoBehaviour
     {
         anim.SetTrigger("start");
         yield return new WaitForSeconds(1.3f);
-        SceneManager.LoadScene("BigMap");
+        SceneManager.LoadScene("TopDownMap");
     }
 }
