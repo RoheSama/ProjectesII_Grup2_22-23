@@ -7,11 +7,13 @@ public class SceneTransition : MonoBehaviour
 {
     [SerializeField] private GameObject image;
     public Animator anim;
+    public GameObject dialogue;
+
 
     // Update is called once per frame
     void Update()
     {
-        if(FindObjectOfType<EnemyHitNew>().died == true)
+        if(dialogue.GetComponent<Dialogue>().chargeScene)
         {
             image.SetActive(true);
             StartCoroutine(LoadScene());
@@ -23,6 +25,6 @@ public class SceneTransition : MonoBehaviour
     {
         anim.SetTrigger("start");
         yield return new WaitForSeconds(1.3f);
-        SceneManager.LoadScene("BigMap");
+        SceneManager.LoadScene("TopDownMap");
     }
 }

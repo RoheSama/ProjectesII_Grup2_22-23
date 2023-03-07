@@ -40,7 +40,10 @@ public class Dialogue : MonoBehaviour
     public bool lastDialogue = false;
     public bool chargeScene = false;
 
-    // Update is called once per frame
+
+    public GameObject controlPoint1;
+    public GameObject controlPoint2;
+
     void Update()
     {
 
@@ -73,7 +76,12 @@ public class Dialogue : MonoBehaviour
 
         if (ended)
         {
-            DestroyDialogue();
+            if (!lastDialogue)
+            {
+                DestroyDialogue();
+            }
+            controlPoint1.SetActive(false);
+            controlPoint2.SetActive(true);
         }
     }
 
@@ -161,7 +169,7 @@ public class Dialogue : MonoBehaviour
 
     }
 
-    private void FinishDialogue()
+    public void FinishDialogue()
     {
         didDialogueStart = false;
         dialoguePanel.SetActive(false);
