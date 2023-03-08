@@ -405,6 +405,8 @@ public class IABehaviour : MonoBehaviour
         navMeshAgent.speed = 0;
         playerMovement.moveSpeed = 1;
 
+        audioSourceVoids.prayingVoidOn();
+
         animator.SetBool("CanCry", false);
         animator.SetBool("IdleUp", false);
         animator.SetBool("IdleDown", false);

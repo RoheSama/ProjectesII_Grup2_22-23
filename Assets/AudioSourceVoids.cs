@@ -7,6 +7,7 @@ public class AudioSourceVoids : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip audioClipWalk;
     public AudioClip audioCry;
+    public AudioClip audioPray;
     public AudioClip audioHide;
 
     public GameObject gameObjectVoid;
@@ -47,6 +48,11 @@ public class AudioSourceVoids : MonoBehaviour
     public void walkingVoidOn()
     {
         audioSource.clip = audioClipWalk;
+        audioSource.Play();
+    }
+    public void prayingVoidOn()
+    {
+        audioSource.clip = audioPray;
         audioSource.Play();
     }
 
