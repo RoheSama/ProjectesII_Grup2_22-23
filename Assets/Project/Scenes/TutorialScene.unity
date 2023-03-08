@@ -2028,7 +2028,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 3
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -2401,7 +2401,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 3
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -2498,7 +2498,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 304715276}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 118.65, y: -5.45, z: 0.02534491}
+  m_LocalPosition: {x: 113.75001, y: -5.45, z: 0.02534491}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3404,6 +3404,10 @@ MonoBehaviour:
   - To eradicate the student, you need to let the shadow demon possess you.
   - Press 'RIGHT CLICK' to let the shadow demon possess you.
   - "\rOnce you're possessed, press 'LEFT CLICK' to eradicate the student."
+  - "\rIf you do not want to be spotted, try to kill humans from the back. \r\nThat
+    way, they won't alert any unwanted public."
+  - Of course, you don't need to be stealthy to kill, but it is a sweet advantage.
+  - Kill the student and move to the right to find next light.
   dialoguePanel: {fileID: 2140868016}
   hud: {fileID: 1776379964}
   dialogueSystem: {fileID: 381405750}
@@ -3418,13 +3422,19 @@ MonoBehaviour:
   - 3
   - 3
   - 3
-  - 3
+  - 2
+  - 2
+  - 2
+  - 2
   dialogueName:
   - 3
   - 3
   - 3
   - 3
-  - 3
+  - 2
+  - 2
+  - 2
+  - 2
   character1: {fileID: 2024346517}
   character2: {fileID: 2093130102}
   character3: {fileID: 199904093}
@@ -4239,7 +4249,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 501757007}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 119.67, y: -8.18, z: 0.02534491}
+  m_LocalPosition: {x: 114.770004, y: -8.18, z: 0.02534491}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4972,7 +4982,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 552259155}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 129.63, y: -2.5, z: 0}
+  m_LocalPosition: {x: 126.2, y: -2.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4994,12 +5004,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAlert: {fileID: 458372984}
   dialogueLines:
-  - 'This is a student.
+  - 'So, objective is clear right human? Kill everyone on your sight and avoid getting
+    caught by the priest, and of course, avoid getting caught between prayers and
+    crosses.
 
     Your objective.'
-  - To eradicate the student, you need to let the shadow demon possess you.
-  - Press 'RIGHT CLICK' to let the shadow demon possess you.
-  - "\rOnce you're possessed, press 'LEFT CLICK' to eradicate the student."
+  - Do I really have to go around turning crosses upside down and stuff like that?
+  - What am I, the little girl from the excorcist?
+  - 'Well, you kinda look like her, maybe she is a little bit prettier but...
+
+'
+  - '" Ha Ha "'
+  - 'Let''s quit chatting, I think you know what you have to do.
+
+'
+  - Let's have some fun, Violet.
   dialoguePanel: {fileID: 2140868016}
   hud: {fileID: 1776379964}
   dialogueSystem: {fileID: 381405750}
@@ -5010,17 +5029,23 @@ MonoBehaviour:
   sprite2: {fileID: 365275484}
   sprite3: {fileID: 1309999765}
   dialogueImage:
-  - 3
-  - 3
-  - 3
-  - 3
-  - 3
+  - 2
+  - 1
+  - 1
+  - 2
+  - 1
+  - 2
+  - 2
+  - 2
   dialogueName:
-  - 3
-  - 3
-  - 3
-  - 3
-  - 3
+  - 2
+  - 1
+  - 1
+  - 2
+  - 1
+  - 2
+  - 2
+  - 2
   character1: {fileID: 2024346517}
   character2: {fileID: 2093130102}
   character3: {fileID: 199904093}
@@ -9229,7 +9254,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2.5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -9796,7 +9821,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2.5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -11560,7 +11585,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 3
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -13174,7 +13199,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2.5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -13738,6 +13763,7 @@ Transform:
   - {fileID: 408925762}
   - {fileID: 85734832}
   - {fileID: 70179316}
+  - {fileID: 1847104910}
   m_Father: {fileID: 579974124}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13961,10 +13987,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.6
-  m_Speed: 2
-  m_Acceleration: 8
+  m_Speed: 0
+  m_Acceleration: 0
   avoidancePriority: 30
-  m_AngularSpeed: 0.001
+  m_AngularSpeed: 0
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -14517,12 +14543,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAlert: {fileID: 458372984}
   dialogueLines:
-  - 'This is a student.
+  - 'This is the priest, the one who will make our life hell, ironically.
 
-    Your objective.'
-  - To eradicate the student, you need to let the shadow demon possess you.
-  - Press 'RIGHT CLICK' to let the shadow demon possess you.
-  - "\rOnce you're possessed, press 'LEFT CLICK' to eradicate the student."
+    Your
+    objective.'
+  - "He is too strong for us right now, so before we can kill him, we need to harvest
+    \nall the students souls."
+  - Once we eliminate all students, we will be able to attack and take him down.
+  - Eradicate the students behind him, and then kill the priest. Then you'll find
+    a new light going right.
   dialoguePanel: {fileID: 2140868016}
   hud: {fileID: 1776379964}
   dialogueSystem: {fileID: 381405750}
@@ -14533,17 +14562,17 @@ MonoBehaviour:
   sprite2: {fileID: 365275484}
   sprite3: {fileID: 1309999765}
   dialogueImage:
-  - 3
-  - 3
-  - 3
-  - 3
-  - 3
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
   dialogueName:
-  - 3
-  - 3
-  - 3
-  - 3
-  - 3
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
   character1: {fileID: 2024346517}
   character2: {fileID: 2093130102}
   character3: {fileID: 199904093}
@@ -16205,7 +16234,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 3
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -16782,12 +16811,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactAlert: {fileID: 458372984}
   dialogueLines:
-  - 'This is a student.
-
-    Your objective.'
-  - To eradicate the student, you need to let the shadow demon possess you.
-  - Press 'RIGHT CLICK' to let the shadow demon possess you.
-  - "\rOnce you're possessed, press 'LEFT CLICK' to eradicate the student."
+  - If you choose to not kill in a stealthy way, students will get alerted and that
+    damned priest will destroy us.
+  - Not only that, humans will get scared and hide from you in lockers and bathrooms.
+  - Choose your strategy, as long as you kill all humans and amuse me, I'm happy
+    either way.
+  - Keep in mind, if you start causing too much chaos, the school will get paranoid
+    and our work will be a little bit harder.
+  - Move right to find the next light.
   dialoguePanel: {fileID: 2140868016}
   hud: {fileID: 1776379964}
   dialogueSystem: {fileID: 381405750}
@@ -16798,17 +16829,19 @@ MonoBehaviour:
   sprite2: {fileID: 365275484}
   sprite3: {fileID: 1309999765}
   dialogueImage:
-  - 3
-  - 3
-  - 3
-  - 3
-  - 3
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
   dialogueName:
-  - 3
-  - 3
-  - 3
-  - 3
-  - 3
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
   character1: {fileID: 2024346517}
   character2: {fileID: 2093130102}
   character3: {fileID: 199904093}
@@ -17170,7 +17203,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2.5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -36108,7 +36141,7 @@ Tilemap:
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.2830189, g: 0.254717, b: 0.254717, a: 1}
   m_Origin: {x: -130, y: -6, z: 0}
   m_Size: {x: 287, y: 17, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
@@ -36166,7 +36199,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639752902}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 145.16, y: -8.15, z: 0.02534491}
+  m_LocalPosition: {x: 111.3, y: -8.15, z: 0.02534491}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -36878,7 +36911,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2.5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -38053,7 +38086,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 2.5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -38281,6 +38314,116 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1815196303}
   m_CullTransparentMesh: 1
+--- !u!1 &1847104909
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1847104910}
+  - component: {fileID: 1847104911}
+  m_Layer: 9
+  m_Name: Light 2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1847104910
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847104909}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1141281879}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1847104911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847104909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073797afb82c5a1438f328866b10b3f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ComponentVersion: 1
+  m_LightType: 3
+  m_BlendStyleIndex: 0
+  m_FalloffIntensity: 0.5
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 2.5
+  m_LightVolumeIntensity: 1
+  m_LightVolumeIntensityEnabled: 0
+  m_ApplyToSortingLayers: 00000000
+  m_LightCookieSprite: {fileID: 0}
+  m_DeprecatedPointLightCookieSprite: {fileID: 0}
+  m_LightOrder: 0
+  m_OverlapOperation: 0
+  m_NormalMapDistance: 3
+  m_NormalMapQuality: 2
+  m_UseNormalMap: 0
+  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensity: 0.75
+  m_ShadowVolumeIntensityEnabled: 0
+  m_ShadowVolumeIntensity: 0.75
+  m_Vertices:
+  - position: {x: 0.9985302, y: 0.9985302, z: 0}
+    color: {r: 0.70710677, g: 0.70710677, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0.9985302, y: 0.9985302, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0, y: 0}
+  - position: {x: -0.9985302, y: 0.9985302, z: 0}
+    color: {r: -0.70710677, g: 0.70710677, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: -0.9985302, y: 0.9985302, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0, y: 0}
+  - position: {x: -0.99853003, y: -0.9985304, z: 0}
+    color: {r: -0.70710665, g: -0.7071069, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: -0.99853003, y: -0.9985304, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0, y: 0}
+  - position: {x: 0.99853003, y: -0.9985304, z: 0}
+    color: {r: 0.70710665, g: -0.7071069, b: 0, a: 0}
+    uv: {x: 0, y: 0}
+  - position: {x: 0.99853003, y: -0.9985304, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0, y: 0}
+  - position: {x: 0, y: 0, z: 0}
+    color: {r: 0, g: 0, b: 0, a: 1}
+    uv: {x: 0, y: 0}
+  m_Triangles: 030001000800020000000100030002000100050003000800040002000300050004000300070005000800060004000500070006000500010007000800000006000700010000000700
+  m_LocalBounds:
+    m_Center: {x: 0, y: -0.00000011920929, z: 0}
+    m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
+  m_PointLightInnerAngle: 360
+  m_PointLightOuterAngle: 360
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1.4
+  m_ShapeLightParametricSides: 5
+  m_ShapeLightParametricAngleOffset: 0
+  m_ShapeLightParametricRadius: 1
+  m_ShapeLightFalloffSize: 0.5
+  m_ShapeLightFalloffOffset: {x: 0, y: 0}
+  m_ShapePath:
+  - {x: -0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: -0.5, z: 0}
+  - {x: 0.5, y: 0.5, z: 0}
+  - {x: -0.5, y: 0.5, z: 0}
 --- !u!1 &1888345954
 GameObject:
   m_ObjectHideFlags: 0
@@ -39021,7 +39164,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941122518}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.2300014, y: -0.844, z: 0}
+  m_LocalPosition: {x: 5.66, y: -0.85, z: 0}
   m_LocalScale: {x: 0.12496, y: 0.12496, z: 0.12496}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -39649,7 +39792,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 3
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
