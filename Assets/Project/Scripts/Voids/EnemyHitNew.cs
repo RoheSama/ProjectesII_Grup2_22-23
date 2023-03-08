@@ -27,7 +27,6 @@ public class EnemyHitNew : MonoBehaviour
     //public float maxRage = 100;
     //public float currentRage = 20;
     // Start is called before the first frame update
-    public bool curaDied = false;
 
     void Start()
     {
@@ -45,7 +44,7 @@ public class EnemyHitNew : MonoBehaviour
                 currentHealth -= damage;
                 Debug.Log("Damaged");
 
-                anim.SetTrigger("Hurt");
+               // anim.SetTrigger("Hurt");
                 if (currentHealth <= 0)
                 {
                     Die();
@@ -77,8 +76,11 @@ public class EnemyHitNew : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         agent.speed = 0.0f;
         StartCoroutine(VoidDestroy());
-        voidsLeft.GetComponent<VoidsLeft>().studentKill();
-        iABehaviour.isDead = true;
+        if (!isCura)
+        {
+            voidsLeft.GetComponent<VoidsLeft>().studentKill();
+            iABehaviour.isDead = true;
+        }
         //Destroy(gameObject);
         //rageBar.UpdateRageBar();
         //UpdateRageBar();
@@ -87,7 +89,6 @@ public class EnemyHitNew : MonoBehaviour
 
     IEnumerator VoidDestroy()
     {
-        curaDied = true;
         yield return new WaitForSeconds(1.0f);
         Destroy(gameObject);
     }
