@@ -44,13 +44,6 @@ public class Dialogue : MonoBehaviour
     public GameObject controlPoint1;
     public GameObject controlPoint2;
 
-    public GameObject cura;
-
-    public bool curaTuto;
-
-
-    public GameObject voidsLeft;
-
     void Update()
     {
 
@@ -83,15 +76,14 @@ public class Dialogue : MonoBehaviour
 
         if (ended)
         {
-            if (!curaTuto)
-            {
                 if (!lastDialogue)
                 {
                     DestroyDialogue();
                 }
                 controlPoint1.SetActive(false);
                 controlPoint2.SetActive(true);
-            }
+            
+
            
         }
     }

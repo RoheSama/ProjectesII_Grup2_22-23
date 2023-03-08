@@ -14,10 +14,6 @@ public class VoidsLeft : MonoBehaviour
     void Update()
     {
         voidsCounter.SetText(totalVoids.ToString());
-        if(totalVoids == 0)
-        {
-            controlPoint.SetActive(true);
-        }
     }
 
    public void studentKill()
