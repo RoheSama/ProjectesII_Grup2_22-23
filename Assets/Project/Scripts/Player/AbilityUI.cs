@@ -171,7 +171,7 @@ public class AbilityUI : MonoBehaviour
 
             //Animation
 
-            anim.SetTrigger("Attacking");
+            anim.SetTrigger("Stuning");
 
         }
 
