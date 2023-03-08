@@ -28,6 +28,9 @@ public class MenuController : MonoBehaviour
     public GameObject secondCrossVideo;
     public GameObject thirdCrossVideo;
 
+    public GameObject firstStudentVideo;
+    public GameObject secondStudentVideo;
+
     private void Update()
     {
         if (Input.GetKeyDown("f"))
@@ -170,6 +173,23 @@ public class MenuController : MonoBehaviour
         {
             firstCrossVideo.SetActive(true);
             secondCrossVideo.SetActive(false);
+        }
+    }
+
+    public void NextStudentVideo()
+    {
+        if (firstStudentVideo.activeSelf)
+        {
+            firstStudentVideo.SetActive(false);
+            secondStudentVideo.SetActive(true);
+        }
+    }
+    public void PreviousStudentVideo()
+    {
+        if (secondStudentVideo.activeSelf)
+        {
+            firstStudentVideo.SetActive(true);
+            secondStudentVideo.SetActive(false);
         }
     }
 }
