@@ -18,6 +18,16 @@ public class MenuController : MonoBehaviour
     public float timer;
     bool activeTimer = false;
 
+    public GameObject crossGuide;
+    public GameObject curaGuide;
+    public GameObject studentsGuide;
+    public GameObject shadowGuide;
+    public GameObject soulReaperGuide;
+
+    public GameObject firstCrossVideo;
+    public GameObject secondCrossVideo;
+    public GameObject thirdCrossVideo;
+
     private void Update()
     {
         if (Input.GetKeyDown("f"))
@@ -87,5 +97,79 @@ public class MenuController : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("ClickSound");
         Application.Quit();
+    }
+
+    // Button de Cross Guide
+    public void CrossGuide()
+    {
+        crossGuide.SetActive(true);
+        controlsMenu.SetActive(false);
+    }
+
+    // Button de Cura Guide
+    public void CuraGuide()
+    {
+        curaGuide.SetActive(true);
+        controlsMenu.SetActive(false);
+    }
+
+    // Button de Students Guide
+    public void StudentsGuide()
+    {
+        studentsGuide.SetActive(true);
+        controlsMenu.SetActive(false);
+    }
+
+    // Button de Shadow Guide
+    public void ShadowGuide()
+    {
+        shadowGuide.SetActive(true);
+        controlsMenu.SetActive(false);
+    }
+
+    // Button de Soul Reaper Guide
+    public void SoulReaperGuide()
+    {
+        soulReaperGuide.SetActive(true);
+        controlsMenu.SetActive(false);
+    }
+
+    // Button de Back de las Guides
+    public void BackToGuide()
+    {
+        crossGuide.SetActive(false);
+        curaGuide.SetActive(false);
+        studentsGuide.SetActive(false);
+        shadowGuide.SetActive(false);
+        soulReaperGuide.SetActive(false);
+        controlsMenu.SetActive(true);
+    }
+
+    public void NextCrossVideo()
+    {
+        if (secondCrossVideo.activeSelf)
+        {
+            secondCrossVideo.SetActive(false);
+            thirdCrossVideo.SetActive(true);
+        }
+        else if (firstCrossVideo.activeSelf)
+        {
+            firstCrossVideo.SetActive(false);
+            secondCrossVideo.SetActive(true);
+        }
+    }
+
+    public void PreviousCrossVideo()
+    {
+        if (!secondCrossVideo.activeSelf)
+        {
+            secondCrossVideo.SetActive(true);
+            thirdCrossVideo.SetActive(false);
+        }
+        else if (!firstCrossVideo.activeSelf)
+        {
+            firstCrossVideo.SetActive(true);
+            secondCrossVideo.SetActive(false);
+        }
     }
 }

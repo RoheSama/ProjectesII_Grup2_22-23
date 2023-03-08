@@ -15,8 +15,9 @@ public class VoidsLeft : MonoBehaviour
     }
 
    public void studentKill()
-    {
+   {
         totalVoids--;
         voidsKilled++;
-    }
+   }
+
 }
