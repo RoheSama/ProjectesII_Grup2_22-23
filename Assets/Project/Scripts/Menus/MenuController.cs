@@ -24,6 +24,10 @@ public class MenuController : MonoBehaviour
     public GameObject shadowGuide;
     public GameObject soulReaperGuide;
 
+    public GameObject firstCrossVideo;
+    public GameObject secondCrossVideo;
+    public GameObject thirdCrossVideo;
+
     private void Update()
     {
         if (Input.GetKeyDown("f"))
@@ -139,5 +143,33 @@ public class MenuController : MonoBehaviour
         shadowGuide.SetActive(false);
         soulReaperGuide.SetActive(false);
         controlsMenu.SetActive(true);
+    }
+
+    public void NextCrossVideo()
+    {
+        if (secondCrossVideo.activeSelf)
+        {
+            secondCrossVideo.SetActive(false);
+            thirdCrossVideo.SetActive(true);
+        }
+        else if (firstCrossVideo.activeSelf)
+        {
+            firstCrossVideo.SetActive(false);
+            secondCrossVideo.SetActive(true);
+        }
+    }
+
+    public void PreviousCrossVideo()
+    {
+        if (!secondCrossVideo.activeSelf)
+        {
+            secondCrossVideo.SetActive(true);
+            thirdCrossVideo.SetActive(false);
+        }
+        else if (!firstCrossVideo.activeSelf)
+        {
+            firstCrossVideo.SetActive(true);
+            secondCrossVideo.SetActive(false);
+        }
     }
 }
