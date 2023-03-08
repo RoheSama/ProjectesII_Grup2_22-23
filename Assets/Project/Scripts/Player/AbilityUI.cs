@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
+using System.Threading;
 
 public class AbilityUI : MonoBehaviour
 {
@@ -24,11 +25,7 @@ public class AbilityUI : MonoBehaviour
     //KeyCodes
     public KeyCode ability1;
     public KeyCode powerUpKey;
-    public KeyCode stunKey;
-    //public KeyCode rangedKey;
-
-    //public Transform shotPosition;
-    //public GameObject projectile;
+    public KeyCode stunKey;
 
     //Rohe
     public Animator anim;
@@ -70,6 +67,14 @@ public class AbilityUI : MonoBehaviour
     //Arnau
     //public GameObject shadowIcon;
 
+    //Stun
+    private GameObject stunArea = default;
+
+    private bool stuning = false;
+
+    private float timeToStun = 0.25f;
+    private float stunTimer = 0f;
+
     void Start()
     {
         abilityImage1.fillAmount = 1;
@@ -77,10 +82,7 @@ public class AbilityUI : MonoBehaviour
         normalForm.SetActive(true);
         shadowForm.SetActive(false);
 
-        //abilityImageRA.fillAmount = 1;
-        //agent = GetComponent<NavMeshAgent>();
-        //agent.updateRotation = false;
-        //agent.updateUpAxis = false;
+        stunArea = transform.GetChild(4).gameObject;
     }
 
     void Update()
@@ -103,10 +105,7 @@ public class AbilityUI : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("attackShadow");
                 isCooldown1 = true;
                 abilityImage1.fillAmount = 1;
-                AreaEnabled();
-
-                //Efecto de la habilidad
-    
+                AreaEnabled(); 
                 //Animation
                 shadowAnim.SetTrigger("Attacking");
                 StartCoroutine(AttackAreaRoutine());
@@ -132,7 +131,7 @@ public class AbilityUI : MonoBehaviour
     }    public void AreaEnabled()
     {
         attackAreaEnabled = true;
-    }    void AreaDamage()
+    }    void AreaDamage()
     {
         Debug.Log("DAMAGE");
         Vector2 origin = new Vector2(0f, 0f);
@@ -166,12 +165,27 @@ public class AbilityUI : MonoBehaviour
             abilityImageStun.fillAmount = 1;
 
             //Efecto de la habilidad
+            stuning = true;
+            stunArea.SetActive(stuning);
 
-
+            if (stuning)
+            {
+                stunTimer += Time.deltaTime;
+                if(stunTimer >= timeToStun)
+                {
+                    stunTimer = 0;
+                    stuning = false;
+                    stunArea.SetActive(stuning);
+                }
+            }
 
             //Animation
 
             anim.SetTrigger("Stuning");
+
+
+            StartCoroutine(AttackAreaRoutine());
+
 
         }
 
@@ -192,6 +206,7 @@ public class AbilityUI : MonoBehaviour
         }
 
     }
+
 
     void PowerUp()
     {

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -67,6 +68,14 @@ public class EnemyHitNew : MonoBehaviour
         }
     }
 
+    public void Stun()
+    {
+        if (isCura)
+        {
+
+            Debug.Log("STUNED");
+        }
+    }
     void Die()
     {
         //Debug.Log("Enemy died");
