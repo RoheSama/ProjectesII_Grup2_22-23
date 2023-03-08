@@ -27,6 +27,7 @@ public class EnemyHitNew : MonoBehaviour
     //public float maxRage = 100;
     //public float currentRage = 20;
     // Start is called before the first frame update
+    public bool curaDied = false;
 
     void Start()
     {
@@ -38,7 +39,7 @@ public class EnemyHitNew : MonoBehaviour
     {
         if (isCura)
         {
-            if (voidsLeft.GetComponent<VoidsLeft>().totalVoids == 0)
+            if (voidsLeft.GetComponent<VoidsLeft>().totalVoids == 1)
             {
                 Instantiate(blood, transform.position, Quaternion.identity);
                 currentHealth -= damage;
@@ -86,6 +87,7 @@ public class EnemyHitNew : MonoBehaviour
 
     IEnumerator VoidDestroy()
     {
+        curaDied = true;
         yield return new WaitForSeconds(1.0f);
         Destroy(gameObject);
     }
