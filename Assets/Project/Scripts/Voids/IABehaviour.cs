@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -400,12 +401,12 @@ public class IABehaviour : MonoBehaviour
 
     void VoidAttack()
     {
+
         attackTimer += Time.deltaTime;
-
         navMeshAgent.speed = 0;
-        playerMovement.moveSpeed = 1;
-
-        audioSourceVoids.prayingVoidOn();
+        playerMovement.shadowSpeed = 1;
+        UnityEngine.Debug.Log("PRAY");
+        //audioSourceVoids.prayingVoidOn();
 
         animator.SetBool("CanCry", false);
         animator.SetBool("IdleUp", false);
@@ -434,7 +435,6 @@ public class IABehaviour : MonoBehaviour
             if (other.CompareTag("Player") && shadowIcon.activeSelf)
             {
                 dangerIcon.SetActive(true);
-                Debug.Log("Alerta");
                 curaBehaviour.dangerIcon.SetActive(true);
                 curaBehaviour.followWaypoints = false;
                 curaBehaviour.lastSeenPlayerIcon.transform.position = new Vector3(dangerIcon.transform.position.x, dangerIcon.transform.position.y-1, dangerIcon.transform.position.z);
@@ -481,7 +481,6 @@ public class IABehaviour : MonoBehaviour
                     canAlertSound = false;
                 }
                 dangerIcon.SetActive(true);
-                Debug.Log("Alerta");
                 curaBehaviour.dangerIcon.SetActive(true);
                 curaBehaviour.followWaypoints = false;
                 curaBehaviour.lastSeenPlayerIcon.transform.position = new Vector3(dangerIcon.transform.position.x, dangerIcon.transform.position.y - 1, dangerIcon.transform.position.z);
@@ -523,7 +522,6 @@ public class IABehaviour : MonoBehaviour
                     canAlertSound = false;
                 }
                 dangerIcon.SetActive(true);
-                Debug.Log("Alerta");
                 curaBehaviour.dangerIcon.SetActive(true);
                 curaBehaviour.followWaypoints = false;
                 curaBehaviour.lastSeenPlayerIcon.transform.position = new Vector3(dangerIcon.transform.position.x, dangerIcon.transform.position.y - 1, dangerIcon.transform.position.z);

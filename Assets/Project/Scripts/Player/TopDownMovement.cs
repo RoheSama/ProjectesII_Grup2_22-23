@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -85,7 +86,14 @@ public class TopDownMovement : MonoBehaviour
     {
         if (other.CompareTag("CrossEnabledRange"))
         {
-            Debug.Log("HE SALIDO DE LA CRUZ");
+           // Debug.Log("HE SALIDO DE LA CRUZ");
+            shadowSpeed = 8;
+        }
+
+
+        if (other.CompareTag("PrayingRange"))
+        {
+          //  Debug.Log("HE SALIDO DEL PRAYING");
             shadowSpeed = 8;
         }
     }
