@@ -172,14 +172,14 @@ public class MenuController : MonoBehaviour
 
     public void PreviousCrossVideo()
     {
-        if (!secondCrossVideo.activeSelf)
+        if (thirdCrossVideo.activeSelf)
         {
             secondCrossVideo.SetActive(true);
             thirdCrossVideo.SetActive(false);
             thirdNumberCross.SetActive(false);
             secondNumberCross.SetActive(true);
         }
-        else if (!firstCrossVideo.activeSelf)
+        else if (secondCrossVideo.activeSelf)
         {
             firstCrossVideo.SetActive(true);
             secondCrossVideo.SetActive(false);
