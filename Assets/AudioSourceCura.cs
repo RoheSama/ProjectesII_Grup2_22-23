@@ -6,6 +6,7 @@ public class AudioSourceCura : MonoBehaviour
 {
     public AudioSource audioSource;
     public AudioClip audioClipWalk;
+    public AudioClip audioClipAttack;
 
     public GameObject gameObjectVoid;
 
@@ -44,6 +45,12 @@ public class AudioSourceCura : MonoBehaviour
     public void walkingVoidOn()
     {
         audioSource.clip = audioClipWalk;
+        audioSource.Play();
+    }
+
+    public void AttackCuraOn()
+    {
+        audioSource.clip = audioClipAttack;
         audioSource.Play();
     }
 }

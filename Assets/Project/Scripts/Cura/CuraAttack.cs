@@ -8,7 +8,7 @@ public class CuraAttack : MonoBehaviour
     public Animator anim;
     public LayerMask playerLayer;
     public NavMeshAgent navMeshAgent;
-
+    
     public Transform attackPoint;
 
     private bool attackAreaEnabled = false;
@@ -20,6 +20,9 @@ public class CuraAttack : MonoBehaviour
 
     public bool curaCanAttack;
     public CuraBehaviour curaBehaviour;
+
+    //Audio
+    public AudioSourceCura audioSourceCura;
 
     void Start()
     {
@@ -40,6 +43,8 @@ public class CuraAttack : MonoBehaviour
     }
     void AreaDamage()
     {
+        //audioSourceCura.AttackCuraOn();
+        FindObjectOfType<AudioManager>().Play("attackPriest");
         Debug.Log("DAMAGE PJ");
         Vector2 origin = new Vector2(0f, 0f);
         Collider2D[] colliders = Physics2D.OverlapCircleAll(attackPoint.position, 1f, playerLayer);
@@ -82,8 +87,7 @@ public class CuraAttack : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            FindObjectOfType<AudioManager>().Play("attackPriest");
-            if(curaCanAttack)
+            if (curaCanAttack)
             {
                 StartCoroutine(AttackAreaRoutine());
             }
