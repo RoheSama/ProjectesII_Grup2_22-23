@@ -89,12 +89,5 @@ public class TopDownMovement : MonoBehaviour
            // Debug.Log("HE SALIDO DE LA CRUZ");
             shadowSpeed = 8;
         }
-
-
-        if (other.CompareTag("PrayingRange"))
-        {
-          //  Debug.Log("HE SALIDO DEL PRAYING");
-            shadowSpeed = 8;
-        }
     }
 }

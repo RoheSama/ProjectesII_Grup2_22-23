@@ -9,13 +9,16 @@ public class CrossEffect : MonoBehaviour
     public Animator animator;
 
     //Audio 
-    public AudioSourceCross audioSourceCross;
+    public AudioSourceCross[] audioSourceCrosses;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("CrossEnabledRange"))
         {
-            audioSourceCross.areaCross();
-
+            for(int i = 0;i < audioSourceCrosses.Length;i++)
+            {
+                audioSourceCrosses[i].areaCross();
+            }
             topDownMovement.shadowSpeed = 1;
             crossEnabledRange = other.gameObject;
             animator = crossEnabledRange.transform.parent.GetComponent<Animator>();

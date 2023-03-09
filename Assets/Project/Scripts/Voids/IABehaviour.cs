@@ -401,7 +401,6 @@ public class IABehaviour : MonoBehaviour
 
     void VoidAttack()
     {
-
         attackTimer += Time.deltaTime;
         navMeshAgent.speed = 0;
         playerMovement.shadowSpeed = 1;
@@ -503,6 +502,7 @@ public class IABehaviour : MonoBehaviour
             if (other.CompareTag("Player") && dangerIcon.activeSelf)
             {
                 canAttack = true;
+                attackTimer = 0;
             }
 
 
