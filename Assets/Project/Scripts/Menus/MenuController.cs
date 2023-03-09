@@ -27,6 +27,14 @@ public class MenuController : MonoBehaviour
     public GameObject firstCrossVideo;
     public GameObject secondCrossVideo;
     public GameObject thirdCrossVideo;
+    public GameObject firstNumberCross;
+    public GameObject secondNumberCross;
+    public GameObject thirdNumberCross;
+
+    public GameObject firstStudentVideo;
+    public GameObject secondStudentVideo;
+    public GameObject firstNumberStudent;
+    public GameObject secondNumberStudent;
 
     private void Update()
     {
@@ -48,7 +56,6 @@ public class MenuController : MonoBehaviour
     // Button de Play 
     public void StartGame()
     {
-
         FindObjectOfType<AudioManager>().Play("ClickSound");
         menuAnim.SetActive(false);
         cinematic.SetActive(true);
@@ -151,11 +158,15 @@ public class MenuController : MonoBehaviour
         {
             secondCrossVideo.SetActive(false);
             thirdCrossVideo.SetActive(true);
+            thirdNumberCross.SetActive(true);
+            secondNumberCross.SetActive(false);
         }
         else if (firstCrossVideo.activeSelf)
         {
             firstCrossVideo.SetActive(false);
             secondCrossVideo.SetActive(true);
+            secondNumberCross.SetActive(true);
+            firstNumberCross.SetActive(false);
         }
     }
 
@@ -165,11 +176,36 @@ public class MenuController : MonoBehaviour
         {
             secondCrossVideo.SetActive(true);
             thirdCrossVideo.SetActive(false);
+            thirdNumberCross.SetActive(false);
+            secondNumberCross.SetActive(true);
         }
         else if (!firstCrossVideo.activeSelf)
         {
             firstCrossVideo.SetActive(true);
             secondCrossVideo.SetActive(false);
+            firstNumberCross.SetActive(true);
+            secondNumberCross.SetActive(false);
+        }
+    }
+
+    public void NextStudentVideo()
+    {
+        if (firstStudentVideo.activeSelf)
+        {
+            firstStudentVideo.SetActive(false);
+            secondStudentVideo.SetActive(true);
+            firstNumberStudent.SetActive(false);
+            secondNumberStudent.SetActive(true);
+        }
+    }
+    public void PreviousStudentVideo()
+    {
+        if (secondStudentVideo.activeSelf)
+        {
+            firstStudentVideo.SetActive(true);
+            secondStudentVideo.SetActive(false);
+            firstNumberStudent.SetActive(true);
+            secondNumberStudent.SetActive(false);
         }
     }
 }
