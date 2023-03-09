@@ -81,10 +81,7 @@ public class Dialogue : MonoBehaviour
                     DestroyDialogue();
                 }
                 controlPoint1.SetActive(false);
-                controlPoint2.SetActive(true);
-            
-
-           
+                controlPoint2.SetActive(true);     
         }
     }
 

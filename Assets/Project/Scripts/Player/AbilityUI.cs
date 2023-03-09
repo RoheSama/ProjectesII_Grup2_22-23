@@ -72,7 +72,7 @@ public class AbilityUI : MonoBehaviour
 
     private bool stuning = false;
 
-    private float timeToStun = 0.25f;
+    private float timeToStun = 2f;
     private float stunTimer = 0f;
 
     void Start()
@@ -91,6 +91,17 @@ public class AbilityUI : MonoBehaviour
         PowerUp();
 
         Stun();
+
+        if (stuning)
+        {
+            stunTimer += Time.deltaTime;
+            if (stunTimer >= timeToStun)
+            {
+                stunTimer = 0;
+                stuning = false;
+                stunArea.SetActive(stuning);
+            }
+        }
         //RangedAttack();
         //UpdateRageBar();
     }
@@ -168,16 +179,7 @@ public class AbilityUI : MonoBehaviour
             stuning = true;
             stunArea.SetActive(stuning);
 
-            if (stuning)
-            {
-                stunTimer += Time.deltaTime;
-                if(stunTimer >= timeToStun)
-                {
-                    stunTimer = 0;
-                    stuning = false;
-                    stunArea.SetActive(stuning);
-                }
-            }
+           
 
             //Animation
 
