@@ -8,6 +8,7 @@ public class OptionsMenu : MonoBehaviour
     public GameObject audioMenu;
     public GameObject optionsMenu;
     public GameObject mainMenu;
+    public GameObject logo;
 
     public void ScreenMenu()
     {
@@ -28,5 +29,6 @@ public class OptionsMenu : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("ClickSound");
         optionsMenu.SetActive(false);
         mainMenu.SetActive(true);
+        logo.SetActive(true);
     }
 }
