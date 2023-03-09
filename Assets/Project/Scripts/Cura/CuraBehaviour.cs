@@ -292,7 +292,14 @@ public class CuraBehaviour : MonoBehaviour
             {
                 canChase = true;
                 playerIsVisible = true;
+                chaseTimer= 0;
                 dangerIcon.SetActive(true);
+
+                //if(chaseTimer >1)
+                //{
+                //    satanicStar01Animator.SetBool("CanStartSatanicStar02", true);
+               // }
+
                 //followWaypoints = false;
                 //lastSeenPlayerIcon.SetActive(true);
                 //lastSeenPlayerIcon.transform.position = player.transform.position;
@@ -318,6 +325,7 @@ public class CuraBehaviour : MonoBehaviour
             {
                 canChase = true;
                 playerIsVisible = true;
+                chaseTimer = 0;
                 dangerIcon.SetActive(true);
                 //followWaypoints = false;
                 //lastSeenPlayerIcon.SetActive(true);
