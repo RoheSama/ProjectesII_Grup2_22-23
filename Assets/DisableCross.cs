@@ -13,21 +13,28 @@ public class DisableCross : MonoBehaviour
     public float timer;
 
     //Audio 
-    public AudioSourceCross audioSourceCross;
+    public AudioSourceCross[] audioSourceCrosses;
 
     private void Update()
     {
         timer += Time.deltaTime;
         if(timer>= 0.3f )
         {
-            audioSourceCross.flipCrossOff();
+            for(int i = 0;i < audioSourceCrosses.Length;i++)
+            {
+                audioSourceCrosses[i].flipCrossOff();
+            }
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("CrossEnabled") && violet.activeSelf)
         {
-            audioSourceCross.flipCross();
+            for (int i = 0; i < audioSourceCrosses.Length; i++)
+            {
+                audioSourceCrosses[i].flipCross();
+            }
+
             cross = other.gameObject;
             cross.tag = "CrossDisabled";
             crossEnabled = cross.transform.GetChild(0).gameObject;
