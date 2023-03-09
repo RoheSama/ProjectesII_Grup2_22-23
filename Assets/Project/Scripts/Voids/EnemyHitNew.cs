@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
@@ -38,13 +39,13 @@ public class EnemyHitNew : MonoBehaviour
     {
         if (isCura)
         {
-            if (voidsLeft.GetComponent<VoidsLeft>().totalVoids == 0)
+            if (voidsLeft.GetComponent<VoidsLeft>().totalVoids == 1)
             {
                 Instantiate(blood, transform.position, Quaternion.identity);
                 currentHealth -= damage;
                 Debug.Log("Damaged");
 
-                anim.SetTrigger("Hurt");
+               // anim.SetTrigger("Hurt");
                 if (currentHealth <= 0)
                 {
                     Die();
@@ -67,6 +68,14 @@ public class EnemyHitNew : MonoBehaviour
         }
     }
 
+    public void Stun()
+    {
+        if (isCura)
+        {
+
+            Debug.Log("STUNED");
+        }
+    }
     void Die()
     {
         //Debug.Log("Enemy died");
@@ -76,8 +85,11 @@ public class EnemyHitNew : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         agent.speed = 0.0f;
         StartCoroutine(VoidDestroy());
-        voidsLeft.GetComponent<VoidsLeft>().studentKill();
-        iABehaviour.isDead = true;
+        if (!isCura)
+        {
+            voidsLeft.GetComponent<VoidsLeft>().studentKill();
+            iABehaviour.isDead = true;
+        }
         //Destroy(gameObject);
         //rageBar.UpdateRageBar();
         //UpdateRageBar();

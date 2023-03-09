@@ -8,6 +8,8 @@ public class VoidsLeft : MonoBehaviour
     public int totalVoids;
     public TMP_Text voidsCounter;
     public int voidsKilled;
+
+    public GameObject controlPoint;
     
     void Update()
     {

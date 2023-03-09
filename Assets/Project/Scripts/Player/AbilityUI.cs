@@ -4,28 +4,28 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
+using System.Threading;
 
 public class AbilityUI : MonoBehaviour
 {
-    // Ability1
+    // Abilities images
     public Image abilityImage1;
-    public Image abilityImageSM;
+    public Image abilityImageSM;    public Image abilityImageStun;
     //public Image abilityImageRA;
 
     public float cooldown1;
     public float cooldownPowerUp;
-    public float cooldownRanged;
+    public float cooldownStun;
     public float currentCD;
 
     bool isCooldown1 = false;
     bool isCooldownRA = false;
+    bool isCooldownStun = false;
 
+    //KeyCodes
     public KeyCode ability1;
-    public KeyCode powerUpKey;
-    //public KeyCode rangedKey;
-
-    //public Transform shotPosition;
-    //public GameObject projectile;
+    public KeyCode powerUpKey;
+    public KeyCode stunKey;
 
     //Rohe
     public Animator anim;
@@ -67,23 +67,41 @@ public class AbilityUI : MonoBehaviour
     //Arnau
     //public GameObject shadowIcon;
 
+    //Stun
+    private GameObject stunArea = default;
+
+    private bool stuning = false;
+
+    private float timeToStun = 2.5f;
+    private float stunTimer = 0f;
+
     void Start()
     {
         abilityImage1.fillAmount = 1;
-        abilityImageSM.fillAmount = 1;
+        abilityImageSM.fillAmount = 1;        abilityImageStun.fillAmount = 1;
         normalForm.SetActive(true);
         shadowForm.SetActive(false);
 
-        //abilityImageRA.fillAmount = 1;
-        //agent = GetComponent<NavMeshAgent>();
-        //agent.updateRotation = false;
-        //agent.updateUpAxis = false;
+        stunArea = transform.GetChild(4).gameObject;
     }
 
     void Update()
     {
         Ability1();
         PowerUp();
+
+        Stun();
+
+        if (stuning)
+        {
+            stunTimer += Time.deltaTime;
+            if (stunTimer >= timeToStun)
+            {
+                stunTimer = 0;
+                stuning = false;
+                stunArea.SetActive(stuning);
+            }
+        }
         //RangedAttack();
         //UpdateRageBar();
     }
@@ -98,30 +116,11 @@ public class AbilityUI : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("attackShadow");
                 isCooldown1 = true;
                 abilityImage1.fillAmount = 1;
-                AreaEnabled();
-
-                //Efecto de la habilidad
-                //Debug.Log("Ataque ejecutado");
-                //targetController.targetedElement.SetActive(false);
+                AreaEnabled(); 
                 //Animation
+                
                 shadowAnim.SetTrigger("Attacking");
-                StartCoroutine(AttackAreaRoutine());
-                //Detect enemies
-                //Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);                //Collider2D[] hitCura = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, curaLayers);
-
-                //foreach (Collider2D cura in hitCura)
-                //{
-                //    Debug.Log("Cura HIT");
-                //    cura.GetComponent<CuraHit>().TakeDamage(attackDamage);
-
-                //}
-
-                //foreach (Collider2D enemy in hitEnemies)
-                //{
-                //    Debug.Log("HIT");
-                //    enemy.GetComponent<EnemyHitNew>().TakeDamage(attackDamage);
-
-                //}
+                StartCoroutine(AttackAreaRoutine());
 
             }
         }
@@ -129,15 +128,9 @@ public class AbilityUI : MonoBehaviour
         if (isCooldown1)
 
         {
-
             abilityImage1.fillAmount -= 1 / cooldown1 * Time.deltaTime;
 
-
-
-
-
             if (abilityImage1.fillAmount <= 0)
-
             {
 
                 abilityImage1.fillAmount = 1;
@@ -150,7 +143,7 @@ public class AbilityUI : MonoBehaviour
     }    public void AreaEnabled()
     {
         attackAreaEnabled = true;
-    }    void AreaDamage()
+    }    void AreaDamage()
     {
         Debug.Log("DAMAGE");
         Vector2 origin = new Vector2(0f, 0f);
@@ -174,8 +167,56 @@ public class AbilityUI : MonoBehaviour
         ScreenShake.Instance.ShakeCamera(0f, 0.1f);
         attackAreaEnabled = false;
     }
-    void PowerUp()
-    {
+    void Stun()
+    {
+        if (Input.GetKeyDown(stunKey) == true && isCooldownStun == false)
+        {
+            FindObjectOfType<AudioManager>().Play("attackShadow");
+            isCooldownStun = true;
+
+            abilityImageStun.fillAmount = 1;
+
+            //Efecto de la habilidad
+            stuning = true;
+            stunArea.SetActive(stuning);
+
+            //Animation
+            if (powerUpActivated)
+            {
+                shadowAnim.SetTrigger("Stuning");
+            }
+            else
+            {
+                anim.SetTrigger("Stuning");
+            }
+
+
+            StartCoroutine(AttackAreaRoutine());
+
+
+        }
+
+        if (isCooldownStun)
+
+        {
+            abilityImageStun.fillAmount -= 1 / cooldownStun * Time.deltaTime;
+
+            if (abilityImageStun.fillAmount <= 0)
+            {
+
+                abilityImageStun.fillAmount = 1;
+
+                isCooldownStun = false;
+
+            }
+
+        }
+
+    }
+
+
+    void PowerUp()
+    {
         if (Input.GetKeyDown(powerUpKey) && powerUpAvailable == true)
         {            if (Input.GetKeyDown(powerUpKey))
             {
@@ -187,9 +228,6 @@ public class AbilityUI : MonoBehaviour
             powerUpActivated = true;
             currentCD = 0;
             abilityImageSM.fillAmount = 1;            StartCoroutine(ShadowForm());
-            //StartCoroutine(PowerUpCooldown());
-            //GetComponent<SpriteRenderer>().color = Color.yellow;
-            //agent.speed = agent.speed + powerUpSpeed;
             StartCoroutine(NormalForm());            //Arnau            //shadowIcon.SetActive(true);
         }
 
@@ -209,12 +247,8 @@ public class AbilityUI : MonoBehaviour
                 currentCD += Time.deltaTime;
                 currentCD = Mathf.Clamp(currentCD, 0.0f, powerUpDuration);
             }
-        }
-
+        }
         shadowCooldown.fillAmount = currentCD / powerUpDuration;
-
-
-
     }
 
     void PowerOn()
@@ -264,58 +298,6 @@ public class AbilityUI : MonoBehaviour
         yield return new WaitForSeconds(0.8f);
         PowerOff();
     }
-
-
-
-    //void RangedAttack()
-
-    //{
-
-    //    if (powerUpActivated)
-
-    //    {
-
-    //        if (Input.GetKeyUp(rangedKey) && isCooldownRA == false)
-
-    //        {
-
-    //            isCooldownRA = true;
-
-    //            abilityImageRA.fillAmount = 1;
-
-
-
-    //            Instantiate(projectile, shotPosition.position, shotPosition.rotation);
-
-    //        }
-
-    //    }
-
-    //    if (isCooldownRA)
-
-    //    {
-
-    //        abilityImageRA.fillAmount -= 1 / cooldownRanged * Time.deltaTime;
-
-
-
-
-
-    //        if (abilityImageRA.fillAmount <= 0)
-
-    //        {
-
-    //            abilityImageRA.fillAmount = 0;
-
-    //            isCooldownRA = false;
-
-    //        }
-
-    //    }
-
-    //}
-
-
 
     private void OnDrawGizmosSelected()
     {

@@ -76,12 +76,12 @@ public class Dialogue : MonoBehaviour
 
         if (ended)
         {
-            if (!lastDialogue)
-            {
-                DestroyDialogue();
-            }
-            controlPoint1.SetActive(false);
-            controlPoint2.SetActive(true);
+                if (!lastDialogue)
+                {
+                    DestroyDialogue();
+                }
+                controlPoint1.SetActive(false);
+                controlPoint2.SetActive(true);     
         }
     }
 
