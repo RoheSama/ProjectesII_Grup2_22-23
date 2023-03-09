@@ -72,7 +72,7 @@ public class AbilityUI : MonoBehaviour
 
     private bool stuning = false;
 
-    private float timeToStun = 2f;
+    private float timeToStun = 2.5f;
     private float stunTimer = 0f;
 
     void Start()
@@ -118,6 +118,7 @@ public class AbilityUI : MonoBehaviour
                 abilityImage1.fillAmount = 1;
                 AreaEnabled(); 
                 //Animation
+                
                 shadowAnim.SetTrigger("Attacking");
                 StartCoroutine(AttackAreaRoutine());
 
@@ -179,11 +180,15 @@ public class AbilityUI : MonoBehaviour
             stuning = true;
             stunArea.SetActive(stuning);
 
-           
-
             //Animation
-
-            anim.SetTrigger("Stuning");
+            if (powerUpActivated)
+            {
+                shadowAnim.SetTrigger("Stuning");
+            }
+            else
+            {
+                anim.SetTrigger("Stuning");
+            }
 
 
             StartCoroutine(AttackAreaRoutine());
