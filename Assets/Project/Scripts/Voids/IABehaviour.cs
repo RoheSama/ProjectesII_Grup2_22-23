@@ -423,7 +423,7 @@ public class IABehaviour : MonoBehaviour
         {
             dangerIcon.SetActive(false);
             navMeshAgent.speed = 2;
-            playerMovement.moveSpeed = 8;
+            playerMovement.shadowSpeed = 8;
         }
     }
 
