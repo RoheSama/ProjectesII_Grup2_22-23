@@ -39,7 +39,7 @@ public class EnemyHitNew : MonoBehaviour
     {
         if (isCura)
         {
-            if (voidsLeft.GetComponent<VoidsLeft>().totalVoids == 1)
+            if (voidsLeft.GetComponent<VoidsLeft>().totalVoids == 0)
             {
                 Instantiate(blood, transform.position, Quaternion.identity);
                 currentHealth -= damage;

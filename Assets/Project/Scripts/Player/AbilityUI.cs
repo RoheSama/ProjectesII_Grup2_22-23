@@ -191,9 +191,6 @@ public class AbilityUI : MonoBehaviour
             }
 
 
-            StartCoroutine(AttackAreaRoutine());
-
-
         }
 
         if (isCooldownStun)
