@@ -101,17 +101,17 @@ public class IABehaviour : MonoBehaviour
 
     void Update()
     {
-        //DEBUG AREA
-        //
-        //
-        //
+            //DEBUG AREA
+            //
+            //
+            //
 
-        //
-        //
-        //
+            //
+            //
+            //
 
-        //Audio
-        if (canActiveAlertSound)
+            //Audio
+            if (canActiveAlertSound)
         {
             canAlertSound = true;
             canActiveAlertSound = false;
@@ -252,6 +252,9 @@ public class IABehaviour : MonoBehaviour
             }
         }
     }
+
+
+
 
     void FollowWaypoints()
     {

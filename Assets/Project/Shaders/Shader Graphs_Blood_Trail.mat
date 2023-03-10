@@ -51,12 +51,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DisolverScale: 10
-    - _DisolverSpeed: 2
+    - _DisolverScale: 5
+    - _DisolverSpeed: 1
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
     - _Color01: {r: 1.6002861, g: 0.30219352, b: 2.8098712, a: 1}
     - _Color02: {r: 0.56078434, g: 0, b: 1, a: 0}
-    - _MainTexSpeed: {r: 0.3, g: 0, b: 0, a: 0}
+    - _MainTexSpeed: {r: 0.6, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
