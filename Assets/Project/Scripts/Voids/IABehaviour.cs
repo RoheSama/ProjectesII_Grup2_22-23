@@ -126,11 +126,11 @@ public class IABehaviour : MonoBehaviour
             attackTimer = 100;
         }
 
-        if (shadow.activeSelf)
-        {
-            trailRenderer.enabled = true;
-        }
-        else trailRenderer.enabled = false;
+        //if (shadow.activeSelf)
+        //{
+        //    trailRenderer.enabled = true;
+        //}
+        //else trailRenderer.enabled = false;
 
         if (satanicStar02Animator.GetBool("CanStartSatanicStar02") == true)
         {
