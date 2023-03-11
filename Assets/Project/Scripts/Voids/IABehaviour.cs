@@ -45,6 +45,8 @@ public class IABehaviour : MonoBehaviour
     public Animator satanicStar01Animator;
     public Animator satanicStar02Animator;
 
+    public StarsManager starsManager;
+
     // Detector
     public CircleCollider2D detector;
     float detectorIncrement = 0;
@@ -132,10 +134,10 @@ public class IABehaviour : MonoBehaviour
         }
         else trailRenderer.enabled = false;
 
-        if (satanicStar02Animator.GetBool("CanStartSatanicStar02") == true)
-        {
-            satanicStar01Animator.SetBool("CanStartSatanicStar01", false);
-        }
+        //  if (satanicStar02Animator.GetBool("CanStartSatanicStar02") == true)
+       // {
+       //     satanicStar01Animator.SetBool("CanStartSatanicStar01", false);
+        //}
 
         //Level 0 to 1
         if (satanicStar01Animator.GetBool("CanStartSatanicStar01") == true)
@@ -178,7 +180,8 @@ public class IABehaviour : MonoBehaviour
             {
                 if(satanicStar02Animator.GetBool("CanStartSatanicStar02") == false)
                 {
-                    satanicStar01Animator.SetBool("CanStartSatanicStar01", true);
+                    starsManager.canStart1Star = true;
+                    //satanicStar01Animator.SetBool("CanStartSatanicStar01", true);
                     standInTable= false;
                     RinconDeLlorar();
                 }
