@@ -294,9 +294,9 @@ public class CuraBehaviour : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         //Disabled Cross Effect
-        if(other.CompareTag("CrossDisabledRange"))
+        if(other.CompareTag("CrossDisabledRange") &&canChase)
         {
-            navMeshAgent.speed -= 6;
+            navMeshAgent.speed -=4;
         }
 
         if (level0)
