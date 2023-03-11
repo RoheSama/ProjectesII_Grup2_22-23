@@ -15,6 +15,7 @@ public class EnemyHitNew : MonoBehaviour
     public Animator anim;
 
     public bool isCura;
+    public bool isTuto;
 
     //[SerializeField]
     //private RageBar rageBar;
@@ -102,7 +103,7 @@ public class EnemyHitNew : MonoBehaviour
         died = true;
         yield return new WaitForSeconds(1.0f);
         Destroy(gameObject);
-        if (isCura)
+        if (isCura && !isTuto)
         {
             SceneManager.LoadScene("MainMenu");
         }

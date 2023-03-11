@@ -13,7 +13,7 @@ public class SceneTransition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(dialogue.GetComponent<Dialogue>().chargeScene)
+        if(dialogue.GetComponent<TutorialTransition>().chargeScene)
         {
             image.SetActive(true);
             StartCoroutine(LoadScene());
