@@ -24,6 +24,7 @@ public class animatonScript : MonoBehaviour
 
     public float timeCounter = 0;
 
+
     //Range Vision
     public GameObject visionRangeDown;
     public GameObject visionRangeUp;
@@ -33,7 +34,7 @@ public class animatonScript : MonoBehaviour
 
     void Start()    
     {
-        
+
     }
 
     void Update()
