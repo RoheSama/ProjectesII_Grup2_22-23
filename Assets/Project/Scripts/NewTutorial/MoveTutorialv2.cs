@@ -24,7 +24,7 @@ public class MoveTutorialv2 : MonoBehaviour
         activated = tutoIA.GetComponent<EnemyHitNew>().died;
 
         if (navMeshAgent.transform.position.x < wayPoint1.transform.position.x + 0.5 && navMeshAgent.transform.position.x > wayPoint1.transform.position.x - 0.5
-            && navMeshAgent.transform.position.y < wayPoint1.transform.position.y + 0.5 && navMeshAgent.transform.position.y > wayPoint1.transform.position.y - 0.5)
+            && navMeshAgent.transform.position.y < wayPoint1.transform.position.y + 0.5 && navMeshAgent.transform.position.y > wayPoint1.transform.position.y - 0.5 && !activated)
         {
             Debug.Log("desactivacion");
             navMeshAgent.enabled = false;
@@ -48,9 +48,6 @@ public class MoveTutorialv2 : MonoBehaviour
             Debug.Log("activacion");
             navMeshAgent.enabled = true;
             navMeshAgent.destination = wayPoint2.transform.position;
-            activated = true;
-        }
-        
-        
+        }     
     }
 }
