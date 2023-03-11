@@ -286,6 +286,12 @@ public class CuraBehaviour : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        //Disabled Cross Effect
+        if(other.CompareTag("CrossDisabledRange"))
+        {
+            navMeshAgent.speed -= 6;
+        }
+
         if (level0)
         {
             if (other.CompareTag("Player") && shadowIcon.activeSelf)
