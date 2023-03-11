@@ -14,15 +14,12 @@ public class MoveTutorial : MonoBehaviour
 
     private void Update()
     {
-        if (navMeshAgent.transform.position.x < wayPoint.transform.position.x + 0.5 && navMeshAgent.transform.position.x > wayPoint.transform.position.x - 0.5
-            && navMeshAgent.transform.position.y < wayPoint.transform.position.y + 0.5 && navMeshAgent.transform.position.y > wayPoint.transform.position.y - 0.5)
+        if (navMeshAgent.transform.position.x < wayPoint.transform.position.x + 0.1 && navMeshAgent.transform.position.x > wayPoint.transform.position.x - 0.1
+            && navMeshAgent.transform.position.y < wayPoint.transform.position.y + 0.1 && navMeshAgent.transform.position.y > wayPoint.transform.position.y - 0.1)
         {
             Debug.Log("desactivacion");
             navMeshAgent.enabled = false;
         }
-
-
-        activated = false;
 
     }
     private void OnTriggerEnter2D(Collider2D collision)
