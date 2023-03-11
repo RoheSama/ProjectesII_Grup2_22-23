@@ -64,6 +64,8 @@ public class CuraBehaviour : MonoBehaviour
     public GameObject crossEnabled;
     public GameObject crossDisabled;
 
+    public StarsManager starsManager;
+
 
     void Start()
     {
@@ -127,7 +129,12 @@ public class CuraBehaviour : MonoBehaviour
         //Chase 
         if (level0 || level1 || level2)
         {
-            if(canChase)
+            if(level0 && canChase)
+            {
+                starsManager.canStart1Star = true;
+            }
+
+            else if(canChase)
             {
                 ChasePlayer();
             }
