@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EnemyHitNew : MonoBehaviour
@@ -100,6 +101,10 @@ public class EnemyHitNew : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         Destroy(gameObject);
+        if (isCura)
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 
 }

@@ -26,6 +26,7 @@ TagManager:
   - CrossEnabled
   - CrossEnabledRange
   - Locker
+  - TutorialIA
   layers:
   - Default
   - TransparentFX
