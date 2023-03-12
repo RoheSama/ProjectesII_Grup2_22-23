@@ -189,10 +189,10 @@ public class IABehaviour : MonoBehaviour
                 HideInHidePlace();
             }
 
-            if (canAvoidStudents && dangerIcon.activeInHierarchy == false)
-            {
-                AvoidStudents();
-            }
+            //if (canAvoidStudents && dangerIcon.activeInHierarchy == false)
+            //{
+            //    AvoidStudents();
+            //}
 
             if (followWaypointsLevel0 && dangerIcon.activeInHierarchy == false)
             {
@@ -233,10 +233,10 @@ public class IABehaviour : MonoBehaviour
                 VoidAttack();
             }
 
-            if (canAvoidStudents && dangerIcon.activeInHierarchy == false)
-            {
-                AvoidStudents();
-            }
+            //if (canAvoidStudents && dangerIcon.activeInHierarchy == false)
+            //{
+            //    AvoidStudents();
+            //}
 
             if (followWaypointsLevel0 || dangerIcon.activeInHierarchy == false)
             {
