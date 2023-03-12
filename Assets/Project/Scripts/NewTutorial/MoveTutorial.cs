@@ -17,7 +17,6 @@ public class MoveTutorial : MonoBehaviour
         if (navMeshAgent.transform.position.x < wayPoint.transform.position.x + 0.1 && navMeshAgent.transform.position.x > wayPoint.transform.position.x - 0.1
             && navMeshAgent.transform.position.y < wayPoint.transform.position.y + 0.1 && navMeshAgent.transform.position.y > wayPoint.transform.position.y - 0.1)
         {
-            Debug.Log("desactivacion");
             navMeshAgent.enabled = false;
         }
 

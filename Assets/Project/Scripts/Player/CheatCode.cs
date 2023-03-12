@@ -10,7 +10,7 @@ public class CheatCode : MonoBehaviour
     public KeyCode voidsKey;
 
     public GameObject voidsNumber;
-    // Update is called once per frame
+
     void Update()
     {
         if (Input.GetKeyDown(inmortalKey))

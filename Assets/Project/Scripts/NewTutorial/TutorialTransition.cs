@@ -12,13 +12,12 @@ public class TutorialTransition : MonoBehaviour
     public NavMeshAgent navMeshAgent;
 
     public bool chargeScene = false;
-    // Update is called once per frame
+
     void Update()
     {
         if (navMeshAgent.transform.position.x < wayPoint1.transform.position.x + 0.5 && navMeshAgent.transform.position.x > wayPoint1.transform.position.x - 0.5
             && navMeshAgent.transform.position.y < wayPoint1.transform.position.y + 0.5 && navMeshAgent.transform.position.y > wayPoint1.transform.position.y - 0.5)
         {
-            Debug.Log("desactivacion");
             navMeshAgent.enabled = false;
         }
     }

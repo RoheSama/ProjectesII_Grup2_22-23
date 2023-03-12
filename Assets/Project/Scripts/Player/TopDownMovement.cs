@@ -60,7 +60,6 @@ public class TopDownMovement : MonoBehaviour
     {
         if (input.magnitude > 0.1f || input.magnitude < -0.1f)
         {
-           // Debug.Log("Moved");
             moving = true;
             moved = false;
         }
@@ -86,7 +85,6 @@ public class TopDownMovement : MonoBehaviour
     {
         if (other.CompareTag("CrossEnabledRange"))
         {
-           // Debug.Log("HE SALIDO DE LA CRUZ");
             shadowSpeed = 8;
         }
     }

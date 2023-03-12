@@ -205,9 +205,7 @@ public class Dialogue : MonoBehaviour
         {
             isPlayerInRange = true;
             interactAlert.SetActive(true);
-            Debug.Log("dialogue");
         }
-
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -216,7 +214,6 @@ public class Dialogue : MonoBehaviour
         {
             isPlayerInRange = false;
             interactAlert.SetActive(false);
-            Debug.Log("nondialogue");
         }
     }
 }

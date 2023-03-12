@@ -40,7 +40,6 @@ public class MenuController : MonoBehaviour
     public GameObject secondNumberStudent;
     public GameObject askForTutorialButton;
 
-    // SceneManager.LoadScene("TutorialScene");
     private void Update()
     {
         if (Input.GetKeyDown("f"))
@@ -195,8 +194,6 @@ public class MenuController : MonoBehaviour
         gloomGuide.SetActive(false);
         controlsMenu.SetActive(true);
     }
-
-
 
     public void NextCrossVideo()
     {

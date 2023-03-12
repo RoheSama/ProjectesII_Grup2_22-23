@@ -10,8 +10,7 @@ public class AbilityUI : MonoBehaviour
 {
     // Abilities images
     public Image abilityImage1;
-    public Image abilityImageSM;    public Image abilityImageStun;
-    //public Image abilityImageRA;
+    public Image abilityImageSM;    public Image abilityImageStun;
 
     public float cooldown1;
     public float cooldownPowerUp;
@@ -66,8 +65,6 @@ public class AbilityUI : MonoBehaviour
     //Rendering
     public RenderPipelineAsset powerUpAsset;
     public RenderPipelineAsset normalAsset;
-    //Arnau
-    //public GameObject shadowIcon;
 
     //Stun
     private GameObject stunArea = default;
@@ -106,8 +103,6 @@ public class AbilityUI : MonoBehaviour
                 stunArea.SetActive(stuning);
             }
         }
-        //RangedAttack();
-        //UpdateRageBar();
     }
 
     void Ability1()
@@ -149,14 +144,12 @@ public class AbilityUI : MonoBehaviour
         attackAreaEnabled = true;
     }    void AreaDamage()
     {
-        Debug.Log("DAMAGE");
         Vector2 origin = new Vector2(0f, 0f);
         Collider2D[] colliders = Physics2D.OverlapCircleAll(attackPoint.position,3f, AoE);
         foreach(Collider2D enemy in colliders)
         {
             if (enemy.GetComponent<EnemyHitNew>())
             {
-                Debug.Log("DAMAGED");
                 enemy.GetComponent<EnemyHitNew>().TakeDamage(attackDamage);
             }
         }
@@ -229,13 +222,11 @@ public class AbilityUI : MonoBehaviour
             {
                 PowerOff();
             }
-
-                        //shadowModeEffect.SetActive(true);
             powerUpAvailable = false;
             powerUpActivated = true;
             currentCD = 0;
             abilityImageSM.fillAmount = 1;            StartCoroutine(ShadowForm());
-            StartCoroutine(NormalForm());            //Arnau            //shadowIcon.SetActive(true);
+            StartCoroutine(NormalForm());
         }
 
         if (!powerUpAvailable)
@@ -272,10 +263,6 @@ public class AbilityUI : MonoBehaviour
     }
     void PowerOff()
     {
-         //GetComponent<SpriteRenderer>().color = Color.white;
-
-        //agent.speed = agent.speed - powerUpSpeed;
-
         normalForm.SetActive(true);
         shadowForm.SetActive(false);
 

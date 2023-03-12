@@ -20,13 +20,13 @@ public class IABehaviour : MonoBehaviour
 
     //Waypoints for FollowWaypoints
     public GameObject[] waypoints;
-    int waypointsIndex = 0;
+    public int waypointsIndex = 0;
 
     //Timer
     public int[] timeWaypoints;
     int timeWaypointsIndex = 0;
 
-    float waypointsTimer = 0;
+    public float waypointsTimer = 0;
     bool waypointsTimerReached = false;
 
     //Icono Danger
@@ -105,15 +105,6 @@ public class IABehaviour : MonoBehaviour
 
     void Update()
     {
-            //DEBUG AREA
-            //
-            //
-            //
-
-            //
-            //
-            //
-
             //Audio
             if (canActiveAlertSound)
             {
@@ -141,11 +132,6 @@ public class IABehaviour : MonoBehaviour
             trailRenderer.enabled = true;
         }
         else trailRenderer.enabled = false;
-
-        //  if (satanicStar02Animator.GetBool("CanStartSatanicStar02") == true)
-       // {
-       //     satanicStar01Animator.SetBool("CanStartSatanicStar01", false);
-        //}
 
         //Level 0 to 1
         if (satanicStar01Animator.GetBool("CanStartSatanicStar01") == true)
@@ -189,7 +175,6 @@ public class IABehaviour : MonoBehaviour
                 if(satanicStar02Animator.GetBool("CanStartSatanicStar02") == false)
                 {
                     starsManager.canStart1Star = true;
-                    //satanicStar01Animator.SetBool("CanStartSatanicStar01", true);
                     standInTable= false;
                     RinconDeLlorar();
                 }
@@ -204,10 +189,10 @@ public class IABehaviour : MonoBehaviour
                 HideInHidePlace();
             }
 
-            if (canAvoidStudents && dangerIcon.activeInHierarchy == false)
-            {
-                AvoidStudents();
-            }
+            //if (canAvoidStudents && dangerIcon.activeInHierarchy == false)
+            //{
+            //    AvoidStudents();
+            //}
 
             if (followWaypointsLevel0 && dangerIcon.activeInHierarchy == false)
             {
@@ -248,10 +233,10 @@ public class IABehaviour : MonoBehaviour
                 VoidAttack();
             }
 
-            if (canAvoidStudents && dangerIcon.activeInHierarchy == false)
-            {
-                AvoidStudents();
-            }
+            //if (canAvoidStudents && dangerIcon.activeInHierarchy == false)
+            //{
+            //    AvoidStudents();
+            //}
 
             if (followWaypointsLevel0 || dangerIcon.activeInHierarchy == false)
             {
@@ -281,7 +266,9 @@ public class IABehaviour : MonoBehaviour
         }
 
         // Si arribes al waypoint
-        else if (transform.position == navMeshAgent.destination)
+        //else if (transform.position == navMeshAgent.destination)
+        else if(transform.position.x < navMeshAgent.destination.x + 2 && transform.position.x > navMeshAgent.destination.x - 2
+               && transform.position.y < navMeshAgent.destination.y + 2 && transform.position.y > navMeshAgent.destination.y - 2)
         {
             if (!waypointsTimerReached)
             {
@@ -311,7 +298,6 @@ public class IABehaviour : MonoBehaviour
         rinconDeLlorarTimer += Time.deltaTime;
         if (myRinconDeLlorar == null)
         {
-            //detector.transform.localScale = new Vector3(detectorIncrement, detectorIncrement, detectorIncrement);
             detector.radius = (detectorIncrement);
             detectorIncrement++;
         }
@@ -356,7 +342,6 @@ public class IABehaviour : MonoBehaviour
 
     void AvoidStudents()
     {
-        // waypointsIndex++;
         avoidStudentsTemp += Time.deltaTime;
         if (level1)
         {
@@ -418,8 +403,6 @@ public class IABehaviour : MonoBehaviour
         attackTimer += Time.deltaTime;
         navMeshAgent.speed = 0;
         playerMovement.shadowSpeed = 1;
-        UnityEngine.Debug.Log("PRAY");
-        //audioSourceVoids.prayingVoidOn();
 
         animator.SetBool("CanCry", false);
         animator.SetBool("IdleUp", false);

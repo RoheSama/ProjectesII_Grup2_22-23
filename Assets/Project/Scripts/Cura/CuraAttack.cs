@@ -43,20 +43,10 @@ public class CuraAttack : MonoBehaviour
     }
     void AreaDamage()
     {
-        //audioSourceCura.AttackCuraOn();
         FindObjectOfType<AudioManager>().Play("attackPriest");
-        Debug.Log("DAMAGE PJ");
         Vector2 origin = new Vector2(0f, 0f);
         Collider2D[] colliders = Physics2D.OverlapCircleAll(attackPoint.position, 1f, playerLayer);
         player.GetComponent<PlayerHealth>().TakeDamage(curaDamage);
-        //foreach (Collider2D player in colliders)
-        //{
-        //    if (player.GetComponent<PlayerHealth>())
-        //    {
-        //        Debug.Log("DAMAGED PJ");
-        //        player.GetComponent<PlayerHealth>().TakeDamage(curaDamage);
-        //    }
-        //}
     }
     IEnumerator AttackAreaRoutine()
     {

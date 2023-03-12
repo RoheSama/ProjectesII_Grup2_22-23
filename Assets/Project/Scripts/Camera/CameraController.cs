@@ -13,7 +13,6 @@ public class CameraController : MonoBehaviour
     public bool start = false;
     public AnimationCurve curve;
 
-    // Update is called once per frame
     void Update()
     {
         if (FindObjectOfType<AbilityUI>().powerUpActivated == false)
