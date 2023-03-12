@@ -50,8 +50,4 @@ public class ScreenMenu : MonoBehaviour
             Screen.SetResolution(1920, 1080, true);
         }
     }
-
-
-
-
 }

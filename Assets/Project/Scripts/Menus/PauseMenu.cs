@@ -58,14 +58,12 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
-        Debug.Log("Menu");
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 
     public void EnterVolume()
     {
-        Debug.Log("Volume");
         VolumeButton.SetActive(false);
         ResumeButton.SetActive(false);
         VolumeSliders.SetActive(true);
@@ -76,7 +74,6 @@ public class PauseMenu : MonoBehaviour
 
     public void BackButton()
     {
-        Debug.Log("Volume");
         VolumeButton.SetActive(true);
         ResumeButton.SetActive(true);
         VolumeSliders.SetActive(false);
@@ -87,7 +84,6 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        Debug.Log("Quitting Game...");
         Application.Quit();
     }
 }

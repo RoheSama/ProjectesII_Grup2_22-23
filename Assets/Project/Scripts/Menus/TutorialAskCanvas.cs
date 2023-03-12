@@ -8,7 +8,6 @@ public class TutorialAskCanvas : MonoBehaviour
 {
     public GameObject YesButton;
     public GameObject NoButton;
-    // Update is called once per frame
     
     public void YesOption()
     {
