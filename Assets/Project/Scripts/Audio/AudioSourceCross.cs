@@ -9,22 +9,28 @@ public class AudioSourceCross : MonoBehaviour
     public AudioClip audioClipAlerting;
 
     
+    //Flip cross sound
     public void flipCross()
     {
         audioSource.clip = audioClipFlip;
         audioSource.Play();
     }
+
+    //Active cross sound
     public void areaCross()
     {
         audioSource.clip = audioClipAlerting;
         audioSource.Play();
     }
 
+    //Stop cross sound
     public void areaCrossOff()
     {
         audioSource.clip = audioClipAlerting;
         audioSource.Stop();
     }
+
+    //Stop flip cross sound
     public void flipCrossOff()
     {
         audioSource.clip = audioClipFlip;

@@ -1,5 +1,4 @@
 using UnityEngine.Audio;
-
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
@@ -26,23 +25,18 @@ public class AudioManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "MainMenu")
         {
-            Debug.Log("Hola");
             Play("MainMenuTheme");
         }
-        else if (SceneManager.GetActiveScene().name == "BigMap")
-        {
-            Play("School");
-        }
-
     }
 
+    //Play a sound
     public void Play (string name)
     { 
         Sound s = Array.Find(sounds, sound => sound.name == name);
         s.source.Play();
     }
 
-
+    //Sotp the sound
     public void Stop (string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);

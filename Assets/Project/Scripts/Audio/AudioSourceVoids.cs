@@ -18,13 +18,12 @@ public class AudioSourceVoids : MonoBehaviour
     public float lastY;
 
     public float timer;
-    // Start is called before the first frame update
+
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         x = gameObjectVoid.transform.position.x;
