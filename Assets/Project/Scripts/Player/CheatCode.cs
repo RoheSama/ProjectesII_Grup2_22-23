@@ -7,6 +7,9 @@ public class CheatCode : MonoBehaviour
     public GameObject playerHealth;
 
     public KeyCode inmortalKey;
+    public KeyCode voidsKey;
+
+    public GameObject voidsNumber;
     // Update is called once per frame
     void Update()
     {
@@ -14,6 +17,11 @@ public class CheatCode : MonoBehaviour
         {
             playerHealth.GetComponent<PlayerHealth>().maxHealth = 10000;
             playerHealth.GetComponent<PlayerHealth>().health = playerHealth.GetComponent<PlayerHealth>().maxHealth;
+        }
+
+        if (Input.GetKeyDown(voidsKey))
+        {
+            voidsNumber.GetComponent<VoidsLeft>().totalVoids = 0;
         }
     }
 }

@@ -126,7 +126,7 @@ public class IABehaviour : MonoBehaviour
             //Hacer que el void salga si ha entrado en un escondite mientras moría (BUGS)
             if(canIncreasePlayerHealth)
             {
-                playerHealth.health += 0.1f;
+                playerHealth.health += 0.05f;
                 canIncreasePlayerHealth = false;
             }
 
