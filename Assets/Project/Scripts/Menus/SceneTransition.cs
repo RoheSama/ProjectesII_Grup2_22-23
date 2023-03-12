@@ -15,6 +15,7 @@ public class SceneTransition : MonoBehaviour
     {
         if(dialogue.GetComponent<TutorialTransition>().chargeScene)
         {
+            Debug.Log("CARGaA");
             image.SetActive(true);
             StartCoroutine(LoadScene());
             
@@ -23,6 +24,7 @@ public class SceneTransition : MonoBehaviour
 
     IEnumerator LoadScene()
     {
+        
         anim.SetTrigger("start");
         yield return new WaitForSeconds(1.3f);
         SceneManager.LoadScene("TopDownMap");
