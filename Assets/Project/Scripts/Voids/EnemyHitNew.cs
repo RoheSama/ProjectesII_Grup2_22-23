@@ -81,13 +81,14 @@ public class EnemyHitNew : MonoBehaviour
     void Die()
     {
         //Debug.Log("Enemy died");
-        FindObjectOfType<AudioManager>().Play("DeathVoid");
+        FindObjectOfType<AudioManager>().Play("CuraDeathSound");
         anim.SetBool("IsDead", true);
         GetComponent<Collider2D>().enabled = false;
         agent.speed = 0.0f;
         StartCoroutine(VoidDestroy());
         if (!isCura)
         {
+            FindObjectOfType<AudioManager>().Play("DeathVoid");
             voidsLeft.GetComponent<VoidsLeft>().studentKill();
             iABehaviour.isDead = true;
         }
