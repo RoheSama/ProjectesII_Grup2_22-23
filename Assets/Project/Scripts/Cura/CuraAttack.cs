@@ -90,8 +90,17 @@ public class CuraAttack : MonoBehaviour
             if (curaCanAttack)
             {
                 StartCoroutine(AttackAreaRoutine());
+                StartCoroutine(CoolDownAttack());
             }
            
         }
     }
+
+    IEnumerator CoolDownAttack()
+    {
+        yield return new WaitForSeconds(1.0f);
+
+    }
+
+
 }
