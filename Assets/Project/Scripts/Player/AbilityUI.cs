@@ -175,7 +175,7 @@ public class AbilityUI : MonoBehaviour
     {
         if (Input.GetKeyDown(stunKey) == true && isCooldownStun == false)
         {
-            FindObjectOfType<AudioManager>().Play("attackShadow");
+            FindObjectOfType<AudioManager>().Play("Stun");
             isCooldownStun = true;
 
             abilityImageStun.fillAmount = 1;
