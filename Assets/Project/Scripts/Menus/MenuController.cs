@@ -38,8 +38,7 @@ public class MenuController : MonoBehaviour
     public GameObject secondStudentVideo;
     public GameObject firstNumberStudent;
     public GameObject secondNumberStudent;
-
-    
+    public GameObject askForTutorialButton;
 
     private void Update()
     {
@@ -61,6 +60,12 @@ public class MenuController : MonoBehaviour
     // Button de Play 
     public void StartGame()
     {
+        askForTutorialButton.SetActive(true);
+        mainMenuCanvas.SetActive(false);
+    }
+
+    public void YesButton()
+    {
         FindObjectOfType<AudioManager>().Play("ClickSound");
         menuAnim.SetActive(false);
         cinematic.SetActive(true);
@@ -70,8 +75,13 @@ public class MenuController : MonoBehaviour
         logo.SetActive(false);
         panel.SetActive(false);
         skipCinematic.SetActive(true);
-        activeTimer= true;
+        activeTimer = true;
         FindObjectOfType<AudioManager>().Stop("MainMenuTheme");
+    }
+
+    public void NoButton()
+    {
+        
     }
 
     // Button de Options
