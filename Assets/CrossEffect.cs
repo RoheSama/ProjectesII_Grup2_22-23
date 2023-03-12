@@ -19,13 +19,12 @@ public class CrossEffect : MonoBehaviour
             {
                 audioSourceCrosses[i].areaCross();
             }
-            topDownMovement.shadowSpeed = 1;
+            topDownMovement.shadowSpeed = 5;
             crossEnabledRange = other.gameObject;
             animator = crossEnabledRange.transform.parent.GetComponent<Animator>();
             animator.SetBool("CanShine", true);
         }
     }
-
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("CrossEnabledRange"))
