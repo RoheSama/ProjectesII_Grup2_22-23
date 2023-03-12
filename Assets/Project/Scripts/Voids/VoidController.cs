@@ -23,8 +23,6 @@ public class VoidController : MonoBehaviour
     private Vector3 target;
     NavMeshAgent agent;
 
-
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -35,7 +33,6 @@ public class VoidController : MonoBehaviour
         agent.updateUpAxis = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Tick();

@@ -21,14 +21,12 @@ public class MoveTutoriav3 : MonoBehaviour
         if (navMeshAgent.transform.position.x < wayPoint1.transform.position.x + 0.5 && navMeshAgent.transform.position.x > wayPoint1.transform.position.x - 0.5
             && navMeshAgent.transform.position.y < wayPoint1.transform.position.y + 0.5 && navMeshAgent.transform.position.y > wayPoint1.transform.position.y - 0.5 && !activated)
         {
-            Debug.Log("desactivacion");
             navMeshAgent.enabled = false;
         }
 
         if (navMeshAgent.transform.position.x < wayPoint2.transform.position.x + 0.5 && navMeshAgent.transform.position.x > wayPoint2.transform.position.x - 0.5
             && navMeshAgent.transform.position.y < wayPoint2.transform.position.y + 0.5 && navMeshAgent.transform.position.y > wayPoint2.transform.position.y - 0.5)
         {
-            Debug.Log("desactivacion");
             navMeshAgent.enabled = false;
         }
 
@@ -45,11 +43,9 @@ public class MoveTutoriav3 : MonoBehaviour
     {
         if(activated)
         {
-            Debug.Log("activacion");
             navMeshAgent.enabled = true;
             navMeshAgent.destination = wayPoint2.transform.position;
             activated = true;
-
         }
     }
 }

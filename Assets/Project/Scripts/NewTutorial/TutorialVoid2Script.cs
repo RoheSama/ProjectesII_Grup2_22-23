@@ -11,10 +11,6 @@ public class TutorialVoid2Script : MonoBehaviour
     public GameObject student;
     public GameObject icon;
 
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && shadowIcon.activeSelf)
@@ -25,7 +21,6 @@ public class TutorialVoid2Script : MonoBehaviour
         {
             student.SetActive(false);
             icon.SetActive(true);
-            
         }
     }
 

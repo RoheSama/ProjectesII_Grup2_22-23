@@ -18,8 +18,6 @@ public class TimeCounter : MonoBehaviour
     public int minutes;
     public int seconds;
 
-   // public bool activateDeathScene;
-
     // Text
     public Text timeText1;
     public Text timeText2;

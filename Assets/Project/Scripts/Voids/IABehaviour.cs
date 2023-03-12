@@ -105,15 +105,6 @@ public class IABehaviour : MonoBehaviour
 
     void Update()
     {
-            //DEBUG AREA
-            //
-            //
-            //
-
-            //
-            //
-            //
-
             //Audio
             if (canActiveAlertSound)
             {
@@ -141,11 +132,6 @@ public class IABehaviour : MonoBehaviour
             trailRenderer.enabled = true;
         }
         else trailRenderer.enabled = false;
-
-        //  if (satanicStar02Animator.GetBool("CanStartSatanicStar02") == true)
-       // {
-       //     satanicStar01Animator.SetBool("CanStartSatanicStar01", false);
-        //}
 
         //Level 0 to 1
         if (satanicStar01Animator.GetBool("CanStartSatanicStar01") == true)
@@ -189,7 +175,6 @@ public class IABehaviour : MonoBehaviour
                 if(satanicStar02Animator.GetBool("CanStartSatanicStar02") == false)
                 {
                     starsManager.canStart1Star = true;
-                    //satanicStar01Animator.SetBool("CanStartSatanicStar01", true);
                     standInTable= false;
                     RinconDeLlorar();
                 }
@@ -311,7 +296,6 @@ public class IABehaviour : MonoBehaviour
         rinconDeLlorarTimer += Time.deltaTime;
         if (myRinconDeLlorar == null)
         {
-            //detector.transform.localScale = new Vector3(detectorIncrement, detectorIncrement, detectorIncrement);
             detector.radius = (detectorIncrement);
             detectorIncrement++;
         }
@@ -356,7 +340,6 @@ public class IABehaviour : MonoBehaviour
 
     void AvoidStudents()
     {
-        // waypointsIndex++;
         avoidStudentsTemp += Time.deltaTime;
         if (level1)
         {
@@ -418,8 +401,6 @@ public class IABehaviour : MonoBehaviour
         attackTimer += Time.deltaTime;
         navMeshAgent.speed = 0;
         playerMovement.shadowSpeed = 1;
-        UnityEngine.Debug.Log("PRAY");
-        //audioSourceVoids.prayingVoidOn();
 
         animator.SetBool("CanCry", false);
         animator.SetBool("IdleUp", false);
