@@ -9,6 +9,11 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
+    public GameObject ResumeButton;
+    public GameObject MenuButton;
+    public GameObject QuitButton;
+    public GameObject VolumeButton;
+    public GameObject VolumeSliders;
     // Update is called once per frame
     void Update()
     {
@@ -44,6 +49,28 @@ public class PauseMenu : MonoBehaviour
         Debug.Log("Menu");
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void EnterVolume()
+    {
+        Debug.Log("Volume");
+        VolumeButton.SetActive(false);
+        ResumeButton.SetActive(false);
+        VolumeSliders.SetActive(true);
+        MenuButton.SetActive(false);
+        QuitButton.SetActive(false);
+        
+    }
+
+    public void BackButton()
+    {
+        Debug.Log("Volume");
+        VolumeButton.SetActive(true);
+        ResumeButton.SetActive(true);
+        VolumeSliders.SetActive(false);
+        MenuButton.SetActive(true);
+        QuitButton.SetActive(true);
+
     }
 
     public void QuitGame()
