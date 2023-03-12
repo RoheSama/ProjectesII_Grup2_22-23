@@ -25,6 +25,7 @@ public class MenuController : MonoBehaviour
     public GameObject studentsGuide;
     public GameObject shadowGuide;
     public GameObject soulReaperGuide;
+    public GameObject gloomGuide;
 
     public GameObject firstCrossVideo;
     public GameObject secondCrossVideo;
@@ -164,6 +165,13 @@ public class MenuController : MonoBehaviour
         controlsMenu.SetActive(false);
     }
 
+    // Button de Gloom Guide
+    public void GloomGuide()
+    {
+        gloomGuide.SetActive(true);
+        controlsMenu.SetActive(false);
+    }
+
     // Button de Back de las Guides
     public void BackToGuide()
     {
@@ -172,6 +180,7 @@ public class MenuController : MonoBehaviour
         studentsGuide.SetActive(false);
         shadowGuide.SetActive(false);
         soulReaperGuide.SetActive(false);
+        gloomGuide.SetActive(false);
         controlsMenu.SetActive(true);
     }
 
