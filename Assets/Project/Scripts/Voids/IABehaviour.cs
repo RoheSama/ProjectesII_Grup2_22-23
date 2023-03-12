@@ -437,6 +437,7 @@ public class IABehaviour : MonoBehaviour
             dangerIcon.SetActive(false);
             navMeshAgent.speed = 2;
             playerMovement.shadowSpeed = 8;
+            attackTimer= 0;
         }
     }
 
