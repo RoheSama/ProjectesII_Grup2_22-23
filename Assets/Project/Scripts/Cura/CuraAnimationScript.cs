@@ -41,8 +41,6 @@ public class CuraAnimationScript : MonoBehaviour
     {
         timeCounter += Time.deltaTime;
 
-        //  animator.SetFloat("Speed", speed);
-
         actualPositionX = navmeshAgent.transform.position.x;
         actualPositionY = navmeshAgent.transform.position.y;
         diferrenceLastPositionXAndActualPositionX = (lastPositionX - actualPositionX);
@@ -53,33 +51,6 @@ public class CuraAnimationScript : MonoBehaviour
             lastPositionX = actualPositionX;
             lastPositionY = actualPositionY;
             timeCounter = 0;
-        }
-
-        if (!animator.GetBool("CanCry" ))
-        {
-
-
-
-            //Move Down
-            if (diferrenceLastPositionYAndActualPositionY > downValue) //0
-            {
-                animator.SetBool("MoveDown", true);
-                animator.SetBool("MoveUp", false);
-                animator.SetBool("MoveLeft", false);
-                animator.SetBool("MoveRight", false);
-                if (visionRangeDown != null)
-                {
-                    visionRangeDown.SetActive(true);
-                    visionRangeUp.SetActive(false);
-                    visionRangeLeft.SetActive(false);
-                    visionRangeRight.SetActive(false);
-                }
-
-                //if (animator.GetBool("CanCry"))
-                //{
-                //    animator.SetBool("CanCry", false);
-                //}
-            }
 
             ////Move Left
             if (diferrenceLastPositionXAndActualPositionX > leftValue) //0.2
@@ -96,10 +67,10 @@ public class CuraAnimationScript : MonoBehaviour
                     visionRangeRight.SetActive(false);
                 }
 
-                //if (animator.GetBool("CanCry"))
-                //{
-                //    animator.SetBool("CanCry", false);
-                //}
+                if (animator.GetBool("CanCry"))
+                {
+                    animator.SetBool("CanCry", false);
+                }
             }
 
             ////Move Right
@@ -117,10 +88,10 @@ public class CuraAnimationScript : MonoBehaviour
                     visionRangeRight.SetActive(true);
                 }
 
-                //if (animator.GetBool("CanCry"))
-                //{
-                //    animator.SetBool("CanCry", false);
-                //}
+                if (animator.GetBool("CanCry"))
+                {
+                    animator.SetBool("CanCry", false);
+                }
 
             }
 
@@ -139,61 +110,82 @@ public class CuraAnimationScript : MonoBehaviour
                     visionRangeRight.SetActive(false);
                 }
 
-                //if (animator.GetBool("CanCry"))
-                //{
-                //    animator.SetBool("CanCry", false);
-                //}
-
-            }
-
-            if (diferrenceLastPositionXAndActualPositionX == 0 && diferrenceLastPositionYAndActualPositionY == 0)
-            {
-                if (animator.GetBool("MoveDown"))
+                if (animator.GetBool("CanCry"))
                 {
-                    animator.SetBool("MoveDown", false);
-                    animator.SetBool("IdleDown", true);
-                }
-                if (animator.GetBool("MoveUp"))
-                {
-                    animator.SetBool("MoveUp", false);
-                    animator.SetBool("IdleUp", true);
-                }
-                if (animator.GetBool("MoveLeft"))
-                {
-                    animator.SetBool("MoveLeft", false);
-                    animator.SetBool("IdleLeft", true);
-                }
-                if (animator.GetBool("MoveRight"))
-                {
-                    animator.SetBool("MoveRight", false);
-                    animator.SetBool("IdleRight", true);
+                    animator.SetBool("CanCry", false);
                 }
             }
 
-            if (diferrenceLastPositionXAndActualPositionX != 0 && diferrenceLastPositionYAndActualPositionY != 0)
+
+            //Move Down
+            if (diferrenceLastPositionYAndActualPositionY > downValue) //0
             {
-                if (animator.GetBool("IdleDown"))
+                animator.SetBool("MoveDown", true);
+                animator.SetBool("MoveUp", false);
+                animator.SetBool("MoveLeft", false);
+                animator.SetBool("MoveRight", false);
+                if (visionRangeDown != null)
                 {
-                    animator.SetBool("MoveDown", true);
-                    animator.SetBool("IdleDown", false);
-                }
-                if (animator.GetBool("IdleUp"))
-                {
-                    animator.SetBool("MoveUp", true);
-                    animator.SetBool("IdleUp", false);
-                }
-                if (animator.GetBool("IdleLeft"))
-                {
-                    animator.SetBool("MoveLeft", true);
-                    animator.SetBool("IdleLeft", false);
-                }
-                if (animator.GetBool("IdleRight"))
-                {
-                    animator.SetBool("MoveRight", true);
-                    animator.SetBool("IdleRight", false);
+                    visionRangeDown.SetActive(true);
+                    visionRangeUp.SetActive(false);
+                    visionRangeLeft.SetActive(false);
+                    visionRangeRight.SetActive(false);
                 }
 
+                if (animator.GetBool("CanCry"))
+                {
+                    animator.SetBool("CanCry", false);
+                }
+            }
+        }
 
+
+
+        if (diferrenceLastPositionXAndActualPositionX == 0 && diferrenceLastPositionYAndActualPositionY == 0)
+        {
+            if (animator.GetBool("MoveDown"))
+            {
+                animator.SetBool("MoveDown", false);
+                animator.SetBool("IdleDown", true);
+            }
+            if (animator.GetBool("MoveUp"))
+            {
+                animator.SetBool("MoveUp", false);
+                animator.SetBool("IdleUp", true);
+            }
+            if (animator.GetBool("MoveLeft"))
+            {
+                animator.SetBool("MoveLeft", false);
+                animator.SetBool("IdleLeft", true);
+            }
+            if (animator.GetBool("MoveRight"))
+            {
+                animator.SetBool("MoveRight", false);
+                animator.SetBool("IdleRight", true);
+            }
+        }
+
+        if (diferrenceLastPositionXAndActualPositionX != 0 && diferrenceLastPositionYAndActualPositionY != 0)
+        {
+            if (animator.GetBool("IdleDown"))
+            {
+                animator.SetBool("MoveDown", true);
+                animator.SetBool("IdleDown", false);
+            }
+            if (animator.GetBool("IdleUp"))
+            {
+                animator.SetBool("MoveUp", true);
+                animator.SetBool("IdleUp", false);
+            }
+            if (animator.GetBool("IdleLeft"))
+            {
+                animator.SetBool("MoveLeft", true);
+                animator.SetBool("IdleLeft", false);
+            }
+            if (animator.GetBool("IdleRight"))
+            {
+                animator.SetBool("MoveRight", true);
+                animator.SetBool("IdleRight", false);
             }
         }
     }

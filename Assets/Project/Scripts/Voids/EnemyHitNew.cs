@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -26,6 +27,9 @@ public class EnemyHitNew : MonoBehaviour
     public NavMeshAgent agent;
     public bool died;
     public GameObject voidsLeft;
+
+
+    public RenderPipelineAsset normalAsset;
     //public Slider rageBar;
     //public float maxRage = 100;
     //public float currentRage = 20;
@@ -81,13 +85,14 @@ public class EnemyHitNew : MonoBehaviour
     void Die()
     {
         //Debug.Log("Enemy died");
-        FindObjectOfType<AudioManager>().Play("DeathVoid");
+        FindObjectOfType<AudioManager>().Play("CuraDeathSound");
         anim.SetBool("IsDead", true);
         GetComponent<Collider2D>().enabled = false;
         agent.speed = 0.0f;
         StartCoroutine(VoidDestroy());
         if (!isCura)
         {
+            FindObjectOfType<AudioManager>().Play("DeathVoid");
             voidsLeft.GetComponent<VoidsLeft>().studentKill();
             iABehaviour.isDead = true;
         }
@@ -105,7 +110,8 @@ public class EnemyHitNew : MonoBehaviour
         Destroy(gameObject);
         if (isCura && !isTuto)
         {
-            SceneManager.LoadScene("MainMenu");
+            GraphicsSettings.renderPipelineAsset = normalAsset;
+            SceneManager.LoadScene("EndingCinematic");
         }
     }
 

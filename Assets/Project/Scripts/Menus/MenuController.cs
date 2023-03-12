@@ -38,15 +38,16 @@ public class MenuController : MonoBehaviour
     public GameObject secondStudentVideo;
     public GameObject firstNumberStudent;
     public GameObject secondNumberStudent;
+    public GameObject askForTutorialButton;
 
-    
-
+    // SceneManager.LoadScene("TutorialScene");
     private void Update()
     {
         if (Input.GetKeyDown("f"))
         {
             cinematic.SetActive(false);
-            SceneManager.LoadScene("TutorialScene");
+            mainMenuCanvas.SetActive(false);
+            askForTutorialButton.SetActive(true);
         }
         if(activeTimer)
         {
@@ -54,7 +55,8 @@ public class MenuController : MonoBehaviour
         }
         if(timer >= 68)
         {
-            SceneManager.LoadScene("TutorialScene");
+            mainMenuCanvas.SetActive(false);
+            askForTutorialButton.SetActive(true);
         }
     }
 
@@ -70,8 +72,18 @@ public class MenuController : MonoBehaviour
         logo.SetActive(false);
         panel.SetActive(false);
         skipCinematic.SetActive(true);
-        activeTimer= true;
+        activeTimer = true;
         FindObjectOfType<AudioManager>().Stop("MainMenuTheme");
+    }
+
+    public void YesButton()
+    {
+        SceneManager.LoadScene("TopDownMap");
+    }
+
+    public void NoButton()
+    {
+        SceneManager.LoadScene("TutorialScene");
     }
 
     // Button de Options

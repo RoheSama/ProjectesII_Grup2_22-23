@@ -33,6 +33,7 @@ public class stunArea : MonoBehaviour
         if (collider.GetComponent<EnemyHitNew>().isCura)
         {
             Debug.Log("Stunedd");
+            FindObjectOfType<AudioManager>().Play("Laugh");
             cura.GetComponent<NavMeshAgent>().enabled = false;
             stuned= true;
             StartCoroutine(DesStun());

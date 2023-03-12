@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Project/Scenes/BigMap.unity
     guid: d92839eadad21b94db323e1bc6bf05a5
+  - enabled: 1
+    path: Assets/Project/Scenes/EndingCinematic.unity
+    guid: 3a2b6e1766b9b5e4c8fd5448004df1b0
   m_configObjects: {}

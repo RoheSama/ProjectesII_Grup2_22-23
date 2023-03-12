@@ -8,8 +8,7 @@ using UnityEngine.Rendering;
 public class PlayerHealth : MonoBehaviour
 {
     public float health = 0f;
-    [SerializeField]
-    private float maxHealth = 1f;
+    public float maxHealth = 1f;
     public bool alive = true;
     public Animator anim;
     public Animator animShadow;
@@ -108,7 +107,6 @@ public class PlayerHealth : MonoBehaviour
     {
         StartCoroutine(DieAnimation());
         yield return new WaitForSeconds(2);
-        timeCounter.activateDeathScene = true;
-       // SceneManager.LoadScene("MainMenu");
+        timeCounter.deathCanvas.SetActive(true);
     }
 }

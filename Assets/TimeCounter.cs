@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TimeCounter : MonoBehaviour
 {
     // Scenes Gameobjects
     public GameObject game;
-    public GameObject deathScene;
+    public GameObject deathCanvas;
 
     // Time
     public float gameTime;
@@ -17,7 +18,7 @@ public class TimeCounter : MonoBehaviour
     public int minutes;
     public int seconds;
 
-    public bool activateDeathScene;
+   // public bool activateDeathScene;
 
     // Text
     public Text timeText1;
@@ -32,16 +33,19 @@ public class TimeCounter : MonoBehaviour
     public Animator star1Animator;
     public Animator star2Animator;
 
+    private float goToMenuTimer;
+
     void Start()
     {
         alertLevel= 0;
+       // deathCanvas.SetActive(false); 
     }
 
     void Update()
     {
         totalVoidsKilled = voidsLeft.voidsKilled;
 
-        if (activateDeathScene==false)
+        if (!deathCanvas.activeSelf)
         {
             gameTime += Time.deltaTime;
         }
@@ -55,22 +59,24 @@ public class TimeCounter : MonoBehaviour
             alertLevel = 2;
         }
 
-        if (activateDeathScene)
+        if (deathCanvas.activeSelf)
         {
             game.SetActive(false);
-            deathScene.SetActive(true);
+            deathCanvas.SetActive(true);
 
             gameTimeInt = Convert.ToInt32(gameTime);
 
             minutes = gameTimeInt / 60;
             gameTimeInt -= 60 * minutes;
             seconds = gameTimeInt;
-
-            if(minutes <10)
-            {
-                MoveText();
-            }
             DeathScene();
+
+            goToMenuTimer += Time.deltaTime;
+
+            if(goToMenuTimer>=5)
+            {
+                SceneManager.LoadScene("MainMenu");
+            }
         }
     }
 
@@ -84,10 +90,5 @@ public class TimeCounter : MonoBehaviour
         voidsKilledText.text = totalVoidsKilled.ToString();
 
         alertLevelText.text = alertLevel.ToString();
-    }
-
-    void MoveText()
-    {
-        //Adjustar la posicio del text
     }
 }
