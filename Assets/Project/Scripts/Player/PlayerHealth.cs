@@ -107,7 +107,6 @@ public class PlayerHealth : MonoBehaviour
     {
         StartCoroutine(DieAnimation());
         yield return new WaitForSeconds(2);
-        timeCounter.activateDeathScene = true;
-       // SceneManager.LoadScene("MainMenu");
+        timeCounter.deathCanvas.SetActive(true);
     }
 }
