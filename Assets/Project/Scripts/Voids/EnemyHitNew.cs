@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EnemyHitNew : MonoBehaviour
@@ -14,6 +15,7 @@ public class EnemyHitNew : MonoBehaviour
     public Animator anim;
 
     public bool isCura;
+    public bool isTuto;
 
     //[SerializeField]
     //private RageBar rageBar;
@@ -79,7 +81,6 @@ public class EnemyHitNew : MonoBehaviour
     void Die()
     {
         //Debug.Log("Enemy died");
-        died = true;
         FindObjectOfType<AudioManager>().Play("DeathVoid");
         anim.SetBool("IsDead", true);
         GetComponent<Collider2D>().enabled = false;
@@ -98,8 +99,14 @@ public class EnemyHitNew : MonoBehaviour
 
     IEnumerator VoidDestroy()
     {
+
+        died = true;
         yield return new WaitForSeconds(1.0f);
         Destroy(gameObject);
+        if (isCura && !isTuto)
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
     }
 
 }
