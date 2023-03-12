@@ -40,12 +40,14 @@ public class MenuController : MonoBehaviour
     public GameObject secondNumberStudent;
     public GameObject askForTutorialButton;
 
+    // SceneManager.LoadScene("TutorialScene");
     private void Update()
     {
         if (Input.GetKeyDown("f"))
         {
             cinematic.SetActive(false);
-            SceneManager.LoadScene("TutorialScene");
+            mainMenuCanvas.SetActive(false);
+            askForTutorialButton.SetActive(true);
         }
         if(activeTimer)
         {
@@ -53,18 +55,13 @@ public class MenuController : MonoBehaviour
         }
         if(timer >= 68)
         {
-            SceneManager.LoadScene("TutorialScene");
+            mainMenuCanvas.SetActive(false);
+            askForTutorialButton.SetActive(true);
         }
     }
 
     // Button de Play 
     public void StartGame()
-    {
-        askForTutorialButton.SetActive(true);
-        mainMenuCanvas.SetActive(false);
-    }
-
-    public void YesButton()
     {
         FindObjectOfType<AudioManager>().Play("ClickSound");
         menuAnim.SetActive(false);
@@ -79,9 +76,14 @@ public class MenuController : MonoBehaviour
         FindObjectOfType<AudioManager>().Stop("MainMenuTheme");
     }
 
+    public void YesButton()
+    {
+        SceneManager.LoadScene("TopDownMap");
+    }
+
     public void NoButton()
     {
-        
+        SceneManager.LoadScene("TutorialScene");
     }
 
     // Button de Options
