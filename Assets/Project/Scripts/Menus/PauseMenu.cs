@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
@@ -14,12 +15,18 @@ public class PauseMenu : MonoBehaviour
     public GameObject QuitButton;
     public GameObject VolumeButton;
     public GameObject VolumeSliders;
+
+    //Rendering
+    public RenderPipelineAsset powerUpAsset;
+    public RenderPipelineAsset normalAsset;
+
+    public GameObject shadow;
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            if(GameIsPaused)
+            if (GameIsPaused)
             {
                 Resume();
             }
@@ -35,6 +42,10 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f; //Freeze Game
         GameIsPaused = false;
+        if (shadow.activeSelf)
+        {
+            GraphicsSettings.renderPipelineAsset = powerUpAsset;
+        }
     }
 
     void Pause()
@@ -42,6 +53,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f; //Freeze Game
         GameIsPaused = true;
+        GraphicsSettings.renderPipelineAsset = normalAsset;
     }
 
     public void LoadMenu()

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -26,6 +27,9 @@ public class EnemyHitNew : MonoBehaviour
     public NavMeshAgent agent;
     public bool died;
     public GameObject voidsLeft;
+
+
+    public RenderPipelineAsset normalAsset;
     //public Slider rageBar;
     //public float maxRage = 100;
     //public float currentRage = 20;
@@ -106,6 +110,7 @@ public class EnemyHitNew : MonoBehaviour
         Destroy(gameObject);
         if (isCura && !isTuto)
         {
+            GraphicsSettings.renderPipelineAsset = normalAsset;
             SceneManager.LoadScene("EndingCinematic");
         }
     }
