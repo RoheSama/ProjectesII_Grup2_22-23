@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -65,6 +66,9 @@ public class CuraBehaviour : MonoBehaviour
     public GameObject crossDisabled;
 
     public StarsManager starsManager;
+    public float normalSpeed;
+    public float runningSpeed;
+    public bool canSlowCura = true;
 
 
     void Start()
@@ -96,7 +100,7 @@ public class CuraBehaviour : MonoBehaviour
 
         if (!dangerIcon.activeSelf)
         {
-            navMeshAgent.speed = 3.0f;
+            navMeshAgent.speed = normalSpeed;
         }
         if (dangerIcon.activeSelf)
         {
@@ -204,19 +208,19 @@ public class CuraBehaviour : MonoBehaviour
 
         if (level0)
         {
-            navMeshAgent.speed = 7.0f;
+            navMeshAgent.speed = runningSpeed;
             // lastSeenPlayerIcon.SetActive(true);
         }
 
         if (level1)
         {
-            navMeshAgent.speed = 7.0f;
+            navMeshAgent.speed = runningSpeed;
             //lastSeenPlayerIcon.SetActive(true);
         }
 
         if (level2)
         {
-            navMeshAgent.speed = 7.0f;
+            navMeshAgent.speed = runningSpeed;
             // lastSeenPlayerIcon.SetActive(true);
         }
 
@@ -253,7 +257,7 @@ public class CuraBehaviour : MonoBehaviour
         }
         else
         {
-            navMeshAgent.speed = 6.0f;
+            navMeshAgent.speed = runningSpeed;
             navMeshAgent.acceleration = 8;
         }
 
@@ -296,7 +300,12 @@ public class CuraBehaviour : MonoBehaviour
         //Disabled Cross Effect
         if(other.CompareTag("CrossDisabledRange") &&canChase)
         {
-            navMeshAgent.speed -=4;
+            if(canSlowCura)
+            {
+                runningSpeed -= 3;
+                UnityEngine.Debug.Log("SLOWEAO");
+                canSlowCura= false;
+            }
         }
 
         if (level0)
@@ -369,6 +378,17 @@ public class CuraBehaviour : MonoBehaviour
                 playerIsVisible = false;
                 // lastSeenPlayerIcon.transform.position = player.transform.position;
                 // lastSeenPlayerIcon.SetActive(true);
+            }
+        }
+
+        //Disabled Cross Effect
+        if (other.CompareTag("CrossDisabledRange"))
+        {
+            if (canSlowCura== false)
+            {
+                runningSpeed += 3;
+                UnityEngine.Debug.Log("YA NO ESTOY SLOWEAO");
+                canSlowCura = true;
             }
         }
 
