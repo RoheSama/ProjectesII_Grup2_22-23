@@ -75,6 +75,8 @@ public class AbilityUI : MonoBehaviour
     private float timeToStun = 2.5f;
     private float stunTimer = 0f;
 
+    public bool isTuto;
+
     void Start()
     {
         abilityImage1.fillAmount = 1;
@@ -225,7 +227,7 @@ public class AbilityUI : MonoBehaviour
             powerUpActivated = true;
             currentCD = 0;
             abilityImageSM.fillAmount = 1;            StartCoroutine(ShadowForm());
-            StartCoroutine(NormalForm());            //Arnau            //shadowIcon.SetActive(true);
+            StartCoroutine(NormalForm());
         }
 
         if (!powerUpAvailable)
@@ -255,7 +257,11 @@ public class AbilityUI : MonoBehaviour
         normalFace.enabled = false;
         shadowFace.enabled = true;
         ScreenShake.Instance.ShakeCamera(0f, 0.0f);
-        GraphicsSettings.renderPipelineAsset = powerUpAsset;
+        if (!isTuto)
+        {
+            GraphicsSettings.renderPipelineAsset = powerUpAsset;
+        }
+        
     }
     void PowerOff()
     {
@@ -271,9 +277,11 @@ public class AbilityUI : MonoBehaviour
 
         normalFace.enabled = true;
         shadowFace.enabled = false;
-        GraphicsSettings.renderPipelineAsset = normalAsset;
-        //Arnau
-        //shadowIcon.SetActive(false);
+
+        if (!isTuto)
+        {
+            GraphicsSettings.renderPipelineAsset = normalAsset;
+        }
     }
 
     IEnumerator ShadowForm()
