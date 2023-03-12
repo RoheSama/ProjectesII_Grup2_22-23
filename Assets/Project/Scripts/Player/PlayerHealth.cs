@@ -21,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
     public SpriteRenderer characterShadow;
 
     public RenderPipelineAsset normalAsset;
+    public TimeCounter timeCounter;
 
     // Start is called before the first frame update
     void Start()
@@ -96,13 +97,13 @@ public class PlayerHealth : MonoBehaviour
             characterShadow.enabled = false;
             GraphicsSettings.renderPipelineAsset = normalAsset;
         }
-        
     }
 
     IEnumerator Wait()
     {
         StartCoroutine(DieAnimation());
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene("MainMenu");
+        timeCounter.activateDeathScene = true;
+       // SceneManager.LoadScene("MainMenu");
     }
 }
