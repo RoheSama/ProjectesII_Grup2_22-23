@@ -65,6 +65,7 @@ public class CuraBehaviour : MonoBehaviour
     public GameObject crossEnabled;
     public GameObject crossDisabled;
 
+    // Other
     public StarsManager starsManager;
     public float normalSpeed;
     public float runningSpeed;
@@ -78,26 +79,6 @@ public class CuraBehaviour : MonoBehaviour
 
     void Update()
     {
-
-
-        //DEBUG
-        if (level0)
-        {
-           // Debug.Log("level0");
-        }
-
-        if (level1)
-        {
-           // Debug.Log("level1");
-        }
-
-        if (level2)
-        {
-           // Debug.Log("level2");
-        }
-
-        //Debug.Log(chaseTimer);
-
         if (!dangerIcon.activeSelf)
         {
             navMeshAgent.speed = normalSpeed;
@@ -185,7 +166,6 @@ public class CuraBehaviour : MonoBehaviour
 
             if (!waypointsTimerReached && waypointsTimer >= timeWaypoints[timeWaypointsIndex])
             {
-                // Index++
                 waypointsIndex++;
                 timeWaypointsIndex++;
                 waypointsTimerReached = true;
@@ -209,19 +189,16 @@ public class CuraBehaviour : MonoBehaviour
         if (level0)
         {
             navMeshAgent.speed = runningSpeed;
-            // lastSeenPlayerIcon.SetActive(true);
         }
 
         if (level1)
         {
             navMeshAgent.speed = runningSpeed;
-            //lastSeenPlayerIcon.SetActive(true);
         }
 
         if (level2)
         {
             navMeshAgent.speed = runningSpeed;
-            // lastSeenPlayerIcon.SetActive(true);
         }
 
         if (chaseTimer >= chaseTime && playerIsVisible == false)
@@ -303,7 +280,6 @@ public class CuraBehaviour : MonoBehaviour
             if(canSlowCura)
             {
                 runningSpeed -= 3;
-                UnityEngine.Debug.Log("SLOWEAO");
                 canSlowCura= false;
             }
         }
@@ -316,15 +292,6 @@ public class CuraBehaviour : MonoBehaviour
                 playerIsVisible = true;
                 chaseTimer= 0;
                 dangerIcon.SetActive(true);
-
-                //if(chaseTimer >1)
-                //{
-                //    satanicStar01Animator.SetBool("CanStartSatanicStar02", true);
-               // }
-
-                //followWaypoints = false;
-                //lastSeenPlayerIcon.SetActive(true);
-                //lastSeenPlayerIcon.transform.position = player.transform.position;
 
                 //Audio
                 if (canAlertSound)
@@ -349,9 +316,6 @@ public class CuraBehaviour : MonoBehaviour
                 playerIsVisible = true;
                 chaseTimer = 0;
                 dangerIcon.SetActive(true);
-                //followWaypoints = false;
-                //lastSeenPlayerIcon.SetActive(true);
-                //lastSeenPlayerIcon.transform.position = player.transform.position;
                 
                 //Audio
                  if (canAlertSound)
@@ -376,8 +340,6 @@ public class CuraBehaviour : MonoBehaviour
             if (other.CompareTag("Player"))
             {
                 playerIsVisible = false;
-                // lastSeenPlayerIcon.transform.position = player.transform.position;
-                // lastSeenPlayerIcon.SetActive(true);
             }
         }
 
@@ -387,24 +349,8 @@ public class CuraBehaviour : MonoBehaviour
             if (canSlowCura== false)
             {
                 runningSpeed += 3;
-                UnityEngine.Debug.Log("YA NO ESTOY SLOWEAO");
                 canSlowCura = true;
             }
         }
-
-        //if (level1 || level2)
-        //{
-        //    if (other.CompareTag("Player"))
-        //    {
-        //        playerIsVisible = false;
-        //        // lastSeenPlayerIcon.transform.position = player.transform.position;
-        //        //lastSeenPlayerIcon.SetActive(true);
-
-        //        /*if (chaseTimer > 0)
-        //        {
-        //            chaseTimer = 0;
-        //        }*/
-        //    }
-        //}
     }
 }

@@ -17,7 +17,7 @@ public class CameraZoom : MonoBehaviour
         cam = Camera.main;
         zoom = cam.orthographicSize;
     }
-    // Update is called once per frame
+
     void Update()
     {
         float scrollData;

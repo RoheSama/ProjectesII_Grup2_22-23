@@ -31,12 +31,6 @@ public class CuraAnimationScript : MonoBehaviour
     public GameObject visionRangeLeft;
     public GameObject visionRangeRight;
 
-
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         timeCounter += Time.deltaTime;
@@ -92,7 +86,6 @@ public class CuraAnimationScript : MonoBehaviour
                 {
                     animator.SetBool("CanCry", false);
                 }
-
             }
 
             ////Move Up

@@ -46,7 +46,6 @@ public class DisableCross : MonoBehaviour
             crossDisabled = null;
             cross = null;
             timer = 0;
-            
         }
     }
 }
