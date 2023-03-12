@@ -56,6 +56,8 @@ public class AbilityUI : MonoBehaviour
     public Image normalFace;
     public Image shadowFace;
 
+    public PlayerHealth playerHealth;
+
     //Attack Area
     private bool attackAreaEnabled = false;
     [SerializeField] private GameObject attackArea;
@@ -179,6 +181,12 @@ public class AbilityUI : MonoBehaviour
             //Efecto de la habilidad
             stuning = true;
             stunArea.SetActive(stuning);
+           
+            playerHealth.health -= 0.1f;
+            if(playerHealth.health <=0)
+            {
+                playerHealth.health = 0.1f;
+            }
 
             //Animation
             if (powerUpActivated)
