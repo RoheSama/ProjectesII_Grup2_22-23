@@ -20,13 +20,13 @@ public class IABehaviour : MonoBehaviour
 
     //Waypoints for FollowWaypoints
     public GameObject[] waypoints;
-    int waypointsIndex = 0;
+    public int waypointsIndex = 0;
 
     //Timer
     public int[] timeWaypoints;
     int timeWaypointsIndex = 0;
 
-    float waypointsTimer = 0;
+    public float waypointsTimer = 0;
     bool waypointsTimerReached = false;
 
     //Icono Danger
@@ -266,7 +266,9 @@ public class IABehaviour : MonoBehaviour
         }
 
         // Si arribes al waypoint
-        else if (transform.position == navMeshAgent.destination)
+        //else if (transform.position == navMeshAgent.destination)
+        else if(transform.position.x < navMeshAgent.destination.x + 2 && transform.position.x > navMeshAgent.destination.x - 2
+               && transform.position.y < navMeshAgent.destination.y + 2 && transform.position.y > navMeshAgent.destination.y - 2)
         {
             if (!waypointsTimerReached)
             {
