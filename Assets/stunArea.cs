@@ -10,7 +10,7 @@ public class stunArea : MonoBehaviour
     public GameObject shadow;
     public GameObject violet;
 
-    private bool stuned;
+    public bool stuned;
 
     private void Update()
     {
