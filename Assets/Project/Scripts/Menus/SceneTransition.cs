@@ -25,7 +25,7 @@ public class SceneTransition : MonoBehaviour
     IEnumerator LoadScene()
     {
         
-        anim.SetTrigger("Start");
+        anim.SetTrigger("start");
         yield return new WaitForSeconds(1.3f);
         SceneManager.LoadScene("TopDownMap");
     }
