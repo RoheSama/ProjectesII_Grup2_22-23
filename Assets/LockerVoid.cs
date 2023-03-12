@@ -16,6 +16,8 @@ public class LockerVoid : MonoBehaviour
 
     private bool voidActivated = false;
 
+    public bool locked = false;
+
     void Start()
     {
 
@@ -31,6 +33,7 @@ public class LockerVoid : MonoBehaviour
             && navMeshAgent.transform.position.y < locker.transform.position.y + 1 && navMeshAgent.transform.position.y > locker.transform.position.y - 1)
         {
             student.SetActive(false);
+            locked = true;
             icon.SetActive(true);
         }
     }
