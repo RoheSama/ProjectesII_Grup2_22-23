@@ -520,7 +520,6 @@ public class IABehaviour : MonoBehaviour
                 attackTimer = 0;
             }
 
-
             if (other.CompareTag("Target") || other.CompareTag("Player") && dangerIcon.activeInHierarchy == false)
             {
                 followWaypointsLevel0 = false;
