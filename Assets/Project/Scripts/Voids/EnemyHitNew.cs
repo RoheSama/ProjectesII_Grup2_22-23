@@ -105,7 +105,7 @@ public class EnemyHitNew : MonoBehaviour
         Destroy(gameObject);
         if (isCura && !isTuto)
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("EndingCinematic");
         }
     }
 
