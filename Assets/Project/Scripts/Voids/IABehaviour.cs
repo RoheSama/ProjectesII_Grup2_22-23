@@ -94,6 +94,8 @@ public class IABehaviour : MonoBehaviour
     public GameObject shadow;
 
     public bool standInTable = false;
+    public PlayerHealth playerHealth;
+    private bool canIncreasePlayerHealth = true;
 
     void Start()
     {
@@ -114,14 +116,20 @@ public class IABehaviour : MonoBehaviour
 
             //Audio
             if (canActiveAlertSound)
-        {
+            {
             canAlertSound = true;
             canActiveAlertSound = false;
-        }
+            }
 
         if(isDead)
         {
             //Hacer que el void salga si ha entrado en un escondite mientras moría (BUGS)
+            if(canIncreasePlayerHealth)
+            {
+                playerHealth.health += 0.1f;
+                canIncreasePlayerHealth = false;
+            }
+
             navMeshAgent.enabled = false;
             hideTimer = 100;
             //Desactivar Ataque si el student muere
@@ -429,6 +437,7 @@ public class IABehaviour : MonoBehaviour
             dangerIcon.SetActive(false);
             navMeshAgent.speed = 2;
             playerMovement.shadowSpeed = 8;
+            attackTimer= 0;
         }
     }
 
@@ -510,7 +519,6 @@ public class IABehaviour : MonoBehaviour
                 canAttack = true;
                 attackTimer = 0;
             }
-
 
             if (other.CompareTag("Target") || other.CompareTag("Player") && dangerIcon.activeInHierarchy == false)
             {
