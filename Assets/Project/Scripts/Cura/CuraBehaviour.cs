@@ -217,10 +217,10 @@ public class CuraBehaviour : MonoBehaviour
             navMeshAgent.destination = lastSeenPlayerIcon.transform.position;
         }
 
-        if (navMeshAgent.transform.position.x < lastSeenPlayerIcon.transform.position.x + 13 && navMeshAgent.transform.position.x > lastSeenPlayerIcon.transform.position.x - 13
-            && navMeshAgent.transform.position.y < lastSeenPlayerIcon.transform.position.y + 13 && navMeshAgent.transform.position.y > lastSeenPlayerIcon.transform.position.y - 13 ||
-            navMeshAgent.transform.position.x < player.transform.position.x + 13 && navMeshAgent.transform.position.x > player.transform.position.x - 13
-            && navMeshAgent.transform.position.y < player.transform.position.y + 13 && navMeshAgent.transform.position.y > player.transform.position.y - 13)
+        if (navMeshAgent.transform.position.x < lastSeenPlayerIcon.transform.position.x + 20 && navMeshAgent.transform.position.x > lastSeenPlayerIcon.transform.position.x - 20
+            && navMeshAgent.transform.position.y < lastSeenPlayerIcon.transform.position.y + 20 && navMeshAgent.transform.position.y > lastSeenPlayerIcon.transform.position.y - 20 ||
+            navMeshAgent.transform.position.x < player.transform.position.x + 20 && navMeshAgent.transform.position.x > player.transform.position.x - 20
+            && navMeshAgent.transform.position.y < player.transform.position.y + 20 && navMeshAgent.transform.position.y > player.transform.position.y - 20)
         {
             curaCanSpeedRun = true;
         }

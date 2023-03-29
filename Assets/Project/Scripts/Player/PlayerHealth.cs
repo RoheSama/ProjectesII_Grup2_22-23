@@ -69,7 +69,6 @@ public class PlayerHealth : MonoBehaviour
         {
             health = 0f;
         }
-
     }
 
     void Die()
