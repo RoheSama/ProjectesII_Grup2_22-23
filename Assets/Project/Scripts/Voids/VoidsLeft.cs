@@ -27,5 +27,4 @@ public class VoidsLeft : MonoBehaviour
         totalVoids--;
         voidsKilled++;
    }
-
 }
