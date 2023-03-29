@@ -10,10 +10,16 @@ public class VoidsLeft : MonoBehaviour
     public int voidsKilled;
 
     public GameObject controlPoint;
+    public GameObject killThePriestMessage;
     
     void Update()
     {
         voidsCounter.SetText(totalVoids.ToString());
+
+        if(totalVoids == 0)
+        {
+            killThePriestMessage.SetActive(true);
+        }
     }
 
    public void studentKill()
