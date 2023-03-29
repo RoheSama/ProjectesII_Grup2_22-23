@@ -73,7 +73,7 @@ public class TimeCounter : MonoBehaviour
 
             if(goToMenuTimer>=5)
             {
-                SceneManager.LoadScene("MainMenu");
+                SceneManager.LoadScene("TopDownMap");
             }
         }
     }
