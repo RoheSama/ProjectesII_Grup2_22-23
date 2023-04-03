@@ -97,6 +97,9 @@ public class IABehaviour : MonoBehaviour
     public PlayerHealth playerHealth;
     private bool canIncreasePlayerHealth = true;
 
+    //Particles
+    public ParticleSystemRenderer particleSystem;
+ 
     void Start()
     {
         shadow.SetActive(true);
@@ -129,9 +132,13 @@ public class IABehaviour : MonoBehaviour
 
         if (shadow.activeSelf)
         {
-            trailRenderer.enabled = true;
+            // trailRenderer.enabled = true;
+            particleSystem.renderingLayerMask = 1;
         }
-        else trailRenderer.enabled = false;
+        else
+            //trailRenderer.enabled = false;
+            particleSystem.renderingLayerMask = 0;
+
 
         //Level 0 to 1
         if (satanicStar01Animator.GetBool("CanStartSatanicStar01") == true)
