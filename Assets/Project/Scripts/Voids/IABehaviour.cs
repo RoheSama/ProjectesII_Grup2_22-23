@@ -117,7 +117,7 @@ public class IABehaviour : MonoBehaviour
 
         if(isDead)
         {
-            //Hacer que el void salga si ha entrado en un escondite mientras moría (BUGS)
+            //Hacer que el void salga si ha entrado en un escondite mientras morÃ­a (BUGS)
             if(canIncreasePlayerHealth)
             {
                 playerHealth.health += 0.05f;
@@ -130,14 +130,14 @@ public class IABehaviour : MonoBehaviour
             attackTimer = 100;
         }
 
-        if (shadow.activeSelf)
-        {
-            // trailRenderer.enabled = true;
-            particleSystem.renderingLayerMask = 1;
-        }
-        else
-            //trailRenderer.enabled = false;
-            particleSystem.renderingLayerMask = 0;
+        //if (shadow.activeSelf)
+        //{
+        //    // trailRenderer.enabled = true;
+        //    particleSystem.renderingLayerMask = 1;
+        //}
+        //else
+        //    //trailRenderer.enabled = false;
+        //    particleSystem.renderingLayerMask = 0;
 
 
         //Level 0 to 1

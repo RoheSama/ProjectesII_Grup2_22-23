@@ -24,6 +24,10 @@ public class animatonScript : MonoBehaviour
 
     public float timeCounter = 0;
 
+    //Particles
+    public ParticleSystemRenderer particleSystemRenderer;
+    public ParticleSystem particleSystem;
+    public GameObject shadow;
 
     //Range Vision
     public GameObject visionRangeDown;
@@ -34,7 +38,7 @@ public class animatonScript : MonoBehaviour
 
     void Start()    
     {
-
+         particleSystem.Pause();
     }
 
     void Update()
@@ -71,7 +75,22 @@ public class animatonScript : MonoBehaviour
                 {
                     animator.SetBool("CanCry", false);
                 }
+
+                if (shadow.activeSelf)
+                {
+                    // trailRenderer.enabled = true;
+                    particleSystemRenderer.renderingLayerMask = 1;
+                    particleSystem.Play();
+
+                }
+                else
+                    //trailRenderer.enabled = false;
+                    particleSystemRenderer.renderingLayerMask = 0;
+                    particleSystem.Play();
+
             }
+
+
 
             ////Move Right
             if (diferrenceLastPositionXAndActualPositionX < rightValue) //-0.2
@@ -93,6 +112,16 @@ public class animatonScript : MonoBehaviour
                     animator.SetBool("CanCry", false);
                 }
 
+                if (shadow.activeSelf)
+                {
+                    // trailRenderer.enabled = true;
+                    particleSystemRenderer.renderingLayerMask = 1;
+                    particleSystem.Play();
+                }
+                else
+                    //trailRenderer.enabled = false;
+                    particleSystemRenderer.renderingLayerMask = 0;
+                particleSystem.Play();
             }
 
             ////Move Up
@@ -114,6 +143,17 @@ public class animatonScript : MonoBehaviour
                 {
                     animator.SetBool("CanCry", false);
                 }
+
+                if (shadow.activeSelf)
+                {
+                    // trailRenderer.enabled = true;
+                    particleSystemRenderer.renderingLayerMask = 1;
+                    particleSystem.Play();
+                }
+                else
+                    //trailRenderer.enabled = false;
+                    particleSystemRenderer.renderingLayerMask = 0;
+                    particleSystem.Play();
             }
 
 
@@ -136,6 +176,17 @@ public class animatonScript : MonoBehaviour
                 {
                     animator.SetBool("CanCry", false);
                 }
+
+                if (shadow.activeSelf)
+                {
+                    // trailRenderer.enabled = true;
+                    particleSystemRenderer.renderingLayerMask = 1;
+                    particleSystem.Play();
+                }
+                else
+                    //trailRenderer.enabled = false;
+                    particleSystemRenderer.renderingLayerMask = 0;
+                    particleSystem.Play();
             }
         }
 
@@ -163,6 +214,7 @@ public class animatonScript : MonoBehaviour
                 animator.SetBool("MoveRight", false);
                 animator.SetBool("IdleRight", true);
             }
+           // particleSystem.Pause();
         }
 
         if (diferrenceLastPositionXAndActualPositionX != 0 && diferrenceLastPositionYAndActualPositionY != 0)
@@ -187,6 +239,7 @@ public class animatonScript : MonoBehaviour
                 animator.SetBool("MoveRight", true);
                 animator.SetBool("IdleRight", false);
             }
+           // particleSystem.Pause();
         }
     }
     
