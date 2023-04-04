@@ -16,16 +16,19 @@ public class MouseDetector : MonoBehaviour
 
     private void Update()
     {
-        if(shadowIcon.activeSelf)
+        if(shadowIcon!= null && violet != null && shadow!=null)
         {
-            shadow.SetActive(true);
-            violet.SetActive(false);
-        }
+            if (shadowIcon.activeSelf)
+            {
+                shadow.SetActive(true);
+                violet.SetActive(false);
+            }
 
-        else
-        {
-            shadow.SetActive(false);
-            violet.SetActive(true);
+            else
+            {
+                shadow.SetActive(false);
+                violet.SetActive(true);
+            }
         }
     }
 
