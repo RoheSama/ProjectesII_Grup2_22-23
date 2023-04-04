@@ -11,6 +11,7 @@ public class Activate_Info : MonoBehaviour
     public GameObject ability1;
     public GameObject ability2;
     public GameObject ability3;
+    public GameObject studentsAlive;
 
 
     void Start()
@@ -20,11 +21,12 @@ public class Activate_Info : MonoBehaviour
 
     void Update()
     {
+        studentsAlive.SetActive(true);
         Vector3 mousePos = Input.mousePosition;
         {
             //DEBUG
-            UnityEngine.Debug.Log(mousePos.x);
-            //UnityEngine.Debug.Log(mousePos.y);
+            //UnityEngine.Debug.Log(mousePos.x);
+           // UnityEngine.Debug.Log(mousePos.y);
 
             //Ability1
             if(mousePos.x > 89 && mousePos.x <204 && mousePos.y > 70 && mousePos.y < 184) 
@@ -52,6 +54,16 @@ public class Activate_Info : MonoBehaviour
             }
             else
                 ability3.SetActive(false);
+
+
+            //Students Alive
+            if (mousePos.x > 1660 && mousePos.x < 1770 && mousePos.y > 60 && mousePos.y < 165)
+            {
+                studentsAlive.SetActive(true);
+                UnityEngine.Debug.Log("3");
+            }
+            else
+                studentsAlive.SetActive(false);
 
 
         }
