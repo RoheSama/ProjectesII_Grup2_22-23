@@ -22,6 +22,8 @@ public class TopDownMovement : MonoBehaviour
     public GameObject shadow;
     public  float violetSpeed;
 
+    public bool canMove = true;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();   
@@ -29,9 +31,10 @@ public class TopDownMovement : MonoBehaviour
 
     void Update()
     {
+       
         GetInput();
         Animate();
-        if(shadow.activeSelf)
+        if (shadow.activeSelf)
         {
             moveSpeed = shadowSpeed;
         }
@@ -39,6 +42,12 @@ public class TopDownMovement : MonoBehaviour
         {
             moveSpeed = violetSpeed;
         }
+
+        if (!canMove)
+        {
+            moveSpeed = 0f;
+        }
+       
     }
 
     private void FixedUpdate()

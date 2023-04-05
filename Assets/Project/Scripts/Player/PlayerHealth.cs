@@ -22,6 +22,9 @@ public class PlayerHealth : MonoBehaviour
     public RenderPipelineAsset normalAsset;
     public TimeCounter timeCounter;
 
+    public GameObject normalMove;
+    public GameObject shadowMove;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -88,16 +91,19 @@ public class PlayerHealth : MonoBehaviour
     {
         if (FindObjectOfType<AbilityUI>().powerUpActivated == false)
         {
+            normalMove.GetComponent<TopDownMovement>().canMove = false;
             anim.SetTrigger("Die");
             yield return new WaitForSeconds(0.75f);
             character.enabled = false;
         }
         else
         {
+            shadowMove.GetComponent<TopDownMovement>().canMove = false;
             animShadow.SetTrigger("Die");
             yield return new WaitForSeconds(0.75f);
             characterShadow.enabled = false;
             GraphicsSettings.renderPipelineAsset = normalAsset;
+            
         }
     }
 
