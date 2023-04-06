@@ -5,15 +5,25 @@ using UnityEngine;
 public class BloodSplatter : MonoBehaviour
 {
     public GameObject IAFather;
+    public bool activated;
+
+    [SerializeField] SpriteRenderer sp;
 
     // Update is called once per frame
     void Update()
     {
+        activated = IAFather.GetComponent<EnemyHitNew>().died;
         this.transform.position = IAFather.transform.position; 
         
-        if (IAFather.GetComponent<EnemyHitNew>().died)
+        if (activated)
         {
-            this.gameObject.SetActive(true);
+            StartCoroutine(SpawnBlood());
         }
+    }
+
+    IEnumerator SpawnBlood()
+    {
+        yield return 0.3f;
+        sp.enabled = true;
     }
 }
