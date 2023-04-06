@@ -18,12 +18,19 @@ public class BloodSplatter : MonoBehaviour
         if (activated)
         {
             StartCoroutine(SpawnBlood());
+            StartCoroutine(DespawnBlood());
         }
     }
 
     IEnumerator SpawnBlood()
     {
-        yield return 0.3f;
+        yield return new WaitForSeconds(0.3f);
         sp.enabled = true;
+    }
+
+    IEnumerator DespawnBlood()
+    {
+        yield return new WaitForSeconds(2.3f);
+        sp.enabled = false;
     }
 }
