@@ -13,6 +13,8 @@ public class BloodSplatter : MonoBehaviour
 
     [SerializeField] SpriteRenderer sp;
 
+    public Animator anim;
+
     // Update is called once per frame
     void Update()
     {
@@ -35,6 +37,10 @@ public class BloodSplatter : MonoBehaviour
     IEnumerator DespawnBlood()
     {
         yield return new WaitForSeconds(despawnTime);
+        anim.SetTrigger("Blood");
+        anim.enabled = true;
+        yield return new WaitForSeconds(0.5f);
         sp.enabled = false;
+        anim.enabled = false;
     }
 }
