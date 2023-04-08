@@ -12,6 +12,8 @@ public class stunArea : MonoBehaviour
 
     public bool stuned;
 
+    public Animator anim;
+
     private void Update()
     {
         if (FindObjectOfType<AbilityUI>().powerUpActivated == false)
@@ -26,6 +28,16 @@ public class stunArea : MonoBehaviour
         if(stuned)
         {
             StartCoroutine(DesStun());
+            anim.SetBool("IsStunned", true);
+            anim.SetBool("CanCry", false);
+            anim.SetBool("MoveUp", false);
+            anim.SetBool("MoveDown", false);
+            anim.SetBool("MoveLeft", false);
+            anim.SetBool("MoveRight", false);
+            anim.SetBool("IdleUp", false);
+            anim.SetBool("IdleDown", false);
+            anim.SetBool("IdleLeft", false);
+            anim.SetBool("IdleRight", false);
         }
     }
     private void OnTriggerEnter2D(Collider2D collider)
@@ -44,6 +56,8 @@ public class stunArea : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
 
         cura.GetComponent<NavMeshAgent>().enabled = true;
-        stuned= false;  
+        stuned= false;
+        anim.SetBool("IsStunned", false);
+       
     }
 }
