@@ -63,7 +63,7 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator Shaking()
     {
-        ScreenShake.Instance.ShakeCamera(1f, 0.1f);
+        ScreenShake.Instance.ShakeCamera(3f, 0.1f);
         yield return new WaitForSeconds(0.4f);
         ScreenShake.Instance.ShakeCamera(0f, 0.1f);
     }
