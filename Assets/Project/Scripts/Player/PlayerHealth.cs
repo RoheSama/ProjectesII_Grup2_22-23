@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.Rendering;
+using Cinemachine;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -22,11 +23,20 @@ public class PlayerHealth : MonoBehaviour
     public RenderPipelineAsset normalAsset;
     public TimeCounter timeCounter;
 
+    public GameObject normalMove;
+    public GameObject shadowMove;
+
+    public GameObject cura;
+
+    [SerializeField] CinemachineVirtualCamera cam;
+    float fov;
+
     // Start is called before the first frame update
     void Start()
     {
         //health 
         health = maxHealth;
+        //cam = GetComponent<CinemachineVirtualCamera>(); 
     }
 
     // Update is called once per frame
@@ -53,7 +63,7 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator Shaking()
     {
-        ScreenShake.Instance.ShakeCamera(1f, 0.1f);
+        ScreenShake.Instance.ShakeCamera(3f, 0.1f);
         yield return new WaitForSeconds(0.4f);
         ScreenShake.Instance.ShakeCamera(0f, 0.1f);
     }
@@ -84,20 +94,39 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    IEnumerator CamZoom()
+    {
+        fov = cam.m_Lens.FieldOfView -= 20f;
+        if(fov <= 0)
+        {
+            Debug.Log("Zoomin");
+            cam.m_Lens.FieldOfView -= 60f;
+        }
+        yield return new WaitForSeconds(0.4f);
+    }
     IEnumerator DieAnimation()
     {
         if (FindObjectOfType<AbilityUI>().powerUpActivated == false)
-        {
+        { 
+            normalMove.GetComponent<TopDownMovement>().canMove = false;
+            shadowMove.GetComponent<TopDownMovement>().canMove = false;
+            StartCoroutine(CamZoom());
+            cura.SetActive(false);
             anim.SetTrigger("Die");
             yield return new WaitForSeconds(0.75f);
             character.enabled = false;
         }
         else
         {
+            shadowMove.GetComponent<TopDownMovement>().canMove = false;
+            normalMove.GetComponent<TopDownMovement>().canMove = false;
+            StartCoroutine(CamZoom());
+            cura.SetActive(false);
             animShadow.SetTrigger("Die");
             yield return new WaitForSeconds(0.75f);
             characterShadow.enabled = false;
             GraphicsSettings.renderPipelineAsset = normalAsset;
+            
         }
     }
 
