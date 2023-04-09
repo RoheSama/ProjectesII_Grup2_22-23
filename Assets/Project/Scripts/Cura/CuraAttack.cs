@@ -21,8 +21,10 @@ public class CuraAttack : MonoBehaviour
     public bool curaCanAttack;
     public CuraBehaviour curaBehaviour;
 
+    public float knockbackForce;
     //Audio
     public AudioSourceCura audioSourceCura;
+
 
     void Start()
     {
@@ -81,8 +83,10 @@ public class CuraAttack : MonoBehaviour
             {
                 StartCoroutine(AttackAreaRoutine());
                 StartCoroutine(CoolDownAttack());
+
             }
-           
+            Vector2 difference = collision.transform.position - transform.position;
+            collision.transform.position = new Vector2(collision.transform.position.x + difference.x, collision.transform.position.y + difference.y + knockbackForce);
         }
     }
 
