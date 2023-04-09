@@ -68,9 +68,7 @@ public class EnemyHitNew : MonoBehaviour
     {
         if (isCura)
         {
-            //
-           // Debug.Log("STUNED");
-           //
+            anim.SetTrigger("Cura_stun");
         }
     }
     void Die()
