@@ -12,6 +12,8 @@ public class MoveTutorial : MonoBehaviour
 
     public bool activated = false;
 
+    public GameObject invisibleWall;
+
     private void Update()
     {
         if (navMeshAgent.transform.position.x < wayPoint.transform.position.x + 0.1 && navMeshAgent.transform.position.x > wayPoint.transform.position.x - 0.1
@@ -28,6 +30,7 @@ public class MoveTutorial : MonoBehaviour
             navMeshAgent.enabled = true;
             navMeshAgent.destination = wayPoint.transform.position;
             activated = true;
+            invisibleWall.SetActive(false); 
         }
     }
 }
