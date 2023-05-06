@@ -75,6 +75,11 @@ public class MenuController : MonoBehaviour
         FindObjectOfType<AudioManager>().Stop("MainMenuTheme");
     }
 
+    public void HoverSound()
+    {
+        FindObjectOfType<AudioManager>().Play("HoverSound");
+    }
+
     public void YesButton()
     {
         SceneManager.LoadScene("TopDownMap");
