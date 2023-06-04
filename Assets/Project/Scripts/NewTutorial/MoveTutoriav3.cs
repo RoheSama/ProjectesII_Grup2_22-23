@@ -15,6 +15,7 @@ public class MoveTutoriav3 : MonoBehaviour
 
     public GameObject disabledCross;
 
+    public GameObject invisibleWall;
     private void Update()
     {
 
@@ -46,6 +47,7 @@ public class MoveTutoriav3 : MonoBehaviour
             navMeshAgent.enabled = true;
             navMeshAgent.destination = wayPoint2.transform.position;
             activated = true;
+            invisibleWall.SetActive(false);
         }
     }
 }

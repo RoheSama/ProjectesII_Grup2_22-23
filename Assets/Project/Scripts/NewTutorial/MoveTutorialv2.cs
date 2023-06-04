@@ -15,6 +15,8 @@ public class MoveTutorialv2 : MonoBehaviour
 
     public GameObject tutoIA;
 
+    public GameObject invisibleWall;
+
     private void Update()
     {
 
@@ -42,6 +44,7 @@ public class MoveTutorialv2 : MonoBehaviour
         {
             navMeshAgent.enabled = true;
             navMeshAgent.destination = wayPoint2.transform.position;
+            invisibleWall.SetActive(false);
         }     
     }
 }
